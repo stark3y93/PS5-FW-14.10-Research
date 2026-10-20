@@ -4,7 +4,7 @@ This repository contains original Python tools for inspecting the **outer SLB2 w
 
 ## PS5 browser capability bridge
 
-The user reports that the original passive page now runs on a real PS5 14.10. Raw target JSON and the exact navigation route are still pending. The new authenticated LAN bridge collects results, schedules five fixed bounded diagnostic categories and exports evidence matrices. It does not unlock debug options or system access. See [setup and exact PS5 steps](docs/PS5_RESEARCH_BRIDGE.md) and [implementation/evidence status](reports/PS5_1410_BROWSER_BRIDGE.md).
+The original passive page runs on the user's PS5 14.10. The [live storage/file audit](reports/PS5_STORAGE_FILE_AUDIT_20261020.md) now preserves authenticated bridge records, four newly completed jobs, storage persistence and cleanup evidence, and uncertain download/picker outcomes. The exact browser-entry route remains undocumented. The authenticated LAN bridge collects results, schedules five fixed bounded diagnostic categories and exports evidence matrices. It does not unlock debug options or system access. See [setup and exact PS5 steps](docs/PS5_RESEARCH_BRIDGE.md) and [implementation/evidence status](reports/PS5_1410_BROWSER_BRIDGE.md).
 
 ```powershell
 Set-Location E:\PS5-FW-14.10-Research
@@ -12,7 +12,7 @@ Set-Location E:\PS5-FW-14.10-Research
 python -S tools/ps5_bridge.py --bind 192.168.4.29 --port 8765 --secondary-port 8766
 ```
 
-Open the printed dashboard URL on the PC and enter its separate dashboard key. On the PS5, reload the already working `http://192.168.4.29:8765/`, pair with the printed pairing key, then run **surface** first. The preserved original passive page is available at `/passive/`. No new PS5 capability is confirmed until real results are collected.
+Open the printed dashboard URL on the PC and enter its separate dashboard key. On the PS5, reload the already working `http://192.168.4.29:8765/`, pair with the printed pairing key, then run **surface** first. The preserved original passive page is available at `/passive/`. Check current heartbeats before scheduling; saved successful results do not establish a live connection.
 
 The [Gezine review](reports/GEZINE_1410_RESEARCH.md), [vulnerability matrix](reports/VULNERABILITY_MATRIX.md), [false-positive audit](reports/FALSE_POSITIVES.md), [patch comparisons](reports/UPSTREAM_PATCH_COMPARISON.md), [firmware compatibility](reports/FIRMWARE_COMPATIBILITY.md), and [research progress](reports/RESEARCH_PROGRESS.md) distinguish public demonstrations, upstream advisories and evidence on this package. Browser logs can be inspected read-only from a separate checkout.
 

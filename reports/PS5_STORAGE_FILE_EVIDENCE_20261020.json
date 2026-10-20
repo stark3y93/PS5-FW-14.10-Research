@@ -1,0 +1,2372 @@
+{
+  "audit_scope": "Authenticated live audit: original client offline; a newly paired PS5-labelled session completed storage, surface and security tasks.",
+  "recorded_at_utc": "2026-10-20T21:54:14.880792+00:00",
+  "client_id": "7243d0ad563b",
+  "initial_authenticated_status": {
+    "server_time": "2026-10-20T21:53:44.410877+00:00",
+    "clients": [
+      {
+        "client_id": "7243d0ad563b",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T21:49:34.201135+00:00",
+        "online": false,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 1,
+          "sha256": "2a499a2bf18cdb8fc6bf0ba919bed2bb764d7b0298fa54dc0aa7b512f60b0bcc"
+        }
+      }
+    ]
+  },
+  "source_snapshot": {
+    "path": "derived\\live-storage-audit-20261020\\state-20261020T215344411876Z.json",
+    "sha256": "2ad862a8ddc9d1d9e3fa445e7f707d775d89cb37623d74d80768fcf2c1f2e206"
+  },
+  "source_events": {
+    "path": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+    "sha256": "a5ac9ef64131a9ecd63c0a0e009f51fe9576466e1ce0a479762dfff49df2e7ee",
+    "hash_scope": "First 14 newline-terminated event records at initial capture",
+    "captured_bytes": 22704,
+    "captured_lines": 14
+  },
+  "events": [
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 1,
+      "sha256_including_newline": "2a499a2bf18cdb8fc6bf0ba919bed2bb764d7b0298fa54dc0aa7b512f60b0bcc",
+      "record": {
+        "sequence": 1,
+        "server_time": "2026-10-20T21:44:34.166218+00:00",
+        "kind": "registration",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "identity_authenticated": false
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 2,
+      "sha256_including_newline": "a34c8116854063d7f14f7edc3b266101f79081245ab0a01f596153bcb7bf5d57",
+      "record": {
+        "sequence": 2,
+        "server_time": "2026-10-20T21:44:34.177328+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.downloadLink",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.attribute",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileUpload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.popup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.navigation",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileOpen",
+              "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+              "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 3,
+      "sha256_including_newline": "9b34b841b71bcfedaaef8e6add70a1c43329665aa5d749ffdcbd7f55d6ac5297",
+      "record": {
+        "sequence": 3,
+        "server_time": "2026-10-20T21:47:47.887963+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "0744b00f837e127a",
+          "client_id": "7243d0ad563b",
+          "task": "surface",
+          "status": "queued",
+          "created_at": "2026-10-20T21:47:47.887963+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 4,
+      "sha256_including_newline": "ab7790b1936abf4ec4bf1d071873bf8e857309173b22dc0a9b3de9b19a4c0767",
+      "record": {
+        "sequence": 4,
+        "server_time": "2026-10-20T21:47:47.927010+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "0744b00f837e127a",
+          "results": [
+            {
+              "test_id": "surface.Promise",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Promise exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Map",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Map exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Set",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Set exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Symbol",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Symbol exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.BigInt",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check BigInt exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.ArrayBuffer",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check ArrayBuffer exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Uint8Array",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Uint8Array exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.TextEncoder",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check TextEncoder exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.FontFace",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check FontFace exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.TransformStream",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check TransformStream exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.WebAssembly",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check WebAssembly exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fontSet",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fontSet exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.cssGrid",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check cssGrid exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.cssFontFamily",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check cssFontFamily exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.clipboard",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check clipboard exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fileInput",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fileInput exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fileSystem",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fileSystem exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fileAPIs",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "File": true,
+                "FileReader": true,
+                "Blob": true,
+                "FileList": true,
+                "blobURL": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fileAPIs exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.devices",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "bluetooth": false,
+                "usb": false,
+                "serial": false,
+                "hid": false,
+                "mediaDevices": false,
+                "geolocation": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check devices exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.isolation",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "crossOriginIsolated": false,
+                "SharedArrayBuffer": false,
+                "policy": "This page does not request COOP/COEP isolation"
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check isolation exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.permissions",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check permissions exposure in this page without privileged operations; availability is not exploitation."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 5,
+      "sha256_including_newline": "bf461d2ca940e818a2143d51c8c4c1ba2a389e34ae2e1a9b1c7a022f46e1675b",
+      "record": {
+        "sequence": 5,
+        "server_time": "2026-10-20T21:47:49.139273+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "6ab6643a4cb9b633",
+          "client_id": "7243d0ad563b",
+          "task": "storage",
+          "status": "queued",
+          "created_at": "2026-10-20T21:47:49.139273+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 6,
+      "sha256_including_newline": "ba6e248157ef05050f7ae1244a01da8b03aad1a40536878c575994f3b761546f",
+      "record": {
+        "sequence": 6,
+        "server_time": "2026-10-20T21:47:49.211646+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "6ab6643a4cb9b633",
+          "results": [
+            {
+              "test_id": "storage.local",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "readback": true,
+                "prior_page_sentinel": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read one suite-owned localStorage sentinel; preserve ownership collisions."
+            },
+            {
+              "test_id": "storage.session",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "readback": true,
+                "prior_page_sentinel": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read one suite-owned sessionStorage sentinel; preserve ownership collisions."
+            },
+            {
+              "test_id": "storage.indexedDB",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Open only the synthetic database, read/write its sentinel and close the transaction."
+            },
+            {
+              "test_id": "storage.estimate",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "synthetic_characters": 2048,
+                "max_utf16_payload_bytes": 4096,
+                "estimate_available": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read/remove 2048 ASCII characters (<=4096 UTF-16 payload bytes); optionally read origin quota estimate."
+            },
+            {
+              "test_id": "storage.reload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use normal Reload, re-pair, then run storage again; same-page reruns are not persistence proof",
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Find a known synthetic sentinel from a different page instance, not a same-page rerun."
+            },
+            {
+              "test_id": "storage.cleanup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Sentinels retained for reload testing; use the explicit cleanup button when finished",
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Retain markers until the user explicitly requests owned-data cleanup."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 7,
+      "sha256_including_newline": "8794df3afc99bda84cf5fbfbb796d4f92cebb67cc62a0331497e5af60ff7505d",
+      "record": {
+        "sequence": 7,
+        "server_time": "2026-10-20T21:47:59.151288+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "01b8bf5408c41675",
+          "client_id": "7243d0ad563b",
+          "task": "network",
+          "status": "queued",
+          "created_at": "2026-10-20T21:47:59.151288+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 8,
+      "sha256_including_newline": "59caf4a396156b43fd9169c175302384a04835f39a19218d59e3a3c160be3649",
+      "record": {
+        "sequence": 8,
+        "server_time": "2026-10-20T21:47:59.586134+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "01b8bf5408c41675",
+          "results": [
+            {
+              "test_id": "network.fetchGET",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "fetch GET returns the same-origin synthetic marker."
+            },
+            {
+              "test_id": "network.fetchPOST",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "fetch POST sends and returns the same-origin synthetic marker."
+            },
+            {
+              "test_id": "network.xhrGET",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "XHR GET returns the same-origin synthetic marker."
+            },
+            {
+              "test_id": "network.xhrPOST",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "XHR POST returns the synthetic marker and POST method."
+            },
+            {
+              "test_id": "network.cors",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": "Allowed-origin control passed; no-header cross-origin response was unreadable as expected",
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Explicit-allow second-origin control is readable; no-header control is not readable."
+            },
+            {
+              "test_id": "network.websocket",
+              "gate": "INCONCLUSIVE",
+              "observed": "Operation did not complete as expected",
+              "error": "Error: WebSocket connection failed",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Authenticated bounded WebSocket exchange returns one synthetic marker."
+            },
+            {
+              "test_id": "network.eventSource",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Receive one synthetic SSE message then close the connection."
+            },
+            {
+              "test_id": "network.streaming",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "first_chunk_bytes": 47,
+                "bounded_synthetic_response": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Read one bounded response chunk using ReadableStream.getReader then cancel."
+            },
+            {
+              "test_id": "network.timeout",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "controlled_timeout_observed": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "The intentionally delayed local endpoint triggers the 100ms XHR deadline."
+            },
+            {
+              "test_id": "network.failure",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "controlled_connection_failure_reported": true,
+                "error": "XHR network error"
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "The controlled connection-close endpoint produces an explicit network error."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 9,
+      "sha256_including_newline": "9f46490329f85289740864814a038d0980834414350865e8678e82d976b6f483",
+      "record": {
+        "sequence": 9,
+        "server_time": "2026-10-20T21:47:59.666466+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "a28fe99f4e95f76e",
+          "client_id": "7243d0ad563b",
+          "task": "security",
+          "status": "queued",
+          "created_at": "2026-10-20T21:47:59.666466+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 10,
+      "sha256_including_newline": "636e4ea6ade6520a27b1fc3de0a2ea5ce2a98f6240efdfa0d2fa0d542a6e7b6e",
+      "record": {
+        "sequence": 10,
+        "server_time": "2026-10-20T21:47:59.897861+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "a28fe99f4e95f76e",
+          "results": [
+            {
+              "test_id": "security.context",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "isSecureContext": false,
+                "protocol": "http:",
+                "crossOriginIsolated": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe current secure-context and cross-origin-isolation flags; HTTP LAN and loopback can differ."
+            },
+            {
+              "test_id": "security.permissions",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Query geolocation permission state without requesting permission or position."
+            },
+            {
+              "test_id": "security.wasm",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "If exposed, validate an 8-byte empty module; no permanent disablement inference."
+            },
+            {
+              "test_id": "security.worker",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "A temporary Blob worker sends one marker, is terminated, and its URL revoked."
+            },
+            {
+              "test_id": "security.serviceWorker",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Register/unregister only the isolated suite scope, without caches or a fetch handler."
+            },
+            {
+              "test_id": "security.crypto",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "SHA-256 of 3 synthetic bytes returns a 32-byte digest."
+            },
+            {
+              "test_id": "security.sandbox",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "opaque_origin": true,
+                "parent_dom_blocked": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Controlled allow-scripts sandbox has an opaque message origin and denies parent DOM access."
+            },
+            {
+              "test_id": "security.csp",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "control_loaded": true,
+                "inline_script_blocked": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "The static control loads while its explicitly forbidden inline script does not execute."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 11,
+      "sha256_including_newline": "2b788bad93d946a24fbfc55e83c8896a7287c607ed79c1299d1701b6b8a049db",
+      "record": {
+        "sequence": 11,
+        "server_time": "2026-10-20T21:48:00.599647+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "14a94ef099af1a19",
+          "client_id": "7243d0ad563b",
+          "task": "rendering",
+          "status": "queued",
+          "created_at": "2026-10-20T21:48:00.599647+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 12,
+      "sha256_including_newline": "4410561fabc5c461ea7d8dfb7efc4ebf7051da8a534ab8b3d58862b3a5106634",
+      "record": {
+        "sequence": 12,
+        "server_time": "2026-10-20T21:48:00.640814+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "14a94ef099af1a19",
+          "results": [
+            {
+              "test_id": "rendering.language",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "map": true,
+                "set": true,
+                "symbol": true,
+                "bigint": "8",
+                "promise": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Small Map/Set/Symbol/BigInt operations and Promise availability behave as reported."
+            },
+            {
+              "test_id": "rendering.buffer",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "One 256 KiB buffer supports first/last typed-array byte readback."
+            },
+            {
+              "test_id": "rendering.canvas",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "A 16x16 canvas returns the expected one-pixel red readback."
+            },
+            {
+              "test_id": "rendering.webgl",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Create/clear one 16x16 WebGL context and release it when supported."
+            },
+            {
+              "test_id": "rendering.timing",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "iterations": 10000,
+                "elapsed_ms": 0,
+                "checksum": 49995000,
+                "not_a_stress_or_version_test": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Time 10000 integer additions; do not infer a firmware or performance guarantee."
+            },
+            {
+              "test_id": "rendering.errors",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "name": "Error",
+                "message": "PS5 bridge synthetic handled error",
+                "window_error_listener": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Catch a synthetic Error and record its name/message without throwing an unhandled exception."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 13,
+      "sha256_including_newline": "7cb432b1f8bf3ca172d0960d352ce19539318ae7fdd85eec0a7af772ef8105ed",
+      "record": {
+        "sequence": 13,
+        "server_time": "2026-10-20T21:49:42.937573+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Link clicked/requested; saved/opened outcome is NOT established",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 14,
+      "sha256_including_newline": "7406c80b2f9919ce3388d726547de875bf22a70d222d89a532779e92b1ce8346",
+      "record": {
+        "sequence": 14,
+        "server_time": "2026-10-20T21:49:44.162137+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "7243d0ad563b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.attribute",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Link clicked/requested; saved/opened outcome is NOT established",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "live_client_id": "3d699bb03ce4",
+  "live_events": [
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 15,
+      "sha256_including_newline": "c158e0c3bccca7a80d18e46cfc79a8ba40ac85946433b179e1202dfeee041e04",
+      "record": {
+        "sequence": 15,
+        "server_time": "2026-10-20T21:54:29.721682+00:00",
+        "kind": "registration",
+        "data": {
+          "client_id": "3d699bb03ce4",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "identity_authenticated": false
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 16,
+      "sha256_including_newline": "cdc7315a32732f0a1e9bf21a2bcdccc50000f5b6319a0a270a9d73c97c73a395",
+      "record": {
+        "sequence": 16,
+        "server_time": "2026-10-20T21:54:29.740079+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "3d699bb03ce4",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.downloadLink",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.attribute",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileUpload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.popup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.navigation",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileOpen",
+              "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+              "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 17,
+      "sha256_including_newline": "252bf4a1dddfb94eddc9e189bce3cd09a1a67aa1268c4782cc70b16f19cb4db3",
+      "record": {
+        "sequence": 17,
+        "server_time": "2026-10-20T21:55:10.547922+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "fbed8624f915d6c4",
+          "client_id": "3d699bb03ce4",
+          "task": "storage",
+          "status": "queued",
+          "created_at": "2026-10-20T21:55:10.547922+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 18,
+      "sha256_including_newline": "34b1cb51fa2576e83c8a67232e41addd9484fe2b444dff51af0e4f3b3fc1199f",
+      "record": {
+        "sequence": 18,
+        "server_time": "2026-10-20T21:55:11.823377+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "3d699bb03ce4",
+          "job_id": "fbed8624f915d6c4",
+          "results": [
+            {
+              "test_id": "storage.local",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "readback": true,
+                "prior_page_sentinel": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read one suite-owned localStorage sentinel; preserve ownership collisions."
+            },
+            {
+              "test_id": "storage.session",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "readback": true,
+                "prior_page_sentinel": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read one suite-owned sessionStorage sentinel; preserve ownership collisions."
+            },
+            {
+              "test_id": "storage.indexedDB",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Open only the synthetic database, read/write its sentinel and close the transaction."
+            },
+            {
+              "test_id": "storage.estimate",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "synthetic_characters": 2048,
+                "max_utf16_payload_bytes": 4096,
+                "estimate_available": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read/remove 2048 ASCII characters (<=4096 UTF-16 payload bytes); optionally read origin quota estimate."
+            },
+            {
+              "test_id": "storage.reload",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "prior_page_sentinel_seen": true,
+                "stores_with_prior_marker": 2
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Find a known synthetic sentinel from a different page instance, not a same-page rerun."
+            },
+            {
+              "test_id": "storage.cleanup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Sentinels retained for reload testing; use the explicit cleanup button when finished",
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Retain markers until the user explicitly requests owned-data cleanup."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 19,
+      "sha256_including_newline": "3250061d800ba576183192f7c85f6f0e8ead12d2b237f021fdd0f46561b80c35",
+      "record": {
+        "sequence": 19,
+        "server_time": "2026-10-20T21:55:25.265491+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "5165048c10437b8a",
+          "client_id": "3d699bb03ce4",
+          "task": "surface",
+          "status": "queued",
+          "created_at": "2026-10-20T21:55:25.265491+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 20,
+      "sha256_including_newline": "f693507d62c796553726e6d8d59caa7e6be7a1b37b69ef4b617ed885daccc2a8",
+      "record": {
+        "sequence": 20,
+        "server_time": "2026-10-20T21:55:25.784581+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "3d699bb03ce4",
+          "job_id": "5165048c10437b8a",
+          "results": [
+            {
+              "test_id": "surface.Promise",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Promise exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Map",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Map exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Set",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Set exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Symbol",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Symbol exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.BigInt",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check BigInt exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.ArrayBuffer",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check ArrayBuffer exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.Uint8Array",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check Uint8Array exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.TextEncoder",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check TextEncoder exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.FontFace",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check FontFace exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.TransformStream",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check TransformStream exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.WebAssembly",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check WebAssembly exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fontSet",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fontSet exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.cssGrid",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check cssGrid exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.cssFontFamily",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check cssFontFamily exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.clipboard",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check clipboard exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fileInput",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fileInput exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fileSystem",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fileSystem exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.fileAPIs",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "File": true,
+                "FileReader": true,
+                "Blob": true,
+                "FileList": true,
+                "blobURL": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check fileAPIs exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.devices",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "bluetooth": false,
+                "usb": false,
+                "serial": false,
+                "hid": false,
+                "mediaDevices": false,
+                "geolocation": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check devices exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.isolation",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "crossOriginIsolated": false,
+                "SharedArrayBuffer": false,
+                "policy": "This page does not request COOP/COEP isolation"
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check isolation exposure in this page without privileged operations; availability is not exploitation."
+            },
+            {
+              "test_id": "surface.permissions",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Check permissions exposure in this page without privileged operations; availability is not exploitation."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 21,
+      "sha256_including_newline": "a3a183bd8878375e107062ba5f4d014d885c9ad6658bcfc01bfd7782746c4f28",
+      "record": {
+        "sequence": 21,
+        "server_time": "2026-10-20T21:55:44.425573+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "4b06b4ad8f8e584d",
+          "client_id": "3d699bb03ce4",
+          "task": "security",
+          "status": "queued",
+          "created_at": "2026-10-20T21:55:44.425573+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 22,
+      "sha256_including_newline": "3cc083e7a1bc540874f3466f14a1a1b72d4f79a4f3bebea49e84b12b9f17970c",
+      "record": {
+        "sequence": 22,
+        "server_time": "2026-10-20T21:55:45.978805+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "3d699bb03ce4",
+          "job_id": "4b06b4ad8f8e584d",
+          "results": [
+            {
+              "test_id": "security.context",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "isSecureContext": false,
+                "protocol": "http:",
+                "crossOriginIsolated": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe current secure-context and cross-origin-isolation flags; HTTP LAN and loopback can differ."
+            },
+            {
+              "test_id": "security.permissions",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Query geolocation permission state without requesting permission or position."
+            },
+            {
+              "test_id": "security.wasm",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "If exposed, validate an 8-byte empty module; no permanent disablement inference."
+            },
+            {
+              "test_id": "security.worker",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": true,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "A temporary Blob worker sends one marker, is terminated, and its URL revoked."
+            },
+            {
+              "test_id": "security.serviceWorker",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Register/unregister only the isolated suite scope, without caches or a fetch handler."
+            },
+            {
+              "test_id": "security.crypto",
+              "gate": "REQUIRES HTTPS",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "SHA-256 of 3 synthetic bytes returns a 32-byte digest."
+            },
+            {
+              "test_id": "security.sandbox",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "opaque_origin": true,
+                "parent_dom_blocked": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Controlled allow-scripts sandbox has an opaque message origin and denies parent DOM access."
+            },
+            {
+              "test_id": "security.csp",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "control_loaded": true,
+                "inline_script_blocked": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "The static control loads while its explicitly forbidden inline script does not execute."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 23,
+      "sha256_including_newline": "3f8f048a90675666c92d3e93eb8d0b304ac7d52c850a9a4cc1b14f449fcd0bc3",
+      "record": {
+        "sequence": 23,
+        "server_time": "2026-10-20T21:56:24.395868+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "3d699bb03ce4",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.downloadLink",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Link clicked/requested; saved/opened outcome is NOT established",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 24,
+      "sha256_including_newline": "abc926b8abc8171e1443aa6ec90cf9402be78e402baeac0effb13883376dcbd8",
+      "record": {
+        "sequence": 24,
+        "server_time": "2026-10-20T21:59:38.086525+00:00",
+        "kind": "registration",
+        "data": {
+          "client_id": "028819fe310b",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "identity_authenticated": false
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 25,
+      "sha256_including_newline": "4115bb33392573f71d93797ed671df505aa45d6b3191c6e1b00c2dd3f020814d",
+      "record": {
+        "sequence": 25,
+        "server_time": "2026-10-20T21:59:38.109439+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.downloadLink",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.attribute",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileUpload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.popup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.navigation",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileOpen",
+              "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+              "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 26,
+      "sha256_including_newline": "55d133b87776433ddd7a5cb83ff32830047847a52964238df889b4aae7b61799",
+      "record": {
+        "sequence": 26,
+        "server_time": "2026-10-20T21:59:58.255727+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "dc1b661d1c6bf332",
+          "client_id": "028819fe310b",
+          "task": "storage",
+          "status": "queued",
+          "created_at": "2026-10-20T21:59:58.255727+00:00"
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 27,
+      "sha256_including_newline": "34b9a501f40662eea4f23f635eec1eb257e789c786b042a2501b47e47ed559e2",
+      "record": {
+        "sequence": 27,
+        "server_time": "2026-10-20T22:00:00.127952+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "dc1b661d1c6bf332",
+          "results": [
+            {
+              "test_id": "storage.local",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "readback": true,
+                "prior_page_sentinel": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read one suite-owned localStorage sentinel; preserve ownership collisions."
+            },
+            {
+              "test_id": "storage.session",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "readback": true,
+                "prior_page_sentinel": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read one suite-owned sessionStorage sentinel; preserve ownership collisions."
+            },
+            {
+              "test_id": "storage.indexedDB",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": false,
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Open only the synthetic database, read/write its sentinel and close the transaction."
+            },
+            {
+              "test_id": "storage.estimate",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "synthetic_characters": 2048,
+                "max_utf16_payload_bytes": 4096,
+                "estimate_available": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Write/read/remove 2048 ASCII characters (<=4096 UTF-16 payload bytes); optionally read origin quota estimate."
+            },
+            {
+              "test_id": "storage.reload",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "prior_page_sentinel_seen": true,
+                "stores_with_prior_marker": 2
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Find a known synthetic sentinel from a different page instance, not a same-page rerun."
+            },
+            {
+              "test_id": "storage.cleanup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Sentinels retained for reload testing; use the explicit cleanup button when finished",
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Retain markers until the user explicitly requests owned-data cleanup."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 28,
+      "sha256_including_newline": "aa5d83be9921dae23a6189899dcec292aab443cb0763a7b38138cb23fbc64526",
+      "record": {
+        "sequence": 28,
+        "server_time": "2026-10-20T22:00:36.358536+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.storageCleanup",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "removed": 2,
+                "preserved_collisions": 0,
+                "errors": []
+              },
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe storageCleanup only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 29,
+      "sha256_including_newline": "3d2b05f95e95641015b665c781b1b8b9dd120aa1e53a33c4d5e1213744ea78e1",
+      "record": {
+        "sequence": 29,
+        "server_time": "2026-10-20T22:01:05.844151+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Link clicked/requested; saved/opened outcome is NOT established",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 30,
+      "sha256_including_newline": "fa153a11dc3dc5ac2084bd74c522fa937d9edc785a487879f15fbd0f2b48cbb2",
+      "record": {
+        "sequence": 30,
+        "server_time": "2026-10-20T22:01:07.456364+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Link clicked/requested; saved/opened outcome is NOT established",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 31,
+      "sha256_including_newline": "a0d5e3df9350ffcde5ffe515d190311e5b8f2e21c65ce19b73d830060a2ff845",
+      "record": {
+        "sequence": 31,
+        "server_time": "2026-10-20T22:01:38.574981+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Blob URL created; click its link, then report observed outcome",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 32,
+      "sha256_including_newline": "f914d1ea35f436e0a1b12ad11c881c829696a8bb84ddabbb1598789d49df87b4",
+      "record": {
+        "sequence": 32,
+        "server_time": "2026-10-20T22:01:39.990988+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "028819fe310b",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Blob URL created and link clicked; confirm actual outcome below",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 33,
+      "sha256_including_newline": "13d4ce4aa72abf1876410853f199dff249367df5f8be1421e3cccfa433cf9640",
+      "record": {
+        "sequence": 33,
+        "server_time": "2026-10-20T22:03:17.957525+00:00",
+        "kind": "registration",
+        "data": {
+          "client_id": "630895e6f5c3",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "identity_authenticated": false
+        }
+      }
+    },
+    {
+      "source_file": "derived\\bridge-20261020T214316Z-e5aedd\\events.ndjson",
+      "line": 34,
+      "sha256_including_newline": "1d8c12758c0d180e9823f85480d4128e8c6e43b0e040f156555fb7c6a876ef47",
+      "record": {
+        "sequence": 34,
+        "server_time": "2026-10-20T22:03:17.974120+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "630895e6f5c3",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.downloadLink",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.attribute",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileUpload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.popup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.navigation",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileOpen",
+              "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+              "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "controller_observations": [
+    {
+      "source": "user reply in this session",
+      "observation": "page open",
+      "limitations": "Does not specify whether the transition was an ordinary reload, navigation or re-pair."
+    },
+    {
+      "source": "user reply to picker check in this session",
+      "observation": "think i didi it",
+      "classification": "INCONCLUSIVE"
+    },
+    {
+      "source": "user reply to picker clarification in this session",
+      "observation": "I\u2019m not sure",
+      "classification": "INCONCLUSIVE"
+    },
+    {
+      "source": "user reply to TXT-download check in this session",
+      "observation": "nothing json fills at the bottom",
+      "classification": "INCONCLUSIVE",
+      "interpretation": "No visible save/open outcome; raw page JSON changing confirms local logging only."
+    },
+    {
+      "source": "user reply to Blob-download check in this session",
+      "observation": "a webpage opens nothin on it",
+      "classification": "INCONCLUSIVE",
+      "interpretation": "Blank webpage, not evidence of save or successful content readback."
+    },
+    {
+      "source": "user reply to deliberate reload/re-pair instruction",
+      "observation": "re connected",
+      "classification": "User-assisted transition; new session subsequently read both prior-page markers."
+    },
+    {
+      "source": "user reply to owned-storage cleanup instruction",
+      "observation": "done",
+      "classification": "Corroborated by manual.storageCleanup: removed 2, collisions 0, errors []."
+    },
+    {
+      "source": "user reply to exact attachment-link retest",
+      "observation": "download tiny text pressed nothing happened",
+      "classification": "INCONCLUSIVE",
+      "interpretation": "No visible save/open; no explicit error supplied."
+    },
+    {
+      "source": "user reply to Blob creation retest",
+      "observation": "i clicked it im on a seperate webpage rn",
+      "classification": "Corroborated Blob creation and link-click events; not a save."
+    },
+    {
+      "source": "user reply to resulting-page clarification",
+      "observation": "Blank page",
+      "classification": "INCONCLUSIVE",
+      "interpretation": "No synthetic-content readback, save confirmation or explicit error."
+    }
+  ],
+  "reload_client_id": "028819fe310b",
+  "final_authenticated_status": {
+    "server_time": "2026-10-20T22:04:09.270566+00:00",
+    "clients": [
+      {
+        "client_id": "7243d0ad563b",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T21:49:34.201135+00:00",
+        "online": false,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 1,
+          "sha256": "2a499a2bf18cdb8fc6bf0ba919bed2bb764d7b0298fa54dc0aa7b512f60b0bcc"
+        }
+      },
+      {
+        "client_id": "3d699bb03ce4",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T21:56:19.754433+00:00",
+        "online": false,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 15,
+          "sha256": "c158e0c3bccca7a80d18e46cfc79a8ba40ac85946433b179e1202dfeee041e04"
+        }
+      },
+      {
+        "client_id": "028819fe310b",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T22:01:38.116213+00:00",
+        "online": false,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 24,
+          "sha256": "abc926b8abc8171e1443aa6ec90cf9402be78e402baeac0effb13883376dcbd8"
+        }
+      },
+      {
+        "client_id": "630895e6f5c3",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T22:04:07.977636+00:00",
+        "online": true,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 33,
+          "sha256": "13d4ce4aa72abf1876410853f199dff249367df5f8be1421e3cccfa433cf9640"
+        }
+      }
+    ],
+    "jobs": [
+      {
+        "id": "0744b00f837e127a",
+        "client_id": "7243d0ad563b",
+        "task": "surface",
+        "status": "complete",
+        "created_at": "2026-10-20T21:47:47.887963+00:00",
+        "started_at": "2026-10-20T21:47:47.905985+00:00",
+        "completed_at": "2026-10-20T21:47:47.928006+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "6ab6643a4cb9b633",
+        "client_id": "7243d0ad563b",
+        "task": "storage",
+        "status": "complete",
+        "created_at": "2026-10-20T21:47:49.139273+00:00",
+        "started_at": "2026-10-20T21:47:49.150787+00:00",
+        "completed_at": "2026-10-20T21:47:49.212673+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "01b8bf5408c41675",
+        "client_id": "7243d0ad563b",
+        "task": "network",
+        "status": "complete",
+        "created_at": "2026-10-20T21:47:59.151288+00:00",
+        "started_at": "2026-10-20T21:47:59.180927+00:00",
+        "completed_at": "2026-10-20T21:47:59.586134+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "a28fe99f4e95f76e",
+        "client_id": "7243d0ad563b",
+        "task": "security",
+        "status": "complete",
+        "created_at": "2026-10-20T21:47:59.666466+00:00",
+        "started_at": "2026-10-20T21:47:59.680975+00:00",
+        "completed_at": "2026-10-20T21:47:59.897861+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "14a94ef099af1a19",
+        "client_id": "7243d0ad563b",
+        "task": "rendering",
+        "status": "complete",
+        "created_at": "2026-10-20T21:48:00.599647+00:00",
+        "started_at": "2026-10-20T21:48:00.614691+00:00",
+        "completed_at": "2026-10-20T21:48:00.640814+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "fbed8624f915d6c4",
+        "client_id": "3d699bb03ce4",
+        "task": "storage",
+        "status": "complete",
+        "created_at": "2026-10-20T21:55:10.547922+00:00",
+        "started_at": "2026-10-20T21:55:11.755125+00:00",
+        "completed_at": "2026-10-20T21:55:11.824375+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "5165048c10437b8a",
+        "client_id": "3d699bb03ce4",
+        "task": "surface",
+        "status": "complete",
+        "created_at": "2026-10-20T21:55:25.265491+00:00",
+        "started_at": "2026-10-20T21:55:25.753381+00:00",
+        "completed_at": "2026-10-20T21:55:25.785577+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "4b06b4ad8f8e584d",
+        "client_id": "3d699bb03ce4",
+        "task": "security",
+        "status": "complete",
+        "created_at": "2026-10-20T21:55:44.425573+00:00",
+        "started_at": "2026-10-20T21:55:45.751003+00:00",
+        "completed_at": "2026-10-20T21:55:45.979805+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "dc1b661d1c6bf332",
+        "client_id": "028819fe310b",
+        "task": "storage",
+        "status": "complete",
+        "created_at": "2026-10-20T21:59:58.255727+00:00",
+        "started_at": "2026-10-20T22:00:00.114844+00:00",
+        "completed_at": "2026-10-20T22:00:00.127952+00:00",
+        "missing_tests": []
+      }
+    ],
+    "assets": {
+      "/bridge/index.html": "3f2e0f7c3a586f9462ef18a07dfa4691a3d3d04727ff4e566b9c789631fa6589",
+      "/bridge/dashboard.html": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/bridge/client.js": "642a541a650277e2986c36806b9e57a5844d58c6f5deb011d37bb09699302849",
+      "/bridge/suite.js": "f5e87654e5f346940c3597be7abe3b25a6c471f25a23b3620747ff6ea6465df3",
+      "/bridge/dashboard.js": "1a1ee58bcc16af6c682d10d87df401b48fc19417c53ad0affa25846a26c1fc93",
+      "/bridge/style.css": "d0fcc3c14f65cd1fe6db1b6f5fa9e16a30dfd56c6054f540e4707a0f84b36a4b",
+      "/bridge/sw.js": "f4aee8038cfd72e167ec8d4e28f726b266417c58b2b42c50d5f8a056ac8a1d96",
+      "/": "3f2e0f7c3a586f9462ef18a07dfa4691a3d3d04727ff4e566b9c789631fa6589",
+      "/dashboard": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/passive/index.html": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2",
+      "/passive/diagnostic.js": "97bc1b57d549879784a8d8a85dab20b546ae084da7d78936eb15e300decb3f5a",
+      "/passive/": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2"
+    }
+  },
+  "final_snapshot": {
+    "path": "derived\\live-storage-audit-20261020\\final-state-20261020T220409272562Z.json",
+    "sha256": "cd3d73d259d483e814d7ad9e31aae67152edd6712aa0405a0fc191ccf7474d82"
+  },
+  "final_source_prefix": {
+    "captured_lines": 34,
+    "captured_bytes": 51659,
+    "sha256": "6671cb7540b7ec5d4a679ef31646933d36a9c7961c9c729a11a0c8be4369f05a"
+  },
+  "hash_reproduction": "SHA256 of UTF-8 (json.dumps(record, ensure_ascii=True, allow_nan=False) + newline), default Python separators and original key order.",
+  "automatic_summary": {
+    "completed_jobs": 4,
+    "result_rows": 41,
+    "raw_gate_counts": {
+      "CONFIRMED AVAILABLE": 26,
+      "CONFIRMED BLOCKED OR UNAVAILABLE": 8,
+      "REQUIRES USER INTERACTION": 2,
+      "REQUIRES HTTPS": 5
+    }
+  },
+  "status_checks": [
+    {
+      "status": {
+        "server_time": "2026-10-20T22:02:46.461005+00:00",
+        "clients": [
+          {
+            "client_id": "7243d0ad563b",
+            "info": {
+              "firmware": "14.10",
+              "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+              "secure_context": false
+            },
+            "context": {
+              "origin": "http://192.168.4.29:8765",
+              "transport": "http"
+            },
+            "last_seen": "2026-10-20T21:49:34.201135+00:00",
+            "online": false,
+            "evidence": {
+              "file": "events.ndjson",
+              "line": 1,
+              "sha256": "2a499a2bf18cdb8fc6bf0ba919bed2bb764d7b0298fa54dc0aa7b512f60b0bcc"
+            }
+          },
+          {
+            "client_id": "3d699bb03ce4",
+            "info": {
+              "firmware": "14.10",
+              "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+              "secure_context": false
+            },
+            "context": {
+              "origin": "http://192.168.4.29:8765",
+              "transport": "http"
+            },
+            "last_seen": "2026-10-20T21:56:19.754433+00:00",
+            "online": false,
+            "evidence": {
+              "file": "events.ndjson",
+              "line": 15,
+              "sha256": "c158e0c3bccca7a80d18e46cfc79a8ba40ac85946433b179e1202dfeee041e04"
+            }
+          },
+          {
+            "client_id": "028819fe310b",
+            "info": {
+              "firmware": "14.10",
+              "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+              "secure_context": false
+            },
+            "context": {
+              "origin": "http://192.168.4.29:8765",
+              "transport": "http"
+            },
+            "last_seen": "2026-10-20T22:01:38.116213+00:00",
+            "online": false,
+            "evidence": {
+              "file": "events.ndjson",
+              "line": 24,
+              "sha256": "abc926b8abc8171e1443aa6ec90cf9402be78e402baeac0effb13883376dcbd8"
+            }
+          }
+        ],
+        "jobs": [
+          {
+            "id": "0744b00f837e127a",
+            "client_id": "7243d0ad563b",
+            "task": "surface",
+            "status": "complete",
+            "created_at": "2026-10-20T21:47:47.887963+00:00",
+            "started_at": "2026-10-20T21:47:47.905985+00:00",
+            "completed_at": "2026-10-20T21:47:47.928006+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "6ab6643a4cb9b633",
+            "client_id": "7243d0ad563b",
+            "task": "storage",
+            "status": "complete",
+            "created_at": "2026-10-20T21:47:49.139273+00:00",
+            "started_at": "2026-10-20T21:47:49.150787+00:00",
+            "completed_at": "2026-10-20T21:47:49.212673+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "01b8bf5408c41675",
+            "client_id": "7243d0ad563b",
+            "task": "network",
+            "status": "complete",
+            "created_at": "2026-10-20T21:47:59.151288+00:00",
+            "started_at": "2026-10-20T21:47:59.180927+00:00",
+            "completed_at": "2026-10-20T21:47:59.586134+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "a28fe99f4e95f76e",
+            "client_id": "7243d0ad563b",
+            "task": "security",
+            "status": "complete",
+            "created_at": "2026-10-20T21:47:59.666466+00:00",
+            "started_at": "2026-10-20T21:47:59.680975+00:00",
+            "completed_at": "2026-10-20T21:47:59.897861+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "14a94ef099af1a19",
+            "client_id": "7243d0ad563b",
+            "task": "rendering",
+            "status": "complete",
+            "created_at": "2026-10-20T21:48:00.599647+00:00",
+            "started_at": "2026-10-20T21:48:00.614691+00:00",
+            "completed_at": "2026-10-20T21:48:00.640814+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "fbed8624f915d6c4",
+            "client_id": "3d699bb03ce4",
+            "task": "storage",
+            "status": "complete",
+            "created_at": "2026-10-20T21:55:10.547922+00:00",
+            "started_at": "2026-10-20T21:55:11.755125+00:00",
+            "completed_at": "2026-10-20T21:55:11.824375+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "5165048c10437b8a",
+            "client_id": "3d699bb03ce4",
+            "task": "surface",
+            "status": "complete",
+            "created_at": "2026-10-20T21:55:25.265491+00:00",
+            "started_at": "2026-10-20T21:55:25.753381+00:00",
+            "completed_at": "2026-10-20T21:55:25.785577+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "4b06b4ad8f8e584d",
+            "client_id": "3d699bb03ce4",
+            "task": "security",
+            "status": "complete",
+            "created_at": "2026-10-20T21:55:44.425573+00:00",
+            "started_at": "2026-10-20T21:55:45.751003+00:00",
+            "completed_at": "2026-10-20T21:55:45.979805+00:00",
+            "missing_tests": []
+          },
+          {
+            "id": "dc1b661d1c6bf332",
+            "client_id": "028819fe310b",
+            "task": "storage",
+            "status": "complete",
+            "created_at": "2026-10-20T21:59:58.255727+00:00",
+            "started_at": "2026-10-20T22:00:00.114844+00:00",
+            "completed_at": "2026-10-20T22:00:00.127952+00:00",
+            "missing_tests": []
+          }
+        ],
+        "assets": {
+          "/bridge/index.html": "3f2e0f7c3a586f9462ef18a07dfa4691a3d3d04727ff4e566b9c789631fa6589",
+          "/bridge/dashboard.html": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+          "/bridge/client.js": "642a541a650277e2986c36806b9e57a5844d58c6f5deb011d37bb09699302849",
+          "/bridge/suite.js": "f5e87654e5f346940c3597be7abe3b25a6c471f25a23b3620747ff6ea6465df3",
+          "/bridge/dashboard.js": "1a1ee58bcc16af6c682d10d87df401b48fc19417c53ad0affa25846a26c1fc93",
+          "/bridge/style.css": "d0fcc3c14f65cd1fe6db1b6f5fa9e16a30dfd56c6054f540e4707a0f84b36a4b",
+          "/bridge/sw.js": "f4aee8038cfd72e167ec8d4e28f726b266417c58b2b42c50d5f8a056ac8a1d96",
+          "/": "3f2e0f7c3a586f9462ef18a07dfa4691a3d3d04727ff4e566b9c789631fa6589",
+          "/dashboard": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+          "/passive/index.html": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2",
+          "/passive/diagnostic.js": "97bc1b57d549879784a8d8a85dab20b546ae084da7d78936eb15e300decb3f5a",
+          "/passive/": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2"
+        }
+      },
+      "snapshot": {
+        "path": "derived\\live-storage-audit-20261020\\final-state-20261020T220246462511Z.json",
+        "sha256": "381d3db1a3d56abb6c0aaa3c7f4144faf8c5b39f4de4ea2f6bc6bfe6f7d0ddc0"
+      }
+    }
+  ],
+  "additional_reconnected_client_id": "630895e6f5c3"
+}

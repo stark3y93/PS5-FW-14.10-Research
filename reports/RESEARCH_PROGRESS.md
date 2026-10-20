@@ -1,5 +1,9 @@
 # Research progress — 20 October 2026 (Phase 2 update)
 
+## Latest live browser follow-up
+
+The [storage/file audit](PS5_STORAGE_FILE_AUDIT_20261020.md) and [credential-free evidence](PS5_STORAGE_FILE_EVIDENCE_20261020.json) now preserve live target bridge records. The originally supplied client was offline; newly paired sessions completed four scheduled jobs with 41 automatic observations. localStorage/sessionStorage readbacks, prior-page marker persistence, Blob-backed worker operation and removal of two owned markers were recorded. IndexedDB and quota estimation were unavailable in this HTTP context. TXT download attempts showed no visible save; a corroborated Blob link opened a blank page. Picker and user-selected-file reading remain inconclusive, and internal file access is **NOT ESTABLISHED**. The three tested/older sessions subsequently went offline, but a fourth session was ONLINE at the final authenticated check. No exploit or console configuration change was performed.
+
 ## Verified scope
 
 - Imported prior audit commit `c974a4a` onto the existing PR #19 branch, preserving the prior audit history and #19's security guidance.

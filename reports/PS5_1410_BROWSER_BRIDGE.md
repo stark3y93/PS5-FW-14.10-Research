@@ -1,5 +1,7 @@
 # PS5 14.10 browser bridge: implementation and evidence status
 
+> Later live audit, 20 October 2026: genuine target bridge records are now preserved in the [storage/file audit](PS5_STORAGE_FILE_AUDIT_20261020.md). The implementation-time evidence status below is retained as history. Four new jobs yielded 41 automatic observations, followed by owned-storage cleanup. Picker, file reading and saved-download outcomes remain unverified.
+
 Date: 2026-10-20. This report separates user-reported target observations, PC browser smoke evidence and synthetic regression tests. No exploitation or automated console operation was performed.
 
 ## Target evidence received
