@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "label": "Sony WebKit_1400 published source (14.00 onward listing)",
+  "provenance": {
+    "kind": "sony-published-source",
+    "revision": null,
+    "source_url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+    "source_listing_url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+    "listed_firmware_range": "14.00 -",
+    "exact_firmware_build": null
+  },
+  "files": [
+    {
+      "path": "Source/WebCore/css/CSSFontFace.cpp",
+      "sha256": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+      "origin_url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+      "archive_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/CSSFontFace.cpp"
+    },
+    {
+      "path": "Source/WebCore/css/FontFace.cpp",
+      "sha256": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a",
+      "origin_url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+      "archive_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/FontFace.cpp"
+    }
+  ]
+}

@@ -57,6 +57,23 @@ python -S tools/ps5_research.py --compare .\source-before.cpp .\source-after.cpp
 
 The arithmetic and bounds helpers are synthetic models; they do not allocate large buffers or execute target code.
 
+## CSSFontFace source comparison
+
+The detector checks two source files against SHA-256 pins and an audited reference catalog, then reports the backing-lifetime pin and client-membership guard separately. Unknown or modified files cannot become verified findings through a keyword match. Every firmware 14.10 verdict remains insufficient: source-file identity does not authenticate a production component build. See the [deep analysis](reports/CSSFONTFACE_DEEP_ANALYSIS.md), [Sony source provenance](reports/PS5_1410_WEBKIT_PROVENANCE.md) and [evidence gaps](reports/WEBKIT_EVIDENCE_GAPS.md).
+
+These commands download only two small public source files for each audited full commit, verify their pinned hashes, and create new snapshot directories. They install nothing:
+
+```powershell
+python -S tools/ps5_research.py --fetch-webkit 0e722583a4d695c7b25f384c61fbf5b59b4c3146 --snapshot-dir derived\css-before --format json --output derived\css-before.json
+python -S tools/ps5_research.py --fetch-webkit 5aedb82710ba578f61501106e78f6b25b7f7a558 --snapshot-dir derived\css-after --format json --output derived\css-after.json
+python -S tools/ps5_research.py --webkit-compare derived\css-before\snapshot.json derived\css-after\snapshot.json --format json --output derived\css-comparison.json
+python -S tools/ps5_research.py --webkit-compare derived\css-before\snapshot.json derived\css-after\snapshot.json --output derived\css-comparison.md
+```
+
+Use new paths on repeat runs; source and output overwrites are refused. `--webkit-snapshot PATH\snapshot.json` accepts a local source subset. The manifest uses `schema_version: 1`, a `label`, a `provenance` object, and a `files` list containing `path`, lowercase `sha256`, and `origin_url`. Both source paths must be relative to the manifest directory: `Source/WebCore/css/CSSFontFace.cpp` and `Source/WebCore/css/FontFace.cpp`. An [example Sony-source manifest](research/examples/cssfontface/sony-1400-snapshot.json) pins the independently measured archive members; place it with an authorized source subset before using it. The example contains no Sony source or target-build assertion. An [offline ZIP-member extraction example](research/examples/cssfontface/README.md) reproduces the published-source intake from an authorized local archive.
+
+The five source classifications are `PATCHED — VERIFIED`, `VULNERABLE IMPLEMENTATION — VERIFIED`, `MODIFIED / AMBIGUOUS`, `COMPONENT NOT FOUND`, and `INSUFFICIENT EVIDENCE`. “Verified” describes the source pattern and exact audited file pair. A lifetime-only security backport is reported as mixed/ambiguous with its safeguard states; it is not called an unpatched UAF. The limited lexical detector is not a C++ compiler, and the synthetic callback/reference-count tests are not engine-level vulnerability reproductions.
+
 ## Reproduce the 14.10 observations locally
 
 The official PS5 update file must be obtained separately from [Sony's support page](https://www.playstation.com/en-gb/support/hardware/ps5/system-software/). Keep it in ignored `artifacts/`. [Provenance and package identity](notes/provenance.md) record the 14.10 source, size and digest. The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`.
