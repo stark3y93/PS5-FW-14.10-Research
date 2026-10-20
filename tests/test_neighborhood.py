@@ -18,6 +18,12 @@ class NeighborhoodTests(unittest.TestCase):
 
     def test_partitions_entire_file_without_overlap(self):
         result = self.map(package())
+        self.assertEqual(result["slb2"]["version"], 3)
+        self.assertEqual(result["slb2"]["block_count"], 3)
+        self.assertEqual(result["slb2"]["entries"],
+                         [{"name": "PS5UPDATE1.PUP", "block_offset": 2,
+                           "offset": 1024, "size": 100,
+                           "unknown_1": 0, "unknown_2": 0}])
         regions = result["regions"]
         self.assertEqual([r["kind"] for r in regions],
                          ["header", "entry_table", "header_unused", "gap", "entry", "gap"])
@@ -47,8 +53,11 @@ class NeighborhoodTests(unittest.TestCase):
         data[512:544] = b"X" * 32
         data[992:1024] = b"Y" * 32
         original = bytes(data)
-        result = self.map(data)
-        self.assertEqual(data, original)
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "synthetic.pup"
+            path.write_bytes(original)
+            result = map_neighborhood(path, hashlib.sha256(original).hexdigest())
+            self.assertEqual(path.read_bytes(), original)
         gap = next(r for r in result["regions"] if r["kind"] == "gap" and r["start"] == 512)
         self.assertEqual(gap["samples"][0]["nonzero_runs"], [[0, 32], [480, 512]])
         entry = next(r for r in result["regions"] if r["kind"] == "entry")

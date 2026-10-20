@@ -9,6 +9,7 @@ This workspace holds a read-only, offline investigation of Sony's public PS5 **u
 - The download is complete and its observed length, hashes, and container header are recorded in [notes/provenance.md](notes/provenance.md) and [notes/initial-findings.md](notes/initial-findings.md).
 - A strict metadata-only parser and deterministic entropy sampler are in `src/ps5fwlab/`; automated tests use synthetic fixtures in `tests/`.
 - No console settings, firmware, DNS, files, or services were changed. No update was installed or sent to the console.
+- The cross-version comparator is ready and synthetic-tested, but only 14.10 currently passes the official-source provenance gate; no cross-version structural conclusion is claimed.
 
 ## Reproduce locally
 
@@ -33,6 +34,7 @@ The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0
 - [Three ranked PC-only experiments and the reproduced result](notes/experiments.md)
 - [Independent hash-verified window survey and its limits](notes/independent-survey-14.10.md)
 - [Hash-verified SLB2 boundary neighborhood map](notes/wrapper-neighborhood-14.10.md)
+- [Cross-version provenance gate, comparator and current inconclusive result](notes/cross-version-comparison-2026-10-20.md)
 
 ## Scope and method
 

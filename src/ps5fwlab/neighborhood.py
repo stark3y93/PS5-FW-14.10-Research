@@ -100,6 +100,20 @@ def map_neighborhood(path: str | Path, expected_sha256: str) -> dict:
     return {
         "sha256": digest,
         "file_size": metadata.file_size,
+        "slb2": {
+            "version": metadata.version,
+            "block_count": metadata.block_count,
+            "unknown_1": metadata.unknown_1,
+            "unknown_2": metadata.unknown_2,
+            "unknown_3": metadata.unknown_3,
+            "unknown_4": metadata.unknown_4,
+            "entries": [
+                {"name": entry.name, "block_offset": entry.block_offset,
+                 "offset": entry.offset, "size": entry.size,
+                 "unknown_1": entry.unknown_1, "unknown_2": entry.unknown_2}
+                for entry in metadata.entries
+            ],
+        },
         "method": "half-open regions; complete small regions or first and last 512 bytes only",
         "regions": regions,
     }

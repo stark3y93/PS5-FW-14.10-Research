@@ -56,6 +56,27 @@ class CLITests(unittest.TestCase):
                 main(["survey", str(path), "--sha256", "0" * 64,
                       "--window", "256", "--samples", "4"])
 
+    def test_compare_reports_numeric_synthetic_relationships(self):
+        with tempfile.TemporaryDirectory() as directory:
+            paths = []
+            for index, blocks in enumerate((3, 4)):
+                path = Path(directory) / f"sample-{index}.pup"
+                data = bytearray(blocks * 512)
+                struct.pack_into("<4s7I", data, 0, b"SLB2", 3, 0, 1, blocks, 0, 0, 0)
+                struct.pack_into("<4I32s", data, 0x20, 2, 100, 0, 0, b"PART.PUP")
+                data[512:544] = b"X" * 32
+                data[992:1024] = b"Y" * 32
+                path.write_bytes(data)
+                paths.append((path, hashlib.sha256(data).hexdigest(), len(data)))
+            output = io.StringIO()
+            with contextlib.redirect_stdout(output):
+                code = main(["compare", "--package", "first", str(paths[0][0]), paths[0][1], str(paths[0][2]),
+                             "--package", "second", str(paths[1][0]), paths[1][1], str(paths[1][2])])
+            self.assertEqual(code, 0)
+            report = json.loads(output.getvalue())
+            self.assertEqual(report["pre_entry_pattern"], "same")
+            self.assertEqual(report["file_sizes"], "different")
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -8,6 +8,7 @@ from dataclasses import asdict
 from pathlib import Path
 from statistics import mean
 
+from .comparison import compare_packages
 from .entropy import sample_entropy, sample_entropy_at_offsets
 from .neighborhood import map_neighborhood
 from .slb2 import parse_slb2
@@ -32,7 +33,17 @@ def main(argv: list[str] | None = None) -> int:
     map_command = commands.add_parser("map", help="hash-verified SLB2 boundary statistics")
     map_command.add_argument("file", type=Path)
     map_command.add_argument("--sha256", required=True, help="expected full-file SHA-256")
+    compare_command = commands.add_parser("compare", help="compare two or more hash-verified local wrappers")
+    compare_command.add_argument("--package", nargs=4, action="append", required=True,
+                                 metavar=("SAMPLE_ID", "FILE", "SHA256", "EXPECTED_SIZE"),
+                                 help="repeat for each distinct package; sample IDs are not verified versions")
     args = parser.parse_args(argv)
+
+    if args.command == "compare":
+        packages = [(sample_id, path, digest, int(size))
+                    for sample_id, path, digest, size in args.package]
+        print(json.dumps(compare_packages(packages), indent=2))
+        return 0
 
     if args.command == "map":
         print(json.dumps(map_neighborhood(args.file, args.sha256), indent=2))
