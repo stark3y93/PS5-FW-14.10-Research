@@ -22,6 +22,20 @@ python -m ps5fwlab inspect 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' > 'derived\s
 python -m ps5fwlab entropy 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' --window 65536 --samples 256 > 'derived\inner-pup-entropy-64k-256.json'
 ```
 
+The firmware-free test command for a clean checkout is:
+
+```powershell
+$env:PYTHONPATH = 'src'
+python -m unittest discover -s tests -v
+```
+
+GitHub Actions runs this command on Ubuntu 24.04 with Python 3.12. The workflow
+pins `actions/checkout` and `actions/setup-python` to commit IDs, grants only
+`contents: read`, and does not upload artifacts. It needs no package download,
+Sony firmware, credentials, or console access. The optional editable install
+above uses the `setuptools>=68` build requirement in `pyproject.toml`; CI avoids
+installing build dependencies by importing directly from `src`.
+
 The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`. A fresh clone must acquire the official package separately and verify its identity before running package-specific commands. `inspect` validates declared wrapper ranges without extraction. `entropy` samples only inside validated entries; its statistics cannot identify encryption or executable content.
 
 ## Research results
