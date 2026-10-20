@@ -4,8 +4,41 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Sequence
+import math
 
 from .neighborhood import map_neighborhood
+
+
+def _complete_profile(region: dict | None) -> dict | None:
+    """Combine adjacent edge profiles only when they cover the whole region."""
+
+    if region is None:
+        return None
+    samples = region["samples"]
+    if (not samples or samples[0]["start"] != region["start"]
+            or samples[-1]["end"] != region["end"]
+            or any(left["end"] != right["start"]
+                   for left, right in zip(samples, samples[1:]))):
+        return None
+    frequencies = [sum(sample["byte_frequencies"][byte] for sample in samples)
+                   for byte in range(256)]
+    length = region["size"]
+    runs: list[list[int]] = []
+    for sample in samples:
+        for start, end in sample["nonzero_runs"]:
+            absolute_start = sample["start"] + start
+            absolute_end = sample["start"] + end
+            if runs and runs[-1][1] == absolute_start:
+                runs[-1][1] = absolute_end
+            else:
+                runs.append([absolute_start, absolute_end])
+    return {
+        "zero_bytes": frequencies[0],
+        "distinct_bytes": sum(bool(count) for count in frequencies),
+        "entropy_bits_per_byte": -sum((count / length) * math.log2(count / length)
+                                     for count in frequencies if count),
+        "nonzero_runs": runs,
+    }
 
 
 def _sample_summary(sample_id: str, mapped: dict) -> dict:
@@ -15,13 +48,10 @@ def _sample_summary(sample_id: str, mapped: dict) -> dict:
     gap = next((region for region in mapped["regions"]
                 if region["kind"] == "gap" and region["start"] == 512
                 and region["end"] == first_start), None)
-    complete = gap is not None and len(gap["samples"]) == 1
-    runs = ([[gap["start"] + start, gap["start"] + end]
-             for start, end in gap["samples"][0]["nonzero_runs"]]
-            if complete else None)
+    gap_profile = _complete_profile(gap)
     final = mapped["regions"][-1]
     final_gap = final if final["kind"] == "gap" and final["end"] == mapped["file_size"] else None
-    final_complete = final_gap is not None and len(final_gap["samples"]) == 1
+    final_profile = _complete_profile(final_gap)
     header_regions = [region for region in mapped["regions"]
                       if region["kind"] in {"header", "entry_table", "header_unused"}]
     return {
@@ -40,20 +70,18 @@ def _sample_summary(sample_id: str, mapped: dict) -> dict:
         "entry_end_mod_512": [(entry["offset"] + entry["size"]) % 512
                               for entry in entries],
         "pre_entry_interval": [gap["start"], gap["end"]] if gap else None,
-        "pre_entry_runs": runs,
-        "pre_entry_fully_measured": complete,
-        "pre_entry_zero_bytes": gap["samples"][0]["zero_bytes"] if complete else None,
-        "pre_entry_distinct_bytes": gap["samples"][0]["distinct_bytes"] if complete else None,
-        "pre_entry_entropy_bits_per_byte": (
-            gap["samples"][0]["entropy_bits_per_byte"] if complete else None
-        ),
+        "pre_entry_runs": gap_profile["nonzero_runs"] if gap_profile else None,
+        "pre_entry_fully_measured": gap_profile is not None,
+        "pre_entry_zero_bytes": gap_profile["zero_bytes"] if gap_profile else None,
+        "pre_entry_distinct_bytes": gap_profile["distinct_bytes"] if gap_profile else None,
+        "pre_entry_entropy_bits_per_byte": gap_profile["entropy_bits_per_byte"] if gap_profile else None,
         "final_padding_size": final_gap["size"] if final_gap else 0,
         "final_padding_zero_bytes": (
-            final_gap["samples"][0]["zero_bytes"] if final_complete else None
+            final_profile["zero_bytes"] if final_profile else None
         ),
         "final_padding_all_zero": (
-            final_gap["samples"][0]["zero_bytes"] == final_gap["size"]
-            if final_complete else None
+            final_profile["zero_bytes"] == final_gap["size"]
+            if final_profile else None
         ),
     }
 

@@ -47,11 +47,36 @@ class ComparisonTests(unittest.TestCase):
                                        self.write(root, "b", second)])
             self.assertEqual(result["pre_entry_pattern"], "different")
 
+    def test_adjacent_edge_samples_fully_measure_a_1024_byte_gap(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first = package(total_blocks=6, entries=((3, 100, b"A.PUP"),))
+            second = package(total_blocks=7, entries=((3, 100, b"A.PUP"),))
+            for data in (first, second):
+                data[1020:1028] = b"X" * 8
+            result = compare_packages([self.write(root, "a", first),
+                                       self.write(root, "b", second)])
+            self.assertEqual(result["pre_entry_pattern"], "same")
+            self.assertTrue(result["samples"][0]["pre_entry_fully_measured"])
+            self.assertEqual(result["samples"][0]["pre_entry_runs"], [[1020, 1028]])
+            self.assertEqual(result["samples"][0]["pre_entry_zero_bytes"], 1016)
+
+    def test_two_samples_fully_measure_short_final_padding(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            first = package(total_blocks=4, entries=((2, 511, b"A.PUP"),))
+            second = package(total_blocks=5, entries=((2, 511, b"A.PUP"),))
+            result = compare_packages([self.write(root, "a", first),
+                                       self.write(root, "b", second)])
+            self.assertEqual(result["samples"][0]["final_padding_size"], 513)
+            self.assertEqual(result["samples"][0]["final_padding_zero_bytes"], 513)
+            self.assertTrue(result["samples"][0]["final_padding_all_zero"])
+
     def test_unmeasured_middle_makes_run_comparison_inconclusive(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
             short = package()
-            long = package(total_blocks=5, entries=((3, 100, b"A.PUP"),))
+            long = package(total_blocks=6, entries=((4, 100, b"A.PUP"),))
             result = compare_packages([self.write(root, "a", short),
                                        self.write(root, "b", long)])
             self.assertEqual(result["pre_entry_pattern"], "inconclusive")

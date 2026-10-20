@@ -39,6 +39,11 @@ class SurveyTests(unittest.TestCase):
             plan_survey_offsets(offset=0, size=4096, window_size=256,
                                 samples=1, seed_sha256="not-a-digest", prior_samples=2)
 
+    def test_plan_rejects_excessive_slot_frame_without_allocating_it(self):
+        with self.assertRaisesRegex(ValueError, "slot frame"):
+            plan_survey_offsets(offset=0, size=1_000_003, window_size=1,
+                                samples=1, seed_sha256="0" * 64, prior_samples=2)
+
     def test_explicit_offsets_are_bounded_and_read_only(self):
         data = bytes(range(256)) + bytes(256) + bytes(range(256))
         with tempfile.TemporaryDirectory() as directory:

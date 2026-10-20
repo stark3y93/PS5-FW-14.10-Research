@@ -32,10 +32,12 @@ def sample_entropy(
     if not 1 <= window_size <= min(size, MAX_WINDOW_SIZE):
         raise ValueError("window size is invalid for this range")
     span = size - window_size
+    if samples > span + 1:
+        raise ValueError("not enough distinct window starts for requested samples")
     positions = [offset] if samples == 1 else [offset + span * index // (samples - 1) for index in range(samples)]
     return sample_entropy_at_offsets(
         path, offset=offset, size=size, window_size=window_size,
-        positions=tuple(dict.fromkeys(positions)),
+        positions=tuple(positions),
     )
 
 
