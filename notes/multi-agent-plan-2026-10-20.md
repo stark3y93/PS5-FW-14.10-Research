@@ -34,7 +34,7 @@ The pre-existing `integration/research-toolkit-2026-10-20` checkout is clean at 
 
 ## Existing pull request context
 
-The integration manifest records PRs #4–#11 as open at its review time and explains that their useful commits were included in the current integration candidate. A read-only `git ls-remote origin 'refs/pull/*/head'` on 20 October 2026 returned heads for #4–#11. Pull refs alone do not prove current open/closed status; GitHub CLI is unavailable and the private repository's web PR page is inaccessible without authenticated API access. No existing PR was changed.
+The integration manifest records PRs #4–#11 at its earlier review time and explains that their useful commits were included in the integration candidate. An authenticated read-only GitHub API check on 20 October 2026 found #4, #5, #6, #8, #9, #10 and #11 open. PR #7 was merged into `main` at 12:01:59 UTC during this work by activity outside this coordination branch. This team did not merge, close, retarget or edit any existing PR. The new coordination branch remains based on `c2d627a` and targets the integration candidate for review.
 
 ## Initial verification
 
