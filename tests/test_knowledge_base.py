@@ -22,10 +22,13 @@ class KnowledgeBaseTests(unittest.TestCase):
         self.temp.cleanup()
 
     def test_import_counts_and_source_links(self):
-        self.assertEqual(self.counts["repositories"], 18)
+        self.assertEqual(self.counts["repositories"], 32)
         self.assertEqual(self.counts["documents"], 29)
-        self.assertEqual(self.counts["sources"], 47)
+        self.assertEqual(self.counts["sources"], 61)
         self.assertEqual(self.counts["experiments"], 7)
+        self.assertEqual(self.counts["ecosystem_projects"], 28)
+        self.assertEqual(self.counts["compatibility_claims"], 18)
+        self.assertEqual(self.counts["platform_capabilities"], 6)
         self.assertEqual(self.counts["findings"], 25)
         self.assertEqual(self.counts["evidence"], 44)
         self.assertEqual(self.counts["question_evidence"], 27)
@@ -60,15 +63,18 @@ class KnowledgeBaseTests(unittest.TestCase):
 
     def test_dashboard_has_metrics_and_clickable_evidence(self):
         data = dashboard_data(self.db)
-        self.assertEqual(data["stats"]["repositories"], 18)
+        self.assertEqual(data["stats"]["repositories"], 32)
         self.assertEqual(data["stats"]["findings"], 25)
-        self.assertEqual(data["stats"]["sources"], 47)
+        self.assertEqual(data["stats"]["sources"], 61)
         page = render_dashboard(data)
         self.assertIn("Search findings", page)
         self.assertIn("https://", page)
         self.assertIn("Contradictions to review", page)
         self.assertIn("PC-only experiments and archive checks", page)
         self.assertIn("priority ", page)
+        self.assertIn("Cross-project compatibility claims", page)
+        self.assertIn("Freedom OS capability and dependency matrix", page)
+        self.assertIn("r-ps5-linux-loader", page)
 
     def test_catalog_references_resolve(self):
         catalog = json.loads(CATALOG.read_text(encoding="utf-8"))
@@ -92,6 +98,14 @@ class KnowledgeBaseTests(unittest.TestCase):
         for question in catalog["questions"]:
             self.assertTrue(question["evidence"], question["id"])
             self.assertLessEqual({x["source_id"] for x in question["evidence"]}, source_ids)
+
+        ecosystem = json.loads((ROOT / "research" / "knowledge-base" / "ecosystem.json").read_text(encoding="utf-8"))
+        repository_ids = source_ids | {x["id"] for x in ecosystem["repositories"]}
+        for project in ecosystem["projects"]:
+            self.assertIn(project["repository_id"], repository_ids)
+        for claim in ecosystem["compatibility_claims"]:
+            self.assertIn(claim["repository_id"], repository_ids)
+            self.assertTrue(claim["source_url"].startswith("https://"))
 
 
 if __name__ == "__main__":
