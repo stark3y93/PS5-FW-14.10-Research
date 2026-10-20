@@ -30,6 +30,7 @@ CREATE TABLE question(id TEXT PRIMARY KEY, rank INTEGER NOT NULL, priority_score
 CREATE TABLE contradiction(id TEXT PRIMARY KEY, title TEXT NOT NULL, status TEXT NOT NULL, severity TEXT NOT NULL, summary TEXT NOT NULL);
 CREATE TABLE contradiction_finding(contradiction_id TEXT REFERENCES contradiction ON DELETE CASCADE, finding_id TEXT REFERENCES finding, PRIMARY KEY(contradiction_id,finding_id));
 CREATE TABLE contradiction_source(contradiction_id TEXT REFERENCES contradiction ON DELETE CASCADE, source_id TEXT NOT NULL, PRIMARY KEY(contradiction_id,source_id));
+CREATE TABLE experiment(id TEXT PRIMARY KEY, title TEXT NOT NULL, status TEXT NOT NULL, confidence TEXT NOT NULL, method TEXT NOT NULL, result TEXT NOT NULL, firmware_relevance TEXT NOT NULL, source_url TEXT NOT NULL, log_path TEXT NOT NULL);
 CREATE VIRTUAL TABLE finding_fts USING fts5(finding_id UNINDEXED,title,summary,scope,firmware_relevance);
 CREATE VIRTUAL TABLE question_fts USING fts5(question_id UNINDEXED,question,rationale,method);
 CREATE INDEX evidence_finding_idx ON evidence(finding_id);
@@ -91,9 +92,12 @@ def build_database(catalog_path: str | Path, database_path: str | Path) -> dict[
             con.execute("INSERT INTO contradiction VALUES(?,?,?,?,?)", (row["id"], row["title"], row["status"], row["severity"], row["summary"]))
             con.executemany("INSERT INTO contradiction_finding VALUES(?,?)", [(row["id"], x) for x in row.get("finding_ids", [])])
             con.executemany("INSERT INTO contradiction_source VALUES(?,?)", [(row["id"], x) for x in row.get("source_ids", [])])
+        for row in catalog.get("experiments", []):
+            con.execute("INSERT INTO experiment VALUES(?,?,?,?,?,?,?,?,?)", tuple(row[k] for k in ("id", "title", "status", "confidence", "method", "result", "firmware_relevance", "source_url", "log_path")))
         con.commit()
         counts = {name: con.execute(f"SELECT count(*) FROM {table}").fetchone()[0] for name, table in (("repositories", "repository"), ("documents", "source"), ("findings", "finding"), ("evidence", "evidence"), ("questions", "question"), ("contradictions", "contradiction"))}
         counts["sources"] = counts["repositories"] + counts["documents"]
+        counts["experiments"] = con.execute("SELECT count(*) FROM experiment").fetchone()[0]
         con.close()
         temp.replace(destination)
         return counts
@@ -107,6 +111,7 @@ def stats(database_path: str | Path) -> dict[str, int]:
     with closing(sqlite3.connect(database_path)) as con:
         counts = {name: con.execute(f"SELECT count(*) FROM {table}").fetchone()[0] for name, table in (("repositories", "repository"), ("documents", "source"), ("findings", "finding"), ("evidence", "evidence"), ("questions", "question"), ("contradictions", "contradiction"))}
         counts["sources"] = counts["repositories"] + counts["documents"]
+        counts["experiments"] = con.execute("SELECT count(*) FROM experiment").fetchone()[0]
         counts["relevant_1410"] = con.execute("SELECT count(DISTINCT finding_id) FROM finding_firmware WHERE firmware_id='ps5-14.10'").fetchone()[0]
         counts["independently_verified"] = con.execute("SELECT count(*) FROM finding WHERE lower(reproduction_status) LIKE '%independent reproduction%' OR lower(reproduction_status) LIKE '%independently reproduced%'").fetchone()[0]
         counts["primary_source_checked"] = con.execute("SELECT count(*) FROM finding WHERE classification='VERIFIED'").fetchone()[0]

@@ -24,14 +24,16 @@ class KnowledgeBaseTests(unittest.TestCase):
     def test_import_counts_and_source_links(self):
         self.assertEqual(self.counts["repositories"], 17)
         self.assertGreaterEqual(self.counts["sources"], 20)
-        self.assertEqual(self.counts["findings"], 18)
-        self.assertEqual(self.counts["sources"], 37)
+        self.assertEqual(self.counts["findings"], 20)
+        self.assertEqual(self.counts["sources"], 39)
+        self.assertEqual(self.counts["experiments"], 7)
         self.assertGreaterEqual(self.counts["evidence"], self.counts["findings"])
         with closing(sqlite3.connect(self.db)) as con:
             self.assertEqual(con.execute("PRAGMA foreign_key_check").fetchall(), [])
             self.assertEqual(con.execute("SELECT count(*) FROM evidence WHERE source_url NOT LIKE 'https://%' AND source_url NOT LIKE '../../notes/%'").fetchone()[0], 0)
             self.assertGreater(con.execute("SELECT count(*) FROM commit_record").fetchone()[0], 0)
             self.assertGreater(con.execute("SELECT count(*) FROM vulnerability_source").fetchone()[0], 0)
+            self.assertEqual(con.execute("SELECT status FROM experiment WHERE id='e-model-first-build'").fetchone()[0], "FAILED")
 
     def test_search_finds_findings_and_questions(self):
         findings = search(self.db, "SLB2")
@@ -53,6 +55,7 @@ class KnowledgeBaseTests(unittest.TestCase):
         self.assertIn("Search findings", page)
         self.assertIn("https://", page)
         self.assertIn("Contradictions to review", page)
+        self.assertIn("PC-only experiments and archive checks", page)
         self.assertIn("priority ", page)
 
     def test_catalog_references_resolve(self):
