@@ -15,22 +15,22 @@ The pre-existing `integration/research-toolkit-2026-10-20` checkout is clean at 
 | 1 Research Intelligence | `intelligence` | `research/intelligence-2026-10-20` / `D:\Workspace\PS5-Intel-2026-10-20` | Verify named public repositories; build source and question index | Pinned sources and evidence classes |
 | 2 Firmware Analysis | `firmware` | `research/firmware-validation-2026-10-20` / `D:\Workspace\PS5-Firmware-2026-10-20` | Review parser, survey, comparison; implement small synthetic validation fix | Independent test review |
 | 3 Public Vulnerability Research | `vulnerabilities` | `research/public-vulnerabilities-2026-10-20` / `D:\Workspace\PS5-Vulns-2026-10-20` | Review primary disclosures and 14.10 evidence gap | Source and applicability review |
-| 4 Open-Source Engineering | pending slot | separate worktree, to be assigned | Find reproducible upstream documentation or test improvement | Local branch and reviewable proposal; no publication |
-| 5 Testing and Verification | pending slot | separate worktree, to be assigned | Independently review proposed changes and rerun synthetic suite | Written pass/fail report |
+| 4 Open-Source Engineering | `upstream` | `research/upstream-engineering-2026-10-20` / `D:\Workspace\PS5-Upstream-2026-10-20` | Four source-backed proposals and one local documentation draft | Proposal note `345fa86`; external draft `7e07020`, not published |
+| 5 Testing and Verification | `verification` | `review/independent-2026-10-20` / `D:\Workspace\PS5-Verification-2026-10-20` | Independently reviewed all submissions and reran synthetic suite | Accepted after evidence-label correction; note `38ee5d2` |
 | 6 Integration and Coordination | `root` | `coordination/multi-agent-2026-10-20` / `D:\Workspace\PS5-Coord-2026-10-20` | Manage branch ownership, baseline, integration, task board and final report | No conflicting edits, source-only diff |
 
 ## Task board
 
 | ID | Owner | Task | State | Dependency |
 | --- | --- | --- | --- | --- |
-| RI-1 | 1 | Verify the seven named repositories and pin relevant sources | In progress | None |
-| RI-2 | 1 | Build a searchable evidence and question index | In progress | RI-1 |
-| FA-1 | 2 | Audit offline tools and implement a bounded validation improvement | In progress | None |
-| PV-1 | 3 | Record primary disclosures and assess 14.10 evidence | In progress | None |
-| OS-1 | 4 | Prepare at least three evidence-backed upstream proposals | Queued | RI-1 |
-| TV-1 | 5 | Independently review integrated diffs and synthetic tests | Queued | FA-1, RI-2, PV-1 |
-| IC-1 | 6 | Review open PR context and preserve integration checkout | In progress | None |
-| IC-2 | 6 | Integrate accepted commits into coordination branch | Queued | TV-1 |
+| RI-1 | 1 | Verify the seven named repositories and pin relevant sources | Done | None |
+| RI-2 | 1 | Build a searchable evidence and question index | Done after reviewer correction | RI-1 |
+| FA-1 | 2 | Audit offline tools and implement a bounded validation improvement | Done | None |
+| PV-1 | 3 | Record primary disclosures and assess 14.10 evidence | Done | None |
+| OS-1 | 4 | Prepare at least three evidence-backed upstream proposals | Done: four proposals, one local draft | RI-1 |
+| TV-1 | 5 | Independently review integrated diffs and synthetic tests | Done: accepted, 50 tests | FA-1, RI-2, PV-1, OS-1 |
+| IC-1 | 6 | Review open PR context and preserve integration checkout | Done with PR-state limitation below | None |
+| IC-2 | 6 | Integrate accepted commits into coordination branch | Done | TV-1 |
 
 ## Existing pull request context
 
