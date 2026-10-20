@@ -7,14 +7,15 @@ The isolated branch `research/unified-evidence-2026-10-20` is based on `origin/m
 - PR #13 head `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2` — merge commit `5608dcd`.
 - `research/vulnerability-lab` head `b4f7b456789c712fde8aa345879d7139981fb8c8` — merge commit `240ac96`.
 - `research/max-intelligence-2026-10-20` head `c25f02c3ad9147400dd23184c830d1b70d14335e` — merge commit `a7051bd`.
+- PR #14 final head `8cf91e8`, including later commits `eb7baa5`, `d506d3d`, `ec477fc`, and `8cf91e8` — merge commit `1bc71d7`.
 
 The merge commits preserve source branch ancestry. The publication audit remains separate. Other active research worktrees were not edited, checked out, rebased, or reset.
 
 ## Evidence model and current corpus
 
-The checked-in JSON catalog is the durable source of truth. It currently indexes 18 pinned public Git repositories, 23 technical/vendor/support documents, 20 deduplicated findings, 32 finding-to-source relations, 10 firmware-version records, 9 CVE records, 11 components, 8 ranked questions, and 3 unresolved contradictions. Repository references preserve the inspected commit, observed head when available, license status, coverage level, and links with assertion scope. See `source-coverage.md` and `catalog.json`.
+The checked-in JSON catalog is the durable source of truth. It currently indexes 18 pinned public Git repositories, 27 technical/vendor/support documents, 23 deduplicated findings, 39 finding-to-source relations, 27 question-to-source relations, 12 CVE records, 11 components, 8 ranked questions, and 4 unresolved contradictions. Repository references preserve the inspected commit, observed head when available, license status, coverage level, and links with assertion scope. See `source-coverage.md` and `catalog.json`.
 
-Thirteen `VERIFIED` labels mean that the narrow statement is supported by its cited source or a reproducible local synthetic/metadata observation. Seven findings are `AUTHOR-REPORTED`. The catalog has **zero independently reproduced PS5 vulnerability findings** and no device tests. These classifications apply only to each finding's stated scope.
+Thirteen `VERIFIED` labels mean that the narrow statement is supported by its cited source or a reproducible local synthetic/metadata observation. Ten findings are `AUTHOR-REPORTED`. The catalog has **zero independently reproduced PS5 vulnerability findings** and no device tests. These classifications apply only to each finding's stated scope.
 
 ## New primary-source checks
 
@@ -63,8 +64,17 @@ python -S -m ps5knowledge dashboard
 python -S -m unittest discover -s tests -v
 ```
 
-The integrated synthetic suite passed **57/57** after the three branch merges. The knowledge-base tests build a disposable SQLite database, validate references and source URLs, verify FTS search and render the dashboard. These tests make no network or console calls and do not read firmware. Hosted Actions remains unverified because the observed GitHub runs started no jobs.
+The integrated synthetic suite passed **57/57** after all PR #13, PR #14, and PR #15 integration changes. The PR #14 entity-wide search implementation and its source-linked question/CVE evidence assertions are included. The knowledge-base tests build a disposable SQLite database, validate references and source URLs, verify FTS search and render the dashboard. These tests make no network or console calls and do not read firmware. Hosted Actions remains unverified because the observed GitHub runs started no jobs.
 
 ## Direct-console gate
 
 No console observation is authorized by this log. Sony's [support instructions](https://www.playstation.com/en-us/support/hardware/playstation-system-software-application-version/) document Settings → System → System Software → Console Information for the displayed version, and note that the screen also shows network identifiers. The separate plan at [`../plans/direct-console-observation-plan.md`](../plans/direct-console-observation-plan.md) therefore limits capture to a manual version transcription and excludes screenshots and network identifiers. Execution requires the owner's explicit approval of that plan. No payload, protection bypass, firmware update, or console connection is included in this integration.
+
+
+## PR #14 final-commit integration review
+
+The four commits after the PR #14 baseline (`eb7baa5`, `d506d3d`, `ec477fc`, and `8cf91e8`) were compared with this branch. Their distinct FreeBSD jail advisories/CVEs, source-version scope, source-linked question citations, three author-reported browser-stage claims, contradiction detail, researcher attribution, expanded search across findings/questions/repositories/sources/vulnerabilities/researchers, and corresponding tests/docs were integrated. Duplicate records were merged by stable IDs and duplicate evidence links were removed. PR #15-specific MewX/console/source-archive metadata and later upstream WSA records were retained.
+
+## Subsequent source-validation phase
+
+The later PC-only phase downloaded and hashed both complete Sony OSS archives, inspected version markers, and compared a named upstream JSC patch. The earlier HEAD-only limit above describes the preceding integration pass, not the current database state. See `notes/source-validation-2026-10-20.md`.
