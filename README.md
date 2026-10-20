@@ -1,6 +1,8 @@
 # PS5 update wrapper research toolkit
 
-This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. The tests use only synthetic containers.
+This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. Tests use synthetic containers and public-source metadata only.
+
+The source-linked SQLite research index and local dashboard are documented in [research/knowledge-base/README.md](research/knowledge-base/README.md). Build them from the repository root with `python -S -m ps5knowledge build-db` and `python -S -m ps5knowledge dashboard` after setting `PYTHONPATH=src`.
 
 ## What it does
 

@@ -3,6 +3,8 @@
 !/artifacts/.gitkeep
 /derived/*
 !/derived/.gitkeep
+/research/knowledge-base/ps5-research.sqlite3
+/research/knowledge-base/dashboard.html
 __pycache__/
 *.py[cod]
 .venv/
