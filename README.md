@@ -30,6 +30,7 @@ The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0
 - [Comparison matrix separating facts, claims, and hypotheses](notes/comparison-matrix.md)
 - [GitHub source, license, and commit review](notes/source-review.md)
 - [Three ranked PC-only experiments and the reproduced result](notes/experiments.md)
+- [Independent hash-verified window survey and its limits](notes/independent-survey-14.10.md)
 
 ## Scope and method
 
