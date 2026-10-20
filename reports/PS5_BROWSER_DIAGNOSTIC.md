@@ -1,5 +1,7 @@
 # Passive PS5 browser diagnostic
 
+**Browser-access follow-up:** the user has now reported no external guide route, QR-only YouTube linking and Safety deletion of a message URL. Do not repeat these attempts without new evidence. No arbitrary-page method was verified. Prefer the new [restricted host/setup guide](../docs/PS5_DIAGNOSTIC_SETUP.md); [entry-point evidence](BROWSER_ENTRYPOINT_EVIDENCE.md) distinguishes historical assisted authentication from console-side execution. The original Phase 4 instructions below remain preserved as conditional context, not a verified route.
+
 The files in [`diagnostics/browser`](../diagnostics/browser/) perform bounded **API availability checks**. They do not construct/load a FontFace, override iterators, allocate test buffers, compile dynamic JavaScript, invoke native interfaces or run an exploit. Ordinary JavaScript/CSS operations still depend on the browser functioning correctly; this is designed as a harmless page, not a guarantee against every browser defect. It was tested on a PC and with isolated JavaScript fixtures, **not on a PS5**.
 
 ## First establish whether navigation is available

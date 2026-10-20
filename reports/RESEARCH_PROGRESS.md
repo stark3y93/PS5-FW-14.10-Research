@@ -53,3 +53,16 @@ The audit is closer to reliable evidence classification and a repeatable offline
 - Exact production CSSFontFace/metadata presence, a target memory fault, guide-browser native execution, kernel R/W and hypervisor impact remain **unverified**. Highest-value next task: authorized exact-14.10 component/build correspondence.
 
 - Phase 4 independent code review found Markdown link/image injection through filenames. A new regression failed before the entity-escaping fix; the complete 113-test Python suite and eight JavaScript fixtures passed afterward. Review did not authenticate console behavior or independently audit vendor claims; those remain bounded by the primary-source evidence and explicit UNKNOWN target verdict.
+
+
+## Browser access investigation - 20 October 2026
+
+- Preserved the user's 14.10 observations: Sony guide only, QR-only YouTube linking, a Google URL removed by Safety, successful PC Edge diagnostic, and no console diagnostic run. No failed approach was retried or evaded.
+- Recorded ten public source responses with SHA-256 and date qualifications. Historical PS5 assisted Wi-Fi authentication is documented by a network operator; its phone/laptop flow, unnamed firmware and 2022 document date do not prove console-side browsing on 14.10. PlayStation Portal Wi-Fi support is a different-device result. The older YouTube browser tutorial's original datePublished metadata is 28 Jan 2022, last modified 15 Nov 2024, with no tested firmware stated.
+- No reliable arbitrary-webpage route or console-side passive JavaScript result was established on 14.10. Captive-portal support on that exact firmware remains unverified, not declared removed. No deceptive account flow, message evasion, DNS/proxy/certificate modification, portal simulator or exploit was used.
+- Added a bounded two-asset HTTP host with explicit RFC1918/loopback binding, Host/route allowlists, GET/HEAD, byte snapshots, hashes and a check-and-close mode. Public/wildcard binds, unrelated paths, listing, uploads and asset symlinks are rejected. No admin command or dependency installation. Existing diagnostic HTML/JS remain unchanged.
+- Real loopback tests and CLI checks ran. Port 8765 was already occupied and was left untouched; --check succeeded on 8766. No LAN listener or console route was assumed from this PC-only check.
+- Complete suite: 126 Python tests run, **125 passed and 1 skipped** (Windows symlink creation needs unavailable OS privilege); **8 JavaScript tests passed**. The skipped test is retained for environments with symlink support; no elevation was requested.
+- Required reports: PS5_1410_BROWSER_ACCESS.md, BROWSER_ENTRYPOINT_EVIDENCE.md and docs/PS5_DIAGNOSTIC_SETUP.md. Source provenance is BROWSER_ACCESS_SOURCE_PROVENANCE.json. Prior PRs #20/#21/#22 remain open; this branch starts from #22 and preserves their history.
+
+- Browser-host independent review found no Critical/Important issue; additional raw request checks confirmed strict routes. The date-description inconsistency was corrected, and all ten source hashes were checked against retained raw responses by the author. Review does not establish console behavior or LAN/firewall reachability.
