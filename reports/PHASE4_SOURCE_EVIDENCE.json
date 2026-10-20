@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "audit_date": "2026-10-20",
+  "target_firmware": "26.06-14.10.00",
+  "target_executable_mapping": "UNKNOWN",
+  "source_provenance": [
+    {
+      "url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "final_url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "sha256": "5aac2582bea6640f128771b42f52abef6128429973126c5059776cb089a7c9a0",
+      "bytes": 141457
+    },
+    {
+      "url": "https://www.playstation.com/en-us/support/hardware/ps5-console-users-guide/",
+      "final_url": "https://www.playstation.com/en-us/support/hardware/ps5-console-users-guide/",
+      "sha256": "7bdd5fb46b8653f4318478f1220f5ad69c70c6227a5ff9c2e5a88c6c56b662d4",
+      "bytes": 144779
+    },
+    {
+      "url": "https://www.playstation.com/en-gb/support/hardware/ps5/system-software-info/",
+      "final_url": "https://www.playstation.com/en-gb/support/hardware/ps5/system-software-info/",
+      "sha256": "403e16c83eb798a65daa228dc2576d10d0d4b22fc17861a60744193e64d1ba55",
+      "bytes": 121713
+    },
+    {
+      "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc",
+      "final_url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc",
+      "sha256": "6eda865ed1f5a1bf4814d41cd8782eb56a90ba7caa039dade2ece7d146bf0ba3",
+      "bytes": 5615
+    },
+    {
+      "url": "https://api.github.com/repos/PS5Dev/PS5-UMTX-Jailbreak",
+      "final_url": "https://api.github.com/repos/PS5Dev/PS5-UMTX-Jailbreak",
+      "sha256": "947575d52b886b75e27136629c1f89d164b11d78d253d4ae14e64ceae81c5dce",
+      "bytes": 6455
+    },
+    {
+      "url": "https://api.github.com/repos/PS5Dev/PS5-UMTX-Jailbreak/commits/main",
+      "final_url": "https://api.github.com/repos/PS5Dev/PS5-UMTX-Jailbreak/commits/main",
+      "sha256": "a06aa355945fb826338fe824e7e1833097046ddc0fe64b18862fdd5f7a0964c1",
+      "bytes": 5554
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PS5Dev/PS5-UMTX-Jailbreak/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md",
+      "final_url": "https://raw.githubusercontent.com/PS5Dev/PS5-UMTX-Jailbreak/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md",
+      "sha256": "fd9e64fbd774fdec75510e47fc80c9d022e7a1501b1632cb14e96aefb99498d1",
+      "bytes": 8140,
+      "commit": "2cf6778ebe89ff35255e1c228826d0d2155e9d2a",
+      "repository": "PS5Dev/PS5-UMTX-Jailbreak"
+    },
+    {
+      "url": "https://api.github.com/repos/PS5Dev/Byepervisor",
+      "final_url": "https://api.github.com/repos/PS5Dev/Byepervisor",
+      "sha256": "7e9f7a50d13869f617509070ae9644e99930b01bcfc16b17bf702974edded0c9",
+      "bytes": 6139
+    },
+    {
+      "url": "https://api.github.com/repos/PS5Dev/Byepervisor/commits/main",
+      "final_url": "https://api.github.com/repos/PS5Dev/Byepervisor/commits/main",
+      "sha256": "ff8a564281f3432d941b6d090a69ed5807634fa44363b80684e8de998dd7bdaa",
+      "bytes": 5704
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PS5Dev/Byepervisor/57204cbd7bd26ed4623634d52b0f60f40d630087/README.md",
+      "final_url": "https://raw.githubusercontent.com/PS5Dev/Byepervisor/57204cbd7bd26ed4623634d52b0f60f40d630087/README.md",
+      "sha256": "b90db21e69d1203865450cfe7ee8cbaee8d7feb2701df0eaa0ab278e7efd4f6b",
+      "bytes": 4411,
+      "commit": "57204cbd7bd26ed4623634d52b0f60f40d630087",
+      "repository": "PS5Dev/Byepervisor"
+    },
+    {
+      "url": "https://api.github.com/repos/PS5Dev/Byepervisor-Reborn",
+      "final_url": "https://api.github.com/repos/PS5Dev/Byepervisor-Reborn",
+      "sha256": "ddcb4c49827a33938158c3a2a4a46ec10836ad200d2ee654aa5776c276d819e5",
+      "bytes": 6294
+    },
+    {
+      "url": "https://api.github.com/repos/PS5Dev/Byepervisor-Reborn/commits/main",
+      "final_url": "https://api.github.com/repos/PS5Dev/Byepervisor-Reborn/commits/main",
+      "sha256": "4382182bc3e90fccd9abacac3e51f491867e42eae5f5879c9889a21e8d708f02",
+      "bytes": 78079
+    },
+    {
+      "url": "https://raw.githubusercontent.com/PS5Dev/Byepervisor-Reborn/ea04f7132b837087f552c57261cb800481a3a910/README.md",
+      "final_url": "https://raw.githubusercontent.com/PS5Dev/Byepervisor-Reborn/ea04f7132b837087f552c57261cb800481a3a910/README.md",
+      "sha256": "c8feb31f2271467003024f79ffc13574211996886a263104c6d88888354b9a06",
+      "bytes": 3857,
+      "commit": "ea04f7132b837087f552c57261cb800481a3a910",
+      "repository": "PS5Dev/Byepervisor-Reborn"
+    },
+    {
+      "lead": "TransformStream",
+      "error": "HTTP Error 422: Unprocessable Entity"
+    },
+    {
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/8fd92b1021d310b2580eb3ac7913911eb14dc476",
+      "final_url": "https://api.github.com/repos/WebKit/WebKit/commits/8fd92b1021d310b2580eb3ac7913911eb14dc476",
+      "sha256": "e7332ac0e8d6ab586ac77447633b02dea5ef3a4ba36f07c2305feae8466938be",
+      "bytes": 11451
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/6db96cd11f963bfa6a9874768309a175de3049cd/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "final_url": "https://raw.githubusercontent.com/WebKit/WebKit/6db96cd11f963bfa6a9874768309a175de3049cd/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "sha256": "191b9c2e4b391e5187b6dfa02d04a4f6821e54b00080a35fe3972c75c175dbdc",
+      "bytes": 8014,
+      "commit": "6db96cd11f963bfa6a9874768309a175de3049cd",
+      "role": "TransformStream source comparison"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/8fd92b1021d310b2580eb3ac7913911eb14dc476/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "final_url": "https://raw.githubusercontent.com/WebKit/WebKit/8fd92b1021d310b2580eb3ac7913911eb14dc476/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "sha256": "ebd520c304df53eaf42f7125b198a52ada5cc2b5b3518fcdb5e7068d5ef6c57c",
+      "bytes": 8395,
+      "commit": "8fd92b1021d310b2580eb3ac7913911eb14dc476",
+      "role": "TransformStream source comparison"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "final_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "sha256": "0fbdf7c4a3c0f1bbb19ccdf737f5d3746ec3b79f2adfe53772d23fd1ee33b807",
+      "bytes": 5467,
+      "commit": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "role": "TransformStream source comparison"
+    },
+    {
+      "url": "https://api.github.com/repos/soniciso1/ps5-hv-writeups/commits/main",
+      "final_url": "https://api.github.com/repos/soniciso1/ps5-hv-writeups/commits/main",
+      "sha256": "de6ec15e621d65d2feecd2ac3a015f7621431a9683b7b71dcd9aaacc5a68b333",
+      "bytes": 6091
+    },
+    {
+      "url": "https://raw.githubusercontent.com/soniciso1/ps5-hv-writeups/e4d8b98390754d7eba7c4ea307a168a7d2e9962d/s3-resume-startup_mp-ap-launch.md",
+      "final_url": "https://raw.githubusercontent.com/soniciso1/ps5-hv-writeups/e4d8b98390754d7eba7c4ea307a168a7d2e9962d/s3-resume-startup_mp-ap-launch.md",
+      "sha256": "55140b0766b9966f6436bbad094105c3efe698f461d50286a04b0c33951f3286",
+      "bytes": 6749,
+      "commit": "e4d8b98390754d7eba7c4ea307a168a7d2e9962d",
+      "repository": "soniciso1/ps5-hv-writeups"
+    },
+    {
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/97df94ead028cddcfc21e48ec6f2f72d25ec1662",
+      "commit": "97df94ead028cddcfc21e48ec6f2f72d25ec1662",
+      "sha256": "9de52b77e3d80ecb66a30330f03f26f130a2ded5eb7869718c98aad3b4830fba",
+      "bytes": 17614
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/16c6a9971daca74d3b6bdddba6daf8d2c4c57d8c/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+      "commit": "16c6a9971daca74d3b6bdddba6daf8d2c4c57d8c",
+      "sha256": "2fff35e9176d84a6adf793080bfa69c45b0281bbc60a1d14a9b8067c05a9c69c",
+      "bytes": 7611,
+      "role": "metadata source comparison"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/97df94ead028cddcfc21e48ec6f2f72d25ec1662/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+      "commit": "97df94ead028cddcfc21e48ec6f2f72d25ec1662",
+      "sha256": "2e3b1d67b8444176fa07a4dbe029b0f70b27b1c568699f365afc66946a7e6923",
+      "bytes": 9772,
+      "role": "metadata source comparison"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+      "commit": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "sha256": "e53a06b555cd7d979b076c6975c898331f99b188bac32c2dad90c04fa93c6814",
+      "bytes": 6981,
+      "role": "metadata source comparison"
+    }
+  ],
+  "additional_sony_members": {
+    "url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+    "observed_at_utc": "2026-10-20T16:52:01.480911+00:00",
+    "archive_bytes": 1637794253,
+    "bytes_transferred": 73421902,
+    "full_archive_sha256": null,
+    "method": "validated HTTP ranges and ZipFile CRC checks; full archive not downloaded",
+    "files": [
+      {
+        "path": "Source/WebCore/Modules/streams/TransformStream.cpp",
+        "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/Modules/streams/TransformStream.cpp",
+        "sha256": "b28852a98dd094a9ec8df45c1ff1390e3c73d265931c36c79cd59dbb7b856551",
+        "bytes": 5912,
+        "crc32": "3ff65c1d",
+        "crc_validated": true
+      },
+      {
+        "path": "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+        "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+        "sha256": "e53a06b555cd7d979b076c6975c898331f99b188bac32c2dad90c04fa93c6814",
+        "bytes": 6981,
+        "crc32": "a75257a5",
+        "crc_validated": true
+      },
+      {
+        "path": "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.h",
+        "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.h",
+        "sha256": "5c8ea339832848d27a16ece12fc208e6cd8c19ce16d7368096037c6adac4dc92",
+        "bytes": 5305,
+        "crc32": "07e30b41",
+        "crc_validated": true
+      },
+      {
+        "path": "Source/JavaScriptCore/bytecode/MetadataTable.h",
+        "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/bytecode/MetadataTable.h",
+        "sha256": "eaafcb41930c4bc90e0295412fb83031863228b3842126fc8d47a28bb38f0267",
+        "bytes": 4716,
+        "crc32": "ae1b15fb",
+        "crc_validated": true
+      }
+    ],
+    "http_headers": {
+      "Content-Length": "1637794253",
+      "Last-Modified": "Thu, 15 Oct 2026 06:13:57 GMT",
+      "ETag": "\"0x8DF2A837F34C6C7\"",
+      "Accept-Ranges": "bytes"
+    }
+  },
+  "findings": [
+    {
+      "id": "sony-transform-validation",
+      "scope": "published source only",
+      "classification": "RELEVANT VALIDATION CHECKS PRESENT",
+      "target_impact": "UNKNOWN",
+      "evidence": [
+        {
+          "path": "Source/WebCore/Modules/streams/TransformStream.cpp",
+          "sha256": "b28852a98dd094a9ec8df45c1ff1390e3c73d265931c36c79cd59dbb7b856551",
+          "line": 115,
+          "excerpt": "    if (results.size() != 3) [[unlikely]]"
+        },
+        {
+          "path": "Source/WebCore/Modules/streams/TransformStream.cpp",
+          "sha256": "b28852a98dd094a9ec8df45c1ff1390e3c73d265931c36c79cd59dbb7b856551",
+          "line": 123,
+          "excerpt": "    if (!readable || !writable) [[unlikely]]"
+        }
+      ],
+      "baseline": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "baseline_file_sha256": "0fbdf7c4a3c0f1bbb19ccdf737f5d3746ec3b79f2adfe53772d23fd1ee33b807",
+      "byte_identical_to_baseline": false,
+      "observed_diff": "Only result-count check and stream-cast validation/error returns added versus baseline.",
+      "upstream_fix": "8fd92b1021d310b2580eb3ac7913911eb14dc476"
+    },
+    {
+      "id": "sony-metadata-offset-arithmetic",
+      "scope": "published source only",
+      "classification": "OLD UNSIGNED OFFSET PATTERN PRESENT",
+      "target_impact": "UNKNOWN",
+      "evidence": [
+        {
+          "path": "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+          "sha256": "e53a06b555cd7d979b076c6975c898331f99b188bac32c2dad90c04fa93c6814",
+          "line": 109,
+          "excerpt": "    unsigned offset = s_offset16TableSize;"
+        },
+        {
+          "path": "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+          "sha256": "e53a06b555cd7d979b076c6975c898331f99b188bac32c2dad90c04fa93c6814",
+          "line": 129,
+          "excerpt": "            offset += numberOfEntries * metadataSize(static_cast<OpcodeID>(i));"
+        }
+      ],
+      "baseline": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "baseline_file_sha256": "e53a06b555cd7d979b076c6975c898331f99b188bac32c2dad90c04fa93c6814",
+      "byte_identical_to_baseline": true,
+      "upstream_fix": "97df94ead028cddcfc21e48ec6f2f72d25ec1662"
+    }
+  ],
+  "prior_source_evidence": "reports/WEBKIT_SOURCE_EVIDENCE.json",
+  "prior_prs": [
+    {
+      "number": 20,
+      "state_observed": "open",
+      "base": "main",
+      "commit": "5e7c3b1fe63017a933643609995249937f0453b0"
+    },
+    {
+      "number": 21,
+      "state_observed": "open",
+      "base": "research/thread-rop-evidence-audit-20261020",
+      "commit": "f650adecbd4e08a2f00da8615c17d99b5485df6c"
+    }
+  ],
+  "verification": {
+    "python_baseline": 97,
+    "python_final": 113,
+    "javascript_fixtures": 8,
+    "pc_browser_preview": "Windows Chromium page completed; not a PS5 capture",
+    "console_operations": 0,
+    "engine_vulnerability_regressions_executed": 0
+  },
+  "limits": [
+    "No full archive SHA-256 measured",
+    "Hashes bind bytes, not production component inclusion",
+    "No vendor source files or firmware binaries included in this report",
+    "Source comparisons and synthetic tests do not reproduce a target memory fault"
+  ]
+}

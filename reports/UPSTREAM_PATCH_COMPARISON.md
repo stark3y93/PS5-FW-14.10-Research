@@ -1,5 +1,7 @@
 # Upstream patch comparison and candidate status
 
+**Phase 4 update:** [new source comparison](WEBKIT_TARGET_COMPATIBILITY.md) identifies the exact metadata overflow fix `97df94ead028cddcfc21e48ec6f2f72d25ec1662` and measures the old Sony metadata source. It also finds that the Sony TransformStream file already contains the relevant validation safeguards. These findings supersede earlier missing-source/patch statements below, while the 14.10 executable verdict remains unknown.
+
 Audit: 20 October 2026. This phase independently compared Sony-published WebKit source files with six pinned upstream source pairs. Exact PS5 14.10 executable mapping remains unknown. The earlier statement that no Sony source comparison was available is superseded by the evidence below.
 
 ## CSSFontFace: two distinct safeguards
