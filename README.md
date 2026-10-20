@@ -76,6 +76,17 @@ The five source classifications are `PATCHED — VERIFIED`, `VULNERABLE IMPLEMEN
 
 ## Passive browser diagnostic and feasibility audit
 
+**Browser-access follow-up:** no reliable custom-page route was verified on PS5 14.10, and the user's guide/YouTube/message attempts are recorded as unsuccessful. See [entry evidence](reports/BROWSER_ENTRYPOINT_EVIDENCE.md), [browser-access findings](reports/PS5_1410_BROWSER_ACCESS.md) and [restricted hosting setup](docs/PS5_DIAGNOSTIC_SETUP.md). For new PC/LAN runs, prefer the two-file restricted host over a general directory server:
+
+```powershell
+python -S tools/host_diagnostic.py --bind 127.0.0.1 --port 8766 --check
+python -S tools/host_diagnostic.py --bind 127.0.0.1 --port 8766
+# Trusted LAN only: replace this example with your chosen PC adapter's IPv4.
+python -S tools/host_diagnostic.py --bind 192.168.1.50 --port 8766
+```
+
+Run one serving command at a time and stop with Ctrl+C. This helper never supplies a PS5 navigation route, impersonates a captive portal or changes DNS/proxy/certificates. `--check` prints exact asset hashes and closes. Earlier Phase 4 instructions follow for historical context; the new setup guide incorporates the user's observed restrictions.
+
 Phase 4 adds a passive page and offline JSON importer. See [console/PC instructions](reports/PS5_BROWSER_DIAGNOSTIC.md), [target compatibility](reports/WEBKIT_TARGET_COMPATIBILITY.md), [boundary matrix](reports/SECURITY_BOUNDARY_MATRIX.md) and [feasibility report](reports/JAILBREAK_FEASIBILITY_1410.md). No external-navigation route on the 14.10 guide is assumed. The page checks availability without loading fonts, executing a regression or uploading results.
 
 PC preview (stop the server with Ctrl+C):

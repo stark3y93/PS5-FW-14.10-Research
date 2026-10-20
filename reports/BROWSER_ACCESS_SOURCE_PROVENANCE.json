@@ -1,0 +1,189 @@
+{
+  "schema_version": 1,
+  "retrieved_at_utc": "2026-10-20T17:47:40.000333+00:00",
+  "sources": [
+    {
+      "id": "sony-guide",
+      "url": "https://www.playstation.com/en-us/support/hardware/ps5-console-users-guide/",
+      "source_date": null,
+      "date_meaning": "No publication date displayed in inspected support text",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://www.playstation.com/en-us/support/hardware/ps5-console-users-guide/",
+      "sha256": "beca000ada0cd4cbfb1d5d996cd7fb43160d879a0863e121d8c89cff1fa8e1fa",
+      "bytes": 144810,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    },
+    {
+      "id": "sony-network",
+      "url": "https://www.playstation.com/en-us/support/connectivity/internet-connect-playstation/",
+      "source_date": null,
+      "date_meaning": "No publication date displayed in inspected support text",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://www.playstation.com/en-us/support/connectivity/internet-connect-playstation/",
+      "sha256": "ab2f0c672adc6d18e278e617ae33327a248f5373ed151a13742439bb07d4bae5",
+      "bytes": 192855,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    },
+    {
+      "id": "sony-notices",
+      "url": "https://www.playstation.com/en-us/support/important-notice/",
+      "source_date": "2023-11-13",
+      "date_meaning": "Effective termination date for X integration; not original notice publication date",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://www.playstation.com/en-us/support/important-notice/",
+      "sha256": "583374d46d6ce5ddcdac5551d9ae665c713e4061bf35a567be2320a1dee3af93",
+      "bytes": 222964,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    },
+    {
+      "id": "sony-youtube",
+      "url": "https://www.playstation.com/en-gb/support/hardware/ps5-youtube/",
+      "source_date": null,
+      "date_meaning": "No publication date displayed in inspected support text",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://www.playstation.com/en-gb/support/hardware/ps5-youtube/",
+      "sha256": "3ff1e7d135b7d15960f304ff99db77b4d3cdf142b1ea98582709303d45015a9d",
+      "bytes": 147352,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    },
+    {
+      "id": "google-youtube-signin",
+      "url": "https://support.google.com/youtube/answer/3015415?hl=en",
+      "source_date": null,
+      "date_meaning": "No publication date displayed in inspected support text",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://support.google.com/youtube/answer/3015415?hl=en",
+      "sha256": "1c215be14a7fa6a77c993a5c42cd7f3f3d6aa3bb831f91b425043d1e73d72439",
+      "bytes": 1624740,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    },
+    {
+      "id": "ahs-wifi",
+      "url": "https://fcrc.albertahealthservices.ca/chimp/chimp-media-systems-pt-rm-(web).pdf",
+      "source_date": "2022-03-22",
+      "date_meaning": "Printed Last Modified / Print Date on page 4; original publication date unknown",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://fcrc.albertahealthservices.ca/chimp/chimp-media-systems-pt-rm-(web).pdf",
+      "sha256": "e77197ccf36ced205070f4c115382e60a06e9a365fde49a856610977f9dc12f9",
+      "bytes": 456376,
+      "original_publication_date": null
+    },
+    {
+      "id": "surrey-resnet",
+      "url": "https://my.surrey.ac.uk/sites/default/files/2024-11/ps5-instructions.pdf",
+      "source_date": null,
+      "date_meaning": "2024-11 is a URL directory, not verified publication date",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://my.surrey.ac.uk/sites/default/files/2024-11/ps5-instructions.pdf",
+      "sha256": "c5fcc374f19d645273bf3c45c2e2c0b7ecf89b30f91107886e4dd0f2df64a853",
+      "bytes": 764953,
+      "original_publication_date": null
+    },
+    {
+      "id": "portal-announcement",
+      "url": "https://blog.playstation.com/2024/06/18/new-playstation-portal-remote-player-system-software-update-releases-tomorrow/",
+      "source_date": "2024-06-18",
+      "date_meaning": "Dated vendor post; updated July 24, 2024; different device from PS5",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://blog.playstation.com/2024/06/18/new-playstation-portal-remote-player-system-software-update-releases-tomorrow/",
+      "sha256": "d8ef9c44a49df9ed808ddfb087e4fb3f843f0728ce04e06e0ef9cca3b5da9647",
+      "bytes": 173954,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    },
+    {
+      "id": "historical-youtube-browser",
+      "url": "https://www.tomsguide.com/how-to/how-to-access-ps5-web-browser",
+      "source_date": "2024-11-15",
+      "date_meaning": "Last updated 2024-11-15, agreeing with dateModified; original datePublished metadata 2022-01-28; tested firmware unstated",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://www.tomsguide.com/how-to/how-to-access-ps5-web-browser",
+      "sha256": "9af7a8354dee998236312fb3a6a4f88b907b12118d7ddd2e44d5b39525cc4aab",
+      "bytes": 2219973,
+      "structured_date_fields": [
+        "2022-01-28T11:31:11+00:00",
+        "2024-11-15T16:46:52+00:00"
+      ],
+      "original_publication_date": "2022-01-28",
+      "structured_dates": {
+        "datePublished": "2022-01-28T11:31:11+00:00",
+        "dateModified": "2024-11-15T16:46:52+00:00"
+      }
+    },
+    {
+      "id": "sony-broadcast",
+      "url": "https://www.playstation.com/en-ca/support/games/ps5-stream-gameplay-broadcast/",
+      "source_date": null,
+      "date_meaning": "No publication date displayed in inspected support text",
+      "firmware_tested": null,
+      "independent_1410_reproduction": false,
+      "final_url": "https://www.playstation.com/en-ca/support/games/ps5-stream-gameplay-broadcast/",
+      "sha256": "9576396353ea0c00cccd1556c6a3b0ffd0ae3a1071beeee268d5a5be149e2763",
+      "bytes": 164894,
+      "structured_date_fields": [],
+      "original_publication_date": null
+    }
+  ],
+  "verdict": "NO VERIFIED ARBITRARY-WEBSITE ROUTE ON PS5 14.10 FOUND",
+  "limits": [
+    "A source hash records bytes, not hardware verification",
+    "No console or network configuration changed",
+    "No portal/DNS/proxy/certificate service implemented",
+    "Original publication dates remain unknown where stated"
+  ],
+  "user_report": {
+    "source": "User message in this chat, 2026-10-20; not independently recorded",
+    "firmware_label": "14.10",
+    "guide": "Sony pages open; no external navigation found",
+    "youtube": "QR linking screen only",
+    "messaging": "Google URL deleted by PlayStation Safety",
+    "diagnostic": "PC Edge succeeds; no PS5 run"
+  },
+  "search_scope": [
+    "PS5 14.10 browser access",
+    "PS5 14.10 captive portal",
+    "PS5 14.10 How to Authenticate",
+    "Sony official guide/network/account-linking documentation",
+    "Original network-operator PS5 instructions"
+  ],
+  "not_claimed": [
+    "All possible routes exhausted",
+    "Portal support removed on 14.10",
+    "Arbitrary browsing impossible"
+  ],
+  "verification": {
+    "python_tests_run": 126,
+    "python_passed": 125,
+    "python_skipped": 1,
+    "skip_reason": "Windows symlink creation privilege unavailable",
+    "javascript_tests_passed": 8,
+    "console_operations": 0,
+    "diagnostic_assets_modified": false,
+    "source_responses_hashed": 10
+  },
+  "review": {
+    "scope": "Independent read-only review of code, tests and report consistency",
+    "important_findings": 0,
+    "critical_findings": 0,
+    "minor_provenance_wording": "Corrected to distinguish original publication from update date",
+    "limits": [
+      "No console verification",
+      "No independent source hash remeasurement by reviewer",
+      "No LAN/firewall reachability test"
+    ]
+  }
+}
