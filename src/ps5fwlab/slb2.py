@@ -79,6 +79,7 @@ def parse_slb2(path: str | Path) -> SLB2Metadata:
         raise SLB2Error("declared block count does not match file size")
 
     entries: list[SLB2Entry] = []
+    names: set[str] = set()
     for index in range(entry_count):
         table_offset = HEADER_SIZE + index * ENTRY_SIZE
         block_offset, size, entry_unknown_1, entry_unknown_2, name_bytes = struct.unpack_from(
@@ -89,9 +90,13 @@ def parse_slb2(path: str | Path) -> SLB2Metadata:
         offset = block_offset * BLOCK_SIZE
         if offset < BLOCK_SIZE or offset >= file_size or size > file_size - offset:
             raise SLB2Error(f"entry {index} lies outside the file")
+        name = _parse_name(name_bytes)
+        if name in names:
+            raise SLB2Error(f"entry {index} has a duplicate name")
+        names.add(name)
         entries.append(
             SLB2Entry(
-                name=_parse_name(name_bytes),
+                name=name,
                 block_offset=block_offset,
                 offset=offset,
                 size=size,

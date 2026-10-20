@@ -8,6 +8,7 @@ This workspace holds a read-only, offline investigation of Sony's public PS5 **u
 - The package was downloaded from the **PS5 console update file** link on Sony's [UK system software page](https://www.playstation.com/en-gb/support/hardware/ps5/system-software/). It is the `sys_...` update package, not the `rec_...` reinstallation package.
 - The download is complete and its observed length, hashes, and container header are recorded in [notes/provenance.md](notes/provenance.md) and [notes/initial-findings.md](notes/initial-findings.md).
 - A strict metadata-only parser and deterministic entropy sampler are in `src/ps5fwlab/`; automated tests use synthetic fixtures in `tests/`.
+- The parser audit covers malformed and truncated headers, maximum 32-bit fields, duplicate names, and seeded structural mutations; see [analysis notes](notes/analysis-14.10.md). A second read-only run reproduced the 256-window byte profile, without identifying the inner encoding.
 - No console settings, firmware, DNS, files, or services were changed. No update was installed or sent to the console.
 
 ## Reproduce locally
