@@ -22,6 +22,8 @@ The [FileReader/filesystem-interface follow-up](reports/PS5_FILE_INTERFACES_2026
 
 For the current source/patch assessment and live policy observations, see the [PS5 14.10 WebKit security review](reports/PS5_1410_WEBKIT_SECURITY_REVIEW_20261020.md). It distinguishes source safeguards, public project support ranges and unverified production-build applicability.
 
+The subsequent [patch-family audit](reports/PS5_1410_WEBKIT_PATCH_FAMILIES_20261020.md) covers the coordinated font, metadata, Proxy and cloning source changes, related scope fixes and revert history. It records 186 static comparison records and keeps production 14.10 applicability unverified; no browser tests were repeated.
+
 | Command | Output | Input protection |
 | --- | --- | --- |
 | `inspect` | Validated SLB2 header and entry metadata | Bounds-checked parser |
