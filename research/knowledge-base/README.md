@@ -8,13 +8,19 @@ This is a source-linked index of public PS5 research and upstream technical evid
 
 ## Current snapshot
 
-Snapshot date: 2026-10-20. The catalog contains **47 indexed source records** (18 repositories and 29 technical/vendor/support documents), **25 deduplicated findings**, **44 finding-to-evidence links**, **27 question-to-source links**, **13 vulnerability records**, **11 components**, **8 ranked questions**, **4 unresolved contradictions**, and **7 experiment records**. All findings carry explicit firmware relevance, including unknown and author-reported claims.
+Snapshot date: 2026-10-20. The catalog contains **61 indexed source records** (32 repositories and 29 technical/vendor/support documents), **25 deduplicated findings**, **44 finding-to-evidence links**, **27 question-to-source links**, **13 vulnerability records**, **11 components**, **8 ranked questions**, **4 unresolved contradictions**, and **7 experiment records**. The ecosystem layer adds **28 cross-linked projects**, **18 compatibility claims**, and **6 capability/dependency records** without duplicating the original finding ledger. All findings carry explicit firmware relevance, including unknown and author-reported claims.
 
 Fifteen findings are `VERIFIED` only for their bounded statements, and ten are author-reported. This does **not** mean any PS5 vulnerability was independently reproduced: the independent-device verification metric remains **zero**. Review each finding's scope and evidence in [`catalog.json`](catalog.json).
 
 The unified catalog preserves PR #13's pinned source index, the later PR #14 evidence and search improvements, and the additional Sony listing metadata and gated observation plan. Structured records consolidate earlier notes; record counts are not counts of new discoveries.
 
 Coverage labels intentionally differentiate README/scope extraction from source-level review. Most exploit and payload repositories were **not executed**. Repository identity and license are pinned to the inspected tree; a matching public default-branch head was observed at catalog time where recorded. A commit hash verifies a source snapshot identity, not the correctness of its claims.
+
+## Wider homebrew and open-software ecosystem
+
+[`ecosystem.json`](ecosystem.json) adds pinned repositories and a normalized compatibility/capability matrix for Linux boot, kernel/graphics patches, PS5 Vulkan, native app management, SDKs, homebrew applications, Steam/Wine/DXVK/vkd3d-proton and host-side translation projects. Compatibility statements retain their evidence class and status. The matrix has no independent 14.10 exploit, homebrew or Linux verification. In the reviewed Linux loader README, supported model/version entries stop at selected 13.60 combinations; the high-firmware pLinux5-NG README says only 13.20 is currently supported despite a broader headline. See the [ecosystem review](ecosystem-research.md).
+
+The source updater is incremental and disabled by default. `python -S -m ps5knowledge update-sources` is a no-op unless explicitly enabled with `--enable`; the scheduled workflow also requires the repository variable `PS5_RESEARCH_UPDATES_ENABLED=true`. It reads GitHub API metadata only, records new activity as unverified, keeps search matches as review candidates, and produces a draft PR for review. It does not clone upstream repositories or promote claims automatically. GitHub Actions billing may still block the scheduled workflow after deliberate enablement.
 
 ## Build and search
 
@@ -28,6 +34,7 @@ python -S -m ps5knowledge build-db
 python -S -m ps5knowledge stats
 python -S -m ps5knowledge search 'WebKit Sony'
 python -S -m ps5knowledge dashboard
+python -S -m ps5knowledge update-sources  # disabled safe no-op by default
 ```
 
 The default outputs are local `ps5-research.sqlite3` and `dashboard.html` files in this directory. They are reproducibly generated from `catalog.json` and ignored by Git so the human-reviewable JSON stays the source of truth. Use `--catalog`, `--database`, and `--output` to select different paths. Search is local FTS5 across findings, questions, repositories, source documents, vulnerability identifiers, and researcher/publisher records; results include source links. Terms are treated as literal quoted tokens, not SQL or FTS query syntax. The static dashboard can be opened in a browser without a server or external JavaScript dependencies.
