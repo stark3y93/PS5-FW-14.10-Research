@@ -24,6 +24,7 @@ python -S -m unittest discover -s tests -v
 ```
 
 The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
+The integrated suite currently has 49 tests, including deterministic parser mutations and the survey and comparator regressions. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
 
 ## Reproduce the 14.10 observations locally
 
@@ -51,6 +52,8 @@ The `entropy` windows can overlap; they are descriptive measurements, not indepe
 - [Independent 14.10 byte-window survey](notes/independent-survey-14.10.md) records offsets, results and statistical limits.
 - [Cross-version comparison](notes/cross-version-comparison-2026-10-20.md) has synthetic validation but no provenance-verified historical input.
 - [Evidence matrix](notes/comparison-matrix.md), [source review](notes/source-review.md) and [experiment ranking](notes/experiments.md) separate observations, third-party claims and hypotheses.
+- [Parser validation](notes/analysis-14.10.md) covers strict bounds, malformed synthetic headers and the duplicate-name ambiguity policy.
 - [Toolkit review and proposed merge order](notes/toolkit-consolidation-review-2026-10-20.md) describe remaining integration work.
+- [Integrated branch manifest and merge proposal](notes/integration-2026-10-20.md) records which PR changes are included and which PRs would become redundant.
 
 No command connects to a console or establishes the meaning of unknown SLB2 fields, inner PUP encryption state, executable content, signature validity, exploitability, or firmware compatibility. Keep Sony packages and generated output in `artifacts/` and `derived/`, respectively; both directories are Git-ignored.
