@@ -35,6 +35,7 @@ The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0
 - [Independent hash-verified window survey and its limits](notes/independent-survey-14.10.md)
 - [Hash-verified SLB2 boundary neighborhood map](notes/wrapper-neighborhood-14.10.md)
 - [Cross-version provenance gate, comparator and current inconclusive result](notes/cross-version-comparison-2026-10-20.md)
+- [Historical Sony-hosted candidate audit and unresolved version binding](notes/historical-sony-source-audit-2026-10-20.md)
 
 ## Scope and method
 
