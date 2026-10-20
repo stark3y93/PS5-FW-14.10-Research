@@ -9,6 +9,7 @@ from pathlib import Path
 from statistics import mean
 
 from .entropy import sample_entropy, sample_entropy_at_offsets
+from .neighborhood import map_neighborhood
 from .slb2 import parse_slb2
 from .survey import plan_survey_offsets, sha256_file, survey_frame_size, zero_hit_upper_bound
 
@@ -28,7 +29,14 @@ def main(argv: list[str] | None = None) -> int:
     survey_command.add_argument("--window", type=int, default=65536)
     survey_command.add_argument("--samples", type=int, default=256)
     survey_command.add_argument("--threshold", type=float, default=7.9)
+    map_command = commands.add_parser("map", help="hash-verified SLB2 boundary statistics")
+    map_command.add_argument("file", type=Path)
+    map_command.add_argument("--sha256", required=True, help="expected full-file SHA-256")
     args = parser.parse_args(argv)
+
+    if args.command == "map":
+        print(json.dumps(map_neighborhood(args.file, args.sha256), indent=2))
+        return 0
 
     metadata = parse_slb2(args.file)
     if args.command == "inspect":
