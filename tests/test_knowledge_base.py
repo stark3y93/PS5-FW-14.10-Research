@@ -23,10 +23,11 @@ class KnowledgeBaseTests(unittest.TestCase):
 
     def test_import_counts_and_source_links(self):
         self.assertEqual(self.counts["repositories"], 18)
-        self.assertEqual(self.counts["documents"], 27)
-        self.assertEqual(self.counts["sources"], 45)
-        self.assertEqual(self.counts["findings"], 23)
-        self.assertEqual(self.counts["evidence"], 39)
+        self.assertEqual(self.counts["documents"], 29)
+        self.assertEqual(self.counts["sources"], 47)
+        self.assertEqual(self.counts["experiments"], 7)
+        self.assertEqual(self.counts["findings"], 25)
+        self.assertEqual(self.counts["evidence"], 44)
         self.assertEqual(self.counts["question_evidence"], 27)
         self.assertGreaterEqual(self.counts["evidence"], self.counts["findings"])
         with closing(sqlite3.connect(self.db)) as con:
@@ -60,12 +61,13 @@ class KnowledgeBaseTests(unittest.TestCase):
     def test_dashboard_has_metrics_and_clickable_evidence(self):
         data = dashboard_data(self.db)
         self.assertEqual(data["stats"]["repositories"], 18)
-        self.assertEqual(data["stats"]["findings"], 23)
-        self.assertEqual(data["stats"]["sources"], 45)
+        self.assertEqual(data["stats"]["findings"], 25)
+        self.assertEqual(data["stats"]["sources"], 47)
         page = render_dashboard(data)
         self.assertIn("Search findings", page)
         self.assertIn("https://", page)
         self.assertIn("Contradictions to review", page)
+        self.assertIn("PC-only experiments and archive checks", page)
         self.assertIn("priority ", page)
 
     def test_catalog_references_resolve(self):

@@ -679,7 +679,7 @@
       "date": "2026-10-20",
       "kind": "official source listing",
       "provenance": "Sony-controlled page labels WebKit_1400 for PS5 14.00 onward. Direct HEAD check on 2026-10-20: 1,637,794,253 bytes; Last-Modified 2026-10-15; ETag 0x8DF2A837F34C6C7 (HTTP validator, not a cryptographic hash).",
-      "summary": "Provides version-labelled source snapshot but no exact mapping to 26.06-14.10.00 build/commit. The archive is large and was not downloaded in this integration.",
+      "summary": "Provides a version-labelled Sony WebKit source snapshot, now locally downloaded and SHA-256 hashed in the source-validation phase; exact mapping to build 26.06-14.10.00 remains unknown.",
       "researchers": [
         "user-sony"
       ],
@@ -693,7 +693,7 @@
       "date": "2026-10-20",
       "kind": "official source listing",
       "provenance": "Sony-controlled page labels JSC-800 for PS5 8.00 onward. Direct HEAD check on 2026-10-20: 1,369,859,528 bytes; Last-Modified 2026-08-07; ETag bf49658547d459e0405ba5cba59cb1d6:1786126791.99314 (HTTP validator, not a cryptographic hash).",
-      "summary": "Provides JSC source; exact 14.10 build correspondence is not stated. The archive is large and was not downloaded in this integration.",
+      "summary": "Provides Sony JSC source, now locally downloaded and SHA-256 hashed in the source-validation phase; exact 14.10 build correspondence is not stated.",
       "researchers": [
         "user-sony"
       ],
@@ -1022,6 +1022,30 @@
       "summary": "Current upstream comparison source. Its version statements apply to WebKitGTK/WPE, not Sony PlayStation.",
       "researchers": [],
       "version_scope": "WebKitGTK/WPE and bundled component scopes as individually listed by WSA-2026-0006; no Sony build mapping."
+    },
+    {
+      "id": "d-webkit-b21a503",
+      "title": "WebKit upstream JSC Phi escape fix b21a503",
+      "publisher": "WebKit project",
+      "url": "https://github.com/WebKit/WebKit/commit/b21a503b579a8ab14c839f82cc77176e507352e5",
+      "date": "2025-12-17",
+      "kind": "upstream-source-patch",
+      "provenance": "Official WebKit Git repository commit, Bugzilla 302502; code comparison limited to named source file.",
+      "summary": "Updates DFG StoreBarrierInsertionPhase escape handling to mark transitively incoming Phi values. The commit references Bugzilla 302502; product applicability is separate.",
+      "researchers": [],
+      "version_scope": "Upstream WebKit commit 304602@main; no Sony version asserted"
+    },
+    {
+      "id": "d-apple-2025-43529",
+      "title": "Apple iOS 26.2 security content for CVE-2025-43529",
+      "publisher": "Apple",
+      "url": "https://support.apple.com/en-us/125884",
+      "date": "2025-12-12",
+      "kind": "official-security-advisory",
+      "provenance": "Apple product advisory; identifies Bugzilla 302502 and CVE-2025-43529. Not Sony product evidence.",
+      "summary": "Describes a WebKit use-after-free fixed through improved memory handling in named Apple products.",
+      "researchers": [],
+      "version_scope": "Apple iOS 26.2 and iPadOS 26.2; no Sony version asserted"
     }
   ],
   "components": [
@@ -1318,6 +1342,20 @@
       "source_ids": [
         "d-freebsd-jail-15576"
       ]
+    },
+    {
+      "id": "cve-2025-43529",
+      "identifier": "CVE-2025-43529",
+      "title": "WebKit use-after-free associated with Bugzilla 302502",
+      "upstream_status": "VERIFIED for Apple products; Sony applicability unknown",
+      "upstream_summary": "Apple advisory associates Bugzilla 302502 with a WebKit use-after-free; WebKit commit b21a503 changes JSC DFG Phi escape bookkeeping.",
+      "affected_products": "Apple products listed in iOS 26.2 security advisory; no PS5 claim",
+      "mitigation": "Apple fix published; Sony 14.10 code and runtime status unresolved.",
+      "disclosure_date": "2025-12-12",
+      "source_ids": [
+        "d-apple-2025-43529",
+        "d-webkit-b21a503"
+      ]
     }
   ],
   "findings": [
@@ -1425,7 +1463,7 @@
       "classification": "VERIFIED",
       "confidence": "High for source page labels; exact 14.10 revision correspondence unknown.",
       "summary": "Sony WebKit source page labels WebKit_1400 as 14.00 onward and JSC-800 as 8.00 onward. Neither page documents the exact commit/build shipped in 26.06-14.10.00.",
-      "scope": "Sony source listings; archive contents were not downloaded for this review.",
+      "scope": "Sony source listings; archive contents were later downloaded and analyzed in the source-validation phase.",
       "firmware_relevance": "Provides a PC-only lead for 14.10 source research, not binary equivalence.",
       "reproduction_status": "Source page reviewed; source archives not acquired or built.",
       "component_ids": [
@@ -2203,6 +2241,88 @@
           "status": "candidate metadata; Sony version/digest mapping unverified"
         }
       ]
+    },
+    {
+      "id": "f-sony-archives-obtained",
+      "title": "Sony WebKit and JSC OSS archives have distinct source vintages",
+      "classification": "VERIFIED",
+      "confidence": "High for downloaded archive identity and inspected version markers; low for exact firmware build mapping.",
+      "summary": "The official WebKit_1400 ZIP is SHA-256 e645974579c88ec09c3036ce882fcaea2b0380f9ae4596b163811501d3be9db0 and declares source version 616.1.27.211.1. The official JSC-800 ZIP is SHA-256 c30ca1a35b50556ea1cc18909259bf0f7fec078bf2227827cf21a2bbbf81e4ed; its JSC ChangeLog begins 2022-03-25. Neither archive contains an authenticated 14.10 build identifier identified in this bounded review.",
+      "scope": "Sony public source archive downloads and named internal files only.",
+      "firmware_relevance": "Listing ranges encompass 14.10, but exact 26.06-14.10.00 source correspondence is unverified.",
+      "reproduction_status": "Both complete ZIPs downloaded, hashed, integrity-opened and summarized by analyze_archives.py; no console or firmware execution.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [],
+      "evidence": [
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "official-source-listing",
+          "locator": "14.00 - archive link",
+          "supports": "Sony lists WebKit source for the version range."
+        },
+        {
+          "source_id": "d-sony-jsc",
+          "kind": "official-source-listing",
+          "locator": "8.00 - archive link",
+          "supports": "Sony lists JSC source for the version range."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "exact source/build identity",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-jsc-phi-patch-absent",
+      "title": "Named upstream JSC Phi escape fix is absent from Sony published WebKit source",
+      "classification": "VERIFIED",
+      "confidence": "High for file-level patch-pattern comparison; low for runtime vulnerability inference.",
+      "summary": "WebKit commit b21a503 adds forAllTransitiveIncomingValues when escaping a Phi. Sony WebKit_1400 DFGStoreBarrierInsertionPhase.cpp lacks that call and retains direct node/stack-escape epoch marking in the compared locations. The JSC-800 archive also lacks the call, but its older function differs. This is a source-delta observation, not proof the 14.10 runtime is affected.",
+      "scope": "Single upstream patch and corresponding named Sony archive files; alternate backports and build configuration not excluded.",
+      "firmware_relevance": "Exact 14.10 component revision, DFG mode and patch/backport status are unknown.",
+      "reproduction_status": "Static comparison on hashed ZIPs; isolated PC model passed under AddressSanitizer; WebKit/JSC engine and PS5 were not executed.",
+      "component_ids": [
+        "jsc",
+        "webkit"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [
+        "cve-2025-43529"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-webkit-b21a503",
+          "kind": "upstream-patch",
+          "locator": "DFGStoreBarrierInsertionPhase.cpp escape lambda",
+          "supports": "Upstream transitive Phi incoming-value handling."
+        },
+        {
+          "source_id": "d-apple-2025-43529",
+          "kind": "official-advisory",
+          "locator": "WebKit; Bugzilla 302502",
+          "supports": "Apple product CVE identity only."
+        },
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "official-source-archive",
+          "locator": "WebKit_1400.zip Source/JavaScriptCore/dfg/DFGStoreBarrierInsertionPhase.cpp",
+          "supports": "Published file has pre-fix direct epoch pattern."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "runtime vulnerability applicability",
+          "status": "unknown"
+        }
+      ]
     }
   ],
   "questions": [
@@ -2210,12 +2330,12 @@
       "id": "q-webkit-build-map",
       "rank": 1,
       "question": "Can Sony's version-labelled WebKit/JSC sources be mapped to the exact 26.06-14.10.00 build?",
-      "rationale": "Directly relevant to the browser claims and the only plausible public source-to-fix path found.",
+      "rationale": "Both complete official archives are hash-verified and a named JSC security patch differs at source level, but no authenticated 14.10 build-to-source revision mapping exists.",
       "evidence_quality_score": 4,
       "answerability_score": 4,
       "safe_verification_score": 5,
       "community_value_score": 5,
-      "method": "Record official archive URL, version label, HTTP validators/Last-Modified and file-level license notices; obtain exact source/build metadata where available; compare relevant source to pinned upstream advisory fixes. Keep HTTP ETags distinct from cryptographic hashes and report only source-level conclusions until build mapping exists.",
+      "method": "Retain URL, version label, HTTP validators and archive hashes; match multiple exact source file hashes to upstream WebKit Git history; compare full patch context and Sony-specific changes. Keep results PC-only and source-level until a build manifest is authenticated.",
       "stop_condition": "If Sony archives omit exact source/build mapping, retain UNKNOWN; do not infer binary identity.",
       "firmware_relevance_score": 5,
       "priority_score": 4.6,
@@ -2500,6 +2620,85 @@
         "r-ps5-1410-browser",
         "d-webkitgtk-wsa-43715"
       ]
+    }
+  ],
+  "experiments": [
+    {
+      "id": "e-branch-preservation",
+      "title": "Unified branch preservation check",
+      "status": "PASS",
+      "confidence": "High",
+      "method": "Inspected Git worktree list and created a new branch/worktree from committed a7051bd.",
+      "result": "Earlier PR #13, vulnerability-lab and max-intelligence histories were merged in the parent unified branch; this phase uses a separate checkout.",
+      "firmware_relevance": "None; repository provenance only.",
+      "source_url": "https://github.com/stark3y93/PS5-FW-14.10-Research",
+      "log_path": "notes/source-validation-2026-10-20.md"
+    },
+    {
+      "id": "e-sony-webkit-download",
+      "title": "Sony WebKit archive acquisition",
+      "status": "PASS",
+      "confidence": "High",
+      "method": "Official URL download, ZIP inventory and SHA-256 hash.",
+      "result": "1,637,794,253 bytes; 414,182 entries; version marker 616.1.27.211.1; hash in source-archive-analysis JSON.",
+      "firmware_relevance": "Listed for 14.00 onward; exact 14.10 build mapping unknown.",
+      "source_url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "log_path": "notes/source-archive-analysis-2026-10-20.json"
+    },
+    {
+      "id": "e-sony-jsc-download",
+      "title": "Sony JSC archive acquisition",
+      "status": "PASS",
+      "confidence": "High",
+      "method": "Official URL download, ZIP inventory and SHA-256 hash.",
+      "result": "1,369,859,528 bytes; 377,362 entries; JSC ChangeLog first entry 2022-03-25; hash in source-archive-analysis JSON.",
+      "firmware_relevance": "Listed for 8.00 onward; exact 14.10 build mapping unknown.",
+      "source_url": "https://www.playstation.com/en-us/oss/ps5/webkit-javascriptcore/",
+      "log_path": "notes/source-archive-analysis-2026-10-20.json"
+    },
+    {
+      "id": "e-phi-patch-compare",
+      "title": "Upstream Phi escape patch comparison",
+      "status": "SOURCE DELTA",
+      "confidence": "High for inspected file text; low for runtime applicability.",
+      "method": "Compared upstream b21a503 patch marker with DFGStoreBarrierInsertionPhase.cpp inside both Sony ZIPs.",
+      "result": "Transitive incoming-value call absent in both; direct escape epoch pattern remains in WebKit_1400. No PS5 vulnerability conclusion.",
+      "firmware_relevance": "Unknown until exact build and backport correspondence are established.",
+      "source_url": "https://github.com/WebKit/WebKit/commit/b21a503b579a8ab14c839f82cc77176e507352e5",
+      "log_path": "notes/source-archive-analysis-2026-10-20.json"
+    },
+    {
+      "id": "e-model-first-build",
+      "title": "First sanitizer harness build",
+      "status": "FAILED",
+      "confidence": "High",
+      "method": "VS clang-cl default target attempted with x64 libraries.",
+      "result": "Link failed from x86/x64 mismatch; corrected by selecting x64 clang-cl. No test result from failed build.",
+      "firmware_relevance": "None; local tooling failure.",
+      "source_url": "https://clang.llvm.org/docs/AddressSanitizer.html",
+      "log_path": "notes/source-validation-2026-10-20.md"
+    },
+    {
+      "id": "e-model-asan",
+      "title": "Isolated Phi graph model under AddressSanitizer",
+      "status": "PASS WITH LIMITATION",
+      "confidence": "High for model assertions; no engine-level inference.",
+      "method": "Compiled original C++ graph bookkeeping model using x64 clang-cl /fsanitize=address and ran locally.",
+      "result": "Expected old-only Phi marking and corrected transitive marking assertions passed, exit 0; sanitizer printed a Windows interception warning. This does not execute WebKit source.",
+      "firmware_relevance": "None directly; illustrates patch semantics only.",
+      "source_url": "https://github.com/WebKit/WebKit/commit/b21a503b579a8ab14c839f82cc77176e507352e5",
+      "log_path": "notes/source-validation-2026-10-20.md"
+    },
+    {
+      "id": "e-asan-positive-control",
+      "title": "AddressSanitizer positive control",
+      "status": "PASS",
+      "confidence": "High",
+      "method": "Compiled local 8-byte allocation/out-of-bounds write probe with same compiler flags.",
+      "result": "ASan reported heap-buffer-overflow at asan_probe.cpp:5 and exited 1; Windows interception warning did not prevent detection.",
+      "firmware_relevance": "None; confirms local sanitizer instrumentation works.",
+      "source_url": "https://clang.llvm.org/docs/AddressSanitizer.html",
+      "log_path": "notes/source-validation-2026-10-20.md"
     }
   ]
 }

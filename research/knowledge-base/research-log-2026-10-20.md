@@ -74,3 +74,7 @@ No console observation is authorized by this log. Sony's [support instructions](
 ## PR #14 final-commit integration review
 
 The four commits after the PR #14 baseline (`eb7baa5`, `d506d3d`, `ec477fc`, and `8cf91e8`) were compared with this branch. Their distinct FreeBSD jail advisories/CVEs, source-version scope, source-linked question citations, three author-reported browser-stage claims, contradiction detail, researcher attribution, expanded search across findings/questions/repositories/sources/vulnerabilities/researchers, and corresponding tests/docs were integrated. Duplicate records were merged by stable IDs and duplicate evidence links were removed. PR #15-specific MewX/console/source-archive metadata and later upstream WSA records were retained.
+
+## Subsequent source-validation phase
+
+The later PC-only phase downloaded and hashed both complete Sony OSS archives, inspected version markers, and compared a named upstream JSC patch. The earlier HEAD-only limit above describes the preceding integration pass, not the current database state. See `notes/source-validation-2026-10-20.md`.

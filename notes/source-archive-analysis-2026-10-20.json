@@ -1,0 +1,29 @@
+{
+  "scope": "Official Sony OSS source ZIPs; no firmware or console tested",
+  "archives": {
+    "WebKit_1400.zip": {
+      "url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+      "bytes": 1637794253,
+      "sha256": "e645974579c88ec09c3036ce882fcaea2b0380f9ae4596b163811501d3be9db0",
+      "entries": 414182,
+      "webkit_source_version": "616.1.27.211.1",
+      "jsc_changelog_first_line": null,
+      "dfg_file_sha256": "68862b10f284063d4a44afeb0cc31f1f1cb27100018f6ebd6887369be89a32fe",
+      "dfg_has_transitive_incoming_call": false,
+      "dfg_has_direct_escape_epoch": true,
+      "dfg_has_potential_stack_escape_direct_epoch": true
+    },
+    "JSC-800.zip": {
+      "url": "https://secure.cdn.us.playstation.com/oss/PS5/webkit-javascriptcore/JSC-800.zip",
+      "bytes": 1369859528,
+      "sha256": "c30ca1a35b50556ea1cc18909259bf0f7fec078bf2227827cf21a2bbbf81e4ed",
+      "entries": 377362,
+      "webkit_source_version": null,
+      "jsc_changelog_first_line": "2022-03-25  Alan Coon  <alancoon@apple.com>",
+      "dfg_file_sha256": "b51539d17deef8b4863ac535d001df640bf268de3b2861d8833a9bc981e139db",
+      "dfg_has_transitive_incoming_call": false,
+      "dfg_has_direct_escape_epoch": true,
+      "dfg_has_potential_stack_escape_direct_epoch": false
+    }
+  }
+}
