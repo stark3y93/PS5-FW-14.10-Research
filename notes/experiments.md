@@ -24,4 +24,13 @@ python -m ps5fwlab entropy 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' --window 655
 
 The run sampled 256 distinct 65,536-byte windows, totaling 16,777,216 bytes (about 1.33% of the `PS5UPDATE1.PUP` entry). Observed entropy ranged from **7.996277** to **7.997969** bits per byte, with a mean of **7.997182**. No sampled window was below 7.9 bits per byte. The full local JSON is `derived/inner-pup-entropy-64k-256.json` and is ignored by Git.
 
+On 20 October 2026, a second read-only run after rechecking SHA-256
+`C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`
+reproduced all 256 saved offsets and entropy values exactly. The new run gave
+mean zero-byte fraction `0.0038799644` and mean printable-ASCII fraction
+`0.3711596131`. Its first and last window offsets were `1,024` and
+`1,261,342,269`. These are descriptive byte frequencies, not evidence of a
+specific encoding. The unsampled 98.67% may differ; even the sampled windows
+cannot distinguish encryption from compression or other high-entropy data.
+
 **Interpretation:** the sampled bytes are high entropy. This result does not show whether the inner PUP is encrypted, compressed, mixed, or usable by a given parser. The next useful offline input would be a documented header specification or a separately obtained, legitimately decrypted sample with its own provenance; this lab has neither.
