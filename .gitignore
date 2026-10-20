@@ -1,0 +1,12 @@
+# The source firmware and generated reports stay local.
+/artifacts/*
+!/artifacts/.gitkeep
+/derived/*
+!/derived/.gitkeep
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+*.egg-info/
+/build/
+/dist/
