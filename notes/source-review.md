@@ -21,3 +21,20 @@ This is a review of **source repositories**, not an execution or endorsement of 
 - [FreeBSD-SA-24:14.umtx](https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc) documents CVE-2024-43102 and its FreeBSD correction. It does **not** establish the patch state of Sony's FreeBSD-derived kernel on 14.10.
 
 None of these repositories was copied into `src/`, installed on a PS5, or used to decrypt the public package.
+
+## Upstream head check (20 October 2026)
+
+For each of the ten repositories in the table above, the default-branch head
+returned by GitHub's `repos/{owner}/{repo}/commits?per_page=1` API exactly
+matched the inspected commit ID in that row. Thus this check found **no newer
+default-branch commit** to review for those references. It does not inspect
+unmerged branches, unpublished work, deleted commits, or releases that point
+away from the default branch. Reproduce a single check with:
+
+```powershell
+gh api 'repos/ntfargo/Relapse-Exploit/commits?per_page=1' --jq '.[0].sha'
+```
+
+The result for that example was `dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0`.
+The linked source snapshot itself still gates supported firmware at 13.60;
+unchanged upstream heads add no evidence about 14.10 compatibility.

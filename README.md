@@ -31,6 +31,12 @@ The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0
 - [GitHub source, license, and commit review](notes/source-review.md)
 - [Three ranked PC-only experiments and the reproduced result](notes/experiments.md)
 
+The 20 October upstream check found that all ten reviewed default-branch heads
+still match their pinned commits. The [evidence ledger](notes/comparison-matrix.md)
+assigns confidence to source wording and local observations separately from
+untested 14.10 compatibility. The recommended next PC-only experiment is an
+independent, preregistered window survey of the verified local package.
+
 ## Scope and method
 
 1. Preserve `artifacts/PS5UPDATE-26.06-14.10.00.PUP` as the source artifact. Recompute its SHA-256 before relying on a later analysis result.
