@@ -40,6 +40,12 @@ class EntropyTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             self.sample(b"abc", offset=0, size=3, window_size=4, samples=1)
 
+    def test_rejects_requested_windows_with_duplicate_starts(self):
+        for size, window, count in ((16, 16, 2), (17, 16, 3)):
+            with self.subTest(size=size, count=count), self.assertRaisesRegex(ValueError, "distinct"):
+                self.sample(bytes(size), offset=0, size=size,
+                            window_size=window, samples=count)
+
 
 if __name__ == "__main__":
     unittest.main()

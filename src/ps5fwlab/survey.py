@@ -9,6 +9,8 @@ from pathlib import Path
 
 from .entropy import MAX_SAMPLES, MAX_WINDOW_SIZE
 
+MAX_SURVEY_SLOTS = 1_000_000
+
 
 def sha256_file(path: str | Path) -> str:
     """Hash a local file in bounded chunks without retaining its contents."""
@@ -55,6 +57,8 @@ def _candidate_slots(offset: int, size: int, window_size: int, prior_samples: in
         raise ValueError("sample count is outside the supported range")
 
     slot_count = size // window_size
+    if slot_count > MAX_SURVEY_SLOTS:
+        raise ValueError("survey slot frame exceeds the supported limit")
     span = size - window_size
     prior_positions = (
         [offset] if prior_samples == 1 else

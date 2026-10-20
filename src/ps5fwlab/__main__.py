@@ -101,6 +101,8 @@ def main(argv: list[str] | None = None) -> int:
                 "max_entropy": max(sample.entropy_bits_per_byte for sample in measured),
                 "uniform_slot_model_upper_fraction_95pct": zero_hit_upper_bound(len(measured)) if hits == 0 else None,
             })
+        if sha256_file(args.file) != digest:
+            raise ValueError("full-file SHA-256 changed during survey")
         payload = {
             "sha256": digest,
             "method": "SHA-256-seeded, aligned, disjoint windows excluding overlap with 256 prior evenly spaced windows",

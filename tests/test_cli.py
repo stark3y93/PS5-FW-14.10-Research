@@ -8,8 +8,10 @@ import struct
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from ps5fwlab.__main__ import main
+from ps5fwlab.entropy import sample_entropy_at_offsets
 
 
 class CLITests(unittest.TestCase):
@@ -76,6 +78,27 @@ class CLITests(unittest.TestCase):
             report = json.loads(output.getvalue())
             self.assertEqual(report["pre_entry_pattern"], "same")
             self.assertEqual(report["file_sizes"], "different")
+
+    def test_survey_rejects_file_changed_during_sampling(self):
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "sample.pup"
+            data = bytearray(4096)
+            struct.pack_into("<4s7I", data, 0, b"SLB2", 3, 0, 1, 8, 0, 0, 0)
+            struct.pack_into("<4I32s", data, 0x20, 2, 2048, 0, 0, b"PART.PUP")
+            path.write_bytes(data)
+            digest = hashlib.sha256(data).hexdigest()
+
+            def mutate_after_sampling(*args, **kwargs):
+                samples = sample_entropy_at_offsets(*args, **kwargs)
+                with path.open("r+b") as source:
+                    source.seek(3000)
+                    source.write(b"X")
+                return samples
+
+            with patch("ps5fwlab.__main__.sample_entropy_at_offsets", side_effect=mutate_after_sampling):
+                with self.assertRaisesRegex(ValueError, "changed during survey"):
+                    main(["survey", str(path), "--sha256", digest,
+                          "--window", "1", "--samples", "1"])
 
 
 if __name__ == "__main__":

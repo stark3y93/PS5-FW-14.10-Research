@@ -114,6 +114,6 @@ def map_neighborhood(path: str | Path, expected_sha256: str) -> dict:
                 for entry in metadata.entries
             ],
         },
-        "method": "half-open regions; complete small regions or first and last 512 bytes only",
+        "method": "half-open regions; complete coverage through 1024 bytes, otherwise first and last 512 bytes",
         "regions": regions,
     }
