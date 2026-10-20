@@ -15,3 +15,24 @@ Status is assessed for **this public 26.06-14.10.00 package and the reviewed sou
 | Mitigations | Sony only says 14.10 includes unspecified security fixes. | [Historical 4.03-focused writeup](https://github.com/ChendoChap/PS5-Webkit-Execution/blob/ad157f5c074818658ca842301837fab43e08dc00/.github/README.md) describes SMEP, SMAP, XOM, Clang CFI, and the hypervisor. | Which mitigations changed in 14.10 is unknown without version-specific trusted binaries or measurements. |
 
 **Meaning of the columns:** "confirmed" is an observation on the local artifact, source code itself, or a primary advisory about its own product. "Third-party claim" records what a project author says about PS5 behavior. "Untested" names what this lab has not established. A project's own compatibility statement is not an independent 14.10 test.
+
+## Evidence and confidence ledger (20 October 2026)
+
+Here *high* means confidence that the cited source or local observation says
+exactly what is reported; it does **not** upgrade a third-party compatibility
+claim into an independent test. *Medium* means an author-reported PS5 behavior
+without reproduction here. *Unknown* means no 14.10-specific measurement.
+
+| Question | Evidence and inspected commit | Confidence in stated evidence | 14.10 conclusion |
+|---|---|---|---|
+| Release and security note | [Sony release notes](https://www.playstation.com/en-gb/support/hardware/ps5/system-software-info/) list 26.06-14.10.00 and unspecified security fixes. | High for the published note; unknown for affected components. | No identified mitigation delta. |
+| Inner parser prerequisite | [PUP unpacker README at `005cccc`](https://github.com/zecoxao/ps5-pup-unpacker/blob/005cccc908142c35ab7280e7f9eef8d5203c21e0/README.md) requires previously decrypted input. | High for the documented prerequisite. | The local opaque PUP has not met that prerequisite. |
+| WebKit range | [PSFree `psfree.mjs` at `368d82a`](https://github.com/kmeps4/PSFree/blob/368d82aa40d3017c220757ce315761adb5f06678/psfree.mjs) labels PS5 `[1.00, 6.00)`. | High for source wording; medium for the author's affected-range claim. | Unknown; no 14.10 claim. |
+| UMTX range and chain | [UMTX README at `2cf6778`](https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md) asserts impact through 7.61, integrated support through 5.50, and a WebKit-chain gap from 6.00. [FreeBSD advisory](https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc) applies to FreeBSD, not Sony's build. | High for source wording and FreeBSD's own advisory; medium for PS5 claims. | Sony 14.10 kernel patch state unknown. |
+| Relapse browser gate | [`firmware.js` at `dd8e4e0`](https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/src/firmware.js) rejects versions outside a list ending at 13.60; [soniciso1 README at `112dbe5`](https://github.com/soniciso1/relapse/blob/112dbe5949e9c3de923bb0909289c58a9c082151/README.md) also ends at 13.60. | High for source gates; medium for author-reported exploit support. | No published support for 14.10 in these snapshots; bug status unknown. |
+| SDK prerequisites | [PS5SDK README at `a2e03a2`](https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/README.md) lists offsets through 4.51; [payload SDK README at `f5d40f0`](https://github.com/ps5-payload-dev/sdk/blob/f5d40f02770e9b0001dd9e18056eca70b3da8b40/README.md) assumes an already exploited console. | High for source wording. | Neither establishes a 14.10 loader, offsets, or decryption route. |
+
+The [source review](source-review.md) records licenses and commit dates. Its
+20 October head check found no new default-branch commits in the ten pinned
+repositories. This is a bounded source-state observation, not evidence that
+14.10 vulnerabilities are absent.
