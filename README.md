@@ -20,6 +20,7 @@ python -m unittest discover -s tests -v
 Get-FileHash -LiteralPath 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' -Algorithm SHA256
 python -m ps5fwlab inspect 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' > 'derived\slb2-metadata.json'
 python -m ps5fwlab entropy 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' --window 65536 --samples 256 > 'derived\inner-pup-entropy-64k-256.json'
+python -m ps5fwlab map 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' --sha256 C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6 > 'derived\wrapper-neighborhood-14.10.json'
 ```
 
 The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`. A fresh clone must acquire the official package separately and verify its identity before running package-specific commands. `inspect` validates declared wrapper ranges without extraction. `entropy` samples only inside validated entries; its statistics cannot identify encryption or executable content.
@@ -31,6 +32,7 @@ The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0
 - [GitHub source, license, and commit review](notes/source-review.md)
 - [Three ranked PC-only experiments and the reproduced result](notes/experiments.md)
 - [Independent hash-verified window survey and its limits](notes/independent-survey-14.10.md)
+- [Hash-verified SLB2 boundary neighborhood map](notes/wrapper-neighborhood-14.10.md)
 
 ## Scope and method
 
