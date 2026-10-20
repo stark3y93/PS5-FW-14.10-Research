@@ -69,6 +69,28 @@ class ResearchTests(unittest.TestCase):
         self.assertEqual(value["uint32_bytes"], 100_096)
         self.assertTrue(value["wrapped"])
 
+    def test_checked_size_model_enforces_u32_allocation_boundary(self):
+        self.assertEqual(research.checked_allocation_size(38_347_922, 112), 4_294_967_264)
+        with self.assertRaises(OverflowError):
+            research.checked_allocation_size(38_347_923, 112)
+        with self.assertRaises(ValueError):
+            research.checked_allocation_size(-1, 112)
+
+    def test_bounds_model_rejects_end_and_negative_indices(self):
+        self.assertTrue(research.index_in_bounds(0, 1))
+        self.assertFalse(research.index_in_bounds(1, 1))
+        self.assertFalse(research.index_in_bounds(-1, 1))
+
+    def test_source_comparison_records_hashes_and_changed_lines(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            before, after = Path(tmp) / "before.cpp", Path(tmp) / "after.cpp"
+            before.write_text("for (auto client : clients) callback(client);\n", encoding="utf-8")
+            after.write_text("for (auto client : clients) if (clients.contains(client)) callback(client);\n", encoding="utf-8")
+            result = research.compare_source_files(before, after)
+            self.assertTrue(result["before_sha256"])
+            self.assertEqual(result["removed_lines"], ["for (auto client : clients) callback(client);"])
+            self.assertIn("clients.contains", result["added_lines"][0])
+
     def test_distinct_lettered_runs_do_not_mask_incomplete_call(self):
         events = [
             {"tag": "V150G-CALLING", "body": "", "file": "log", "line": 1},

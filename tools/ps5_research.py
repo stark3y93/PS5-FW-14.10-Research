@@ -10,6 +10,7 @@ import hashlib
 import json
 import re
 import sys
+import difflib
 from dataclasses import asdict
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -145,6 +146,36 @@ def overflow_arithmetic(count=38_348_816, stride=112):
             "uint32_bytes": total & 0xffffffff, "wrapped": total > 0xffffffff}
 
 
+def checked_allocation_size(count, stride, maximum=0xffffffff):
+    """Synthetic checked-size model; it does not allocate or model target code."""
+    if count < 0 or stride < 0:
+        raise ValueError("count and stride must be non-negative")
+    total = count * stride
+    if total > maximum:
+        raise OverflowError("allocation size exceeds configured integer limit")
+    return total
+
+
+def index_in_bounds(index, length):
+    """Model the safe 0 <= index < length predicate used in offline fixtures."""
+    return 0 <= index < length
+
+
+def compare_source_files(before, after):
+    """Return a reproducible text diff summary for caller-supplied source snapshots."""
+    before, after = Path(before), Path(after)
+    left = read_lines(before)
+    right = read_lines(after)
+    diff = list(difflib.unified_diff(left, right, fromfile=before.name,
+                                     tofile=after.name, lineterm=""))
+    return {"before": before.name, "after": after.name,
+            "before_sha256": hashlib.sha256(before.read_bytes()).hexdigest(),
+            "after_sha256": hashlib.sha256(after.read_bytes()).hexdigest(),
+            "removed_lines": [line[1:] for line in diff if line.startswith("-") and not line.startswith("---")],
+            "added_lines": [line[1:] for line in diff if line.startswith("+") and not line.startswith("+++")],
+            "unified_diff": "\n".join(diff)}
+
+
 def scan_source(root):
     hits = []
     for path in files(root):
@@ -169,7 +200,7 @@ def firmware_metadata(path, checksum=False):
         if checksum:
             stream.seek(0)
             digest = hashlib.file_digest(stream, "sha256").hexdigest()
-    result = {"present": True, "file": str(path), "bytes": path.stat().st_size,
+    result = {"present": True, "file": path.name, "bytes": path.stat().st_size,
             "container_magic": header[:4].decode("ascii", errors="replace"),
             "header_hex": header[:32].hex(),
             "visible_marker": "PS5UPDATE1.PUP" if b"PS5UPDATE1.PUP" in header else None,
@@ -189,7 +220,7 @@ def firmware_metadata(path, checksum=False):
 def analyze(root, firmware=None, checksum=False):
     events = parse_logs(root)
     claims = claim_lines(root)
-    return {"root": str(root.resolve()), "inventory": inventory(root), "events": events,
+    return {"root": root.resolve().name, "inventory": inventory(root), "events": events,
             "event_findings": evaluate_events(events), "claims": claims,
             "contradictions": detect_contradictions(root), "static_hits": scan_source(root),
             "firmware": firmware_metadata(firmware, checksum),
@@ -199,7 +230,7 @@ def analyze(root, firmware=None, checksum=False):
                             "Static pattern matches do not prove memory corruption or reachability."]}
 
 
-def render(report):
+def render(report, external=False):
     counts = Counter(item["type"] for item in report["inventory"])
     v480 = next((e for e in report["events"] if e["tag"] == "V480-post-compile-HITS"), None)
     css = next((e for e in report["claims"] if e["file"] == "docs/bugs/cssfontface-uaf.md"), None)
@@ -207,7 +238,8 @@ def render(report):
     kernel = next((e for e in report["claims"] if e["file"] == "docs/KERNEL_AUDIT.md"), None)
     def cite(item):
         return f"`{item['file']}:{item['line']}`" if item else "no local citation"
-    lines = ["# Offline PS5 research evidence report", "", f"Root: `{report['root']}`", "",
+    root_label = "<evidence checkout>" if external else "<repository root>"
+    lines = ["# Offline PS5 research evidence report", "", f"Root: `{root_label}`", "",
              f"Inventoried {len(report['inventory'])} files; parsed {len(report['events'])} log events; "
              f"indexed {len(report['claims'])} claim lines.", "",
              "## Inventory", "", ", ".join(f"{k}: {v}" for k, v in sorted(counts.items())), "",
@@ -249,17 +281,31 @@ def main(argv=None):
     parser.add_argument("--sha256", action="store_true", help="hash the entire PUP")
     parser.add_argument("--format", choices=("markdown", "json"), default="markdown")
     parser.add_argument("--output", type=Path, help="write new report; refuses to overwrite")
+    parser.add_argument("--compare", nargs=2, metavar=("BEFORE", "AFTER"),
+                        help="compare two caller-supplied text source snapshots and report hashes/diff")
     args = parser.parse_args(argv)
     if not args.root.is_dir():
         parser.error("--root must be a directory")
     if args.evidence_root and not args.evidence_root.is_dir():
         parser.error("--evidence-root must be a directory")
+    if args.compare:
+        before, after = map(Path, args.compare)
+        if not before.is_file() or not after.is_file():
+            parser.error("--compare inputs must be existing files")
+        payload = json.dumps(compare_source_files(before, after), indent=2) + "\n"
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("x", encoding="utf-8") as stream:
+                stream.write(payload)
+        else:
+            print(payload, end="")
+        return 0
     report = analyze(args.root, args.firmware, args.sha256)
     if args.evidence_root:
         report["external_evidence"] = analyze(args.evidence_root)
     payload = json.dumps(report, indent=2) + "\n" if args.format == "json" else render(report)
     if args.evidence_root and args.format == "markdown":
-        payload += "\n## Separate browser evidence checkout\n\n" + render(report["external_evidence"])
+        payload += "\n## Separate browser evidence checkout\n\n" + render(report["external_evidence"], external=True)
     if args.output:
         args.output.parent.mkdir(parents=True, exist_ok=True)
         with args.output.open("x", encoding="utf-8") as stream:

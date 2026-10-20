@@ -2,7 +2,7 @@
 
 This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. The tests use only synthetic containers.
 
-The [20 October 2026 Gezine review](reports/GEZINE_1410_RESEARCH.md), [vulnerability matrix](reports/VULNERABILITY_MATRIX.md), [false-positive audit](reports/FALSE_POSITIVES.md), and [next offline steps](reports/NEXT_RESEARCH_STEPS.md) distinguish public demonstrations, upstream CVEs and findings on this actual package. Browser probe logs reside in a separate desktop checkout with a different Git remote; the new audit command can inspect both read-only.
+The [Gezine review](reports/GEZINE_1410_RESEARCH.md), [vulnerability matrix](reports/VULNERABILITY_MATRIX.md), [false-positive audit](reports/FALSE_POSITIVES.md), [patch comparisons](reports/UPSTREAM_PATCH_COMPARISON.md), [firmware compatibility](reports/FIRMWARE_COMPATIBILITY.md), and [research progress](reports/RESEARCH_PROGRESS.md) distinguish public demonstrations, upstream advisories and evidence on this package. Browser logs can be inspected read-only from a separate checkout.
 
 ## What it does
 
@@ -33,11 +33,19 @@ The integrated suite includes deterministic parser mutations, survey and compara
 Run from this checkout in Windows PowerShell with Python 3.12. No installation or console connection is needed:
 
 ```powershell
-python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --sha256 --evidence-root 'C:\Users\josep\Desktop\PS5-14.10-Jailbreak-Research' --output derived\evidence-audit.md
-python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --evidence-root 'C:\Users\josep\Desktop\PS5-14.10-Jailbreak-Research' --format json --output derived\evidence-audit.json
+python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --sha256 --evidence-root 'C:\path\to\browser-research-checkout' --output derived\evidence-audit.md
+python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --evidence-root 'C:\path\to\browser-research-checkout' --format json --output derived\evidence-audit.json
 ```
 
-The tool inventories both checkouts, parses saved beacon logs, indexes claims and static code patterns with file and line, flags the V480 contradiction and incomplete test endings, reproduces a synthetic 32-bit arithmetic wrap, and calls this repository's bounded SLB2 parser for PUP metadata. It never decrypts the inner PUP, executes probes, or labels a pattern match as a vulnerability. `--output` refuses to overwrite an existing result; choose a new path on repeat runs. See the [committed sample report](reports/OFFLINE_ANALYSIS.md).
+The tool inventories both checkouts, parses saved beacon logs, indexes claims and static code patterns with file and line, flags the V480 contradiction and incomplete test endings, compares caller-supplied source snapshots, models checked integer boundaries, and calls this repository's bounded SLB2 parser for PUP metadata. It never decrypts the inner PUP, executes probes, or labels a pattern match as a vulnerability. `--output` refuses to overwrite an existing result; choose a new path on repeat runs. See the [committed sample report](reports/OFFLINE_ANALYSIS.md).
+
+Compare two local text snapshots, retaining hashes and a unified diff:
+
+```powershell
+python -S tools/ps5_research.py --compare .\source-before.cpp .\source-after.cpp --output derived\source-diff.json
+```
+
+The arithmetic and bounds helpers are synthetic models; they do not allocate large buffers or execute target code.
 
 ## Reproduce the 14.10 observations locally
 

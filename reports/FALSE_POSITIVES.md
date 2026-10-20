@@ -1,6 +1,6 @@
 # False positives and unsupported conclusions
 
-All `analysis/`, `docs/`, `probes/`, and `results/` citations below refer to the separate desktop checkout `C:\Users\josep\Desktop\PS5-14.10-Jailbreak-Research`, whose Git remote differs from this repository. Its original logs were read, not copied or altered here.
+All `analysis/`, `docs/`, `probes/`, and `results/` citations below refer to the separate user-supplied browser research checkout, whose Git remote differs from this repository. Its original logs were read, not copied or altered here.
 
 ## Disproven string corruption
 

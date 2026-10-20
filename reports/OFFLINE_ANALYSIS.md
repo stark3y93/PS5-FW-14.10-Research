@@ -1,12 +1,12 @@
 # Offline PS5 research evidence report
 
-Root: `E:\PS5-FW-14.10-Research`
+Root: `<repository root>`
 
-Inventoried 40 files; parsed 0 log events; indexed 41 claim lines.
+Inventoried 48 files; parsed 0 log events; indexed 81 claim lines.
 
 ## Inventory
 
-(none): 5, .md: 18, .py: 15, .toml: 1, .yml: 1
+(none): 5, .json: 1, .md: 25, .py: 15, .toml: 1, .yml: 1
 
 ## Ranked evidence
 
@@ -17,6 +17,7 @@ Inventoried 40 files; parsed 0 log events; indexed 41 claim lines.
 
 ## Contradictions
 
+- 81400 string length described as corruption despite corrected V480 result: `derived/combined-audit-20261020.md:102` - 81400 string length described as corruption despite corrected V480 result: `analysis/struct-layouts.md:16` JSString.length() reads from the StringImpl pointed to by m_fiber, not from a field in JSString itself. The `.length = 81400` resul; `notes/1410-vulnerability-evidence-priorities-2026-10-20.md:18` | V480 JavaScript string corruption | Corrected browser beacons: `0-of-14` hits; expected character checks | **Disproven for the corrected test**, not a usable primitive | None for the original claim; archive correction and avoid reassertio
 
 ## Nondefinitive log endings
 
@@ -33,7 +34,7 @@ These are source-text matches, not identified vulnerabilities.
 
 {
   "present": true,
-  "file": "D:\\PS5UPDATE.PUP",
+  "file": "PS5UPDATE.PUP",
   "bytes": 1261408256,
   "container_magic": "SLB2",
   "header_hex": "534c4232030000000000010001000000c8972500000000000000000000000000",
@@ -82,7 +83,7 @@ These are source-text matches, not identified vulnerabilities.
 
 # Offline PS5 research evidence report
 
-Root: `C:\Users\josep\Desktop\PS5-14.10-Jailbreak-Research`
+Root: `<evidence checkout>`
 
 Inventoried 81 files; parsed 299 log events; indexed 155 claim lines.
 
