@@ -21,20 +21,25 @@ Snapshot: 2026-10-20. Inspected repositories are pinned to the commits listed be
 | [PS5Dev/Byepervisor](https://github.com/PS5Dev/Byepervisor/tree/57204cbd7bd26ed4623634d52b0f60f40d630087) | `57204cbd7bd26ed4623634d52b0f60f40d630087` | Unlicense | fully extracted at README/architecture-claim level |
 | [PS5Dev/Byepervisor-Reborn](https://github.com/PS5Dev/Byepervisor-Reborn/tree/ea04f7132b837087f552c57261cb800481a3a910) | `ea04f7132b837087f552c57261cb800481a3a910` | Not asserted in this ledger; license file requires recheck before code reuse | partially extracted; README compatibility claims reviewed |
 | [Cryptogenic/PS5-IPV6-Kernel-Exploit](https://github.com/Cryptogenic/PS5-IPV6-Kernel-Exploit/tree/4d4c5b25eb74ba47ca136b7827a8cffabc522736) | `4d4c5b25eb74ba47ca136b7827a8cffabc522736` | License status not rechecked in current source index | partially extracted; README version claims reviewed |
+| [MewX/ps5-official-firmware-list](https://github.com/MewX/ps5-official-firmware-list/tree/83b0b510580bdbf3a2b77c05ccc7566e887be60d) | `83b0b510580bdbf3a2b77c05ccc7566e887be60d` | Not verified; no reuse permission assumed | two pinned XML metadata rows reviewed; not Sony firmware attestation |
 
 ## Extraction state
 
 - Fully extracted for the bounded claim noted in `coverage`: 6 repository records.
-- Partially extracted by README, visible source paths, compatibility tables, or license metadata: 11 repository records.
+- Partially extracted by README, visible source paths, compatibility tables, or license metadata: 12 repository records.
 - Not studied in this snapshot: exhaustive file-by-file review and execution/testing of third-party exploit projects; no third-party payloads were run.
 - Each repository record preserves claimed firmware range and the source evidence categories. A reported/tested range is not transferred to other firmware versions.
 
 ## Existing knowledge baseline
 
-PR #13 source index commit `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2` indexed 7 repositories and classified 18 evidence URLs. The present normalized catalog retains those seven pinned records, adds 10 repository records from previous source-review notes, and represents 20 first-class technical/vendor documents. Three useful source records are specifically primary/vendor context: Sony release and OSS listings, and vendor/upstream advisories. None provides exact Sony component-to-build vulnerability mapping for 14.10.
+PR #13 source index commit `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2` indexed 7 repositories and classified 18 evidence URLs. The present normalized catalog retains those seven pinned records, adds 11 repository records from previous source-review notes and the historical firmware index, and represents 23 first-class technical/vendor documents. These include Sony release/source listings and version-viewing instructions, and vendor/upstream advisories. None provides exact Sony component-to-build vulnerability mapping for 14.10.
 
-The additional 10 repository records are primarily better-indexing of older work already in project notes; they should not be described as ten new technical discoveries. The two public 14.10 community repositories add author-reported device research claims, but the catalog treats them as unverified rather than independent evidence.
+The additional 11 repository records are primarily better-indexing of older work already in project notes, plus the MewX historical update-list metadata; they should not be described as eleven new technical discoveries. The two public 14.10 community repositories add author-reported device research claims, but the catalog treats them as unverified rather than independent evidence.
 
-## Active branch preservation
+## Unified integration status
 
-The research integration was created from `origin/main` in branch `research/max-intelligence-2026-10-20` and a separate worktree. Existing research, audit, coordination, CI and agent worktrees/branches were inspected with `git branch -a -vv` and `git worktree list`; none was checked out, rebased, edited, deleted, or merged as part of this work. PR #13 was inspected read-only at pinned head `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2`.
+Branch `research/unified-evidence-2026-10-20` starts from `origin/main` (`46ebfc78eec7d863af1d73003681b1dc0fc44944`) and merges PR #13 head `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2`, `research/vulnerability-lab` (`b4f7b456789c712fde8aa345879d7139981fb8c8`), and `research/max-intelligence-2026-10-20` (`c25f02c3ad9147400dd23184c830d1b70d14335e`) using merge commits. This preserves the contributing commit histories. The publication-audit worktree remains separate; no research contributor worktree was edited or rebased. Merge commits: `5608dcd`, `240ac96`, and `a7051bd`.
+
+The integration adds no firmware archive, exploit payload, credential, or copied third-party implementation. The catalogue contains URLs, pinned public repository commit IDs, source/license status, scope-labelled findings and generated database/dashboard instructions. Sony's official WebKit and JavaScriptCore pages link to version labels `WebKit_1400` (14.00 onward) and `JSC-800` (8.00 onward). On 2026-10-20, HTTP HEAD returned archive lengths of 1,637,794,253 and 1,369,859,528 bytes, respectively, plus Last-Modified dates and ETags recorded in `catalog.json`. ETags are validators, not hashes; the archives were not downloaded or inspected because of their size. Exact 14.10 source/build correspondence remains unknown.
+
+Current WebKitGTK WSA-2026-0005 and WSA-2026-0006 were added as upstream-only source records. WSA-2026-0006 (2026-09-29) lists CVEs across WebKitGTK/WPE and bundled components; each entry's product/version scope must be read individually. These advisories do not establish applicability to PlayStation's fork. CVE-2026-43715 is confirmed in WSA-2026-0004/Red Hat as a WebKitGTK use-after-free with upstream affected-version scope, but the cited 14.10 CSSFontFace claim's equivalence and Sony applicability remain unverified. WebKit Bugzilla 313577 returned access denied during this check, so no source patch/commit was independently mapped from that bug.
