@@ -15,3 +15,6 @@ ps5fwlab = "ps5fwlab.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]
+
+[tool.setuptools.package-data]
+ps5fwlab = ["webkit_reference_catalog.json"]

@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "scope": "Audited source-file pairs; not firmware mappings. SHA-256 pins identify bytes; no developer signature validated.",
+  "references": [
+    {
+      "revision": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "label": "2023 source baseline matching sampled Sony WebKit_1400 files",
+      "source_url": "https://github.com/WebKit/WebKit/commit/0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "files": {
+        "Source/WebCore/css/CSSFontFace.cpp": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+        "Source/WebCore/css/FontFace.cpp": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a"
+      }
+    },
+    {
+      "revision": "a7e4fdb9545042aef190cd469efb633e442fb43c",
+      "label": "main parent of client-membership guard; backing pin already present",
+      "source_url": "https://github.com/WebKit/WebKit/commit/a7e4fdb9545042aef190cd469efb633e442fb43c",
+      "files": {
+        "Source/WebCore/css/CSSFontFace.cpp": "3e0d7230b75ebbcc07b83d2712065270c8671ce84b5050bee3290150cfda4e9f",
+        "Source/WebCore/css/FontFace.cpp": "ad69d00081adce004e367fe2cb136409b380870e820b734af6510491fa68d522"
+      }
+    },
+    {
+      "revision": "5aedb82710ba578f61501106e78f6b25b7f7a558",
+      "label": "main client-membership guard",
+      "source_url": "https://github.com/WebKit/WebKit/commit/5aedb82710ba578f61501106e78f6b25b7f7a558",
+      "files": {
+        "Source/WebCore/css/CSSFontFace.cpp": "7efea7ee2d47d686a068f7a5de6599acd0c1fb5574062b53bc4d802110f55c01",
+        "Source/WebCore/css/FontFace.cpp": "ad69d00081adce004e367fe2cb136409b380870e820b734af6510491fa68d522"
+      }
+    },
+    {
+      "revision": "d6dc8ef95ed7fb13ec3c1049520996408a174e5e",
+      "label": "GLib 2.52 parent of lifetime backport",
+      "source_url": "https://github.com/WebKit/WebKit/commit/d6dc8ef95ed7fb13ec3c1049520996408a174e5e",
+      "files": {
+        "Source/WebCore/css/CSSFontFace.cpp": "8738f0216bfeaf85080b33d0c87d74e04d089769ab45b6faa7ab865c51c8bdb6",
+        "Source/WebCore/css/FontFace.cpp": "2cae03ab94ef238ead639f860f2dcb31a18d8ae474fddf3b839c564d5ca860b2"
+      }
+    },
+    {
+      "revision": "f3d61dae1b61dfbd2fc0b01196b63f8769bca77e",
+      "label": "GLib 2.52 lifetime security backport only",
+      "source_url": "https://github.com/WebKit/WebKit/commit/f3d61dae1b61dfbd2fc0b01196b63f8769bca77e",
+      "files": {
+        "Source/WebCore/css/CSSFontFace.cpp": "8738f0216bfeaf85080b33d0c87d74e04d089769ab45b6faa7ab865c51c8bdb6",
+        "Source/WebCore/css/FontFace.cpp": "09b79f210b4a941c8f01d5532896c16337ad38d9aef091ed7d8c31805b112e7e"
+      }
+    },
+    {
+      "revision": "f1fff08a99d77bac49c2500ece3fdcfac06c8f1c",
+      "label": "GLib 2.52 membership-guard follow-up",
+      "source_url": "https://github.com/WebKit/WebKit/commit/f1fff08a99d77bac49c2500ece3fdcfac06c8f1c",
+      "files": {
+        "Source/WebCore/css/CSSFontFace.cpp": "40254433d154023fd291536a2090abec67abe4aa37f0d59130509834210f2246",
+        "Source/WebCore/css/FontFace.cpp": "09b79f210b4a941c8f01d5532896c16337ad38d9aef091ed7d8c31805b112e7e"
+      }
+    }
+  ]
+}

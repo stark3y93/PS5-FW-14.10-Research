@@ -1,0 +1,143 @@
+{
+  "scope": "source comparison only",
+  "before": {
+    "classification": "VULNERABLE IMPLEMENTATION \u2014 VERIFIED",
+    "scope": "source snapshot only",
+    "ps5_1410_classification": "INSUFFICIENT EVIDENCE",
+    "reasons": [
+      "No exact PS5 14.10 executable/build correspondence is validated by this source-only tool."
+    ],
+    "files": [
+      {
+        "path": "Source/WebCore/css/CSSFontFace.cpp",
+        "sha256": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+        "expected_sha256": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+        "hash_verified": true,
+        "bytes": 28259,
+        "origin_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebCore/css/CSSFontFace.cpp"
+      },
+      {
+        "path": "Source/WebCore/css/FontFace.cpp",
+        "sha256": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a",
+        "expected_sha256": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a",
+        "hash_verified": true,
+        "bytes": 13370,
+        "origin_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebCore/css/FontFace.cpp"
+      }
+    ],
+    "functions": {
+      "client_iteration": {
+        "file": "Source/WebCore/css/CSSFontFace.cpp",
+        "state": "unguarded",
+        "line": 55,
+        "body_sha256": "9eb08c20f2ef1fba12de3c90d27731de4d3862cf6edbae62e7ed55a6f7a5b5fe"
+      },
+      "backing_load": {
+        "file": "Source/WebCore/css/FontFace.cpp",
+        "state": "unprotected",
+        "line": 358,
+        "body_sha256": "7c870098c7b55f14b9888acff6b3507354c5a2a2dedcd20636f2fb133bc5e6ff"
+      }
+    },
+    "reference_matches": [
+      {
+        "revision": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+        "label": "2023 source baseline matching sampled Sony WebKit_1400 files"
+      }
+    ],
+    "provenance": {
+      "kind": "upstream-source",
+      "revision": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "source_url": "https://github.com/WebKit/WebKit/commit/0e722583a4d695c7b25f384c61fbf5b59b4c3146"
+    },
+    "label": "2023 source baseline matching sampled Sony WebKit_1400 files",
+    "manifest_sha256": "cca6ae493ce488748a5b368d5637c0ebda297229005ae9228739312bc79c8056"
+  },
+  "after": {
+    "classification": "PATCHED \u2014 VERIFIED",
+    "scope": "source snapshot only",
+    "ps5_1410_classification": "INSUFFICIENT EVIDENCE",
+    "reasons": [
+      "No exact PS5 14.10 executable/build correspondence is validated by this source-only tool."
+    ],
+    "files": [
+      {
+        "path": "Source/WebCore/css/CSSFontFace.cpp",
+        "sha256": "7efea7ee2d47d686a068f7a5de6599acd0c1fb5574062b53bc4d802110f55c01",
+        "expected_sha256": "7efea7ee2d47d686a068f7a5de6599acd0c1fb5574062b53bc4d802110f55c01",
+        "hash_verified": true,
+        "bytes": 28112,
+        "origin_url": "https://raw.githubusercontent.com/WebKit/WebKit/5aedb82710ba578f61501106e78f6b25b7f7a558/Source/WebCore/css/CSSFontFace.cpp"
+      },
+      {
+        "path": "Source/WebCore/css/FontFace.cpp",
+        "sha256": "ad69d00081adce004e367fe2cb136409b380870e820b734af6510491fa68d522",
+        "expected_sha256": "ad69d00081adce004e367fe2cb136409b380870e820b734af6510491fa68d522",
+        "hash_verified": true,
+        "bytes": 13815,
+        "origin_url": "https://raw.githubusercontent.com/WebKit/WebKit/5aedb82710ba578f61501106e78f6b25b7f7a558/Source/WebCore/css/FontFace.cpp"
+      }
+    ],
+    "functions": {
+      "client_iteration": {
+        "file": "Source/WebCore/css/CSSFontFace.cpp",
+        "state": "guarded",
+        "line": 63,
+        "body_sha256": "f8551e563ace8b68125e1a31f18acf115d66acfeb7e55aab42076baa6b76a640"
+      },
+      "backing_load": {
+        "file": "Source/WebCore/css/FontFace.cpp",
+        "state": "pinned",
+        "line": 363,
+        "body_sha256": "4cc985eb36a7a9c192dad3833d11f41fdd97e0cbe8325549f8e7532795e4512f"
+      }
+    },
+    "reference_matches": [
+      {
+        "revision": "5aedb82710ba578f61501106e78f6b25b7f7a558",
+        "label": "main client-membership guard"
+      }
+    ],
+    "provenance": {
+      "kind": "upstream-source",
+      "revision": "5aedb82710ba578f61501106e78f6b25b7f7a558",
+      "acquired_at_utc": "2026-10-20T16:28:18.391545+00:00",
+      "source_url": "https://github.com/WebKit/WebKit/commit/5aedb82710ba578f61501106e78f6b25b7f7a558"
+    },
+    "label": "main client-membership guard",
+    "manifest_sha256": "f692d8426fe2aadb49f7184acc50e359c9bd9d9f18b01c9ec5324db8eab5da6a"
+  },
+  "function_changes": [
+    {
+      "function": "backing_load",
+      "before": {
+        "file": "Source/WebCore/css/FontFace.cpp",
+        "state": "unprotected",
+        "line": 358,
+        "body_sha256": "7c870098c7b55f14b9888acff6b3507354c5a2a2dedcd20636f2fb133bc5e6ff"
+      },
+      "after": {
+        "file": "Source/WebCore/css/FontFace.cpp",
+        "state": "pinned",
+        "line": 363,
+        "body_sha256": "4cc985eb36a7a9c192dad3833d11f41fdd97e0cbe8325549f8e7532795e4512f"
+      }
+    },
+    {
+      "function": "client_iteration",
+      "before": {
+        "file": "Source/WebCore/css/CSSFontFace.cpp",
+        "state": "unguarded",
+        "line": 55,
+        "body_sha256": "9eb08c20f2ef1fba12de3c90d27731de4d3862cf6edbae62e7ed55a6f7a5b5fe"
+      },
+      "after": {
+        "file": "Source/WebCore/css/CSSFontFace.cpp",
+        "state": "guarded",
+        "line": 63,
+        "body_sha256": "f8551e563ace8b68125e1a31f18acf115d66acfeb7e55aab42076baa6b76a640"
+      }
+    }
+  ],
+  "ps5_1410_classification": "INSUFFICIENT EVIDENCE"
+}
