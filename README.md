@@ -46,6 +46,22 @@ The `entropy` windows can overlap; they are descriptive measurements, not indepe
 
 `compare` accepts repeated `--package SAMPLE_ID FILE SHA256 EXPECTED_SIZE` arguments. Sample IDs are labels, **not verified firmware versions**. Cross-version interpretation requires independent Sony-controlled version-to-file evidence. Only 14.10 currently meets this project's provenance gate: [historical 14.00 and 13.60 candidate audit](notes/historical-sony-source-audit-2026-10-20.md). No historical packages were downloaded for this repository.
 
+## Run against an existing firmware file on Windows
+
+If the update package is already stored at `D:\PS5UPDATE.PUP`, there is no need to copy it into the repository. Open **Command Prompt (CMD)** in the repository directory and run:
+
+```cmd
+cd /d D:\Workspace\PS5-FW-14.10-Research
+set PYTHONPATH=src
+certutil -hashfile "D:\PS5UPDATE.PUP" SHA256
+python -S -m ps5fwlab inspect "D:\PS5UPDATE.PUP" > "derived\slb2-metadata.json"
+python -S -m ps5fwlab survey "D:\PS5UPDATE.PUP" --sha256 C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6 --window 65536 --samples 256 > "derived\independent-survey-14.10.json"
+```
+
+Check that the SHA-256 output equals the expected digest **before** using the results as 14.10 evidence. A mismatch means stop and investigate the file identity. The commands above do not decrypt or extract the inner firmware. The survey can take time because it hashes the full package before and after sampling.
+
+Do not run CMD commands at the Python `>>>` prompt. Do not commit the original PUP, extracted firmware, credentials, or locally generated scan reports. Check `git status --short` and `git diff --cached --name-only` before any push; ignore rules do not remove files already tracked in Git history.
+
 ## Findings and limits
 
 - [14.10 wrapper observations](notes/wrapper-neighborhood-14.10.md) include two 32-byte nonzero runs in a fully measured 512-byte pre-entry block. Their recurrence across versions is unknown.
