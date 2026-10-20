@@ -7,6 +7,7 @@ The isolated branch `research/unified-evidence-2026-10-20` is based on `origin/m
 - PR #13 head `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2` — merge commit `5608dcd`.
 - `research/vulnerability-lab` head `b4f7b456789c712fde8aa345879d7139981fb8c8` — merge commit `240ac96`.
 - `research/max-intelligence-2026-10-20` head `c25f02c3ad9147400dd23184c830d1b70d14335e` — merge commit `a7051bd`.
+- PR #14 final head `8cf91e8`, including later commits `eb7baa5`, `d506d3d`, `ec477fc`, and `8cf91e8` — merge commit `1bc71d7`.
 
 The merge commits preserve source branch ancestry. The publication audit remains separate. Other active research worktrees were not edited, checked out, rebased, or reset.
 
