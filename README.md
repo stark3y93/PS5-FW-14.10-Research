@@ -1,6 +1,8 @@
 # PS5 update wrapper research toolkit
 
-This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. The tests use only synthetic containers.
+This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. Tests use synthetic containers and public-source metadata only.
+
+The source-linked SQLite research index and local dashboard are documented in [research/knowledge-base/README.md](research/knowledge-base/README.md). Build them from the repository root with `python -S -m ps5knowledge build-db` and `python -S -m ps5knowledge dashboard` after setting `PYTHONPATH=src`.
 
 ## What it does
 
@@ -24,7 +26,7 @@ python -S -m unittest discover -s tests -v
 ```
 
 The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
-The integrated suite currently has 49 tests, including deterministic parser mutations and the survey and comparator regressions. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
+The integrated suite currently has 57 tests, including deterministic parser mutations, survey and comparator regressions, mapper mutation detection, evidence-ledger validation, and knowledge-base build/search/dashboard checks. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions has not started jobs in the observed runs; local test output is the available execution evidence.
 
 ## Reproduce the 14.10 observations locally
 
@@ -48,6 +50,8 @@ The `entropy` windows can overlap; they are descriptive measurements, not indepe
 
 ## Findings and limits
 
+- [Public research index](research/README.md) pins upstream sources, classifies evidence and links to ranked open questions.
+- [PS5 vulnerability research ledger](research/vulnerability-lab/README.md) summarizes public-source findings, their confidence, the 14.10 evidence gap, and safe PC-only follow-up.
 - [14.10 wrapper observations](notes/wrapper-neighborhood-14.10.md) include two 32-byte nonzero runs in a fully measured 512-byte pre-entry block. Their recurrence across versions is unknown.
 - [Independent 14.10 byte-window survey](notes/independent-survey-14.10.md) records offsets, results and statistical limits.
 - [Cross-version comparison](notes/cross-version-comparison-2026-10-20.md) has synthetic validation but no provenance-verified historical input.

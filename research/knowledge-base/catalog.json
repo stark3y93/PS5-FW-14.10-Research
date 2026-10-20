@@ -1,0 +1,2505 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-20",
+  "baseline_reference": {
+    "pull_request": 13,
+    "head_commit": "da5114413e3cadcc34dcebcc4c1b8c9ea93073c2",
+    "indexed_repositories": 7,
+    "classified_evidence_links": 18,
+    "review_note": "PR 13 source index corrected after independent review. Its survey validation change is not included here; this branch starts from main and does not modify that active branch."
+  },
+  "researchers": [
+    {
+      "id": "org-ps5dev",
+      "name": "PS5Dev",
+      "kind": "GitHub organization",
+      "url": "https://github.com/PS5Dev",
+      "attribution": "Repository owner/maintainer identity only; individual vulnerability authorship is not inferred."
+    },
+    {
+      "id": "user-ntfargo",
+      "name": "ntfargo",
+      "kind": "GitHub account",
+      "url": "https://github.com/ntfargo",
+      "attribution": "Project account; individual authorship is attributed only where a pinned source says so."
+    },
+    {
+      "id": "user-kmeps4",
+      "name": "kmeps4",
+      "kind": "GitHub account",
+      "url": "https://github.com/kmeps4",
+      "attribution": "Repository owner, not proof of sole authorship."
+    },
+    {
+      "id": "user-zecoxao",
+      "name": "zecoxao",
+      "kind": "GitHub account",
+      "url": "https://github.com/zecoxao",
+      "attribution": "Repository owner, not proof of sole authorship."
+    },
+    {
+      "id": "user-chendochap",
+      "name": "ChendoChap",
+      "kind": "GitHub account",
+      "url": "https://github.com/ChendoChap",
+      "attribution": "Repository author/maintainer attribution from repository metadata."
+    },
+    {
+      "id": "user-gezin",
+      "name": "Gezine",
+      "kind": "GitHub account",
+      "url": "https://github.com/Gezine",
+      "attribution": "Repository owner; no attribution beyond pinned README credits."
+    },
+    {
+      "id": "user-sony",
+      "name": "Sony Interactive Entertainment",
+      "kind": "vendor",
+      "url": "https://www.playstation.com/",
+      "attribution": "Publisher of official PS5 release notes and OSS source listings."
+    },
+    {
+      "id": "org-freebsd",
+      "name": "The FreeBSD Project",
+      "kind": "upstream OS project",
+      "url": "https://www.freebsd.org/",
+      "attribution": "Publisher of FreeBSD security advisories; findings are scoped to the named FreeBSD branches."
+    },
+    {
+      "id": "org-apple",
+      "name": "Apple Product Security",
+      "kind": "vendor security team",
+      "url": "https://support.apple.com/100100",
+      "attribution": "Publisher of Apple product advisories; does not establish PlayStation fork status."
+    },
+    {
+      "id": "org-webkit",
+      "name": "WebKit Project",
+      "kind": "open-source project",
+      "url": "https://webkit.org/",
+      "attribution": "Publisher of cross-port architecture documentation; ports maintain separate source trees."
+    },
+    {
+      "id": "org-hardwear",
+      "name": "Hardwear.io researchers",
+      "kind": "conference research",
+      "url": "https://hardwear.io/",
+      "attribution": "Conference presentation sources are treated as research claims, not Sony vendor statements."
+    },
+    {
+      "id": "user-pastawithpesto",
+      "name": "pastawithpesto",
+      "kind": "GitHub account",
+      "url": "https://github.com/pastawithpesto",
+      "attribution": "Repository owner account; not evidence of sole authorship."
+    },
+    {
+      "id": "user-zigzagboi1",
+      "name": "ZigZagBoi1",
+      "kind": "GitHub account",
+      "url": "https://github.com/ZigZagBoi1",
+      "attribution": "Repository owner account; not evidence of sole authorship."
+    },
+    {
+      "id": "user-nikosradio",
+      "name": "nikosradio",
+      "kind": "GitHub account",
+      "url": "https://github.com/nikosradio",
+      "attribution": "Repository owner account; not evidence of sole authorship."
+    },
+    {
+      "id": "user-soniciso1",
+      "name": "soniciso1",
+      "kind": "GitHub account",
+      "url": "https://github.com/soniciso1",
+      "attribution": "Repository owner account; not evidence of sole authorship."
+    },
+    {
+      "id": "user-ps5-payload-dev",
+      "name": "ps5-payload-dev",
+      "kind": "GitHub account",
+      "url": "https://github.com/ps5-payload-dev",
+      "attribution": "Repository owner account; not evidence of sole authorship."
+    },
+    {
+      "id": "user-cryptogenic",
+      "name": "Cryptogenic",
+      "kind": "GitHub account",
+      "url": "https://github.com/Cryptogenic",
+      "attribution": "Repository owner account; not evidence of sole authorship."
+    },
+    {
+      "id": "org-redhat",
+      "name": "Red Hat Product Security",
+      "kind": "vendor security team",
+      "url": "https://access.redhat.com/security",
+      "attribution": "Publisher of Red Hat CVE records; product scope is not transferred to Sony."
+    },
+    {
+      "id": "org-webkitgtk",
+      "name": "WebKitGTK Security",
+      "kind": "upstream security team",
+      "url": "https://webkitgtk.org/security/",
+      "attribution": "Publisher of WebKitGTK advisories; does not establish Sony port/build status."
+    }
+  ],
+  "repositories": [
+    {
+      "id": "r-ps5-umtx",
+      "owner": "PS5Dev",
+      "name": "PS5-UMTX-Jailbreak",
+      "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak",
+      "commit": "2cf6778ebe89ff35255e1c228826d0d2155e9d2a",
+      "observed_head": "2cf6778ebe89ff35255e1c228826d0d2155e9d2a",
+      "license": "Unlicense",
+      "contribution": "No CONTRIBUTING file in pinned tree; README points to Discord.",
+      "coverage": "fully extracted at README/source-tree level",
+      "summary": "WebKit-based PS5 kernel-chain repository. README claims a wider issue impact range than the listed integrated firmware support; explicit browser-entry limit matters.",
+      "firmware_claim": "README attributes the issue to PS5 1.00â€“7.61; integrated support list ends at 5.50; WebKit entry gap is noted from 6.00.",
+      "researchers": [
+        "org-ps5dev"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md",
+          "kind": "author_claim",
+          "supports": "Claimed bug range, integrated support and entry limitation."
+        },
+        {
+          "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/tree/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/document/en/ps5/offsets",
+          "kind": "source_observation",
+          "supports": "Version-specific offset tree."
+        },
+        {
+          "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/LICENSE",
+          "kind": "source_observation",
+          "supports": "Unlicense file."
+        }
+      ]
+    },
+    {
+      "id": "r-ps5sdk",
+      "owner": "PS5Dev",
+      "name": "PS5SDK",
+      "url": "https://github.com/PS5Dev/PS5SDK",
+      "commit": "a2e03a2a0231a3a3397fa6cd087a01ca6d04f273",
+      "observed_head": "a2e03a2a0231a3a3397fa6cd087a01ca6d04f273",
+      "license": "GPL-2.0",
+      "contribution": "README invites pull requests; no CONTRIBUTING file in pinned tree.",
+      "coverage": "fully extracted at README/offset-table level",
+      "summary": "SDK for building payload ELF files; firmware-specific offsets are not an exploit compatibility oracle.",
+      "firmware_claim": "README lists selected kernel-helper offsets through 4.51.",
+      "researchers": [
+        "org-ps5dev"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/README.md",
+          "kind": "author_claim",
+          "supports": "SDK scope and firmware-specific offset examples."
+        },
+        {
+          "url": "https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/LICENSE",
+          "kind": "source_observation",
+          "supports": "GPL-2.0 license."
+        }
+      ]
+    },
+    {
+      "id": "r-luacore",
+      "owner": "Gezine",
+      "name": "Luac0re",
+      "url": "https://github.com/Gezine/Luac0re",
+      "commit": "6fa8db6c021e1ae01864455e03e9c86aa5d33d66",
+      "observed_head": "6fa8db6c021e1ae01864455e03e9c86aa5d33d66",
+      "license": "MIT",
+      "contribution": "No CONTRIBUTING file in pinned tree.",
+      "coverage": "partially extracted; README and project scope reviewed",
+      "summary": "Lua-based mast1c0re variant. Broad â€˜latestâ€™ wording is not a pinned 14.10 compatibility test.",
+      "firmware_claim": "README describes JIT route and says one related payload requires PS5 12.00 or lower.",
+      "researchers": [
+        "user-gezin"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/README.md",
+          "kind": "author_claim",
+          "supports": "Project scope and firmware/dependency claim."
+        },
+        {
+          "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/LICENSE",
+          "kind": "source_observation",
+          "supports": "MIT license."
+        }
+      ]
+    },
+    {
+      "id": "r-relapse-exploit",
+      "owner": "ntfargo",
+      "name": "Relapse-Exploit",
+      "url": "https://github.com/ntfargo/Relapse-Exploit",
+      "commit": "dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0",
+      "observed_head": "dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0",
+      "license": "MIT",
+      "contribution": "No CONTRIBUTING file in pinned tree.",
+      "coverage": "fully extracted for README, version gate and license",
+      "summary": "Browser-chain source contains an explicit supported-version list. It describes this project's gate, not Sony's patch state.",
+      "firmware_claim": "README says 7.00â€“13.60; firmware.js rejects unlisted versions.",
+      "researchers": [
+        "user-ntfargo"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/README.md",
+          "kind": "author_claim",
+          "supports": "Claimed chain range."
+        },
+        {
+          "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/src/firmware.js",
+          "kind": "source_observation",
+          "supports": "Actual project version allowlist."
+        },
+        {
+          "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/LICENSE",
+          "kind": "source_observation",
+          "supports": "MIT license."
+        }
+      ]
+    },
+    {
+      "id": "r-pup-unpacker",
+      "owner": "zecoxao",
+      "name": "ps5-pup-unpacker",
+      "url": "https://github.com/zecoxao/ps5-pup-unpacker",
+      "commit": "005cccc908142c35ab7280e7f9eef8d5203c21e0",
+      "observed_head": "005cccc908142c35ab7280e7f9eef8d5203c21e0",
+      "license": "No root license found at pinned tree",
+      "contribution": "No contribution guide; clarify reuse rights before code work.",
+      "coverage": "partially extracted; README, reader and integer widths reviewed",
+      "summary": "Parser for previously decrypted inner PUP input; no claim that it handles the intact opaque 14.10 package.",
+      "firmware_claim": "No explicit firmware support range.",
+      "researchers": [
+        "user-zecoxao"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/zecoxao/ps5-pup-unpacker/blob/005cccc908142c35ab7280e7f9eef8d5203c21e0/README.md",
+          "kind": "author_claim",
+          "supports": "Decrypted-input prerequisite."
+        },
+        {
+          "url": "https://github.com/zecoxao/ps5-pup-unpacker/blob/005cccc908142c35ab7280e7f9eef8d5203c21e0/BinaryReader.h",
+          "kind": "source_observation",
+          "supports": "Reader methods reviewed in upstream proposal note."
+        },
+        {
+          "url": "https://github.com/zecoxao/ps5-pup-unpacker/tree/005cccc908142c35ab7280e7f9eef8d5203c21e0",
+          "kind": "source_observation",
+          "supports": "Pinned source tree and missing root license."
+        }
+      ]
+    },
+    {
+      "id": "r-ps5-1410-browser",
+      "owner": "pastawithpesto",
+      "name": "PS5-14.10-Jailbreak-Research",
+      "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research",
+      "commit": "ea1beed081adfdbebd887db558358c753633b575",
+      "observed_head": "ea1beed081adfdbebd887db558358c753633b575",
+      "license": "README states MIT; no root LICENSE file at pinned tree, so a formal reuse grant was not established",
+      "contribution": "CONTRIBUTING file is incomplete at pinned revision; no reuse grant established.",
+      "coverage": "partially extracted; README, visible reports and evidence limits inspected; no code executed",
+      "summary": "Author reports 14.10 browser observations and browser-stage candidates. Device identity and captures are not independently authenticated by this project; later stages remain unresolved.",
+      "firmware_claim": "README attributes browser observations to a 14.10 console; claims WebKit source analysis and early-stage findings, with kernel stage not demonstrated.",
+      "researchers": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/blob/ea1beed081adfdbebd887db558358c753633b575/README.md",
+          "kind": "author_claim",
+          "supports": "Author-attributed device observations and research status."
+        },
+        {
+          "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/tree/ea1beed081adfdbebd887db558358c753633b575/docs",
+          "kind": "source_observation",
+          "supports": "Pinned documentation tree; not an independent validation."
+        },
+        {
+          "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/blob/ea1beed081adfdbebd887db558358c753633b575/CONTRIBUTING.md",
+          "kind": "source_observation",
+          "supports": "Contribution guidance is incomplete."
+        }
+      ]
+    },
+    {
+      "id": "r-ps5-1410-kernel",
+      "owner": "ZigZagBoi1",
+      "name": "PS5-14.10-Research",
+      "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research",
+      "commit": "2bfb6b54940dfbd18d05b2712d723b0b4cfd0049",
+      "observed_head": "2bfb6b54940dfbd18d05b2712d723b0b4cfd0049",
+      "license": "No root license found at pinned tree",
+      "contribution": "CONTRIBUTING asks for PRs and tests; no code reuse license established.",
+      "coverage": "partially extracted; README, progress report and license status inspected; code/tests not run",
+      "summary": "Author reports userland probes and kernel attack-surface work; the pinned README says kernel read/write and a complete exploit are not demonstrated.",
+      "firmware_claim": "14.10 is stated target; evidence remains author-reported and hardware provenance is not independently authenticated.",
+      "researchers": [
+        "user-zigzagboi1"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049/README.md",
+          "kind": "author_claim",
+          "supports": "Project's own scope and milestone limitations."
+        },
+        {
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049/PS5-FW-14.10-Jailbreak-Status-Report.md",
+          "kind": "author_claim",
+          "supports": "Status report; community-derived patch claims are unverified."
+        },
+        {
+          "url": "https://raw.githubusercontent.com/ZigZagBoi1/PS5-14.10-Research/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049/LICENSE",
+          "kind": "source_observation",
+          "supports": "No root LICENSE at pinned path."
+        }
+      ]
+    },
+    {
+      "id": "r-ps4tools",
+      "owner": "nikosradio",
+      "name": "ps4tools",
+      "url": "https://github.com/nikosradio/ps4tools",
+      "commit": "2aabe4da09ba14c41f3a0d8516aa756742ef4688",
+      "observed_head": "2aabe4da09ba14c41f3a0d8516aa756742ef4688",
+      "license": "GPL-2.0",
+      "contribution": "No contribution guide found in reviewed source index.",
+      "coverage": "partially extracted; SLB2 structure and extraction loop reviewed",
+      "summary": "Historical PS4 SLB2 format clue: 0x20 header, 0x30 entries and 512-byte blocks; extraction loop is sequential and ignores each table offset.",
+      "firmware_claim": "PS4 utility; no PS5 or 14.10 claim.",
+      "researchers": [
+        "user-nikosradio"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/nikosradio/ps4tools/blob/2aabe4da09ba14c41f3a0d8516aa756742ef4688/pupunpack.c",
+          "kind": "source_observation",
+          "supports": "Historical SLB2 definitions and sequential extraction logic."
+        },
+        {
+          "url": "https://github.com/nikosradio/ps4tools/blob/2aabe4da09ba14c41f3a0d8516aa756742ef4688/LICENSE",
+          "kind": "source_observation",
+          "supports": "GPL-2.0 license."
+        }
+      ]
+    },
+    {
+      "id": "r-pup-decrypt",
+      "owner": "zecoxao",
+      "name": "ps5-pup-decrypt",
+      "url": "https://github.com/zecoxao/ps5-pup-decrypt",
+      "commit": "290f5dd216b6878223457f51b32127acc480964a",
+      "observed_head": "290f5dd216b6878223457f51b32127acc480964a",
+      "license": "No root license found at pinned tree",
+      "contribution": "No contribution guide or PC-only scope established.",
+      "coverage": "partially extracted; README prerequisites reviewed",
+      "summary": "README describes a console/USB/elevated-privilege workflow; not a safe PC-only path and not used.",
+      "firmware_claim": "No reproducible 14.10 compatibility statement.",
+      "researchers": [
+        "user-zecoxao"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/zecoxao/ps5-pup-decrypt/blob/290f5dd216b6878223457f51b32127acc480964a/README.md",
+          "kind": "author_claim",
+          "supports": "Documented prerequisites."
+        }
+      ]
+    },
+    {
+      "id": "r-psfree",
+      "owner": "kmeps4",
+      "name": "PSFree",
+      "url": "https://github.com/kmeps4/PSFree",
+      "commit": "368d82aa40d3017c220757ce315761adb5f06678",
+      "observed_head": "368d82aa40d3017c220757ce315761adb5f06678",
+      "license": "AGPL-3.0",
+      "contribution": "No contribution guide recorded in earlier source review.",
+      "coverage": "fully extracted for public version claim and scope",
+      "summary": "WebKit exploit project identifies an older PS5 range below 6.00; this is a project claim, not a 14.10 finding.",
+      "firmware_claim": "PS5 1.00 through below 6.00, per pinned source annotation.",
+      "researchers": [
+        "user-kmeps4"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/kmeps4/PSFree/blob/368d82aa40d3017c220757ce315761adb5f06678/psfree.mjs",
+          "kind": "author_claim",
+          "supports": "Source's version applicability annotation."
+        },
+        {
+          "url": "https://github.com/kmeps4/PSFree/blob/368d82aa40d3017c220757ce315761adb5f06678/LICENSE",
+          "kind": "source_observation",
+          "supports": "AGPL-3.0 license."
+        }
+      ]
+    },
+    {
+      "id": "r-soniciso-relapse",
+      "owner": "soniciso1",
+      "name": "relapse",
+      "url": "https://github.com/soniciso1/relapse",
+      "commit": "112dbe5949e9c3de923bb0909289c58a9c082151",
+      "observed_head": "112dbe5949e9c3de923bb0909289c58a9c082151",
+      "license": "No root license found at pinned tree",
+      "contribution": "No reuse permission inferred.",
+      "coverage": "partially extracted; README and file tree reviewed",
+      "summary": "A separate Relapse repository documents a browser/kernel chain with payload files; payloads were not executed.",
+      "firmware_claim": "README claims 7.00â€“13.60 with omissions; 14.10 not claimed.",
+      "researchers": [
+        "user-soniciso1"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/soniciso1/relapse/blob/112dbe5949e9c3de923bb0909289c58a9c082151/README.md",
+          "kind": "author_claim",
+          "supports": "Project firmware range and stage description."
+        },
+        {
+          "url": "https://github.com/soniciso1/relapse/tree/112dbe5949e9c3de923bb0909289c58a9c082151",
+          "kind": "source_observation",
+          "supports": "Pinned tree includes payloads; not executed."
+        }
+      ]
+    },
+    {
+      "id": "r-payload-sdk",
+      "owner": "ps5-payload-dev",
+      "name": "sdk",
+      "url": "https://github.com/ps5-payload-dev/sdk",
+      "commit": "f5d40f02770e9b0001dd9e18056eca70b3da8b40",
+      "observed_head": "f5d40f02770e9b0001dd9e18056eca70b3da8b40",
+      "license": "GPL-3.0; some BSD headers noted",
+      "contribution": "No contribution policy extracted in current baseline.",
+      "coverage": "partially extracted; scope and prerequisites reviewed",
+      "summary": "SDK for payloads on already-exploited consoles; does not demonstrate firmware vulnerability or access.",
+      "firmware_claim": "Requires a loader/exploited environment; no 14.10 claim established.",
+      "researchers": [
+        "user-ps5-payload-dev"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ps5-payload-dev/sdk/blob/f5d40f02770e9b0001dd9e18056eca70b3da8b40/README.md",
+          "kind": "author_claim",
+          "supports": "SDK purpose and prerequisites."
+        },
+        {
+          "url": "https://github.com/ps5-payload-dev/sdk/blob/f5d40f02770e9b0001dd9e18056eca70b3da8b40/LICENSE",
+          "kind": "source_observation",
+          "supports": "GPL-3.0 root license."
+        }
+      ]
+    },
+    {
+      "id": "r-chendo-webkit",
+      "owner": "ChendoChap",
+      "name": "PS5-Webkit-Execution",
+      "url": "https://github.com/ChendoChap/PS5-Webkit-Execution",
+      "commit": "ad157f5c074818658ca842301837fab43e08dc00",
+      "observed_head": "ad157f5c074818658ca842301837fab43e08dc00",
+      "license": "No root license found at pinned tree",
+      "contribution": "No reuse permission inferred.",
+      "coverage": "fully extracted as historical write-up; no code run",
+      "summary": "Historical PS5 4.03 WebKit write-up discusses CFI, SMAP/SMEP, XOM and hypervisor boundaries in that test context.",
+      "firmware_claim": "4.03 report only; not evidence of 14.10 mitigation configuration.",
+      "researchers": [
+        "user-chendochap"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ChendoChap/PS5-Webkit-Execution/blob/ad157f5c074818658ca842301837fab43e08dc00/.github/README.md",
+          "kind": "author_claim",
+          "supports": "Researcher-authored historical findings and test range."
+        },
+        {
+          "url": "https://github.com/ChendoChap/PS5-Webkit-Execution/tree/ad157f5c074818658ca842301837fab43e08dc00",
+          "kind": "source_observation",
+          "supports": "Pinned source tree; no root license found."
+        }
+      ]
+    },
+    {
+      "id": "r-cssfontface",
+      "owner": "ntfargo",
+      "name": "CSSFontFace-Exploit",
+      "url": "https://github.com/ntfargo/CSSFontFace-Exploit",
+      "commit": "221baa6e7349b96a6fd299808a25a4178e47741c",
+      "observed_head": "221baa6e7349b96a6fd299808a25a4178e47741c",
+      "license": "MIT",
+      "contribution": "Archived project; no current contribution guide noted.",
+      "coverage": "partially extracted; README range and license reviewed",
+      "summary": "Project reports a CSSFontFace issue through PS5 13.40 and exploitability through 8.60; no 14.10 state established.",
+      "firmware_claim": "Author-stated PS5 issue range 1.00â€“13.40; chain exploitability 1.00â€“8.60.",
+      "researchers": [
+        "user-ntfargo"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/ntfargo/CSSFontFace-Exploit/blob/221baa6e7349b96a6fd299808a25a4178e47741c/README.md",
+          "kind": "author_claim",
+          "supports": "Claimed version ranges and limits."
+        },
+        {
+          "url": "https://github.com/ntfargo/CSSFontFace-Exploit/blob/221baa6e7349b96a6fd299808a25a4178e47741c/LICENSE",
+          "kind": "source_observation",
+          "supports": "MIT license."
+        }
+      ]
+    },
+    {
+      "id": "r-byepervisor",
+      "owner": "PS5Dev",
+      "name": "Byepervisor",
+      "url": "https://github.com/PS5Dev/Byepervisor",
+      "commit": "57204cbd7bd26ed4623634d52b0f60f40d630087",
+      "observed_head": "57204cbd7bd26ed4623634d52b0f60f40d630087",
+      "license": "Unlicense",
+      "contribution": "README points to community channel; no CONTRIBUTING file noted.",
+      "coverage": "fully extracted at README/architecture-claim level",
+      "summary": "Documents hypervisor/kernel memory-isolation research for early firmware. Its stated HEN support is 2.50; the mechanisms are not measurements of 14.10.",
+      "firmware_claim": "Project describes 1.xxâ€“2.xx focus; current HEN support 2.50 per README.",
+      "researchers": [
+        "org-ps5dev"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/PS5Dev/Byepervisor/blob/57204cbd7bd26ed4623634d52b0f60f40d630087/README.md",
+          "kind": "author_claim",
+          "supports": "Project scope and reported hypervisor boundaries."
+        },
+        {
+          "url": "https://github.com/PS5Dev/Byepervisor/blob/57204cbd7bd26ed4623634d52b0f60f40d630087/LICENSE",
+          "kind": "source_observation",
+          "supports": "Unlicense."
+        }
+      ]
+    },
+    {
+      "id": "r-byepervisor-reborn",
+      "owner": "PS5Dev",
+      "name": "Byepervisor-Reborn",
+      "url": "https://github.com/PS5Dev/Byepervisor-Reborn",
+      "commit": "ea04f7132b837087f552c57261cb800481a3a910",
+      "observed_head": "ea04f7132b837087f552c57261cb800481a3a910",
+      "license": "Not asserted in this ledger; license file requires recheck before code reuse",
+      "contribution": "Not inspected beyond repository evidence in prior kernel review.",
+      "coverage": "partially extracted; README compatibility claims reviewed",
+      "summary": "Project author reports selected support through 13.60 and speculative 14.00 potential; no 14.10 evidence.",
+      "firmware_claim": "README lists full support for 13.00/13.20/13.60, labels 13.00 untested, and calls 14.00 a possibility with modifications.",
+      "researchers": [
+        "org-ps5dev"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/PS5Dev/Byepervisor-Reborn/blob/ea04f7132b837087f552c57261cb800481a3a910/README.md",
+          "kind": "author_claim",
+          "supports": "Pinned support and test labels."
+        }
+      ]
+    },
+    {
+      "id": "r-ps5-ipv6",
+      "owner": "Cryptogenic",
+      "name": "PS5-IPV6-Kernel-Exploit",
+      "url": "https://github.com/Cryptogenic/PS5-IPV6-Kernel-Exploit",
+      "commit": "4d4c5b25eb74ba47ca136b7827a8cffabc522736",
+      "observed_head": "4d4c5b25eb74ba47ca136b7827a8cffabc522736",
+      "license": "License status not rechecked in current source index",
+      "contribution": "Not inspected.",
+      "coverage": "partially extracted; README version claims reviewed",
+      "summary": "Historical PS5 implementation of IPv6 kernel race class; project lists selected old firmware versions through 4.51.",
+      "firmware_claim": "Author-reported selected tested versions through 4.51; community patch boundary is not a Sony advisory.",
+      "researchers": [
+        "user-cryptogenic"
+      ],
+      "evidence": [
+        {
+          "url": "https://github.com/Cryptogenic/PS5-IPV6-Kernel-Exploit/tree/4d4c5b25eb74ba47ca136b7827a8cffabc522736",
+          "kind": "author_claim",
+          "supports": "Pinned project and stated old-version range."
+        }
+      ]
+    },
+    {
+      "id": "r-ps5-firmware-list",
+      "owner": "MewX",
+      "name": "ps5-official-firmware-list",
+      "url": "https://github.com/MewX/ps5-official-firmware-list",
+      "commit": "83b0b510580bdbf3a2b77c05ccc7566e887be60d",
+      "license": "Not verified in this audit; no reuse permission assumed",
+      "contribution": "Metadata reference only; no code or firmware downloaded or copied.",
+      "coverage": "Partially reviewed: two commit-pinned archived update-list XML records.",
+      "summary": "Community archive indexes version-labelled PS5 update-list XML and checksum/URL metadata. Its rows are useful leads but do not alone authenticate Sony's firmware version-to-digest mapping.",
+      "firmware_claim": "Pinned XML records label 13.60 and 14.00 update entries; independent Sony identity and full-object digest verification remain unresolved.",
+      "researchers": [],
+      "evidence": [
+        {
+          "url": "https://github.com/MewX/ps5-official-firmware-list/blob/83b0b510580bdbf3a2b77c05ccc7566e887be60d/updatelists/updatelist.2026_0909.14.00.00.xml",
+          "kind": "third_party_metadata",
+          "supports": "Pinned archived XML lists a 14.00-labeled Sony update URL and SHA-256 path; not independent firmware verification."
+        },
+        {
+          "url": "https://github.com/MewX/ps5-official-firmware-list/blob/7f4ed6a8d7395d22e260563a189756ec6308ca46/updatelists/updatelist.2026_0717.13.60.00.xml",
+          "kind": "third_party_metadata",
+          "supports": "Earlier pinned archived XML lists a 13.60-labeled update entry; not independent firmware verification."
+        }
+      ]
+    }
+  ],
+  "documents": [
+    {
+      "id": "d-sony-1410-release",
+      "title": "PS5 system software update features 26.06-14.10.00",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-gb/support/hardware/ps5/system-software-info/",
+      "date": null,
+      "kind": "official release notes",
+      "provenance": "Sony-controlled support page; current page at review date",
+      "summary": "Says the 14.10 release contains security fixes; does not name component, CVE, or patch state.",
+      "researchers": [
+        "user-sony"
+      ],
+      "version_scope": "PS5 system software 26.06-14.10.00."
+    },
+    {
+      "id": "d-sony-webkit",
+      "title": "Sony PS5 WebKit open-source source page",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "date": "2026-10-20",
+      "kind": "official source listing",
+      "provenance": "Sony-controlled page labels WebKit_1400 for PS5 14.00 onward. Direct HEAD check on 2026-10-20: 1,637,794,253 bytes; Last-Modified 2026-10-15; ETag 0x8DF2A837F34C6C7 (HTTP validator, not a cryptographic hash).",
+      "summary": "Provides version-labelled source snapshot but no exact mapping to 26.06-14.10.00 build/commit. The full archive remains undownloaded; selective range reads matched two WebCore files to upstream commit 0e722583a4d695c7b25f384c61fbf5b59b4c3146.",
+      "researchers": [
+        "user-sony"
+      ],
+      "version_scope": "Sony lists WebKit_1400 for PS5 software 14.00 onward; exact 14.10 build/revision mapping not specified."
+    },
+    {
+      "id": "d-sony-jsc",
+      "title": "Sony PS5 JavaScriptCore open-source source page",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-us/oss/ps5/webkit-javascriptcore/",
+      "date": "2026-10-20",
+      "kind": "official source listing",
+      "provenance": "Sony-controlled page labels JSC-800 for PS5 8.00 onward. Direct HEAD check on 2026-10-20: 1,369,859,528 bytes; Last-Modified 2026-08-07; ETag bf49658547d459e0405ba5cba59cb1d6:1786126791.99314 (HTTP validator, not a cryptographic hash).",
+      "summary": "Provides a separate JSC source snapshot; its version configuration reports 613.1.17.1.14 and no exact 14.10 build correspondence. The full archive remains undownloaded.",
+      "researchers": [
+        "user-sony"
+      ],
+      "version_scope": "Sony lists JSC-800 for PS5 software 8.00 onward; exact 14.10 build/revision mapping not specified."
+    },
+    {
+      "id": "d-sony-oss-index",
+      "title": "Sony PS5 open-source software index",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-us/oss/ps5/",
+      "date": null,
+      "kind": "official source index",
+      "provenance": "Sony-controlled source index",
+      "summary": "Lists Sony's PS5 open-source disclosures and component-specific source packages.",
+      "researchers": [
+        "user-sony"
+      ],
+      "version_scope": "PS5 OSS index; package/version scope varies by linked component source."
+    },
+    {
+      "id": "d-freebsd-umtx",
+      "title": "FreeBSD-SA-24:14.umtx",
+      "publisher": "The FreeBSD Project",
+      "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-24:14.umtx.asc",
+      "date": "2024-09-04",
+      "kind": "official security advisory",
+      "provenance": "FreeBSD security advisory; upstream scope only",
+      "summary": "Documents CVE-2024-43102, UMTX shared-memory refcount lifetime bug, and corrected FreeBSD branches.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "FreeBSD branches/releases named in SA-24:14; PlayStation kernel correspondence unknown."
+    },
+    {
+      "id": "d-freebsd-execve",
+      "title": "FreeBSD-SA-26:13.exec",
+      "publisher": "The FreeBSD Project",
+      "url": "https://lists.freebsd.org/archives/freebsd-security/2026-April/000448.html",
+      "date": "2026-04-29",
+      "kind": "official security advisory",
+      "provenance": "FreeBSD Security Team notice; upstream scope only",
+      "summary": "CVE-2026-7270 operator-precedence bug in execve argument handling; advisory says all supported FreeBSD branches affected and lists corrections.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "All supported FreeBSD branches per SA-26:13; PlayStation kernel correspondence unknown."
+    },
+    {
+      "id": "d-freebsd-file",
+      "title": "FreeBSD-SA-26:19.file",
+      "publisher": "The FreeBSD Project",
+      "url": "https://security.freebsd.org/advisories/FreeBSD-SA-26:19.file.asc",
+      "date": "2026-05-21",
+      "kind": "official security advisory",
+      "provenance": "FreeBSD advisory; upstream scope only",
+      "summary": "CVE-2026-45251 concerns file descriptor close while poll/select waits; no transfer to Sony is established.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "FreeBSD branches/releases named in SA-26:19; PlayStation kernel correspondence unknown."
+    },
+    {
+      "id": "d-freebsd-ipv6",
+      "title": "FreeBSD-SA-20:20.ipv6",
+      "publisher": "The FreeBSD Project",
+      "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-20:20.ipv6.asc",
+      "date": "2020-07-08",
+      "kind": "official security advisory",
+      "provenance": "FreeBSD advisory; upstream scope only",
+      "summary": "CVE-2020-7457 IPv6 ancillary-option race/UAF; PS5 implementation claims are separate evidence.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "FreeBSD branches/releases named in SA-20:20; PlayStation kernel correspondence unknown."
+    },
+    {
+      "id": "d-freebsd-posixshm",
+      "title": "FreeBSD-SA-26:44.posixshm",
+      "publisher": "The FreeBSD Project",
+      "url": "https://www.freebsd.org/security/advisories/FreeBSD-SA-26:44.posixshm.asc",
+      "date": "2026-06-30",
+      "kind": "official security advisory",
+      "provenance": "FreeBSD advisory; upstream scope only",
+      "summary": "CVE-2026-49427 and CVE-2026-49428 POSIX shared-memory issues; no PS5 mapping found.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "FreeBSD branches/releases named in SA-26:44; PlayStation kernel correspondence unknown."
+    },
+    {
+      "id": "d-apple-2021-30889",
+      "title": "Apple Safari 15.1 security content",
+      "publisher": "Apple Product Security",
+      "url": "https://support.apple.com/en-us/103166",
+      "date": "2021-10-27",
+      "kind": "official vendor advisory",
+      "provenance": "Apple product scope only",
+      "summary": "CVE-2021-30889 WebKit buffer overflow; historical PS5 4.03 writeup attributes related browser issue, but exact fork mapping is unknown.",
+      "researchers": [
+        "org-apple"
+      ],
+      "version_scope": "Apple Safari 15.1 advisory scope; no PS5 version mapping established."
+    },
+    {
+      "id": "d-apple-2022-22620",
+      "title": "Apple Safari 15.3 security content",
+      "publisher": "Apple Product Security",
+      "url": "https://support.apple.com/en-us/103180",
+      "date": "2022-02-10",
+      "kind": "official vendor advisory",
+      "provenance": "Apple product scope only",
+      "summary": "CVE-2022-22620 WebKit use-after-free in Apple products; PSFree references older PS5 range but Sony patch mapping is unknown.",
+      "researchers": [
+        "org-apple"
+      ],
+      "version_scope": "Apple Safari 15.3 advisory scope; PSFree author states an older PS5 range below 6.00, without Sony patch mapping."
+    },
+    {
+      "id": "d-apple-2023-41993",
+      "title": "Apple Safari 17 security content",
+      "publisher": "Apple Product Security",
+      "url": "https://support.apple.com/en-us/120330",
+      "date": "2023-09-21",
+      "kind": "official vendor advisory",
+      "provenance": "Apple product scope only",
+      "summary": "CVE-2023-41993 WebKit web-content execution issue in Apple product scope; no PS5 equivalence established.",
+      "researchers": [
+        "org-apple"
+      ],
+      "version_scope": "Apple Safari 17 advisory scope; no PS5 version mapping established."
+    },
+    {
+      "id": "d-redhat-64784",
+      "title": "CVE-2026-64784 Red Hat advisory record",
+      "publisher": "Red Hat Product Security",
+      "url": "https://access.redhat.com/security/cve/cve-2026-64784",
+      "date": null,
+      "kind": "vendor-cve-record",
+      "provenance": "Vendor product-security record with external references. Applies to WebKitGTK; not Sony.",
+      "summary": "Describes a WebKitGTK out-of-bounds access issue. Mapping to a PS5 MetadataTable claim has not been demonstrated.",
+      "researchers": [
+        "org-redhat"
+      ],
+      "version_scope": "Red Hat WebKitGTK package scope evaluated in its CVE record; CVE.org and Apple references are product-specific; no Sony mapping."
+    },
+    {
+      "id": "d-webkit-ports",
+      "title": "WebKit ports architecture documentation",
+      "publisher": "WebKit Project",
+      "url": "https://docs.webkit.org/Ports/Introduction.html",
+      "date": null,
+      "kind": "project technical documentation",
+      "provenance": "Upstream WebKit documentation; port-specific source and release cadence matter",
+      "summary": "Documents independently maintained ports; Apple advisories alone do not establish PlayStation branch status.",
+      "researchers": [
+        "org-webkit"
+      ],
+      "version_scope": "WebKit ports documentation; general architecture, not tied to a product release."
+    },
+    {
+      "id": "d-hardwear-byepervisor",
+      "title": "Byepervisor: Breaking PS5 Hypervisor Security",
+      "publisher": "Hardwear.io / PS5 researchers",
+      "url": "https://hardwear.io/netherlands-2024/presentation/Byepervisor__Breaking_PS5_Hypervisor_Security.pdf",
+      "date": "2024-10-01",
+      "kind": "conference presentation",
+      "provenance": "Researcher presentation; early firmware scope, no 14.10 measurement",
+      "summary": "Public technical presentation on PS5 hypervisor/kernel isolation; treat mitigation description as historical tested-context evidence.",
+      "researchers": [
+        "org-hardwear"
+      ],
+      "version_scope": "Historical PS5 architecture presentation; exact firmware applicability is not established in this record."
+    },
+    {
+      "id": "d-nvd-43102",
+      "title": "NVD CVE-2024-43102 record",
+      "publisher": "NIST NVD",
+      "url": "https://nvd.nist.gov/vuln/detail/CVE-2024-43102",
+      "date": "2024-09-04",
+      "kind": "government CVE record",
+      "provenance": "Corroborating index, affected product scope remains FreeBSD",
+      "summary": "Indexes the upstream FreeBSD UMTX advisory; does not establish Sony kernel impact.",
+      "researchers": [],
+      "version_scope": "CVE-2024-43102 record mirrors upstream FreeBSD scope; no Sony kernel mapping."
+    },
+    {
+      "id": "d-local-wrapper-observations",
+      "title": "Existing 14.10 wrapper neighborhood measurements",
+      "publisher": "Project research notes",
+      "url": "../../notes/wrapper-neighborhood-14.10.md",
+      "date": "2026-10-20",
+      "kind": "internal reproducible report",
+      "provenance": "Local report tied to official package hash; no proprietary bytes included.",
+      "summary": "Reports two 32-byte nonzero runs in one fully measured pre-entry block; recurrence and meaning unknown.",
+      "researchers": [],
+      "version_scope": "One locally hash-verified Sony PS5 update package, 26.06-14.10.00."
+    },
+    {
+      "id": "d-hardwear-exfat",
+      "title": "Next-gen exploitation: exploring the PS5 security landscape",
+      "publisher": "Hardwear.io researchers",
+      "url": "https://hardwear.io/usa-2023/presentation/next-gen-exploitation-exploring-the-PS5-security-landscape.pdf",
+      "date": "2023-10-01",
+      "kind": "conference presentation",
+      "provenance": "Research presentation; historical PS5 scope only.",
+      "summary": "Discusses exFAT integer handling as a PS5 security surface; no 14.10 patch mapping.",
+      "researchers": [
+        "org-hardwear"
+      ],
+      "version_scope": "Historical PS5 security presentation; exact affected firmware range not established."
+    },
+    {
+      "id": "d-redhat-43715",
+      "title": "CVE-2026-43715 Red Hat advisory record",
+      "publisher": "Red Hat Product Security",
+      "url": "https://access.redhat.com/security/cve/cve-2026-43715",
+      "date": null,
+      "kind": "vendor-cve-record",
+      "provenance": "Vendor product-security record with linked CVE.org, NVD, WebKit Bugzilla and WebKitGTK advisory references. Applies to WebKitGTK; not Sony.",
+      "summary": "Describes a WebKitGTK use-after-free and links Bugzilla 313577 and WSA-2026-0004. Establishes upstream issue identity only, not PS5 correspondence.",
+      "researchers": [
+        "org-redhat"
+      ],
+      "version_scope": "Red Hat WebKitGTK CVE record; upstream issue scope only, no Sony mapping."
+    },
+    {
+      "id": "d-webkitgtk-wsa-43715",
+      "title": "WebKitGTK Security Advisory WSA-2026-0004",
+      "publisher": "WebKitGTK",
+      "url": "https://webkitgtk.org/security/WSA-2026-0004.html",
+      "date": "2026-07-10",
+      "kind": "upstream-security-advisory",
+      "provenance": "Upstream project advisory; separate port/source scope.",
+      "summary": "Primary WebKitGTK security advisory cited by the CVE record. No Sony build mapping identified.",
+      "researchers": [
+        "org-webkitgtk"
+      ],
+      "version_scope": "WebKitGTK/WPE WebKit before 2.52.5 per WSA-2026-0004; no Sony build mapping."
+    },
+    {
+      "id": "d-freebsd-jail-15547",
+      "title": "FreeBSD-SA-26:02.jail, CVE-2025-15547",
+      "publisher": "The FreeBSD Project",
+      "url": "https://lists.freebsd.org/archives/freebsd-security/2026-January/000414.html",
+      "date": "2026-01-27",
+      "kind": "official-security-advisory",
+      "provenance": "FreeBSD-published signed advisory; scope identifies FreeBSD 14.3 and 13.5 only.",
+      "summary": "Documents a jail filesystem escape involving nullfs mount configuration and states corrected FreeBSD revisions. No Sony kernel correspondence is established.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "FreeBSD 14.3 and 13.5 per SA-26:02; Sony kernel correspondence unknown."
+    },
+    {
+      "id": "d-freebsd-jail-15576",
+      "title": "FreeBSD-SA-26:04.jail, CVE-2025-15576",
+      "publisher": "The FreeBSD Project",
+      "url": "https://lists.freebsd.org/archives/freebsd-security/2026-February/000421.html",
+      "date": "2026-02-24",
+      "kind": "official-security-advisory",
+      "provenance": "FreeBSD-published signed advisory; scope identifies FreeBSD 14.3 and 13.5 only.",
+      "summary": "Documents a jail chroot escape involving file-descriptor exchange between separately configured jails and states corrected FreeBSD revisions. No Sony kernel correspondence is established.",
+      "researchers": [
+        "org-freebsd"
+      ],
+      "version_scope": "FreeBSD 14.3 and 13.5 per SA-26:04; Sony kernel correspondence unknown."
+    },
+    {
+      "id": "d-local-historical-source-audit",
+      "title": "Local audit of historical Sony update metadata provenance",
+      "publisher": "This research project",
+      "url": "../../notes/historical-sony-source-audit-2026-10-20.md",
+      "date": "2026-10-20",
+      "kind": "local-source-audit",
+      "provenance": "Read-only audit report; no third-party package was acquired without Sony-controlled version/digest provenance.",
+      "summary": "Records the provenance gap for historical PS5 update candidates 13.60 and 14.00.",
+      "researchers": [],
+      "version_scope": "Historical PS5 update candidates 13.60 and 14.00; no packages passed the official provenance gate."
+    },
+    {
+      "id": "d-local-source-review",
+      "title": "Local pinned public source review",
+      "publisher": "This research project",
+      "url": "../../notes/source-review.md",
+      "date": "2026-10-20",
+      "kind": "local-source-review",
+      "provenance": "Static source review of pinned public repositories and primary references; no exploit code executed.",
+      "summary": "Records prior bounded review of PUP/SLB2 references, exploit project support gates, and upstream advisories.",
+      "researchers": [],
+      "version_scope": "Pinned upstream and historical PS5 source snapshots enumerated in the local review; no 14.10 binary mapping."
+    },
+    {
+      "id": "d-sony-console-version-help",
+      "title": "Sony instructions for viewing PS5 system software version",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-us/support/hardware/playstation-system-software-application-version/",
+      "date": "2026-10-20",
+      "kind": "official support procedure",
+      "provenance": "Sony documents the built-in Settings path to Console Information and notes the page also displays network identifiers.",
+      "summary": "Supports the proposed manual, read-only version observation plan; not vulnerability or patch evidence.",
+      "researchers": [
+        "user-sony"
+      ],
+      "version_scope": "Sony support instructions for viewing the displayed console system software version; not vulnerability or patch evidence."
+    },
+    {
+      "id": "d-webkitgtk-wsa-2026-0005",
+      "title": "WebKitGTK Security Advisory WSA-2026-0005",
+      "publisher": "WebKitGTK",
+      "url": "https://webkitgtk.org/security/WSA-2026-0005.html",
+      "date": "2026-08-20",
+      "kind": "upstream-security-advisory",
+      "provenance": "Primary WebKitGTK/WPE advisory listing fixes and affected upstream port versions. No PlayStation build mapping.",
+      "summary": "Adds current upstream vulnerability and fix-scope context; does not establish whether any issue is present in Sony's fork or PS5 14.10.",
+      "researchers": [],
+      "version_scope": "WebKitGTK/WPE versions and CVEs as listed by WSA-2026-0005; no Sony build mapping."
+    },
+    {
+      "id": "d-webkitgtk-wsa-2026-0006",
+      "title": "WebKitGTK Security Advisory WSA-2026-0006",
+      "publisher": "WebKitGTK",
+      "url": "https://webkitgtk.org/security/WSA-2026-0006.html",
+      "date": "2026-09-29",
+      "kind": "upstream-security-advisory",
+      "provenance": "Primary WebKitGTK/WPE advisory; includes WebKitGTK-scoped fixes and also references third-party bundled components. Product scope must be read per CVE.",
+      "summary": "Current upstream comparison source. Its version statements apply to WebKitGTK/WPE, not Sony PlayStation.",
+      "researchers": [],
+      "version_scope": "WebKitGTK/WPE and bundled component scopes as individually listed by WSA-2026-0006; no Sony build mapping."
+    }
+  ],
+  "components": [
+    {
+      "id": "slb2",
+      "name": "SLB2 update wrapper",
+      "description": "Outer block-based update package metadata and entry boundaries."
+    },
+    {
+      "id": "pup",
+      "name": "Inner PUP container",
+      "description": "Inner PS5 update content; not assumed decrypted, executable, or parseable."
+    },
+    {
+      "id": "webkit",
+      "name": "WebKit browser engine",
+      "description": "PlayStation browser port; exact 14.10 source/build mapping unknown."
+    },
+    {
+      "id": "jsc",
+      "name": "JavaScriptCore",
+      "description": "JavaScript engine; exact PlayStation 14.10 revision and build flags unknown."
+    },
+    {
+      "id": "kernel",
+      "name": "PS5 kernel",
+      "description": "Sony FreeBSD-derived kernel; exact upstream ancestry and backports unverified."
+    },
+    {
+      "id": "umtx",
+      "name": "UMTX shared-memory subsystem",
+      "description": "Synchronization/shared-memory kernel interface."
+    },
+    {
+      "id": "ipv6",
+      "name": "IPv6 networking stack",
+      "description": "Kernel networking component; PS5-specific CVE applicability unknown."
+    },
+    {
+      "id": "hypervisor",
+      "name": "PS5 hypervisor",
+      "description": "Privilege boundary and memory-protection layer; 14.10 configuration unverified."
+    },
+    {
+      "id": "exfat",
+      "name": "exFAT filesystem implementation",
+      "description": "Historically discussed PS5 attack surface; 14.10 state unknown."
+    },
+    {
+      "id": "sdk",
+      "name": "PS5 development SDKs",
+      "description": "Build tooling/offset references; availability does not establish exploit compatibility."
+    },
+    {
+      "id": "upstream-tools",
+      "name": "Public PUP/SLB2 tools",
+      "description": "Third-party parser and unpacker code, reviewed statically only."
+    }
+  ],
+  "firmware_versions": [
+    {
+      "id": "ps5-1.00",
+      "version": "1.00",
+      "build": null,
+      "release_date": null,
+      "status": "historical project claims only"
+    },
+    {
+      "id": "ps5-2.50",
+      "version": "2.50",
+      "build": null,
+      "release_date": null,
+      "status": "Byepervisor project support claim"
+    },
+    {
+      "id": "ps5-4.03",
+      "version": "4.03",
+      "build": null,
+      "release_date": null,
+      "status": "historical WebKit/kernel author claims"
+    },
+    {
+      "id": "ps5-5.50",
+      "version": "5.50",
+      "build": null,
+      "release_date": null,
+      "status": "UMTX integrated project support ceiling in pinned README"
+    },
+    {
+      "id": "ps5-6.00",
+      "version": "6.00",
+      "build": null,
+      "release_date": null,
+      "status": "older WebKit project entry limitation claims"
+    },
+    {
+      "id": "ps5-4.51",
+      "version": "4.51",
+      "build": null,
+      "release_date": null,
+      "status": "PS5 IPv6 project reported tested ceiling"
+    },
+    {
+      "id": "ps5-7.61",
+      "version": "7.61",
+      "build": null,
+      "release_date": null,
+      "status": "UMTX impact claim; integrated chain support narrower"
+    },
+    {
+      "id": "ps5-13.60",
+      "version": "13.60",
+      "build": "26.05-13.60.00",
+      "release_date": "2026-07-24",
+      "status": "Sony release mapping/source history should be checked; Relapse author claim"
+    },
+    {
+      "id": "ps5-14.00",
+      "version": "14.00",
+      "build": "26.06-14.00.00",
+      "release_date": "2026-09-16",
+      "status": "Official release/build mapping cited in public status; component patch status unknown"
+    },
+    {
+      "id": "ps5-14.10",
+      "version": "14.10",
+      "build": "26.06-14.10.00",
+      "release_date": "2026-10-01",
+      "status": "Sony release notes say unspecified security fixes; no CVE/component mapping"
+    }
+  ],
+  "vulnerabilities": [
+    {
+      "id": "cve-2024-43102",
+      "identifier": "CVE-2024-43102",
+      "title": "UMTX shared-memory reference-count lifetime flaw",
+      "upstream_status": "VERIFIED for FreeBSD advisory scope",
+      "upstream_summary": "Concurrent shared-memory mapping removals may prematurely free an object after an incorrect reference-count update.",
+      "affected_products": "FreeBSD release branches named by SA-24:14",
+      "mitigation": "FreeBSD branch corrections; no Sony patch mapping.",
+      "disclosure_date": "2024-09-04",
+      "source_ids": [
+        "d-freebsd-umtx",
+        "d-nvd-43102"
+      ]
+    },
+    {
+      "id": "cve-2020-7457",
+      "identifier": "CVE-2020-7457",
+      "title": "IPv6 ancillary options synchronization issue",
+      "upstream_status": "VERIFIED for FreeBSD advisory scope",
+      "upstream_summary": "Missing synchronization can produce a kernel use-after-free in the affected FreeBSD IPv6 options path.",
+      "affected_products": "FreeBSD branches named by SA-20:20",
+      "mitigation": "FreeBSD branch corrections; Sony patch history not established.",
+      "disclosure_date": "2020-09-02",
+      "source_ids": [
+        "d-freebsd-ipv6"
+      ]
+    },
+    {
+      "id": "cve-2026-7270",
+      "identifier": "CVE-2026-7270",
+      "title": "execve argument buffer overflow from operator precedence bug",
+      "upstream_status": "VERIFIED for FreeBSD advisory scope",
+      "upstream_summary": "FreeBSD advisory reports an operator-precedence issue that can overflow adjacent execve argument buffers and permit local privilege escalation.",
+      "affected_products": "All supported FreeBSD versions at advisory publication",
+      "mitigation": "FreeBSD branch corrections from 2026-04-29; no Sony mapping.",
+      "disclosure_date": "2026-04-29",
+      "source_ids": [
+        "d-freebsd-execve"
+      ]
+    },
+    {
+      "id": "cve-2026-45251",
+      "identifier": "CVE-2026-45251",
+      "title": "File descriptor poll/select use-after-free",
+      "upstream_status": "VERIFIED for FreeBSD advisory scope",
+      "upstream_summary": "FreeBSD advisory describes a file descriptor close race while poll/select waits.",
+      "affected_products": "FreeBSD advisory branches only",
+      "mitigation": "FreeBSD corrections; Sony kernel mapping unknown.",
+      "disclosure_date": "2026-05-21",
+      "source_ids": [
+        "d-freebsd-file"
+      ]
+    },
+    {
+      "id": "cve-2021-30889",
+      "identifier": "CVE-2021-30889",
+      "title": "WebKit buffer overflow",
+      "upstream_status": "VERIFIED for Apple product scope",
+      "upstream_summary": "Apple advisory documents a WebKit buffer overflow; a PS5 4.03 researcher write-up associates a browser issue with this CVE.",
+      "affected_products": "Apple products listed by Safari 15.1 advisory; PS5 claim is separate",
+      "mitigation": "Apple fixes only; PlayStation branch state unknown.",
+      "disclosure_date": "2021-10-27",
+      "source_ids": [
+        "d-apple-2021-30889"
+      ]
+    },
+    {
+      "id": "cve-2022-22620",
+      "identifier": "CVE-2022-22620",
+      "title": "WebKit use-after-free",
+      "upstream_status": "VERIFIED for Apple product scope",
+      "upstream_summary": "Apple Safari advisory documents the issue; PSFree labels an older PS5 range as affected.",
+      "affected_products": "Apple products in Safari 15.3 advisory; PS5 range author-reported",
+      "mitigation": "Apple fixes; no Sony patch correspondence established.",
+      "disclosure_date": "2022-02-10",
+      "source_ids": [
+        "d-apple-2022-22620"
+      ]
+    },
+    {
+      "id": "cve-2023-41993",
+      "identifier": "CVE-2023-41993",
+      "title": "WebKit web-content processing code-execution issue",
+      "upstream_status": "VERIFIED for Apple product scope",
+      "upstream_summary": "Apple security content describes possible arbitrary code execution from processing web content and an Apple fix.",
+      "affected_products": "Apple products named by Safari advisory",
+      "mitigation": "Apple product fixes only; PS5 applicability unknown.",
+      "disclosure_date": "2023-09-21",
+      "source_ids": [
+        "d-apple-2023-41993"
+      ]
+    },
+    {
+      "id": "cve-2026-64784",
+      "identifier": "CVE-2026-64784",
+      "title": "WebKitGTK out-of-bounds access advisory; PS5 repository attribution unresolved",
+      "upstream_status": "Public WebKitGTK advisory; PS5 mapping unresolved",
+      "upstream_summary": "Red Hat describes a WebKitGTK out-of-bounds access due to missing bounds checks, affecting its evaluated product packages; CVE.org reports low availability impact for the generic record. This does not establish Sony applicability. Red Hat describes CVE-2026-64784 as a WebKitGTK out-of-bounds access issue. The 14.10 repositoryâ€™s MetadataTable attribution has not been matched to the same source fix or product scope.",
+      "affected_products": "WebKitGTK products in Red Hat advisory; PS5 applicability not established",
+      "mitigation": "Red Hat backports for its products; Sony patch state unknown.",
+      "disclosure_date": "2026-08-17",
+      "source_ids": [
+        "d-redhat-64784"
+      ]
+    },
+    {
+      "id": "cve-2026-43715",
+      "identifier": "CVE-2026-43715",
+      "title": "CSSFontFace UAF identifier cited by a 14.10 project",
+      "upstream_status": "Public WebKitGTK advisory; PS5 mapping unresolved",
+      "upstream_summary": "Red Hat describes CVE-2026-43715 as a WebKitGTK use-after-free and links WebKit Bugzilla 313577 and WSA-2026-0004. This verifies the public WebKitGTK record only; it does not establish that the PS5 reportâ€™s CSSFontFace observation is the same issue.",
+      "affected_products": "As claimed by third-party 14.10 repository; unresolved",
+      "mitigation": "Unknown.",
+      "disclosure_date": "2026-07-10",
+      "source_ids": [
+        "d-redhat-43715"
+      ]
+    },
+    {
+      "id": "cve-2026-43705",
+      "identifier": "CVE-2026-43705",
+      "title": "WebKitGTK/WPE type-confusion advisory; PS5 TransformStream mapping unresolved",
+      "upstream_status": "Official WebKitGTK/WPE advisory; PS5 mapping unresolved",
+      "upstream_summary": "WSA-2026-0004 describes a type-confusion issue addressed with improved checks in WebKitGTK/WPE versions before 2.52.5 and references WebKit Bugzilla 314528. A PS5 14.10 repository associates this identifier with TransformStream double iteration; exact same-flaw/source-fix identity and Sony applicability are unverified.",
+      "affected_products": [
+        "WebKitGTK and WPE WebKit before 2.52.5 per WSA-2026-0004"
+      ],
+      "mitigation": "Upstream advisory recommends updating to current stable WebKitGTK/WPE; no Sony mitigation status established.",
+      "disclosure_date": "2026-07-10",
+      "source_ids": [
+        "d-webkitgtk-wsa-43715"
+      ]
+    },
+    {
+      "id": "cve-2025-15547",
+      "identifier": "CVE-2025-15547",
+      "title": "FreeBSD jail escape via nullfs",
+      "upstream_status": "Official FreeBSD advisory; Sony mapping unknown",
+      "upstream_summary": "FreeBSD-SA-26:02 documents a conditional jail escape on FreeBSD 14.3 and 13.5 when jailed root can use configured nullfs mounts; fixed revisions are specified in the advisory. This is upstream scope only.",
+      "affected_products": [
+        "FreeBSD 14.3",
+        "FreeBSD 13.5"
+      ],
+      "mitigation": "Use corrected FreeBSD release/branch per FreeBSD-SA-26:02; Sony patch status unknown.",
+      "disclosure_date": "2026-01-27",
+      "source_ids": [
+        "d-freebsd-jail-15547"
+      ]
+    },
+    {
+      "id": "cve-2025-15576",
+      "identifier": "CVE-2025-15576",
+      "title": "FreeBSD jail chroot escape via file-descriptor exchange",
+      "upstream_status": "Official FreeBSD advisory; Sony mapping unknown",
+      "upstream_summary": "FreeBSD-SA-26:04 documents a conditional chroot escape involving cooperating processes in separate jails with shared nullfs access and Unix-domain-socket descriptor exchange on FreeBSD 14.3 and 13.5. This is upstream scope only.",
+      "affected_products": [
+        "FreeBSD 14.3",
+        "FreeBSD 13.5"
+      ],
+      "mitigation": "Use corrected FreeBSD release/branch per FreeBSD-SA-26:04; Sony patch status unknown.",
+      "disclosure_date": "2026-02-24",
+      "source_ids": [
+        "d-freebsd-jail-15576"
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "f-wrapper-bounds",
+      "title": "14.10 outer SLB2 wrapper has a bounded, inspectable metadata table",
+      "classification": "VERIFIED",
+      "confidence": "High for local hash-verified metadata observations; format semantics remain partial.",
+      "summary": "Local tooling reads the SLB2 header and entry metadata with bounds checks. It does not parse/decrypt the inner PUP or establish signature validity.",
+      "scope": "One official Sony 26.06-14.10.00 update package; do not distribute or commit bytes.",
+      "firmware_relevance": "Directly observed outer container for 14.10 only.",
+      "reproduction_status": "Reproducible from local ignored package by hash-pinned commands; current branch does not re-read firmware.",
+      "component_ids": [
+        "slb2",
+        "pup"
+      ],
+      "researcher_ids": [],
+      "evidence": [
+        {
+          "source_id": "d-sony-1410-release",
+          "kind": "context",
+          "locator": "Official version label",
+          "supports": "Identity context, not SLB2 format."
+        },
+        {
+          "source_id": "d-local-wrapper-observations",
+          "kind": "local-measurement",
+          "locator": "Direct observations and reproduction command",
+          "supports": "Measured 14.10 wrapper intervals and sample limitations."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "observed package version",
+          "status": "direct observation"
+        }
+      ]
+    },
+    {
+      "id": "f-two-32-byte-runs",
+      "title": "Two nonzero 32-byte runs occur in one measured 14.10 pre-entry block",
+      "classification": "VERIFIED",
+      "confidence": "High for measured bytes in one hash-verified local package; no cross-version sample.",
+      "summary": "The neighborhood mapper reports two 32-byte nonzero runs in a fully measured pre-entry block. Semantic meaning and recurrence are unknown.",
+      "scope": "One package only; numerical metadata is documented in existing notes.",
+      "firmware_relevance": "Direct observation on 14.10, no comparison baseline.",
+      "reproduction_status": "Previously measured and documented; no Sony bytes copied to this database.",
+      "component_ids": [
+        "slb2"
+      ],
+      "researcher_ids": [],
+      "evidence": [
+        {
+          "source_id": "d-local-wrapper-observations",
+          "kind": "local-measurement-report",
+          "locator": "pre-entry block measurement summary",
+          "supports": "Two runs of 32 nonzero bytes each in one 14.10 package."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "measured once",
+          "status": "direct observation"
+        }
+      ]
+    },
+    {
+      "id": "f-sony-1410-security-fixes",
+      "title": "Sony release notes report unspecified 14.10 security fixes",
+      "classification": "VERIFIED",
+      "confidence": "High for the release-note statement; component patch state unknown.",
+      "summary": "Sony says the 14.10 release contains security fixes without naming component, CVE, or mitigation.",
+      "scope": "Sony public release note wording only.",
+      "firmware_relevance": "Direct 14.10 fact.",
+      "reproduction_status": "Source fact checked against Sony support page; no technical patch reproduced.",
+      "component_ids": [
+        "kernel",
+        "webkit",
+        "hypervisor"
+      ],
+      "researcher_ids": [
+        "user-sony"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-sony-1410-release",
+          "kind": "official-release-note",
+          "locator": "System software 26.06-14.10.00 entry",
+          "supports": "Unspecified security fixes."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "official release note",
+          "status": "direct observation"
+        }
+      ]
+    },
+    {
+      "id": "f-webkit-source-labels",
+      "title": "Sony publishes version-labelled WebKit and JSC snapshots without exact 14.10 build mapping",
+      "classification": "VERIFIED",
+      "confidence": "High for source page labels; exact 14.10 revision correspondence unknown.",
+      "summary": "Sony WebKit source page labels WebKit_1400 as 14.00 onward and JSC-800 as 8.00 onward. Four sampled WebCore/JSC files in WebKit_1400 match upstream commit 0e722583a4d695c7b25f384c61fbf5b59b4c3146; the separate JSC-800 version file reports 613.1.17.1.14. Neither page maps the published source to 26.06-14.10.00.",
+      "scope": "Sony-published source bundle members selected by HTTP range reads; exact firmware build mapping remains unknown.",
+      "firmware_relevance": "Provides a PC-only lead for 14.10 source research, not binary equivalence.",
+      "reproduction_status": "Sony ZIP metadata and selected source members range-read and hashed; four WebCore/JSC files in WebKit_1400 matched the pinned upstream commit; JSC-800 version metadata was inspected; full archives not downloaded; no engine build or console test.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-sony"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "official-source-listing",
+          "locator": "WebKit_1400 archive label",
+          "supports": "14.00 onward source label."
+        },
+        {
+          "source_id": "d-sony-jsc",
+          "kind": "official-source-listing",
+          "locator": "JSC-800 archive label",
+          "supports": "8.00 onward source label."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "possible source family; build mapping absent",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-freebsd-umtx-upstream",
+      "title": "CVE-2024-43102 is documented for upstream FreeBSD only",
+      "classification": "VERIFIED",
+      "confidence": "High for FreeBSD advisory; no transfer to Sony.",
+      "summary": "FreeBSD advisory describes a shared-memory reference-count race and corrected FreeBSD branches. PS5Dev separately attributes its older PS5 work to this CVE.",
+      "scope": "Upstream FreeBSD only; PS5 derivative status not established.",
+      "firmware_relevance": "Candidate research question; PS5 14.10 applicability unknown.",
+      "reproduction_status": "Advisory and pinned repository README reviewed; no vulnerability executed.",
+      "component_ids": [
+        "kernel",
+        "umtx"
+      ],
+      "researcher_ids": [
+        "org-freebsd",
+        "org-ps5dev"
+      ],
+      "vulnerability_ids": [
+        "cve-2024-43102"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-freebsd-umtx",
+          "kind": "official-advisory",
+          "locator": "Problem description and corrected branches",
+          "supports": "FreeBSD CVE description."
+        },
+        {
+          "source_id": "r-ps5-umtx",
+          "kind": "author-claim",
+          "locator": "Pinned README at 2cf6778",
+          "supports": "PS5 project attribution and old range claim."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "cross-vendor applicability",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-umtx-ps5-range",
+      "title": "PS5 UMTX project distinguishes impact claim from integrated-chain support",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that pinned README says this; behavior not independently reproduced.",
+      "summary": "README's impact range reaches 7.61 while the integrated support list ends at 5.50 and browser entry limitations begin earlier. These are different claims.",
+      "scope": "Pinned PS5Dev project snapshot only.",
+      "firmware_relevance": "No 14.10 support claim; underlying patch state unknown.",
+      "reproduction_status": "README/source inventory checked; no code run.",
+      "component_ids": [
+        "kernel",
+        "umtx",
+        "webkit"
+      ],
+      "researcher_ids": [
+        "org-ps5dev"
+      ],
+      "vulnerability_ids": [
+        "cve-2024-43102"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-umtx",
+          "kind": "author-claim",
+          "locator": "Pinned README and offsets tree",
+          "supports": "Separates reported impact from project support."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-7.61",
+          "relationship": "claimed bug impact ceiling",
+          "status": "author-reported"
+        },
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "not listed as supported",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-relapse-gate",
+      "title": "Relapse pinned implementation allowlist stops at 13.60",
+      "classification": "VERIFIED",
+      "confidence": "High for literal source allowlist; not a Sony patch statement.",
+      "summary": "The pinned firmware.js enumerates supported versions and rejects versions outside the list. 14.10 is absent.",
+      "scope": "Project gate behavior as static source observation only.",
+      "firmware_relevance": "The repo makes no 14.10 support claim; bug and patch state remain unknown.",
+      "reproduction_status": "Static source review only; no chain executed.",
+      "component_ids": [
+        "webkit",
+        "jsc",
+        "kernel"
+      ],
+      "researcher_ids": [
+        "user-ntfargo"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-relapse-exploit",
+          "kind": "source-observation",
+          "locator": "src/firmware.js at dd8e4e0",
+          "supports": "Explicit project allowlist."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-13.60",
+          "relationship": "last supported in project list",
+          "status": "author-reported and source-gated"
+        },
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "not in list",
+          "status": "project-incompatible only; Sony vulnerability status unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-ps5-sdk-offsets",
+      "title": "PS5SDK documents selected offsets through 4.51",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High for README contents and source inventory.",
+      "summary": "SDK kernel helper offsets are firmware-specific; SDK presence or successful host build does not establish 14.10 exploit compatibility.",
+      "scope": "Pinned PS5SDK repository documentation.",
+      "firmware_relevance": "No 14.10 offset set documented by pinned README.",
+      "reproduction_status": "README/source listing reviewed; no payload built or run.",
+      "component_ids": [
+        "sdk",
+        "kernel"
+      ],
+      "researcher_ids": [
+        "org-ps5dev"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5sdk",
+          "kind": "author-claim",
+          "locator": "Pinned README offset list",
+          "supports": "Selected old firmware offsets."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-4.03",
+          "relationship": "example offset target",
+          "status": "documented"
+        },
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "no documented offset",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-pup-tool-requires-decrypted-input",
+      "title": "Public PS5 PUP unpacker requires previously decrypted input",
+      "classification": "VERIFIED",
+      "confidence": "High for pinned README prerequisite; no input was processed.",
+      "summary": "The README requires a previously decrypted PS5 PUP, so the tool does not establish that the locally held opaque 14.10 inner file is parseable.",
+      "scope": "Tool's documented input prerequisite.",
+      "firmware_relevance": "Explains current obstacle in inner PUP analysis.",
+      "reproduction_status": "README/static source review only; no decryption attempt.",
+      "component_ids": [
+        "pup",
+        "upstream-tools"
+      ],
+      "researcher_ids": [
+        "user-zecoxao"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-pup-unpacker",
+          "kind": "author-claim",
+          "locator": "Pinned README",
+          "supports": "Decrypted input required."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "input format not established",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-ps4-slb2-format-clue",
+      "title": "Historical PS4 SLB2 code documents 512-byte blocks and table entries",
+      "classification": "VERIFIED",
+      "confidence": "High for source structure; not a PS5 specification.",
+      "summary": "The PS4 tool defines a 0x20 header and 0x30 entries, while its sequential extraction loop ignores the entry block offset. The code is a historical clue, not validated PS5 behavior.",
+      "scope": "Pinned PS4 utility source only.",
+      "firmware_relevance": "Indirect format lineage lead; no 14.10 compatibility evidence.",
+      "reproduction_status": "Static source review; no binary parsed or code executed.",
+      "component_ids": [
+        "slb2",
+        "upstream-tools"
+      ],
+      "researcher_ids": [],
+      "evidence": [
+        {
+          "source_id": "r-ps4tools",
+          "kind": "source-observation",
+          "locator": "pupunpack.c at 2aabe4d",
+          "supports": "Header/entry definitions and sequential loop."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "format analogy only",
+          "status": "hypothesis"
+        }
+      ]
+    },
+    {
+      "id": "f-freebsd-execve",
+      "title": "CVE-2026-7270 is an upstream FreeBSD execve bug; Sony mapping unknown",
+      "classification": "VERIFIED",
+      "confidence": "High for the FreeBSD advisory; PS5 applicability unsupported.",
+      "summary": "FreeBSD published the execve operator-precedence issue with corrections on supported FreeBSD branches. Third-party PS5 kernel audit lists it as a candidate but provides no Sony code mapping in the reviewed material.",
+      "scope": "FreeBSD upstream advisory; third-party PS5 claim remains separate.",
+      "firmware_relevance": "Candidate only; exact 14.10 kernel ancestry, code presence and patch state unknown.",
+      "reproduction_status": "Advisory and repository text review only; no exploit/code execution.",
+      "component_ids": [
+        "kernel"
+      ],
+      "researcher_ids": [
+        "org-freebsd"
+      ],
+      "vulnerability_ids": [
+        "cve-2026-7270"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-freebsd-execve",
+          "kind": "official-advisory",
+          "locator": "SA-26:13.exec",
+          "supports": "Upstream affected scope/correction."
+        },
+        {
+          "source_id": "r-ps5-1410-kernel",
+          "kind": "author-claim",
+          "locator": "Current report claim not authenticated at device level",
+          "supports": "Candidate mentioned by repository."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "cross-vendor applicability",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-freebsd-fd-uaf",
+      "title": "CVE-2026-45251 is an upstream FreeBSD fd race; Sony mapping unknown",
+      "classification": "VERIFIED",
+      "confidence": "High for upstream advisory, no PS5 code evidence.",
+      "summary": "FreeBSD advisory documents a poll/select file-descriptor race; the community PS5 kernel audit lists it as a candidate but does not establish sandbox reachability or a Sony patch state.",
+      "scope": "FreeBSD upstream advisory only.",
+      "firmware_relevance": "14.10 applicability unknown; candidate depends on component presence and reachability not documented by Sony.",
+      "reproduction_status": "Primary advisory and author report reviewed; not executed.",
+      "component_ids": [
+        "kernel"
+      ],
+      "researcher_ids": [
+        "org-freebsd"
+      ],
+      "vulnerability_ids": [
+        "cve-2026-45251"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-freebsd-file",
+          "kind": "official-advisory",
+          "locator": "SA-26:19.file",
+          "supports": "FreeBSD behavior."
+        },
+        {
+          "source_id": "r-ps5-1410-kernel",
+          "kind": "author-claim",
+          "locator": "Kernel audit candidate listing",
+          "supports": "Third-party candidate claim."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "cross-vendor applicability",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-hypervisor-early",
+      "title": "Public PS5 hypervisor research documents historical protection boundaries",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that pinned project/paper makes the claims; firmware-specific behavior not reproduced.",
+      "summary": "Byepervisor write-up discusses hypervisor/guest kernel boundaries, XOM and nested page-table policy on early firmware; do not transfer mitigation state to 14.10.",
+      "scope": "Historical early firmware research, including project support around 2.50.",
+      "firmware_relevance": "No 14.10 configuration or patch measurement.",
+      "reproduction_status": "Source review only; no payload run.",
+      "component_ids": [
+        "hypervisor",
+        "kernel"
+      ],
+      "researcher_ids": [
+        "org-ps5dev",
+        "org-hardwear"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-byepervisor",
+          "kind": "author-claim",
+          "locator": "Pinned README at 57204cb",
+          "supports": "Project author's boundary description and scope."
+        },
+        {
+          "source_id": "d-hardwear-byepervisor",
+          "kind": "conference-paper",
+          "locator": "2024 slides",
+          "supports": "Public historical research context."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-2.50",
+          "relationship": "project support claim",
+          "status": "author-reported"
+        },
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "mitigation configuration",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-pastawithpesto-cve-claim",
+      "title": "14.10 browser repository claims CSSFontFace/MetadataTable findings",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned repository and upstream advisories make their respective bounded claims; low for same-flaw mapping, Sony build mapping, and independent PS5 reproduction.",
+      "summary": "The repository author reports 14.10 browser-stage observations and candidate CVE associations. Public WebKitGTK/WPE records exist for CVE-2026-43705 (type confusion) and CVE-2026-43715 (use-after-free), but equivalence to the reported TransformStream/CSSFontFace issues and PS5 applicability remain unverified; the source says CSSFontFace device confirmation is pending.",
+      "scope": "Pinned repository claims only; no exploit code or trigger used.",
+      "firmware_relevance": "Direct claimed target 14.10 but no independent reproduction.",
+      "reproduction_status": "README/reports reviewed; no code, PoC, probe or firmware executed.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [
+        "cve-2026-43715",
+        "cve-2026-64784",
+        "cve-2026-43705"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "README at ea1beed",
+          "supports": "Device/version and browser candidate claims."
+        },
+        {
+          "source_id": "d-redhat-64784",
+          "kind": "vendor-advisory",
+          "locator": "Red Hat CVE page",
+          "supports": "WebKitGTK product scope and CVE description."
+        },
+        {
+          "source_id": "d-webkitgtk-wsa-43715",
+          "kind": "upstream-advisory",
+          "locator": "WSA-2026-0004, entries CVE-2026-43705 and CVE-2026-43715",
+          "supports": "Confirms these identifiers and broad upstream flaw classes/versions; does not establish they match the reported PS5 issues."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed device target",
+          "status": "author-reported, not independently reproduced"
+        }
+      ]
+    },
+    {
+      "id": "f-zigzag-userland-claims",
+      "title": "14.10 kernel research repository reports userland probes but no kernel R/W",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that pinned docs contain claims; device identity and capture integrity not independently authenticated.",
+      "summary": "Pinned 14.10 community documentation names upstream FreeBSD CVE candidates, including two jail advisories. FreeBSD advisories establish conditional issues and fixes for FreeBSD 14.3/13.5; they do not establish Sony kernel lineage or 14.10 patch status. The repository itself says kernel read/write and a complete chain are not demonstrated.",
+      "scope": "Pinned repository documentation and visible records only.",
+      "firmware_relevance": "Claims target 14.10; no independently verified vulnerability or patch state.",
+      "reproduction_status": "Static review of bounded documentation; no code/probes run.",
+      "component_ids": [
+        "webkit",
+        "kernel"
+      ],
+      "researcher_ids": [],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-kernel",
+          "kind": "author-claim",
+          "locator": "README and status report at 2bfb6b5",
+          "supports": "Research status and explicit missing milestones."
+        },
+        {
+          "source_id": "d-freebsd-jail-15547",
+          "kind": "official-advisory",
+          "locator": "FreeBSD-SA-26:02.jail",
+          "supports": "FreeBSD advisory scope and corrected FreeBSD revisions; not Sony patch evidence."
+        },
+        {
+          "source_id": "d-freebsd-jail-15576",
+          "kind": "official-advisory",
+          "locator": "FreeBSD-SA-26:04.jail",
+          "supports": "FreeBSD advisory scope and corrected FreeBSD revisions; not Sony patch evidence."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed target",
+          "status": "author-reported"
+        }
+      ],
+      "vulnerability_ids": [
+        "cve-2025-15547",
+        "cve-2025-15576",
+        "cve-2026-7270",
+        "cve-2026-45251",
+        "cve-2024-43102"
+      ]
+    },
+    {
+      "id": "f-apple-cve-no-port-transfer",
+      "title": "Apple WebKit CVEs do not establish Sony PlayStation WebKit status",
+      "classification": "VERIFIED",
+      "confidence": "High for Apple advisories and WebKit's independent port model.",
+      "summary": "Apple publishes WebKit CVEs for Apple products; WebKit documentation says ports are separately maintained. Without Sony source/build mapping, PS5 applicability remains unknown.",
+      "scope": "Apple products and general WebKit porting documentation.",
+      "firmware_relevance": "Provides candidate patch-diff questions only; not 14.10 vulnerability evidence.",
+      "reproduction_status": "Primary advisory and architecture documentation reviewed; no vulnerable page executed.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "org-apple",
+        "org-webkit"
+      ],
+      "vulnerability_ids": [
+        "cve-2021-30889",
+        "cve-2022-22620",
+        "cve-2023-41993"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-apple-2021-30889",
+          "kind": "official-advisory",
+          "locator": "Safari 15.1",
+          "supports": "Apple product issue only."
+        },
+        {
+          "source_id": "d-apple-2022-22620",
+          "kind": "official-advisory",
+          "locator": "Safari 15.3",
+          "supports": "Apple product issue only."
+        },
+        {
+          "source_id": "d-apple-2023-41993",
+          "kind": "official-advisory",
+          "locator": "Safari 17",
+          "supports": "Apple product issue only."
+        },
+        {
+          "source_id": "d-webkit-ports",
+          "kind": "project-documentation",
+          "locator": "Port model",
+          "supports": "Port-specific maintenance caveat."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "cross-port applicability",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-ipv6-ps5-old",
+      "title": "PS5 IPv6 kernel exploit documentation covers selected old releases",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that pinned repository claims the range; no 14.10 reproduction.",
+      "summary": "PS5 project README documents an experimental implementation through selected releases up to 4.51; a community patch date is not Sony vendor evidence.",
+      "scope": "Pinned PS5 exploit project and upstream FreeBSD CVE-2020-7457 source.",
+      "firmware_relevance": "No 14.10 evidence; upstream FreeBSD advisory alone cannot map into Sony's fork.",
+      "reproduction_status": "Source review only.",
+      "component_ids": [
+        "kernel",
+        "ipv6"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [
+        "cve-2020-7457"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-ipv6",
+          "kind": "author-claim",
+          "locator": "Pinned repository README",
+          "supports": "Older PS5 tested-range claim."
+        },
+        {
+          "source_id": "d-freebsd-ipv6",
+          "kind": "official-advisory",
+          "locator": "SA-20:20.ipv6",
+          "supports": "FreeBSD-only CVE scope."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-4.51",
+          "relationship": "old project tested ceiling",
+          "status": "author-reported"
+        },
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "patch/applicability",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-exfat-historical",
+      "title": "exFAT is a historically discussed PS5 filesystem attack surface",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "Moderate for presentation claim; no 14.10 component/source mapping.",
+      "summary": "Public PS5 presentation/index associates exFAT integer handling with early firmware research. CVE mapping and exact Sony patch status are not established from authoritative product-specific material here.",
+      "scope": "Historical research/presentation only.",
+      "firmware_relevance": "Unknown for 14.10.",
+      "reproduction_status": "Presentation/source review only.",
+      "component_ids": [
+        "exfat"
+      ],
+      "researcher_ids": [
+        "org-hardwear"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-hardwear-exfat",
+          "kind": "conference-research",
+          "locator": "exFAT integer-handling discussion",
+          "supports": "Historical PS5 attack-surface claim, not 14.10 status."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "component/patch state",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-pastawithpesto-api-fingerprint",
+      "title": "14.10 community report publishes a browser API and runtime fingerprint",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned README reports these values; hardware identity and measurements are not independently authenticated.",
+      "summary": "The author reports a p163 PS5 running 14.10 with Safari 17.0 / AppleWebKit 605.1.15 and JIT disabled, plus an API availability list (including Workers, WebSocket, streams, FontFace, Atomics and ResizableArrayBuffer). The report says it used on-device probes, but this project did not verify the device or artifacts.",
+      "scope": "Single author-reported PS5 browser fingerprint in the pinned public repository.",
+      "firmware_relevance": "Directly claims PS5 firmware 14.10; independent validation is absent.",
+      "reproduction_status": "README/source review only; no browser probe or console access by this project.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "Pinned README, Target and API availability table",
+          "supports": "Author-attributed 14.10 browser/runtime fingerprint; not independently authenticated."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed tested target",
+          "status": "author-reported"
+        }
+      ]
+    },
+    {
+      "id": "f-pastawithpesto-stream-claims",
+      "title": "14.10 community report claims two ReadableStream tee-stage issues",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned report makes the claims; low for independent technical confirmation or impact.",
+      "summary": "The author reports a private-slot behavior and an object-type confusion in ReadableStream.tee() as live on a 14.10 device. The same report says a JavaScript builtin wall prevents using the confused objects to reach internal fields, and says an out-of-bounds variant terminates in a crash trap. It does not establish arbitrary read/write, code execution, or a complete chain.",
+      "scope": "Two browser-stage findings claimed by the pinned repository author.",
+      "firmware_relevance": "Claims 14.10 device observations; hardware and source/build provenance are not independently authenticated.",
+      "reproduction_status": "Static review of writeups and README only; no probes, vulnerable page, or payload executed.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "Pinned README, Novel Findings and Stage Overview",
+          "supports": "Author reports stream-stage observations and explicit limitations; not independent reproduction."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed tested target",
+          "status": "author-reported"
+        }
+      ]
+    },
+    {
+      "id": "f-pastawithpesto-mitigation-claims",
+      "title": "14.10 browser report describes mitigation and runtime state from device probes",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned report states these settings; the project has not verified the target binary or device readings.",
+      "summary": "The author reports JIT disabled and a JavaScript builtin wall that blocks access to internal fields in confused stream objects. The report also makes WebKit allocator/Gigacage and assertion-build claims based on WebKit-1400 source analysis. These are not independently confirmed facts about the exact Sony 26.06-14.10.00 binary.",
+      "scope": "Mixture of author-reported device observations and source-derived claims about a version-labelled WebKit snapshot.",
+      "firmware_relevance": "Targets 14.10, but the cited public WebKit source is not mapped to the exact console build.",
+      "reproduction_status": "Static review only; no device access and no binary/source build comparison.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "Pinned README, Exploitation Environment and Stage Overview",
+          "supports": "Author mitigation/runtime claims and stated stage limitation."
+        },
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "official-source-listing",
+          "locator": "Sony WebKit source version labels",
+          "supports": "Sony provides a WebKit_1400 snapshot from 14.00 onward; exact 14.10 build mapping is not stated."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed target/source analysis",
+          "status": "author-reported"
+        }
+      ]
+    },
+    {
+      "id": "f-webkitgtk-upstream-scope",
+      "title": "Recent WebKitGTK advisories do not establish Sony 14.10 applicability",
+      "classification": "VERIFIED",
+      "confidence": "High for the cited WebKitGTK/WPE advisory scope; no inference about Sony's fork.",
+      "summary": "The 2026 WebKitGTK/WPE advisories document upstream affected-version ranges and fixes, including memory-safety issues. They identify WebKitGTK/WPE builds and do not map those findings or fixes to Sony's WebKit/JSC source package or PS5 14.10.",
+      "scope": "Bounded to the product scope stated by WSA-2026-0005 and WSA-2026-0006; not a PS5 vulnerability finding.",
+      "firmware_relevance": "Context for static source comparison only; PS5 applicability unknown.",
+      "reproduction_status": "Advisory pages reviewed; no advisory PoC or vulnerable code executed.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "org-webkit"
+      ],
+      "vulnerability_ids": [],
+      "evidence": [
+        {
+          "source_id": "d-webkitgtk-wsa-2026-0005",
+          "kind": "official-advisory",
+          "locator": "Affected versions and individual CVE entries",
+          "supports": "Upstream WebKitGTK/WPE scope and fixed-version statements."
+        },
+        {
+          "source_id": "d-webkitgtk-wsa-2026-0006",
+          "kind": "official-advisory",
+          "locator": "Affected versions and individual CVE entries",
+          "supports": "Current WebKitGTK/WPE advisory scope; some entries concern bundled third-party components."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "Sony applicability of upstream fixes",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-community-firmware-index-limits",
+      "title": "Community update-list snapshots are leads, not Sony firmware attestation",
+      "classification": "VERIFIED",
+      "confidence": "High that the pinned XML files contain the stated version labels and URL/checksum metadata; no firmware bytes were downloaded or hashed.",
+      "summary": "Two commit-pinned MewX XML snapshots list 13.60- and 14.00-labelled update entries with Sony CDN URL metadata. These community records alone do not authenticate the complete firmware bytes, Sony build identity, or a version-to-digest mapping.",
+      "scope": "The two named XML files at their immutable Git commit IDs only.",
+      "firmware_relevance": "Historical-version provenance leads for comparison planning; no PS5 14.10 vulnerability inference.",
+      "reproduction_status": "Pinned XML records reviewed; firmware objects were not downloaded or hashed in this integration.",
+      "component_ids": [
+        "pup"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [],
+      "evidence": [
+        {
+          "source_id": "r-ps5-firmware-list",
+          "kind": "third-party-metadata",
+          "locator": "Pinned 2026-09-09 14.00 XML and 2026-07-17 13.60 XML",
+          "supports": "Community archived XML lists version labels and Sony CDN update URL/checksum metadata, not independent firmware attestation."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.00",
+          "relationship": "archived third-party update-list row",
+          "status": "candidate metadata; Sony version/digest mapping unverified"
+        },
+        {
+          "firmware_id": "ps5-13.60",
+          "relationship": "archived third-party update-list row",
+          "status": "candidate metadata; Sony version/digest mapping unverified"
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q-webkit-build-map",
+      "rank": 1,
+      "question": "Can Sony's version-labelled WebKit/JSC sources be mapped to the exact 26.06-14.10.00 build?",
+      "rationale": "Directly relevant to the browser claims and the only plausible public source-to-fix path found.",
+      "evidence_quality_score": 4,
+      "answerability_score": 4,
+      "safe_verification_score": 5,
+      "community_value_score": 5,
+      "method": "Record official archive URL, version label, HTTP validators/Last-Modified and file-level license notices; obtain exact source/build metadata where available; compare relevant source to pinned upstream advisory fixes. Keep HTTP ETags distinct from cryptographic hashes and report only source-level conclusions until build mapping exists.",
+      "stop_condition": "If Sony archives omit exact source/build mapping, retain UNKNOWN; do not infer binary identity.",
+      "firmware_relevance_score": 5,
+      "priority_score": 4.6,
+      "evidence": [
+        {
+          "source_id": "d-sony-webkit",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-sony-jsc",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-sony-1410-release",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-project-range-semantics",
+      "rank": 2,
+      "question": "Can project support tables distinguish claimed vulnerability range, tested chain, and explicit code gate consistently?",
+      "rationale": "Several repositories use broad range language while source allowlists and entry-stage constraints are narrower.",
+      "evidence_quality_score": 4,
+      "answerability_score": 5,
+      "safe_verification_score": 5,
+      "community_value_score": 3,
+      "method": "Static parser over pinned README and version allowlist plus review; prepare documentation-only proposals.",
+      "stop_condition": "Do not treat absent support as a vendor patch statement.",
+      "firmware_relevance_score": 4,
+      "priority_score": 4.2,
+      "evidence": [
+        {
+          "source_id": "r-relapse-exploit",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "r-psfree",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "r-ps5-umtx",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "r-ps5sdk",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-1410-claim-provenance",
+      "rank": 3,
+      "question": "Can the 14.10 community repositories' claimed observations be authenticated from preserved public artifacts without contacting or probing a console?",
+      "rationale": "High relevance but current evidence is author-asserted and hardware identity/capture integrity is unknown.",
+      "evidence_quality_score": 2,
+      "answerability_score": 3,
+      "safe_verification_score": 5,
+      "community_value_score": 4,
+      "method": "Static audit of manifests, checksums, commit history, offline fixtures, and cross-repository claim lineage; avoid executing tests that trigger vulnerability conditions.",
+      "stop_condition": "Do not attempt device replication, exploit PoCs or execute untrusted code.",
+      "firmware_relevance_score": 5,
+      "priority_score": 3.85,
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "r-ps5-1410-kernel",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-vuln-cve-lineage",
+      "rank": 4,
+      "question": "Do the CVE identifiers cited by 14.10 community reports map to the same upstream flaws and fixes, and is any Sony build correspondence documented?",
+      "rationale": "Public upstream records exist for CVE-2026-43715 and CVE-2026-64784, but the PS5 repository mappings remain unresolved.",
+      "evidence_quality_score": 2,
+      "answerability_score": 3,
+      "safe_verification_score": 5,
+      "community_value_score": 4,
+      "method": "Compare the author-cited component names and source references against primary CVE CNA records, upstream advisory references and exact source fixes; preserve product scope and version boundaries.",
+      "stop_condition": "Keep labels unverified if authoritative record or source commit cannot be located.",
+      "firmware_relevance_score": 5,
+      "priority_score": 3.85,
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "r-ps5-1410-kernel",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-redhat-43715",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-redhat-64784",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-webkitgtk-wsa-43715",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-freebsd-source-correspondence",
+      "rank": 5,
+      "question": "Which upstream FreeBSD code and security backports correspond to Sony's kernel for any named CVE candidate?",
+      "rationale": "Could narrow kernel hypotheses, but there is no authenticated exact 14.10 component source in current sources.",
+      "evidence_quality_score": 3,
+      "answerability_score": 2,
+      "safe_verification_score": 5,
+      "community_value_score": 5,
+      "method": "Search official Sony OSS source packages and build metadata; map source lineage only where provenance is explicit; compare advisory fixes statically.",
+      "stop_condition": "Stop at upstream-only conclusions when Sony source/build correspondence cannot be proven.",
+      "firmware_relevance_score": 4,
+      "priority_score": 3.7,
+      "evidence": [
+        {
+          "source_id": "d-sony-oss-index",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-freebsd-umtx",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-freebsd-execve",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-freebsd-file",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-freebsd-jail-15547",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-freebsd-jail-15576",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-slb2-neighborhood-recurrence",
+      "rank": 6,
+      "question": "Do the two 32-byte pre-entry runs recur in a second provenance-verified official PS5 update?",
+      "rationale": "Directly tied to existing 14.10 observation but cross-version comparison is blocked by historical package provenance.",
+      "evidence_quality_score": 4,
+      "answerability_score": 1,
+      "safe_verification_score": 5,
+      "community_value_score": 3,
+      "method": "Only compare additional official Sony packages once version, URL and digest are independently established; profile numerical metadata only.",
+      "stop_condition": "No unofficial mirror or assumed filename-to-version mapping.",
+      "firmware_relevance_score": 5,
+      "priority_score": 3.7,
+      "evidence": [
+        {
+          "source_id": "d-local-wrapper-observations",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-local-historical-source-audit",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-pup-format-reach",
+      "rank": 7,
+      "question": "What published, safe structural documentation establishes the inner PUP's parser boundary without decryption?",
+      "rationale": "The public unpacker reviewed requires already decrypted input; current firmware analysis stops at outer SLB2 metadata.",
+      "evidence_quality_score": 3,
+      "answerability_score": 2,
+      "safe_verification_score": 5,
+      "community_value_score": 4,
+      "method": "Compare licensed historical format sources and synthetic files; do not guess decryption or run device-required tools.",
+      "stop_condition": "Do not infer inner format from entropy or magic values alone.",
+      "firmware_relevance_score": 3,
+      "priority_score": 3.25,
+      "evidence": [
+        {
+          "source_id": "r-pup-unpacker",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "r-pup-decrypt",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-local-source-review",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    },
+    {
+      "id": "q-historical-update-metadata",
+      "rank": 8,
+      "question": "Can official Sony metadata establish more historical PS5 package hashes and versions for cross-version SLB2 comparison?",
+      "rationale": "Would enable original structural comparisons, but previous audit found no sufficient provenance for 14.00/13.60 candidates.",
+      "evidence_quality_score": 3,
+      "answerability_score": 2,
+      "safe_verification_score": 5,
+      "community_value_score": 4,
+      "method": "Revisit only distinct Sony-controlled manifests or first-party archived source documents; no third-party mirror acquisition.",
+      "stop_condition": "Do not repeat the earlier failed candidates; exclude packages lacking official version/hash provenance.",
+      "firmware_relevance_score": 2,
+      "priority_score": 2.95,
+      "evidence": [
+        {
+          "source_id": "d-sony-1410-release",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        },
+        {
+          "source_id": "d-local-historical-source-audit",
+          "supports": "Source to examine for this question; it does not predetermine the answer."
+        }
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "id": "c-64784-scope",
+      "title": "CVE-2026-64784 product and flaw mapping",
+      "status": "needs-review",
+      "severity": "high",
+      "summary": "Red Hat describes CVE-2026-64784 as a WebKitGTK out-of-bounds access issue, while a PS5 14.10 repository uses the identifier for a MetadataTable claim. The same-source-fix and Sony product mapping remain unresolved; this is not proof of misattribution.",
+      "finding_ids": [
+        "f-pastawithpesto-cve-claim"
+      ],
+      "source_ids": [
+        "r-ps5-1410-browser",
+        "d-redhat-64784"
+      ]
+    },
+    {
+      "id": "c-43715-record",
+      "title": "CVE-2026-43715 PS5 source mapping",
+      "status": "needs-review",
+      "severity": "high",
+      "summary": "A public WebKitGTK CVE/advisory exists for a use-after-free, with upstream references. The unresolved question is whether the PS5 reportâ€™s CSSFontFace observation is the same flaw and whether any Sony build is affected. No source/build correspondence or independent PS5 reproduction is established.",
+      "finding_ids": [
+        "f-pastawithpesto-cve-claim"
+      ],
+      "source_ids": [
+        "r-ps5-1410-browser"
+      ]
+    },
+    {
+      "id": "c-14-10-no-chain-vs-browser-claims",
+      "title": "14.10 browser claims versus public-chain status wording",
+      "status": "needs-review",
+      "severity": "medium",
+      "summary": "One repository claims browser-stage primitives on 14.10 while another status report says there is no public userland exploit. These can coexist if the distinction is between userland primitives and a complete public entry chain; sources need careful stage-by-stage reconciliation.",
+      "finding_ids": [
+        "f-pastawithpesto-cve-claim",
+        "f-zigzag-userland-claims",
+        "f-pastawithpesto-stream-claims"
+      ],
+      "source_ids": [
+        "r-ps5-1410-browser",
+        "r-ps5-1410-kernel"
+      ]
+    },
+    {
+      "id": "c-43705-ps5-mapping",
+      "title": "CVE-2026-43705 and PS5 TransformStream claim mapping",
+      "status": "needs-review",
+      "severity": "high",
+      "summary": "The WebKitGTK/WPE advisory identifies CVE-2026-43705 as a type-confusion issue and cites Bugzilla 314528. A pinned PS5 14.10 repository uses the same CVE for a TransformStream double-iteration claim. The shared identifier is verified, but source-fix identity, platform/build correspondence, and PS5 applicability are unresolved.",
+      "finding_ids": [
+        "f-pastawithpesto-cve-claim"
+      ],
+      "source_ids": [
+        "r-ps5-1410-browser",
+        "d-webkitgtk-wsa-43715"
+      ]
+    }
+  ]
+}
