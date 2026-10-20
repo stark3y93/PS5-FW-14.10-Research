@@ -1,0 +1,11 @@
+# Prioritized offline research
+
+1. **Audit the public 14.10 userland evidence package.** Review the public research project's referenced probes and immutable result files for the thread-ROP and controlled-write claims; trace each summary assertion to a raw capture and exact probe revision. The project explicitly says kernel R/W and a target kernel vulnerability are not demonstrated. Do not replay probes on hardware in this offline workflow.
+2. **Preserve and normalize local evidence.** Run `python -S tools/ps5_research.py --evidence-root 'C:\path\to\browser-research-checkout' --format json` and archive the output with original logs. For each historical V429/V432/V445 claim, locate the complete session, timestamps, console model, and test source revision. Mark unavailable captures as unavailable rather than reconstructing them from prose.
+3. **Establish firmware provenance.** Record the official PUP SHA-256; validate package version through trusted Sony metadata. The SLB2 header cannot identify WebKit or kernel patch state. Do not infer contents from encrypted payload sizes.
+4. **Verify upstream-to-target mapping.** Obtain an authorized 14.10 WebKit build/source reference or trustworthy binary diff and check the exact `iterateClients` lifetime fix and `FontFace::load` behavior. A source match would establish candidacy, not exploitability.
+5. **Re-evaluate MetadataTable offline.** Use synthetic count/stride cases around the exact uint32 boundary and review the immutable upstream source and fix. Do not infer a PS5 heap write from compilation or a lost beacon. Preserve the corrected V480 result with any discussion of earlier runs.
+6. **Audit FreeBSD candidates against Sony's fork.** Compare exact patched functions for CVE-2026-7270 and CVE-2026-45251 against an authorized 14.10 kernel artifact, then separately assess syscall reachability. Without both, classify them as upstream-only.
+7. **Document chain gaps.** A userland primitive still needs a demonstrated browser/app entry, required sandbox transition, kernel vulnerability, and kernel read/write. Hypervisor/content-protection impact needs separate evidence. Debug Settings alone does not verify later stages.
+
+These steps are read-only. No live payloads, console changes, or dependency installation are required.

@@ -2,6 +2,8 @@
 
 This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. The tests use only synthetic containers.
 
+The [Gezine review](reports/GEZINE_1410_RESEARCH.md), [vulnerability matrix](reports/VULNERABILITY_MATRIX.md), [false-positive audit](reports/FALSE_POSITIVES.md), [patch comparisons](reports/UPSTREAM_PATCH_COMPARISON.md), [firmware compatibility](reports/FIRMWARE_COMPATIBILITY.md), and [research progress](reports/RESEARCH_PROGRESS.md) distinguish public demonstrations, upstream advisories and evidence on this package. Browser logs can be inspected read-only from a separate checkout.
+
 ## What it does
 
 | Command | Output | Input protection |
@@ -24,7 +26,26 @@ python -S -m unittest discover -s tests -v
 ```
 
 The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
-The integrated suite currently has 49 tests, including deterministic parser mutations and the survey and comparator regressions. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
+The integrated suite includes deterministic parser mutations, survey and comparator regressions, and synthetic evidence-audit cases. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
+
+## Unified offline evidence audit
+
+Run from this checkout in Windows PowerShell with Python 3.12. No installation or console connection is needed:
+
+```powershell
+python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --sha256 --evidence-root 'C:\path\to\browser-research-checkout' --output derived\evidence-audit.md
+python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --evidence-root 'C:\path\to\browser-research-checkout' --format json --output derived\evidence-audit.json
+```
+
+The tool inventories both checkouts, parses saved beacon logs, indexes claims and static code patterns with file and line, flags the V480 contradiction and incomplete test endings, compares caller-supplied source snapshots, models checked integer boundaries, and calls this repository's bounded SLB2 parser for PUP metadata. It never decrypts the inner PUP, executes probes, or labels a pattern match as a vulnerability. `--output` refuses to overwrite an existing result; choose a new path on repeat runs. See the [committed sample report](reports/OFFLINE_ANALYSIS.md).
+
+Compare two local text snapshots, retaining hashes and a unified diff:
+
+```powershell
+python -S tools/ps5_research.py --compare .\source-before.cpp .\source-after.cpp --output derived\source-diff.json
+```
+
+The arithmetic and bounds helpers are synthetic models; they do not allocate large buffers or execute target code.
 
 ## Reproduce the 14.10 observations locally
 
