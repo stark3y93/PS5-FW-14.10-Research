@@ -3,6 +3,7 @@
 import struct
 import tempfile
 import unittest
+from random import Random
 from pathlib import Path
 
 from ps5fwlab.slb2 import SLB2Error, parse_slb2
@@ -53,6 +54,12 @@ class SLB2Tests(unittest.TestCase):
         with self.assertRaises(SLB2Error):
             self.parse(data)
 
+    def test_rejects_zero_entry_count(self):
+        data = package()
+        struct.pack_into("<I", data, 0x0C, 0)
+        with self.assertRaises(SLB2Error):
+            self.parse(data)
+
     def test_rejects_entry_inside_header(self):
         with self.assertRaises(SLB2Error):
             self.parse(package(entries=((0, 100, b"PART.PUP"),)))
@@ -69,9 +76,58 @@ class SLB2Tests(unittest.TestCase):
         with self.assertRaises(SLB2Error):
             self.parse(package(entries=((2, 100, b"../PART.PUP"),)))
 
+    def test_rejects_non_ascii_name(self):
+        with self.assertRaises(SLB2Error):
+            self.parse(package(entries=((2, 100, b"PART\xff.PUP"),)))
+
+    def test_rejects_nonzero_name_padding(self):
+        with self.assertRaises(SLB2Error):
+            self.parse(package(entries=((2, 100, b"PART.PUP\x00X"),)))
+
     def test_rejects_zero_length_entry(self):
         with self.assertRaises(SLB2Error):
             self.parse(package(entries=((2, 0, b"PART.PUP"),)))
+
+    def test_rejects_duplicate_entry_names(self):
+        with self.assertRaises(SLB2Error):
+            self.parse(package(total_blocks=4, entries=((2, 100, b"PART.PUP"), (3, 100, b"PART.PUP"))))
+
+    def test_accepts_entry_ending_at_file_boundary(self):
+        result = self.parse(package(entries=((2, 512, b"PART.PUP"),)))
+        self.assertEqual(result.entries[0].offset + result.entries[0].size, result.file_size)
+
+    def test_rejects_uint32_maximum_offset_and_block_count(self):
+        data = package()
+        struct.pack_into("<I", data, 0x20, 0xFFFFFFFF)
+        with self.assertRaises(SLB2Error):
+            self.parse(data)
+        data = package()
+        struct.pack_into("<I", data, 0x10, 0xFFFFFFFF)
+        with self.assertRaises(SLB2Error):
+            self.parse(data)
+
+    def test_rejects_every_truncated_header_length(self):
+        data = package()
+        for length in range(512):
+            with self.subTest(length=length), self.assertRaises(SLB2Error):
+                self.parse(data[:length])
+
+    def test_deterministic_header_mutations_never_escape_bounded_metadata(self):
+        random = Random(1410)
+        header_fields = (0, 0x0C, 0x10, 0x20, 0x24, 0x30)
+        for trial in range(128):
+            data = package()
+            position = random.choice(header_fields) + random.randrange(4)
+            data[position] ^= 1 << random.randrange(8)
+            with self.subTest(trial=trial, position=position):
+                try:
+                    result = self.parse(data)
+                except SLB2Error:
+                    continue
+                for entry in result.entries:
+                    self.assertGreaterEqual(entry.offset, 512)
+                    self.assertGreater(entry.size, 0)
+                    self.assertLessEqual(entry.offset + entry.size, result.file_size)
 
 
 if __name__ == "__main__":
