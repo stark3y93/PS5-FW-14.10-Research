@@ -4,6 +4,7 @@ import hashlib
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 from ps5fwlab.neighborhood import map_neighborhood, profile_bytes
 from test_slb2 import package
@@ -47,6 +48,25 @@ class NeighborhoodTests(unittest.TestCase):
             path.write_bytes(package())
             with self.assertRaisesRegex(ValueError, "SHA-256"):
                 map_neighborhood(path, "0" * 64)
+
+    def test_rejects_file_changed_during_mapping(self):
+        data = package()
+        with tempfile.TemporaryDirectory() as directory:
+            path = Path(directory) / "synthetic.pup"
+            path.write_bytes(data)
+            digest = hashlib.sha256(data).hexdigest()
+            original_profile = profile_bytes
+
+            def mutate_after_profile(sample):
+                result = original_profile(sample)
+                with path.open("r+b") as source:
+                    source.seek(-1, 2)
+                    source.write(b"X")
+                return result
+
+            with patch("ps5fwlab.neighborhood.profile_bytes", side_effect=mutate_after_profile):
+                with self.assertRaisesRegex(ValueError, "changed during boundary mapping"):
+                    map_neighborhood(path, digest)
 
     def test_nonzero_gap_edges_and_source_preservation(self):
         data = package(total_blocks=4, entries=((2, 513, b"A.PUP"),))

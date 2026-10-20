@@ -24,7 +24,7 @@ python -S -m unittest discover -s tests -v
 ```
 
 The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
-The integrated suite currently has 49 tests, including deterministic parser mutations and the survey and comparator regressions. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
+The integrated suite currently has 50 tests, including deterministic parser mutations, survey and comparator regressions, and mapper mutation detection. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
 
 ## Reproduce the 14.10 observations locally
 
