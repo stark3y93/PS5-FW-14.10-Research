@@ -21,7 +21,7 @@
       "limitations": "Older firmware focus; bundled payloads and network host were not run; no dedicated test tree found",
       "possible_improvement": "Offline lint or documentation checks for the published firmware support list and offset-file inventory",
       "evidence": [
-        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md", "supports": "author firmware list and explicit >=6.00 limitation"},
+        {"kind": "author_claim", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md", "supports": "author firmware list and explicit >=6.00 limitation"},
         {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/tree/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/document/en/ps5/offsets", "supports": "firmware-specific files in source tree"},
         {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/LICENSE", "supports": "root licence"}
       ]
@@ -38,8 +38,9 @@
       "limitations": "SDK is marked work in progress; its firmware-specific examples depend on offsets; no dedicated test tree found",
       "possible_improvement": "Synthetic CMake configure/build checks and documentation that distinguishes generic SDK compilation from firmware-specific runtime support",
       "evidence": [
-        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/README.md", "supports": "functionality, contribution invitation, firmware list, GPL statement"},
-        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5SDK/tree/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/ps5/kernel_offsets", "supports": "offset inventory"}
+        {"kind": "author_claim", "url": "https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/README.md", "supports": "author description, firmware support list and contribution invitation"},
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5SDK/tree/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/ps5/kernel_offsets", "supports": "offset inventory"},
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/LICENSE", "supports": "root licence text"}
       ]
     },
     {
@@ -54,7 +55,7 @@
       "limitations": "Game dependency and userland scope; no dedicated test tree found",
       "possible_improvement": "Document a versioned compatibility matrix with evidence per entry and separate loader from payload prerequisites",
       "evidence": [
-        {"kind": "source_observation", "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/README.md", "supports": "author firmware and dependency statements"},
+        {"kind": "author_claim", "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/README.md", "supports": "author firmware and dependency statements"},
         {"kind": "source_observation", "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/LICENSE", "supports": "root licence"}
       ]
     },
@@ -70,7 +71,7 @@
       "limitations": "No 14.10 compatibility evidence and no dedicated test tree found",
       "possible_improvement": "Add machine-readable supported-version metadata and offline checks against documentation",
       "evidence": [
-        {"kind": "source_observation", "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/README.md", "supports": "author-supported version range"},
+        {"kind": "author_claim", "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/README.md", "supports": "author-supported version range"},
         {"kind": "source_observation", "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/LICENSE", "supports": "root licence"}
       ]
     },
@@ -86,7 +87,7 @@
       "limitations": "Requires separately decrypted input and does not unpack nested filesystems",
       "possible_improvement": "Independent synthetic parser fixtures and defensive input-boundary tests, contingent on reproducible bug and licence review",
       "evidence": [
-        {"kind": "source_observation", "url": "https://github.com/zecoxao/ps5-pup-unpacker/blob/005cccc908142c35ab7280e7f9eef8d5203c21e0/README.md", "supports": "input prerequisite and scope"},
+        {"kind": "author_claim", "url": "https://github.com/zecoxao/ps5-pup-unpacker/blob/005cccc908142c35ab7280e7f9eef8d5203c21e0/README.md", "supports": "author-described input prerequisite and scope"},
         {"kind": "source_observation", "url": "https://github.com/zecoxao/ps5-pup-unpacker/tree/005cccc908142c35ab7280e7f9eef8d5203c21e0", "supports": "root inventory including absent root licence"}
       ]
     },
