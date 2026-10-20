@@ -10,3 +10,46 @@ __pycache__/
 *.egg-info/
 /build/
 /dist/
+
+# Local environment, secrets and credentials (never commit)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+id_rsa
+id_ed25519
+*.credentials.json
+*secrets*.json
+*token*.json
+*.sqlite
+*.sqlite3
+*.db
+
+# Firmware, binary dumps, crash dumps and captured private traffic
+*.PUP
+*.pup
+*.dmp
+*.core
+*.pcap
+*.pcapng
+*.har
+*.bin
+*.elf
+*.self
+*.sprx
+*.rpx
+*.pkg
+*.iso
+
+# Local machine / editor / temporary files
+.vscode/
+.idea/
+*.log
+*.tmp
+*.bak
+Thumbs.db
+.DS_Store
