@@ -679,7 +679,7 @@
       "date": "2026-10-20",
       "kind": "official source listing",
       "provenance": "Sony-controlled page labels WebKit_1400 for PS5 14.00 onward. Direct HEAD check on 2026-10-20: 1,637,794,253 bytes; Last-Modified 2026-10-15; ETag 0x8DF2A837F34C6C7 (HTTP validator, not a cryptographic hash).",
-      "summary": "Provides version-labelled source snapshot but no exact mapping to 26.06-14.10.00 build/commit. The archive is large and was not downloaded in this integration.",
+      "summary": "Provides version-labelled source snapshot but no exact mapping to 26.06-14.10.00 build/commit. The full archive remains undownloaded; selective range reads matched two WebCore files to upstream commit 0e722583a4d695c7b25f384c61fbf5b59b4c3146.",
       "researchers": [
         "user-sony"
       ],
@@ -693,7 +693,7 @@
       "date": "2026-10-20",
       "kind": "official source listing",
       "provenance": "Sony-controlled page labels JSC-800 for PS5 8.00 onward. Direct HEAD check on 2026-10-20: 1,369,859,528 bytes; Last-Modified 2026-08-07; ETag bf49658547d459e0405ba5cba59cb1d6:1786126791.99314 (HTTP validator, not a cryptographic hash).",
-      "summary": "Provides JSC source; exact 14.10 build correspondence is not stated. The archive is large and was not downloaded in this integration.",
+      "summary": "Provides a separate JSC source snapshot; its version configuration reports 613.1.17.1.14 and no exact 14.10 build correspondence. The full archive remains undownloaded.",
       "researchers": [
         "user-sony"
       ],
@@ -1424,10 +1424,10 @@
       "title": "Sony publishes version-labelled WebKit and JSC snapshots without exact 14.10 build mapping",
       "classification": "VERIFIED",
       "confidence": "High for source page labels; exact 14.10 revision correspondence unknown.",
-      "summary": "Sony WebKit source page labels WebKit_1400 as 14.00 onward and JSC-800 as 8.00 onward. Neither page documents the exact commit/build shipped in 26.06-14.10.00.",
-      "scope": "Sony source listings; archive contents were not downloaded for this review.",
+      "summary": "Sony WebKit source page labels WebKit_1400 as 14.00 onward and JSC-800 as 8.00 onward. Four sampled WebCore/JSC files in WebKit_1400 match upstream commit 0e722583a4d695c7b25f384c61fbf5b59b4c3146; the separate JSC-800 version file reports 613.1.17.1.14. Neither page maps the published source to 26.06-14.10.00.",
+      "scope": "Sony-published source bundle members selected by HTTP range reads; exact firmware build mapping remains unknown.",
       "firmware_relevance": "Provides a PC-only lead for 14.10 source research, not binary equivalence.",
-      "reproduction_status": "Source page reviewed; source archives not acquired or built.",
+      "reproduction_status": "Sony ZIP metadata and selected source members range-read and hashed; four WebCore/JSC files in WebKit_1400 matched the pinned upstream commit; JSC-800 version metadata was inspected; full archives not downloaded; no engine build or console test.",
       "component_ids": [
         "webkit",
         "jsc"
