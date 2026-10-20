@@ -60,6 +60,8 @@ def _candidate_slots(offset: int, size: int, window_size: int, prior_samples: in
     if slot_count > MAX_SURVEY_SLOTS:
         raise ValueError("survey slot frame exceeds the supported limit")
     span = size - window_size
+    if prior_samples > span + 1:
+        raise ValueError("prior survey has more samples than distinct window starts")
     prior_positions = (
         [offset] if prior_samples == 1 else
         [offset + span * index // (prior_samples - 1) for index in range(prior_samples)]

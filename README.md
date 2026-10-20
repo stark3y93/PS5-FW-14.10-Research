@@ -48,6 +48,7 @@ The `entropy` windows can overlap; they are descriptive measurements, not indepe
 
 ## Findings and limits
 
+- [Public research index](research/README.md) pins upstream sources, classifies evidence and links to ranked open questions.
 - [14.10 wrapper observations](notes/wrapper-neighborhood-14.10.md) include two 32-byte nonzero runs in a fully measured 512-byte pre-entry block. Their recurrence across versions is unknown.
 - [Independent 14.10 byte-window survey](notes/independent-survey-14.10.md) records offsets, results and statistical limits.
 - [Cross-version comparison](notes/cross-version-comparison-2026-10-20.md) has synthetic validation but no provenance-verified historical input.

@@ -30,6 +30,15 @@ class SurveyTests(unittest.TestCase):
             plan_survey_offsets(offset=0, size=1024, window_size=256,
                                 samples=3, seed_sha256="0" * 64, prior_samples=2)
 
+    def test_rejects_prior_design_with_repeated_window_starts(self):
+        with self.assertRaisesRegex(ValueError, "distinct window starts"):
+            survey_frame_size(offset=0, size=256, window_size=256,
+                              prior_samples=2)
+        with self.assertRaisesRegex(ValueError, "distinct window starts"):
+            plan_survey_offsets(offset=0, size=257, window_size=256,
+                                samples=1, seed_sha256="0" * 64,
+                                prior_samples=3)
+
     def test_frame_size_counts_only_unsampled_aligned_slots(self):
         self.assertEqual(survey_frame_size(offset=512, size=4096,
                                            window_size=256, prior_samples=3), 12)
