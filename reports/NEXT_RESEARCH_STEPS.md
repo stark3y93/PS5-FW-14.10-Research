@@ -1,5 +1,17 @@
 # Prioritized research after the WebKit source audit
 
+## Phase 4 priorities
+
+1. **Obtain exact 14.10 browser/component correspondence.** Selective TransformStream safeguards alongside old CSSFontFace and metadata-table code make family/version inference insufficient. Ask for vendor build/source correspondence or authorized exact-build material with reliable provenance; inspect each relevant function. This remains the highest information-value task.
+2. **Establish ordinary navigation and collect passive API observations if reachable.** Follow [diagnostic instructions](PS5_BROWSER_DIAGNOSTIC.md). No external route is verified from the guide. If unavailable, record that limitation and continue offline. Feature support cannot identify patch state.
+3. **Complete metadata reachability analysis offline.** The exact upstream [overflow fix](https://github.com/WebKit/WebKit/commit/97df94ead028cddcfc21e48ec6f2f72d25ec1662) and old Sony source are now located. Review caller limits and opcode-specific metadata sizes in an authorized source subset before any engine experiment. Do not assume the historical stride of 112 applies, and do not generate enormous programs or allocations on the console. Keep the corrected V480 negative result.
+4. **Run controlled PC engine comparisons only in an already prepared environment.** Preserve source hashes, flags, complete failure output and old/fixed controls. Current fixtures validate tools and logical models, not an engine fault. No new dependencies are required for this phase's deliverables.
+5. **Keep native and privileged evidence separate.** Independently authenticated 80j/80k records would clarify userland evidence; they would not prove a WebKit entry or kernel primitive. Reborn's older-firmware hypervisor work requires prior kernel capability and does not supply 14.10 support. See [boundary matrix](SECURITY_BOUNDARY_MATRIX.md).
+
+TransformStream's specific unchecked-result hypothesis is deprioritized because the published Sony file already contains the checks. API presence alone is not a reason to revive it. Ranks express research information value, not exploit likelihood.
+
+## Earlier priority list (retained)
+
 1. **Obtain an exact, authorized 14.10 browser build correspondence.** Sony's published “14.00 -” source has now been inspected and lacks both font safeguards. The highest-value missing item is a vendor component/source mapping or lawfully supplied browser binary with reliable `26.06-14.10.00` provenance. Compare the actual backing-load and client-iteration functions, including possible backports. Repeating the public source comparison cannot establish the executable's patch state.
 2. **Run a version-pinned PC engine regression pair when a suitable build environment is available.** Run the public font-face regression under the old and fixed WebKit builds and retain source hashes, build configuration and harness output. A source model or generic browser pass does not substitute for this test. The current synthetic tests establish logical reentrancy/ownership differences only.
 3. **Obtain independently authenticated userland result records.** PR #20's 80j/80k captures support reported marker writes; 80i still lacks readback and completion. A separately retained capture with exact source hash, target identity and original/result values would address authenticity. It would not establish a kernel vulnerability.

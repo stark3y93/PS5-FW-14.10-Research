@@ -501,6 +501,9 @@ def main(argv=None):
                         help="compare two CSSFontFace snapshot manifests")
     webkit.add_argument("--fetch-webkit", metavar="COMMIT", help="download two pinned official source files from an audited full commit")
     parser.add_argument("--snapshot-dir", type=Path, help="new source directory required by --fetch-webkit")
+    parser.add_argument("--browser-diagnostic", nargs="+", type=Path,
+                        help="import 1-64 passive diagnostic JSON records; no console connection")
+    parser.add_argument("--target-firmware", default="14.10", help="self-reported firmware label filter")
     args = parser.parse_args(argv)
     if not args.root.is_dir():
         parser.error("--root must be a directory")
@@ -509,10 +512,25 @@ def main(argv=None):
     if args.probe_audit and not args.probe_audit.is_dir():
         parser.error("--probe-audit must be a directory")
     webkit_mode = args.webkit_snapshot or args.webkit_compare or args.fetch_webkit
-    if sum(bool(mode) for mode in (args.compare, args.probe_audit, webkit_mode)) > 1:
+    if sum(bool(mode) for mode in (args.compare, args.probe_audit, webkit_mode, args.browser_diagnostic)) > 1:
         parser.error("choose one comparison/audit mode")
     if args.snapshot_dir and not args.fetch_webkit:
         parser.error("--snapshot-dir requires --fetch-webkit")
+    if args.browser_diagnostic:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+        from ps5fwlab.browser_evidence import analyze_diagnostics, render_diagnostics
+        try:
+            result = analyze_diagnostics(args.browser_diagnostic, args.target_firmware)
+            payload = json.dumps(result, indent=2) + "\n" if args.format == "json" else render_diagnostics(result)
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                with args.output.open("x", encoding="utf-8") as stream:
+                    stream.write(payload)
+            else:
+                print(payload, end="")
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
+        return 0
     if webkit_mode:
         sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
         from ps5fwlab.webkit_patch import classify_snapshot, compare_snapshots, fetch_snapshot, render_report

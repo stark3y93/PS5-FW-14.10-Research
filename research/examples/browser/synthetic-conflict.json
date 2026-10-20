@@ -1,0 +1,9 @@
+{
+  "schema": "ps5-browser-diagnostic/1",
+  "diagnostic_version": "1.0",
+  "status": "complete",
+  "firmware_label": "14.10",
+  "captured_at": "SYNTHETIC — not a console capture",
+  "user_agent": "SYNTHETIC PlayStation 5/14.10",
+  "features": {"FontFace": false, "fontSet": true, "TransformStream": true}
+}

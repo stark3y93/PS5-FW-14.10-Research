@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'unsafe-inline'; connect-src 'none'; img-src 'none'; font-src 'none'; media-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>PS5 passive browser diagnostic</title>
+<style>
+body { background: #101827; color: #f4f6fa; font: 24px/1.5 sans-serif; margin: 2em; max-width: 60em; }
+button, input, textarea { font: inherit; padding: .5em; margin: .3em 0; }
+button { min-height: 3em; margin-right: 1em; } :focus { outline: 4px solid #ffd35a; }
+textarea { box-sizing: border-box; width: 100%; height: 18em; }
+pre { white-space: pre-wrap; overflow-wrap: break-word; }
+</style>
+<script src="diagnostic.js" defer></script>
+</head>
+<body>
+<h1>Passive browser diagnostic · 1.0</h1>
+<p>This checks API availability only. It cannot detect a jailbreak or confirm a security patch.
+No font is loaded, no exploit is run, and no results are uploaded.</p>
+<noscript><p>JavaScript is unavailable here. Photograph this message and record the browser context.</p></noscript>
+<label for="firmware">Firmware label (enter the version you checked in Settings):</label>
+<input id="firmware" value="14.10" maxlength="5" size="7">
+<p><button id="run" type="button">Run passive checks</button><button id="select" type="button">Select JSON text</button></p>
+<p id="status" role="status">Ready. Select Run to begin.</p>
+<pre id="summary" aria-live="polite"></pre>
+<label for="output">Results JSON (read only):</label>
+<textarea id="output" readonly spellcheck="false"></textarea>
+<p>Photograph the summary, or select and copy JSON if your browser permits it. Copy is not guaranteed on PS5.</p>
+<p>No address, cookies, account data, device identifiers or storage contents are collected.
+The browser user-agent and the label you enter are self-reported information.</p>
+</body></html>

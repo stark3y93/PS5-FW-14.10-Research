@@ -74,6 +74,31 @@ Use new paths on repeat runs; source and output overwrites are refused. `--webki
 
 The five source classifications are `PATCHED — VERIFIED`, `VULNERABLE IMPLEMENTATION — VERIFIED`, `MODIFIED / AMBIGUOUS`, `COMPONENT NOT FOUND`, and `INSUFFICIENT EVIDENCE`. “Verified” describes the source pattern and exact audited file pair. A lifetime-only security backport is reported as mixed/ambiguous with its safeguard states; it is not called an unpatched UAF. The limited lexical detector is not a C++ compiler, and the synthetic callback/reference-count tests are not engine-level vulnerability reproductions.
 
+## Passive browser diagnostic and feasibility audit
+
+Phase 4 adds a passive page and offline JSON importer. See [console/PC instructions](reports/PS5_BROWSER_DIAGNOSTIC.md), [target compatibility](reports/WEBKIT_TARGET_COMPATIBILITY.md), [boundary matrix](reports/SECURITY_BOUNDARY_MATRIX.md) and [feasibility report](reports/JAILBREAK_FEASIBILITY_1410.md). No external-navigation route on the 14.10 guide is assumed. The page checks availability without loading fonts, executing a regression or uploading results.
+
+PC preview (stop the server with Ctrl+C):
+
+```powershell
+Set-Location E:\PS5-FW-14.10-Research
+python -S -m http.server 8765 --bind 127.0.0.1 --directory diagnostics/browser
+```
+
+Open `http://127.0.0.1:8765/` on the PC. Select **Run passive checks**. The editable firmware label cannot turn PC results into a PS5 capture. Console instructions are conditional on an existing ordinary navigation route; a GitHub raw page is not a working HTML host.
+
+Exercise the importer immediately using clearly marked synthetic records:
+
+```powershell
+python -S tools/ps5_research.py --browser-diagnostic research/examples/browser/synthetic-complete.json research/examples/browser/synthetic-conflict.json --target-firmware 14.10 --format markdown
+python -S tools/ps5_research.py --browser-diagnostic research/examples/browser/synthetic-complete.json research/examples/browser/synthetic-conflict.json --format json --output derived\browser-fixture-audit-new.json
+$env:PYTHONPATH = (Join-Path (Get-Location) 'src')
+python -S -m unittest discover -s tests -q
+node tests/browser_diagnostic.test.cjs
+```
+
+Python tests require no dependencies. The page fixtures use the already-installed Node runtime's built-in VM only; if Node is absent, do not install it for the console. Those fixtures test page logic, not an actual WebKit engine. Importer evidence uses SHA-256 plus JSON pointers. A `complete` record is self-reported page completion, never proof of firmware identity, native execution or a vulnerability. Source-version comparisons remain available through `--compare` and `--webkit-compare` above.
+
 ## Reproduce the 14.10 observations locally
 
 The official PS5 update file must be obtained separately from [Sony's support page](https://www.playstation.com/en-gb/support/hardware/ps5/system-software/). Keep it in ignored `artifacts/`. [Provenance and package identity](notes/provenance.md) record the 14.10 source, size and digest. The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`.
