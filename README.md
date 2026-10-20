@@ -1,6 +1,18 @@
 # PS5 update wrapper research toolkit
 
-This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. The tests use only synthetic containers.
+This repository contains original Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package and for collecting bounded normal-webpage capability observations. It contains no Sony firmware, extracted binaries, keys or exploit payloads. Offline tests use synthetic inputs; optional browser collection connects only to your explicitly bound trusted-LAN PC service.
+
+## PS5 browser capability bridge
+
+The user reports that the original passive page now runs on a real PS5 14.10. Raw target JSON and the exact navigation route are still pending. The new authenticated LAN bridge collects results, schedules five fixed bounded diagnostic categories and exports evidence matrices. It does not unlock debug options or system access. See [setup and exact PS5 steps](docs/PS5_RESEARCH_BRIDGE.md) and [implementation/evidence status](reports/PS5_1410_BROWSER_BRIDGE.md).
+
+```powershell
+Set-Location E:\PS5-FW-14.10-Research
+# After YOU stop the existing diagnostic server on 8765, reuse its working URL:
+python -S tools/ps5_bridge.py --bind 192.168.4.29 --port 8765 --secondary-port 8766
+```
+
+Open the printed dashboard URL on the PC and enter its separate dashboard key. On the PS5, reload the already working `http://192.168.4.29:8765/`, pair with the printed pairing key, then run **surface** first. The preserved original passive page is available at `/passive/`. No new PS5 capability is confirmed until real results are collected.
 
 The [Gezine review](reports/GEZINE_1410_RESEARCH.md), [vulnerability matrix](reports/VULNERABILITY_MATRIX.md), [false-positive audit](reports/FALSE_POSITIVES.md), [patch comparisons](reports/UPSTREAM_PATCH_COMPARISON.md), [firmware compatibility](reports/FIRMWARE_COMPATIBILITY.md), and [research progress](reports/RESEARCH_PROGRESS.md) distinguish public demonstrations, upstream advisories and evidence on this package. Browser logs can be inspected read-only from a separate checkout.
 
@@ -23,6 +35,9 @@ Python 3.10 or newer is required. There are no runtime dependencies. From the re
 ```powershell
 $env:PYTHONPATH = (Join-Path (Get-Location) 'src')
 python -S -m unittest discover -s tests -v
+node tests/browser_diagnostic.test.cjs
+node tests/bridge_suite.test.cjs
+node tests/bridge_client.test.cjs
 ```
 
 The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
@@ -76,7 +91,7 @@ The five source classifications are `PATCHED — VERIFIED`, `VULNERABLE IMPLEMEN
 
 ## Passive browser diagnostic and feasibility audit
 
-**Browser-access follow-up:** no reliable custom-page route was verified on PS5 14.10, and the user's guide/YouTube/message attempts are recorded as unsuccessful. See [entry evidence](reports/BROWSER_ENTRYPOINT_EVIDENCE.md), [browser-access findings](reports/PS5_1410_BROWSER_ACCESS.md) and [restricted hosting setup](docs/PS5_DIAGNOSTIC_SETUP.md). For new PC/LAN runs, prefer the two-file restricted host over a general directory server:
+**Historical browser-access follow-up:** the earlier investigation did not verify a reliable custom-page route on PS5 14.10. The user has since reported successful passive diagnostic execution; the exact route and raw JSON remain pending. The earlier unsuccessful guide/YouTube/message attempts are preserved in [entry evidence](reports/BROWSER_ENTRYPOINT_EVIDENCE.md), [browser-access findings](reports/PS5_1410_BROWSER_ACCESS.md) and [restricted hosting setup](docs/PS5_DIAGNOSTIC_SETUP.md). For passive PC/LAN runs, prefer the two-file restricted host over a general directory server:
 
 ```powershell
 python -S tools/host_diagnostic.py --bind 127.0.0.1 --port 8766 --check

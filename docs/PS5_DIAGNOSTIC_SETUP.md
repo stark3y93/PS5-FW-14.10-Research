@@ -1,5 +1,7 @@
 # Passive diagnostic setup on Windows
 
+> Later user observation (2026-10-20): the passive diagnostic reportedly ran on the real PS5 14.10. The exact entry sequence and raw target JSON remain pending. The historical findings below are preserved; see the [browser bridge status](../reports/PS5_1410_BROWSER_BRIDGE.md).
+
 **Current status:** the diagnostic has run on the PC, not the PS5. No reliable arbitrary-page entry on PS5 14.10 was found. This host prepares the page; it cannot open a console browser, alter navigation permissions or enable debug options. See the [research result](../reports/PS5_1410_BROWSER_ACCESS.md) and [entry-point evidence](../reports/BROWSER_ENTRYPOINT_EVIDENCE.md).
 
 ## 1. Check the restricted host locally

@@ -66,3 +66,8 @@ The audit is closer to reliable evidence classification and a repeatable offline
 - Required reports: PS5_1410_BROWSER_ACCESS.md, BROWSER_ENTRYPOINT_EVIDENCE.md and docs/PS5_DIAGNOSTIC_SETUP.md. Source provenance is BROWSER_ACCESS_SOURCE_PROVENANCE.json. Prior PRs #20/#21/#22 remain open; this branch starts from #22 and preserves their history.
 
 - Browser-host independent review found no Critical/Important issue; additional raw request checks confirmed strict routes. The date-description inconsistency was corrected, and all ten source hashes were checked against retained raw responses by the author. Review does not establish console behavior or LAN/firewall reachability.
+
+
+## Browser research bridge follow-up — 20 October 2026
+
+The user now reports successful passive diagnostic execution on a PS5 14.10. Raw target JSON and the exact navigation route are pending. Added an authenticated, bounded LAN research bridge, five fixed diagnostic categories, manual synthetic download/file controls, PC dashboard, controlled second-origin networking and timestamped evidence matrices. The original passive assets and earlier evidence remain unchanged. Real PC browser smoke completed all five categories; this is not target validation. See [implementation and evidence status](PS5_1410_BROWSER_BRIDGE.md) and [connection instructions](../docs/PS5_RESEARCH_BRIDGE.md). No PS5 system/debug/kernel access or new vulnerability was established.

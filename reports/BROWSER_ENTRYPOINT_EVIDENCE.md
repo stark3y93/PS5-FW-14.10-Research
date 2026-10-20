@@ -1,5 +1,7 @@
 # Browser entry-point evidence
 
+> Later user observation (2026-10-20): the passive diagnostic reportedly ran on the real PS5 14.10. The exact entry sequence and raw target JSON remain pending. The historical findings below are preserved; see the [browser bridge status](PS5_1410_BROWSER_BRIDGE.md).
+
 Reviewed 20 October 2026. **No candidate below has independent evidence of arbitrary custom-page navigation on PS5 firmware 14.10.** A supplied URL, an authentication screen, or JavaScript running on a phone cannot establish that result. Original source-byte hashes and date qualifications are in [BROWSER_ACCESS_SOURCE_PROVENANCE.json](BROWSER_ACCESS_SOURCE_PROVENANCE.json). Source dates are not firmware test dates.
 
 ## Candidate matrix

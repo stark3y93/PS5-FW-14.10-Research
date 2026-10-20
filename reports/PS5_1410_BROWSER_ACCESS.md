@@ -1,5 +1,7 @@
 # PS5 14.10 browser access investigation
 
+> Later user observation (2026-10-20): the passive diagnostic reportedly ran on the real PS5 14.10. The exact entry sequence and raw target JSON remain pending. The historical findings below are preserved; see the [browser bridge status](PS5_1410_BROWSER_BRIDGE.md).
+
 Audit: 20 October 2026. **No reliable, reproducible method to open an arbitrary custom webpage on this 14.10 console was verified.** The diagnostic is ready to serve, but hosting does not supply console navigation. We did not run the diagnostic on the PS5.
 
 ## User evidence preserved

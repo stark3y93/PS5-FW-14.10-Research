@@ -23,3 +23,7 @@ jobs:
       - run: python -m unittest discover -s tests -v
       - name: Passive diagnostic fixtures (preinstalled Node, no packages)
         run: node tests/browser_diagnostic.test.cjs
+      - name: Bridge capability and manual-action fixtures (no packages)
+        run: |
+          node tests/bridge_suite.test.cjs
+          node tests/bridge_client.test.cjs
