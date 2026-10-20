@@ -2,8 +2,8 @@
 
 **Title:** Add source-linked SQLite PS5 research knowledge base and dashboard
 
-**Base:** `main`  
-**Head:** `research/max-intelligence-2026-10-20`  
+**Base:** `main`
+**Head:** `research/max-intelligence-2026-10-20`
 **Issue:** #2 (research tracking)
 
 ## Summary
