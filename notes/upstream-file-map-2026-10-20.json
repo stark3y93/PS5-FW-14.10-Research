@@ -1,0 +1,74 @@
+{
+  "scope": "selected independent files only; byte equality does not date the entire archive or any firmware binary",
+  "sony_archive": "artifacts\\sony-oss\\WebKit_1400.zip",
+  "sony_official_index": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+  "upstream_tag": "WebKit-7616.1.27.211.1",
+  "upstream_tag_object": "cc47db7e0acf86175cf5b704a8802b20df5d80aa",
+  "upstream_peeled_commit": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+  "method": "SHA-256 of unmodified ZIP member bytes and pinned WebKit raw Git files",
+  "files": [
+    {
+      "path": "Configurations/Version.xcconfig",
+      "sony_bytes": 3213,
+      "sony_sha256": "2c2f5d80b270c69877aaf5bb075307e0b63d5227ca508e8d2474ea42336f5307",
+      "upstream_bytes": 3213,
+      "upstream_sha256": "2c2f5d80b270c69877aaf5bb075307e0b63d5227ca508e8d2474ea42336f5307",
+      "byte_identical": true,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Configurations/Version.xcconfig"
+    },
+    {
+      "path": "Source/JavaScriptCore/dfg/DFGStoreBarrierInsertionPhase.cpp",
+      "sony_bytes": 28321,
+      "sony_sha256": "68862b10f284063d4a44afeb0cc31f1f1cb27100018f6ebd6887369be89a32fe",
+      "upstream_bytes": 28321,
+      "upstream_sha256": "68862b10f284063d4a44afeb0cc31f1f1cb27100018f6ebd6887369be89a32fe",
+      "byte_identical": true,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/JavaScriptCore/dfg/DFGStoreBarrierInsertionPhase.cpp"
+    },
+    {
+      "path": "Source/JavaScriptCore/dfg/DFGPhiChildren.h",
+      "sony_bytes": 2915,
+      "sony_sha256": "76e87af43149e943fd75fc6c1ff5a04bd7052ff55f0e25acd8b01074bf7f7ed8",
+      "upstream_bytes": 2915,
+      "upstream_sha256": "76e87af43149e943fd75fc6c1ff5a04bd7052ff55f0e25acd8b01074bf7f7ed8",
+      "byte_identical": true,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/JavaScriptCore/dfg/DFGPhiChildren.h"
+    },
+    {
+      "path": "Source/WTF/wtf/Vector.h",
+      "sony_bytes": 70183,
+      "sony_sha256": "5995bf85272e4016c75a3973ad600fb499349a57687cc0d8656a0ef10319678f",
+      "upstream_bytes": 70183,
+      "upstream_sha256": "5995bf85272e4016c75a3973ad600fb499349a57687cc0d8656a0ef10319678f",
+      "byte_identical": true,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WTF/wtf/Vector.h"
+    },
+    {
+      "path": "Source/WebCore/dom/Document.cpp",
+      "sony_bytes": 345610,
+      "sony_sha256": "be2747bc38cd8f9a33e6264c28bd59540491c8a424abb4b8646138755db21347",
+      "upstream_bytes": 345025,
+      "upstream_sha256": "027b5e9a3fd586f9837d380b3e50e5b9ecd006e9ddac92f5397b73f63a3787e8",
+      "byte_identical": false,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebCore/dom/Document.cpp"
+    },
+    {
+      "path": "Source/WebKit/WebProcess/WebPage/WebPage.cpp",
+      "sony_bytes": 335869,
+      "sony_sha256": "ed67e2b305a75bce158286e918de3a544cf973e154092c1755fcea24b3a7c618",
+      "upstream_bytes": 333676,
+      "upstream_sha256": "8ef69f836717f94080c370d41ee9fa6d61631f2b081bfb65cadcaa13e00710c4",
+      "byte_identical": false,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebKit/WebProcess/WebPage/WebPage.cpp"
+    },
+    {
+      "path": "Source/cmake/OptionsPlayStation.cmake",
+      "sony_bytes": 29134,
+      "sony_sha256": "006cc6e1cbbe8e3b7e0fd3070812e89e29b4091413fa14e03deb2bdc6cb1b96d",
+      "upstream_bytes": 15632,
+      "upstream_sha256": "fe495ee73835e0fc7e34e81162175c63e5f7379041b4b98c3f809cce7d4f3ec0",
+      "byte_identical": false,
+      "upstream_url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/cmake/OptionsPlayStation.cmake"
+    }
+  ]
+}

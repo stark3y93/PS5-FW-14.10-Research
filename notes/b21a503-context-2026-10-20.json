@@ -1,0 +1,101 @@
+{
+  "scope": "selected public Sony WebKit source and upstream patch; no firmware binary, actual build flags, or console",
+  "upstream_commit": "b21a503b579a8ab14c839f82cc77176e507352e5",
+  "upstream_parent": "1348ad620797f30b9916bbd40423969fa4a8c1cd",
+  "upstream_message": "[JSC] StoreBarrierInsertionPhase's escape should mark all transitively incoming values to phi",
+  "upstream_files": [
+    {
+      "path": "Source/JavaScriptCore/dfg/DFGStoreBarrierInsertionPhase.cpp",
+      "additions": 13,
+      "deletions": 7
+    }
+  ],
+  "upstream_patch_url": "https://github.com/WebKit/WebKit/commit/b21a503b579a8ab14c839f82cc77176e507352e5",
+  "apple_advisory_url": "https://support.apple.com/en-us/125884",
+  "sony_phase_sha256": "68862b10f284063d4a44afeb0cc31f1f1cb27100018f6ebd6887369be89a32fe",
+  "sony_phase_guard": [
+    29
+  ],
+  "sony_phase_direct_epoch": [
+    194,
+    413,
+    419,
+    476,
+    542
+  ],
+  "sony_phase_stack_direct_epoch": [
+    455
+  ],
+  "sony_phase_transitive_call": [],
+  "upstream_parent_direct_epoch_count": 5,
+  "upstream_parent_stack_direct_epoch_count": 1,
+  "sony_phi_helper": [
+    59
+  ],
+  "sony_interpreter_accessor": [
+    225
+  ],
+  "sony_port_defaults": {
+    "ENABLE_JIT": [
+      206
+    ],
+    "ENABLE_DFG_JIT": [
+      208
+    ],
+    "ENABLE_FTL_JIT": [
+      207
+    ]
+  },
+  "feature_dependency_lines": {
+    "ENABLE_DFG_JIT": [
+      278
+    ],
+    "ENABLE_FTL_JIT": [
+      279
+    ]
+  },
+  "jsc_transitive_helper_references": [
+    {
+      "path": "Source/JavaScriptCore/b3/B3PhiChildren.h",
+      "lines": [
+        126,
+        148
+      ]
+    },
+    {
+      "path": "Source/JavaScriptCore/dfg/DFGAbstractInterpreterInlines.h",
+      "lines": [
+        3929
+      ]
+    },
+    {
+      "path": "Source/JavaScriptCore/dfg/DFGConstantFoldingPhase.cpp",
+      "lines": [
+        281
+      ]
+    },
+    {
+      "path": "Source/JavaScriptCore/dfg/DFGPhiChildren.h",
+      "lines": [
+        59
+      ]
+    }
+  ],
+  "dfg_option_metadata_scan": [
+    {
+      "path": "Source/cmake/OptionsPlayStation.cmake",
+      "lines": [
+        208
+      ]
+    },
+    {
+      "path": "Source/cmake/WebKitFeatures.cmake",
+      "lines": [
+        159,
+        278,
+        279
+      ]
+    }
+  ],
+  "interpretation": "The pre-fix phase logic is present in published source, but the PlayStation port defaults DFG and JIT off. Actual firmware build flags and equivalent runtime fixes remain unknown."
+}

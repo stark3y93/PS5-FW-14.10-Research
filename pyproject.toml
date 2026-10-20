@@ -13,6 +13,7 @@ dependencies = []
 [project.scripts]
 ps5fwlab = "ps5fwlab.__main__:main"
 ps5knowledge = "ps5knowledge.__main__:main"
+ps5diagnostics = "ps5diagnostics.__main__:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -32,6 +32,7 @@ CREATE TABLE contradiction(id TEXT PRIMARY KEY, title TEXT NOT NULL, status TEXT
 CREATE TABLE contradiction_finding(contradiction_id TEXT REFERENCES contradiction ON DELETE CASCADE, finding_id TEXT REFERENCES finding, PRIMARY KEY(contradiction_id,finding_id));
 CREATE TABLE contradiction_source(contradiction_id TEXT REFERENCES contradiction ON DELETE CASCADE, source_id TEXT NOT NULL, PRIMARY KEY(contradiction_id,source_id));
 CREATE TABLE experiment(id TEXT PRIMARY KEY, title TEXT NOT NULL, status TEXT NOT NULL, confidence TEXT NOT NULL, method TEXT NOT NULL, result TEXT NOT NULL, firmware_relevance TEXT NOT NULL, source_url TEXT NOT NULL, log_path TEXT NOT NULL);
+CREATE TABLE console_observation(id TEXT PRIMARY KEY, observed_utc TEXT NOT NULL, console_label TEXT NOT NULL, category TEXT NOT NULL, value TEXT NOT NULL, verification TEXT NOT NULL, method TEXT NOT NULL, source_url TEXT NOT NULL);
 CREATE VIRTUAL TABLE finding_fts USING fts5(finding_id UNINDEXED,title,summary,scope,firmware_relevance,vulnerability_terms);
 CREATE VIRTUAL TABLE question_fts USING fts5(question_id UNINDEXED,question,rationale,method);
 CREATE VIRTUAL TABLE repository_fts USING fts5(repository_id UNINDEXED,owner,name,summary,firmware_claim,license);
@@ -108,6 +109,12 @@ def build_database(catalog_path: str | Path, database_path: str | Path) -> dict[
             con.executemany("INSERT INTO contradiction_source VALUES(?,?)", [(row["id"], x) for x in row.get("source_ids", [])])
         for row in catalog.get("experiments", []):
             con.execute("INSERT INTO experiment VALUES(?,?,?,?,?,?,?,?,?)", tuple(row[k] for k in ("id", "title", "status", "confidence", "method", "result", "firmware_relevance", "source_url", "log_path")))
+        # Preserve separately approved, local console observations across catalog rebuilds.
+        if destination.exists():
+            with closing(sqlite3.connect(destination)) as previous:
+                if previous.execute("SELECT 1 FROM sqlite_master WHERE type='table' AND name='console_observation'").fetchone():
+                    rows = previous.execute("SELECT id,observed_utc,console_label,category,value,verification,method,source_url FROM console_observation").fetchall()
+                    con.executemany("INSERT INTO console_observation VALUES(?,?,?,?,?,?,?,?)", rows)
         con.commit()
         counts = {name: con.execute(f"SELECT count(*) FROM {table}").fetchone()[0] for name, table in (("repositories", "repository"), ("documents", "source"), ("findings", "finding"), ("evidence", "evidence"), ("questions", "question"), ("question_evidence", "question_evidence"), ("contradictions", "contradiction"))}
         counts["sources"] = counts["repositories"] + counts["documents"]

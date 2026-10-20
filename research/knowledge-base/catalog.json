@@ -1046,6 +1046,30 @@
       "summary": "Describes a WebKit use-after-free fixed through improved memory handling in named Apple products.",
       "researchers": [],
       "version_scope": "Apple iOS 26.2 and iPadOS 26.2; no Sony version asserted"
+    },
+    {
+      "id": "d-webkit-7616-tag",
+      "title": "WebKit-7616.1.27.211.1 upstream tag",
+      "publisher": "WebKit project",
+      "url": "https://github.com/WebKit/WebKit/tree/0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "date": "2023-09-15",
+      "kind": "upstream-source-tag",
+      "provenance": "Official WebKit Git annotated tag peeled to pinned commit; file hashes independently compared with Sony ZIP members.",
+      "summary": "Four selected source files are byte-identical to Sony WebKit_1400; three other sampled files differ, including Sony PlayStation port options.",
+      "researchers": [],
+      "version_scope": "Selected files at upstream WebKit-7616.1.27.211.1, not the entire Sony archive or PS5 binary."
+    },
+    {
+      "id": "d-sony-remote-play-pc",
+      "title": "Sony PS Remote Play on PC and Mac instructions",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-gb/support/games/playstation-remote-play-on-pc-and-mac/",
+      "date": null,
+      "kind": "official-support-documentation",
+      "provenance": "Sony support page describing official account sign-in, PS5 selection, automatic discovery and optional pairing.",
+      "summary": "Documents a normal account-authorized connection path; no connection to the owner console was attempted.",
+      "researchers": [],
+      "version_scope": "General PS5 Remote Play guidance; individual console availability unverified."
     }
   ],
   "components": [
@@ -2283,11 +2307,11 @@
       "id": "f-jsc-phi-patch-absent",
       "title": "Named upstream JSC Phi escape fix is absent from Sony published WebKit source",
       "classification": "VERIFIED",
-      "confidence": "High for file-level patch-pattern comparison; low for runtime vulnerability inference.",
-      "summary": "WebKit commit b21a503 adds forAllTransitiveIncomingValues when escaping a Phi. Sony WebKit_1400 DFGStoreBarrierInsertionPhase.cpp lacks that call and retains direct node/stack-escape epoch marking in the compared locations. The JSC-800 archive also lacks the call, but its older function differs. This is a source-delta observation, not proof the 14.10 runtime is affected.",
-      "scope": "Single upstream patch and corresponding named Sony archive files; alternate backports and build configuration not excluded.",
-      "firmware_relevance": "Exact 14.10 component revision, DFG mode and patch/backport status are unknown.",
-      "reproduction_status": "Static comparison on hashed ZIPs; isolated PC model passed under AddressSanitizer; WebKit/JSC engine and PS5 were not executed.",
+      "confidence": "High for named file-level delta; low for active security relevance because published PlayStation port defaults DFG/JIT off.",
+      "summary": "WebKit b21a503 adds transitive Phi incoming-value escape marking. Sony WebKit_1400 retains the pre-fix direct marking in a file byte-identical to the 2023 upstream tag. The phase is guarded by ENABLE(DFG_JIT), while Sony PlayStation build options default DFG/JIT OFF. This is a dormant-by-default source delta, not an established 14.10 defect.",
+      "scope": "Named phase, helper, interpreter and PlayStation CMake options in the public Sony archive; runtime build overrides and other equivalences unverified.",
+      "firmware_relevance": "Low/conditional under published defaults; exact 14.10 binary, build flags and equivalent backports unknown.",
+      "reproduction_status": "Static source audit and synthetic graph model only. Unmodified engine build configuration failed due missing host tools; no engine execution or console test.",
       "component_ids": [
         "jsc",
         "webkit"
@@ -2314,12 +2338,100 @@
           "kind": "official-source-archive",
           "locator": "WebKit_1400.zip Source/JavaScriptCore/dfg/DFGStoreBarrierInsertionPhase.cpp",
           "supports": "Published file has pre-fix direct epoch pattern."
+        },
+        {
+          "source_id": "d-webkit-7616-tag",
+          "kind": "upstream-tag",
+          "locator": "DFGStoreBarrierInsertionPhase.cpp at peeled commit 0e722583",
+          "supports": "Named Sony phase is byte-identical to this older upstream file."
+        },
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "build-option",
+          "locator": "Source/cmake/OptionsPlayStation.cmake:206-208",
+          "supports": "JIT, FTL and DFG are OFF by port default; build overrides remain possible."
         }
       ],
       "firmware": [
         {
           "firmware_id": "ps5-14.10",
           "relationship": "runtime vulnerability applicability",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-sony-webkit-upstream-map",
+      "title": "Selected Sony WebKit files map to pinned 2023 upstream tag",
+      "classification": "VERIFIED",
+      "confidence": "High for seven selected byte comparisons; low for whole-archive identity.",
+      "summary": "Four independent files across version configuration, JSC DFG and WTF match WebKit-7616.1.27.211.1 commit 0e722583 exactly. Document.cpp, WebPage.cpp and OptionsPlayStation.cmake differ, establishing a modified Sony source fork.",
+      "scope": "Seven selected paths in official Sony WebKit_1400 ZIP versus pinned upstream Git files.",
+      "firmware_relevance": "The Sony listing covers 14.00 onward, but this does not identify the exact 14.10 compiled component.",
+      "reproduction_status": "SHA-256 byte comparison from ignored local ZIP and pinned upstream raw files; notes/upstream-file-map-2026-10-20.json.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [],
+      "evidence": [
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "official-source-archive",
+          "locator": "WebKit_1400.zip selected members",
+          "supports": "Sony published source bytes and listing scope."
+        },
+        {
+          "source_id": "d-webkit-7616-tag",
+          "kind": "upstream-tag",
+          "locator": "WebKit-7616.1.27.211.1 peeled commit",
+          "supports": "Four exact matches and three sampled nonmatches."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "exact binary revision",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-sony-dfg-default-off",
+      "title": "Sony PlayStation port defaults DFG and JIT off",
+      "classification": "VERIFIED",
+      "confidence": "High for published CMake defaults; unknown for actual PS5 14.10 build flags.",
+      "summary": "OptionsPlayStation.cmake sets ENABLE_JIT, ENABLE_DFG_JIT and ENABLE_FTL_JIT to OFF by default. The named phase is inside #if ENABLE(DFG_JIT). A targeted metadata scan found no explicit DFG ON override, but CMake cache overrides and unpublished production settings remain possible.",
+      "scope": "Sony WebKit_1400 published PlayStation CMake defaults and targeted source metadata scan, not a production configuration record.",
+      "firmware_relevance": "The b21a503 source delta is inactive if these defaults were used; real 14.10 build flags remain unknown.",
+      "reproduction_status": "Static inspection of hashed ZIP members; no compiled PS5 binary or console execution.",
+      "component_ids": [
+        "jsc",
+        "webkit"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [
+        "cve-2025-43529"
+      ],
+      "evidence": [
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "build-option",
+          "locator": "Source/cmake/OptionsPlayStation.cmake:206-208; DFGStoreBarrierInsertionPhase.cpp:29",
+          "supports": "Port defaults OFF and phase compile guard."
+        },
+        {
+          "source_id": "d-webkit-b21a503",
+          "kind": "upstream-patch",
+          "locator": "escape helper in DFG phase",
+          "supports": "Patch relevance depends on executing this guarded phase."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "actual DFG build mode",
           "status": "unknown"
         }
       ]
@@ -2699,6 +2811,72 @@
       "firmware_relevance": "None; confirms local sanitizer instrumentation works.",
       "source_url": "https://clang.llvm.org/docs/AddressSanitizer.html",
       "log_path": "notes/source-validation-2026-10-20.md"
+    },
+    {
+      "id": "e-upstream-file-map",
+      "title": "Pinned upstream file-hash map",
+      "status": "PASS WITH LIMITATION",
+      "confidence": "High for sampled byte identity",
+      "method": "Compared seven selected ZIP members to peeled WebKit-7616.1.27.211.1 commit via SHA-256.",
+      "result": "Four exact matches; three nonmatches, including Sony PlayStation port options. Whole archive and 14.10 binary not mapped.",
+      "firmware_relevance": "Selected source lineage only.",
+      "source_url": "https://github.com/WebKit/WebKit/tree/0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "log_path": "notes/upstream-file-map-2026-10-20.json"
+    },
+    {
+      "id": "e-b21-context",
+      "title": "Upstream patch and local helper context",
+      "status": "PASS WITH LIMITATION",
+      "confidence": "High for patch and source text",
+      "method": "Audited full one-file commit, its parent, Sony DFG phase, Phi helper and interpreter accessor.",
+      "result": "Upstream changes three escape sites; Sony direct-marking pattern and required helper/accessor exist. No equivalent in the named phase; other runtime equivalences not excluded.",
+      "firmware_relevance": "Conditional on DFG being built and used.",
+      "source_url": "https://github.com/WebKit/WebKit/commit/b21a503b579a8ab14c839f82cc77176e507352e5",
+      "log_path": "notes/b21a503-context-2026-10-20.json"
+    },
+    {
+      "id": "e-dfg-port-options",
+      "title": "PlayStation DFG build-option audit",
+      "status": "PASS WITH LIMITATION",
+      "confidence": "High for published defaults, unknown for production build",
+      "method": "Inspected Sony OptionsPlayStation.cmake, WebKitFeatures dependencies and targeted source metadata.",
+      "result": "JIT, DFG, FTL default OFF; phase guarded by ENABLE(DFG_JIT). No explicit ON override in inspected metadata subset.",
+      "firmware_relevance": "Source difference is dormant under published defaults; exact 14.10 build unknown.",
+      "source_url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "log_path": "notes/b21a503-context-2026-10-20.json"
+    },
+    {
+      "id": "e-jsc-configure-perl",
+      "title": "Unmodified JSC Windows configure, first attempt",
+      "status": "FAILED",
+      "confidence": "High for observed tool failure",
+      "method": "Extracted unmodified Sony JSC/WTF/bmalloc/CMake sources into ignored isolated directory and ran VS CMake JSCOnly configure.",
+      "result": "CMake stopped because Perl 5.10+ was not found; no engine build or run.",
+      "firmware_relevance": "No runtime inference.",
+      "source_url": "https://github.com/WebKit/WebKit/blob/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/cmake/WebKitCommon.cmake",
+      "log_path": "notes/jsc-configure-attempts-2026-10-20.md"
+    },
+    {
+      "id": "e-jsc-configure-ruby",
+      "title": "Unmodified JSC Windows configure, second attempt",
+      "status": "FAILED",
+      "confidence": "High for observed tool failure",
+      "method": "Retried isolated JSCOnly configure with Git for Windows Perl 5.38.2 explicitly selected.",
+      "result": "Perl and modules passed; configure stopped because Ruby 2.5+ and development libraries were absent. No engine build or sanitizer run.",
+      "firmware_relevance": "No runtime inference.",
+      "source_url": "https://github.com/WebKit/WebKit/blob/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/cmake/WebKitCommon.cmake",
+      "log_path": "notes/jsc-configure-attempts-2026-10-20.md"
+    },
+    {
+      "id": "e-diagnostics-offline",
+      "title": "Windows diagnostics dashboard offline check",
+      "status": "PASS",
+      "confidence": "High for local-only behavior",
+      "method": "Built and unit-tested Tkinter dashboard against local SQLite catalog with zero console observations.",
+      "result": "Shows not observed/unknown states and Sony-documented methods separately; no console network code or contact.",
+      "firmware_relevance": "Preparation only; console status remains unknown.",
+      "source_url": "https://www.playstation.com/en-gb/support/games/playstation-remote-play-on-pc-and-mac/",
+      "log_path": "research/plans/ps5-connection-diagnostics-approval-plan.md"
     }
   ]
 }
