@@ -4,8 +4,8 @@
 
 Input is the existing, ignored official update PUP, expected full-file SHA-256
 `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`.
-The command verifies that hash before reading sample windows and validates the
-SLB2 interval. For each entry, the sampling frame is complete 65,536-byte
+The current command verifies that hash before and after reading sample windows
+and validates the SLB2 interval. For each entry, the sampling frame is complete 65,536-byte
 windows aligned to its start. Windows touching any of the earlier 256 evenly
 spaced windows are removed from the frame. A Python `random.Random` instance
 seeded by the integer SHA-256 digest selects 256 distinct remaining slots;
@@ -25,6 +25,8 @@ field, when there are zero below-threshold windows, is `1 - 0.05^(1/n)`.
 It is a **model-based benchmark** for uniformly sampled slots, not a formal
 confidence guarantee for this fixed, content-derived seed. It applies only to
 eligible aligned windows, not every byte or the excluded earlier windows.
+The current planner rejects frames above one million aligned slots before
+materializing candidate indices. This limit does not affect this 14.10 run.
 High entropy remains compatible with encryption, compression, and other data.
 
 ## Observed result (20 October 2026)
