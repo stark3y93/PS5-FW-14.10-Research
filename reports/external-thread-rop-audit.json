@@ -1,0 +1,1950 @@
+{
+  "repository": "https://github.com/ZigZagBoi1/PS5-14.10-Research",
+  "commit": "9c89819cf74002b616108bd674b398ae919b40b6",
+  "probes": [
+    {
+      "probe": "80a",
+      "status": "PARTIALLY SUPPORTED",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 238,
+          "excerpt": "| 80a | `thr_create_cs43_threading` | OK | **CS=0x43 threading confirmed on 14.10.** All 4 sections pass without kernel panic. Thread creation with correct CS/SS segment registers produces a live user-mode thread. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line_count": 434,
+          "sha256": "4ffadb5620c717df334615d6efc76cebd31582e4d6bd4828f07519ef1e62244d",
+          "worktree_sha256": "9b739cb66a66ad230f71a660666512018d3e97e803c31b5a95a6d263941d4cec",
+          "git_blob": "19d8834d0f312b347eeb7e562bfae8b69f7d31f2",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215051.txt",
+          "line_count": 16,
+          "sha256": "cfda01af01f45e216515eb7bbf79aa08a05733ae0160d4306c419c13524eea05",
+          "worktree_sha256": "687ed6882f486e0d74225065c96672abbf1e5c738bca2f675fecef3236769d4b",
+          "git_blob": "a0b7b31f69bb9d5c9ba8db701546886610ba35f5",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215051.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line_count": 29,
+          "sha256": "f83822aa4dae6c276a57002299f52b998bc02db1c9c56504d275431967328a77",
+          "worktree_sha256": "c2f6a85b6cf1038e785db54e01350be9eeb64d03aecc43b11429b60170462f8c",
+          "git_blob": "3ef360b88fa68eee8361009ba49256491f408efc",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "line_count": 18,
+          "sha256": "5c02d46903923cf084b4f17e11b4e0233e6cd2fdfd2a956968da6abe4de49d8f",
+          "worktree_sha256": "95dfefb531feb47d43f6d3fbf865a5c6a0bed1c5b0b8ddcc5d41d6621e679635",
+          "git_blob": "87aee5047e6979a896b76502cb7c2ce57173ca07",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "line_count": 21,
+          "sha256": "02145f02f43b8fc556888bdd0da245c4c3dd53e5507f4f627a6264db90cba6d7",
+          "worktree_sha256": "bbfe57446d2c69e5a078cff685a50113050d87a03cba319f55d80cb699ebb8ee",
+          "git_blob": "dc67f723e25d93022fa608cd2615c88a31a7122b",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "line_count": 19,
+          "sha256": "aedd5159f806352300018cc6652b4a070edbf06da83e4841a4b8f712eee37cc1",
+          "worktree_sha256": "76415e163adceeaf92fddcc8ddbd7b5d8382b55e3e98d87b6f954814ba43309b",
+          "git_blob": "fbb1ed98c328b61f39ca6cadb9ee69addca7dfef",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 2,
+          "excerpt": "-- PROBE 80a: thr_create with CS=0x43/SS=0x3B \u2014 THE threading test"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 5,
+          "excerpt": "-- thr_create kernel panic is caused by CS=0 in the ucontext. set_mcontext()"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 23,
+          "excerpt": "print(\"=== PROBE 80a: THR_CREATE CS=0x43 THREADING TEST ===\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 66,
+          "excerpt": "local sc_thr_create = make_syscall(430)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 181,
+          "excerpt": "print(\"[!] If this prints COMPLETE: CS=0x43 PREVENTS the panic!\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 210,
+          "excerpt": "print(\"[1] calling thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 212,
+          "excerpt": "return sc_thr_create(uint64(ctx), uint64(new_tid_buf), uint64(0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 215,
+          "excerpt": "print(\"[1] thr_create: ok=\" .. tostring(ok_tc) .. \" rv=\" .. tostring(rv_tc) .. \" tid=\" .. q(new_tid))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 254,
+          "excerpt": "print(\"[2] calling thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 256,
+          "excerpt": "return sc_thr_create(uint64(ctx), uint64(new_tid_buf), uint64(0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 259,
+          "excerpt": "print(\"[2] thr_create: ok=\" .. tostring(ok_tc) .. \" rv=\" .. tostring(rv_tc) .. \" tid=\" .. q(new_tid))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 318,
+          "excerpt": "print(\"[3] calling thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 320,
+          "excerpt": "return sc_thr_create(uint64(ctx), uint64(new_tid_buf), uint64(0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 323,
+          "excerpt": "print(\"[3] thr_create: ok=\" .. tostring(ok_tc) .. \" rv=\" .. tostring(rv_tc) .. \" tid=\" .. q(new_tid))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 333,
+          "excerpt": "local marker = (off >= -0x80 and off < 0) and \"  \" or \" *\""
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 396,
+          "excerpt": "print(\"[4] calling thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 398,
+          "excerpt": "return sc_thr_create(uint64(ctx), uint64(new_tid_buf), uint64(0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 401,
+          "excerpt": "print(\"[4] thr_create: ok=\" .. tostring(ok_tc) .. \" rv=\" .. tostring(rv_tc) .. \" tid=\" .. q(new_tid))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 411,
+          "excerpt": "print(\"[4] thr_suspend(child): ok=\" .. tostring(ok_sus) .. \" rv=\" .. tostring(rv_sus))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 417,
+          "excerpt": "print(\"[4] thr_kill(SIGSTOP): ok=\" .. tostring(ok_kill) .. \" rv=\" .. tostring(rv_kill))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 433,
+          "excerpt": "print(\"=== PROBE 80a SECTION \" .. TEST_SECTION .. \" COMPLETE ===\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80a_thr_create_cs43_threading.lua",
+          "line": 434,
+          "excerpt": "print(\"=== PROBE 80a COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215051.txt",
+          "line": 1,
+          "excerpt": "=== PROBE 80a: THR_CREATE CS=0x43 THREADING TEST ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line": 1,
+          "excerpt": "=== PROBE 80a: THR_CREATE CS=0x43 THREADING TEST ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line": 13,
+          "excerpt": "[!] If this prints COMPLETE: CS=0x43 PREVENTS the panic!"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line": 22,
+          "excerpt": "[1] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line": 23,
+          "excerpt": "[1] thr_create: ok=true rv=0xffffffffffffffffffffffff tid=0x00000000_00018C7B"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line": 28,
+          "excerpt": "=== PROBE 80a SECTION 1 COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "line": 29,
+          "excerpt": "=== PROBE 80a COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "line": 1,
+          "excerpt": "=== PROBE 80a: THR_CREATE CS=0x43 THREADING TEST ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "line": 13,
+          "excerpt": "[2] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "line": 14,
+          "excerpt": "[2] thr_create: ok=true rv=0xffffffffffffffffffffffff tid=0x00000000_00018EF0"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "line": 17,
+          "excerpt": "=== PROBE 80a SECTION 2 COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "line": 18,
+          "excerpt": "=== PROBE 80a COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "line": 1,
+          "excerpt": "=== PROBE 80a: THR_CREATE CS=0x43 THREADING TEST ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "line": 14,
+          "excerpt": "[3] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "line": 15,
+          "excerpt": "[3] thr_create: ok=true rv=0xffffffffffffffffffffffff tid=0x00000000_00018EF1"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "line": 20,
+          "excerpt": "=== PROBE 80a SECTION 3 COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "line": 21,
+          "excerpt": "=== PROBE 80a COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "line": 1,
+          "excerpt": "=== PROBE 80a: THR_CREATE CS=0x43 THREADING TEST ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "line": 14,
+          "excerpt": "[4] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "line": 15,
+          "excerpt": "[4] thr_create: ok=true rv=0xffffffffffffffffffffffff tid=0x00000000_00018EEF"
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "line": 18,
+          "excerpt": "=== PROBE 80a SECTION 4 COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "line": 19,
+          "excerpt": "=== PROBE 80a COMPLETE ==="
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215051.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "687ed6882f486e0d74225065c96672abbf1e5c738bca2f675fecef3236769d4b"
+        },
+        {
+          "file": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215106.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "c2f6a85b6cf1038e785db54e01350be9eeb64d03aecc43b11429b60170462f8c"
+        },
+        {
+          "file": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215140.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "95dfefb531feb47d43f6d3fbf865a5c6a0bed1c5b0b8ddcc5d41d6621e679635"
+        },
+        {
+          "file": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215154.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "bbfe57446d2c69e5a078cff685a50113050d87a03cba319f55d80cb699ebb8ee"
+        },
+        {
+          "file": "results/phase17_new_vectors/80a_thr_create_cs43_threading_20261019_215205.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "76415e163adceeaf92fddcc8ddbd7b5d8382b55e3e98d87b6f954814ba43309b"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80b",
+      "status": "PARTIALLY SUPPORTED",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 239,
+          "excerpt": "| 80b | `thread_rop_chain` | OK | Thread ROP chain execution via thr_create. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80b_thread_rop_chain.lua",
+          "line_count": 346,
+          "sha256": "bbf4d32f666869b018b0b75a8fc9950cf67569905e91c370d6fc84ec5d50a622",
+          "worktree_sha256": "476bb7294bf5dfdb472937264b76ef8ea19429ba2d2dc0952631722e7a952ab3",
+          "git_blob": "ea9e8d43424d0a9c092713c3fda0e3f8b12bf23f",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80b_thread_rop_chain.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215520.txt",
+          "line_count": 19,
+          "sha256": "d3fcec07e28bc6121abbff7a8cf69e21b09d8878d286c5b6b50b86117ba34044",
+          "worktree_sha256": "fc702207fb6bd5e169539d4ea62077fe4856e577c17ffd7b102e4d743d2b8f2a",
+          "git_blob": "ed1cab0a8af019a33f3d247a05d584d3d6322151",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80b_thread_rop_chain_20261019_215520.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215840.txt",
+          "line_count": 71,
+          "sha256": "31c4b1c97df938c1d26462f13d90804716bd5294360dd489f7741b8de2aa5e6f",
+          "worktree_sha256": "616cdf02338b74a41cee326611c2cef1080393987b52978b3c1001cf66a99c8f",
+          "git_blob": "03bc83c7ba518838507a8fde986ac0ac0307369c",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80b_thread_rop_chain_20261019_215840.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80b_thread_rop_chain.lua",
+          "line": 2,
+          "excerpt": "-- PROBE 80b: Thread ROP chain \u2014 prove controlled execution via thr_create"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80b_thread_rop_chain.lua",
+          "line": 170,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80b_thread_rop_chain.lua",
+          "line": 185,
+          "excerpt": "print(\"=== PROBE 80b COMPLETE ===\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80b_thread_rop_chain.lua",
+          "line": 300,
+          "excerpt": "print(\"  thr_create: ok=\" .. tostring(ok_call) .. \" rv=\" .. tostring(rv))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80b_thread_rop_chain.lua",
+          "line": 346,
+          "excerpt": "print(\"=== PROBE 80b COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215520.txt",
+          "line": 19,
+          "excerpt": "=== PROBE 80b COMPLETE ==="
+        },
+        {
+          "path": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215840.txt",
+          "line": 46,
+          "excerpt": "thr_create: ok=true rv=0xffffffffffffffffffffffff"
+        },
+        {
+          "path": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215840.txt",
+          "line": 71,
+          "excerpt": "=== PROBE 80b COMPLETE ==="
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215520.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": false,
+          "sha256": "fc702207fb6bd5e169539d4ea62077fe4856e577c17ffd7b102e4d743d2b8f2a"
+        },
+        {
+          "file": "results/phase17_new_vectors/80b_thread_rop_chain_20261019_215840.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "616cdf02338b74a41cee326611c2cef1080393987b52978b3c1001cf66a99c8f"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80c",
+      "status": "CONTRADICTED",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 240,
+          "excerpt": "| 80c | `thread_register_exec` | OK | Thread register-controlled code execution. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CONTRADICTED BY SAVED CAPTURE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line_count": 288,
+          "sha256": "d1f3be928489e0c113e9a4b9db7e87a7bd7f1c047aad43b52d9771e74373fbe0",
+          "worktree_sha256": "11147c5a1e49a44f90548b0ae69a9ca445fd88ed17276bc7bcb32b82b3ef255d",
+          "git_blob": "c11bb9d7961987fb746dee6b3a5fbb609c4e0513",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80c_thread_register_exec.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220059.txt",
+          "line_count": 8,
+          "sha256": "0aa3a8244841d6807692c6cc946d52ea09052f7060a9f171fc305b58147f6b2a",
+          "worktree_sha256": "dcf4e61f529ea4d9405f0491efa503aca49de04255c896ecc692c1d888b07673",
+          "git_blob": "81f79fa3efeaf00a6f35f6a8051daaaa4cdae0a8",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80c_thread_register_exec_20261019_220059.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt",
+          "line_count": 26,
+          "sha256": "3d5c9613f3f7383fbb70a32b310972dadb782c52f2919a99d01dfdb54de68eb2",
+          "worktree_sha256": "a295e77dc77e45221ec75bc92afba22d437e305beee5a734f8633fd41515d26b",
+          "git_blob": "52044de1c2d2fac393b41e113d9585a2e74d19d6",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 125,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 178,
+          "excerpt": "print(\"  stack before:\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 189,
+          "excerpt": "print(\"  thr_create: ok=\" .. tostring(ok_call) .. \" rv=\" .. tostring(rv))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 203,
+          "excerpt": "print(\"=== PROBE 80c COMPLETE ===\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 245,
+          "excerpt": "print(\"  marker before: 0x\" .. string.format(\"%08X\", rd(marker) or 0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 253,
+          "excerpt": "print(\"  thr_create: ok=\" .. tostring(ok_call) .. \" rv=\" .. tostring(rv))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 267,
+          "excerpt": "print(\"  *** MARKER = 0xDEADBEEF \u2014 THREAD WROTE TO MEMORY ***\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80c_thread_register_exec.lua",
+          "line": 288,
+          "excerpt": "print(\"=== PROBE 80c COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt",
+          "line": 17,
+          "excerpt": "marker before: 0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt",
+          "line": 18,
+          "excerpt": "thr_create: ok=true rv=0xffffffffffffffffffffffff"
+        },
+        {
+          "path": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt",
+          "line": 26,
+          "excerpt": "=== PROBE 80c COMPLETE ==="
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220059.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "dcf4e61f529ea4d9405f0491efa503aca49de04255c896ecc692c1d888b07673"
+        },
+        {
+          "file": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt",
+          "status": "CONTRADICTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "a295e77dc77e45221ec75bc92afba22d437e305beee5a734f8633fd41515d26b"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80d",
+      "status": "CLAIMED BUT NOT DEMONSTRATED",
+      "completion_detected": false,
+      "operation_return_detected": false,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 241,
+          "excerpt": "| 80d | `thread_diag` | OK | Thread diagnostic probe. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line_count": 241,
+          "sha256": "5857f59c33961b58339c69db8ce8e2a3f80fc08566f2eae0feeed165695b82ad",
+          "worktree_sha256": "79b6a3e70b5b14d72cf728abb55c85e65071fe7b453fcef2aa2102956d80f7a9",
+          "git_blob": "4fcf1dd6cd990b88553c2485712d5863a22ba188",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80d_thread_diag.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80d_thread_diag_20261019_220426.txt",
+          "line_count": 10,
+          "sha256": "7e4a4dc0fa47024da91b513fc4901347a09530613cddb1738fa350e2e44ab269",
+          "worktree_sha256": "a5b9bf6392d2b70eaebdf49d538a27c19a770851c6cbb3dc86eb322c9f370484",
+          "git_blob": "bfeedf39ed54ab90415c74de15e43e60a14e286c",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80d_thread_diag_20261019_220426.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 4,
+          "excerpt": "-- Context: 80a-80c show thr_create returns rv=-1 but allocates a TID."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 6,
+          "excerpt": "--   1. rv=-1 means the context was rejected (thread never starts)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 14,
+          "excerpt": "--   C: Test with all context fields from 58e that returned rv=0"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 80,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 95,
+          "excerpt": "-- A: Reproduce 58e section D layout exactly (rv=0 proven)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 121,
+          "excerpt": "print(\"  rv=\" .. tostring(rv1) .. \" ok=\" .. tostring(ok1))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 147,
+          "excerpt": "print(\"  rv=\" .. tostring(rv2) .. \" ok=\" .. tostring(ok2))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 173,
+          "excerpt": "print(\"  marker before: 0x\" .. string.format(\"%08X\", rd(marker) or 0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 180,
+          "excerpt": "print(\"  rv=\" .. tostring(rv3) .. \" ok=\" .. tostring(ok3))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 193,
+          "excerpt": "-- D: NO CS/SS (58e original) + write gadget \u2014 does rv=0 mean exec?"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 204,
+          "excerpt": "-- NO CS/SS/RFLAGS \u2014 matches 58e which got rv=0"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 209,
+          "excerpt": "print(\"  marker before: 0x\" .. string.format(\"%08X\", rd(marker) or 0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 216,
+          "excerpt": "print(\"  rv=\" .. tostring(rv4) .. \" ok=\" .. tostring(ok4))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 223,
+          "excerpt": "print(\"  *** MARKER WRITTEN! rv=0 THREADS EXECUTE! ***\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 233,
+          "excerpt": "print(\"  A rv=\" .. tostring(rv1))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 234,
+          "excerpt": "print(\"  B rv=\" .. tostring(rv2))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 235,
+          "excerpt": "print(\"  C rv=\" .. tostring(rv3))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 236,
+          "excerpt": "print(\"  D rv=\" .. tostring(rv4))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80d_thread_diag.lua",
+          "line": 241,
+          "excerpt": "print(\"=== PROBE 80d COMPLETE ===\")"
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80d_thread_diag_20261019_220426.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "a5b9bf6392d2b70eaebdf49d538a27c19a770851c6cbb3dc86eb322c9f370484"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80e",
+      "status": "CLAIMED BUT NOT DEMONSTRATED",
+      "completion_detected": false,
+      "operation_return_detected": false,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 242,
+          "excerpt": "| 80e | `cs_sweep` | OK | CS register value sweep for thread creation. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line_count": 235,
+          "sha256": "5a6bd86ece8e397a9e72b5d7ee3182389b7d0ddefc6970e19972b9fc685baca4",
+          "worktree_sha256": "d16fdec3dda2f85de909fc441bb47070014290f0eb920298324dab5b36afa4fd",
+          "git_blob": "0353de6f5e4bafd279c143f5252b3f5bbcae54c7",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80e_cs_sweep.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80e_cs_sweep_20261019_220708.txt",
+          "line_count": 10,
+          "sha256": "d74a6c9ceb74c3f72f786110f32034e4d1e36978d11270e6c6389fb119639eab",
+          "worktree_sha256": "c3f620042d07e8419d628fec990321b4cea1cc622264a8d48596f1cbde282a62",
+          "git_blob": "d734a6fb483eb8571eb4a796350cba4cd3ed4709",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80e_cs_sweep_20261019_220708.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 2,
+          "excerpt": "-- PROBE 80e: CS value sweep for thr_create"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 4,
+          "excerpt": "-- Context: CS=0 gets rv=0 but panics. CS=0x43 gets rv=-1 (rejected)."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 5,
+          "excerpt": "-- This probe sweeps CS values to find which ones return rv=0."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 6,
+          "excerpt": "-- IMPORTANT: We do NOT actually create threads with rv=0 values here."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 10,
+          "excerpt": "-- Also test: what if we set CS AFTER thr_create via a race? (future)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 78,
+          "excerpt": "-- A: Sweep CS values \u2014 which get rv=0 vs rv=-1?"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 79,
+          "excerpt": "--    We use RIP=0 so any rv=0 thread will SIGSEGV (or panic if CS is bad)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 85,
+          "excerpt": "--    SAFE APPROACH: Only test rv, never let rv=0 threads run."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 86,
+          "excerpt": "--    Set RIP=0 and RSP=0 for all tests. If rv=0, the thread WILL crash."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 87,
+          "excerpt": "--    We accept the risk for rv=0 values \u2014 they'll either SIGSEGV (safe)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 129,
+          "excerpt": "print(\"  CS=0x\" .. string.format(\"%02X\", cs) .. \" \u2192 rv=0 tid=\" .. q(tid_val) .. \" *** RV=0! ***\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 132,
+          "excerpt": "print(\"  CS=0x\" .. string.format(\"%02X\", cs) .. \" \u2192 rv=\" .. tostring(rv) .. \" (unusual)\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 134,
+          "excerpt": "-- Skip printing rv=-1 (too many)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 138,
+          "excerpt": "print(\"rv=0 CS values: \" .. #rv0_values)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 170,
+          "excerpt": "print(\"  flags=0x\" .. string.format(\"%X\", flags) .. \" \u2192 rv=\" .. tostring(rv_num) .."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 171,
+          "excerpt": "(is_zero and \" *** RV=0! ***\" or \"\"))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 200,
+          "excerpt": "print(\"  SS=0x\" .. string.format(\"%02X\", ss) .. \" \u2192 rv=\" .. tostring(rv_num) .."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 201,
+          "excerpt": "(is_zero and \" *** RV=0! ***\" or \"\"))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 228,
+          "excerpt": "print(\"  RFLAGS=0x\" .. string.format(\"%X\", rf) .. \" \u2192 rv=\" .. tostring(rv_num) .."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 229,
+          "excerpt": "(is_zero and \" *** RV=0 (WILL PANIC - CS=0)! ***\" or \"\"))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80e_cs_sweep.lua",
+          "line": 235,
+          "excerpt": "print(\"=== PROBE 80e COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80e_cs_sweep_20261019_220708.txt",
+          "line": 10,
+          "excerpt": "CS=0x03 \u2192 rv=0 tid=0x00000000_00018CFB *** RV=0! ***"
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80e_cs_sweep_20261019_220708.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "c3f620042d07e8419d628fec990321b4cea1cc622264a8d48596f1cbde282a62"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80f",
+      "status": "PARTIALLY SUPPORTED",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 243,
+          "excerpt": "| 80f | `get_current_cs` | OK | Read current CS register value. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80f_get_current_cs.lua",
+          "line_count": 169,
+          "sha256": "0b27e25ce17ae9d9cbfbc2a40eb21c9eb6a103f39f8794a3305570b7cd4b0910",
+          "worktree_sha256": "6c4e69a79e7d6b43ad763b5fad76324c34978824d0cf5770e1318cb40c1c3cfb",
+          "git_blob": "766dcf90ac4aded3aa78e021a0678558f7302bea",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80f_get_current_cs.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80f_get_current_cs_20261019_221206.txt",
+          "line_count": 60,
+          "sha256": "5dc057feda2fe0b871f199c0881ca6444d5d28d2e64ed2fc45b704d7fcaaba5e",
+          "worktree_sha256": "39ad0df49df1f303e230e5292b9fc4ccbd80f5b2dcf60e6d5a5d316dfe3b324c",
+          "git_blob": "6e71a002c7a413e692e92e7d7a36a40eeaffbd4d",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80f_get_current_cs_20261019_221206.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80f_get_current_cs.lua",
+          "line": 72,
+          "excerpt": "print(\"  rv=\" .. tostring(rv_a) .. \" ok=\" .. tostring(ok_a))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80f_get_current_cs.lua",
+          "line": 134,
+          "excerpt": "print(\"  cmd=\" .. cmd .. \" rv=\" .. tostring(rv_b) .. \" out=\" .. q(rq(out)))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80f_get_current_cs.lua",
+          "line": 159,
+          "excerpt": "print(\"  sysctl rv=\" .. tostring(rv_c))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80f_get_current_cs.lua",
+          "line": 169,
+          "excerpt": "print(\"=== PROBE 80f COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80f_get_current_cs_20261019_221206.txt",
+          "line": 6,
+          "excerpt": "rv=0x0 ok=true"
+        },
+        {
+          "path": "results/phase17_new_vectors/80f_get_current_cs_20261019_221206.txt",
+          "line": 56,
+          "excerpt": "sysctl rv=0x0"
+        },
+        {
+          "path": "results/phase17_new_vectors/80f_get_current_cs_20261019_221206.txt",
+          "line": 60,
+          "excerpt": "=== PROBE 80f COMPLETE ==="
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80f_get_current_cs_20261019_221206.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "39ad0df49df1f303e230e5292b9fc4ccbd80f5b2dcf60e6d5a5d316dfe3b324c"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80g",
+      "status": "CLAIMED BUT NOT DEMONSTRATED",
+      "completion_detected": false,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 244,
+          "excerpt": "| 80g | `thread_correct_offsets` | OK | Thread context offset verification. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line_count": 289,
+          "sha256": "27ff03bff9fd8c505cfb5dc5f812bfa0a120f9648e7f3b8a12f65982ec5213bf",
+          "worktree_sha256": "89b53ac3b1480134a5b386c02f0b88920ffad3fdae4d735c81ea3985c97e03ab",
+          "git_blob": "80aa64d4a6f82337ca5ab7be36e65624ccfcb89d",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80g_thread_correct_offsets.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80g_thread_correct_offsets_20261019_221341.txt",
+          "line_count": 22,
+          "sha256": "24472023c149a6769e1862b630a7b62914b15d31803426c9ad4c74a12b346cd1",
+          "worktree_sha256": "24472023c149a6769e1862b630a7b62914b15d31803426c9ad4c74a12b346cd1",
+          "git_blob": "3ffd4e620c561a2a2cfcd9fc6587ee49544c13ad",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80g_thread_correct_offsets_20261019_221341.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 148,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 153,
+          "excerpt": "--    This should give us rv=0 AND survive (CS=0x43 from current thread)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 185,
+          "excerpt": "print(\"  [BEFORE] thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 190,
+          "excerpt": "print(\"  rv=\" .. tostring(rv1) .. \" ok=\" .. tostring(ok1))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 195,
+          "excerpt": "print(\"  *** RV=0 WITH CS=0x43! Thread should be running! ***\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 208,
+          "excerpt": "print(\"  rv != 0, thread rejected (rv=\" .. tostring(rv1_num) .. \")\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 238,
+          "excerpt": "print(\"  marker before: 0x\" .. string.format(\"%08X\", rd(marker)))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 259,
+          "excerpt": "print(\"  [BEFORE] thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 264,
+          "excerpt": "print(\"  rv=\" .. tostring(rv2) .. \" ok=\" .. tostring(ok2))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 277,
+          "excerpt": "print(\"  *** MARKER = 0xDEADBEEF \u2014 THREAD WROTE TO MEMORY ***\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80g_thread_correct_offsets.lua",
+          "line": 289,
+          "excerpt": "print(\"=== PROBE 80g COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80g_thread_correct_offsets_20261019_221341.txt",
+          "line": 19,
+          "excerpt": "[BEFORE] thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80g_thread_correct_offsets_20261019_221341.txt",
+          "line": 22,
+          "excerpt": "\u0000\u0000\u0000\u0013\u0000\u001b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000;\u0000;\u0000\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0002\u0001\u0000\u0000\u0000\u0000\u0000\b@>\u0011\u0003\u0000\u0000\u0000;\u0000\u0000\u0000\u0000\u0000\u0000\u0000\ufffd\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0000\u0000\u0000B@\ufffds\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000e\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000  rv=0x0 ok=true"
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80g_thread_correct_offsets_20261019_221341.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": true,
+          "sha256": "24472023c149a6769e1862b630a7b62914b15d31803426c9ad4c74a12b346cd1"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80h",
+      "status": "CLAIMED BUT NOT DEMONSTRATED",
+      "completion_detected": false,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 245,
+          "excerpt": "| 80h | `thread_write_test` | OK | Thread-based memory write test. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line_count": 290,
+          "sha256": "ab40f20609b94ad911ceddf99482967c9be5e3037c241705c7512b2a1b0c167a",
+          "worktree_sha256": "533ad8897accc0ebbdf497314a937f91d3a523fe23290aa624e4c1a18c255efb",
+          "git_blob": "ff21835577f8c137d0f0e00a47143d9b5a1362a3",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80h_thread_write_test.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80h_thread_write_test_20261019_221511.txt",
+          "line_count": 32,
+          "sha256": "928f8b0f9cbfeb46811eb1af9a42f692262ec40aec9950118c90112f09911485",
+          "worktree_sha256": "928f8b0f9cbfeb46811eb1af9a42f692262ec40aec9950118c90112f09911485",
+          "git_blob": "ecf0d0ef51d8f67e229e333d2291688191c561cb",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80h_thread_write_test_20261019_221511.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line": 5,
+          "excerpt": "-- 80g proved: getcontext-based context gets rv=0 with CS=0x43"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line": 182,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line": 185,
+          "excerpt": "print(\"  marker=\" .. q(marker) .. \" val=0x\" .. string.format(\"%08X\", rd(marker)))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line": 212,
+          "excerpt": "print(\"  thr_create rv=\" .. tostring(rv) .. \" ok=\" .. tostring(ok))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line": 281,
+          "excerpt": "print(\"  +0x\" .. string.format(\"%02X\", rdi_off) .. \" rv=\" .. tostring(rv2_num) .. \" marker=0x\" .. string.format(\"%08X\", mv))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80h_thread_write_test.lua",
+          "line": 290,
+          "excerpt": "print(\"=== PROBE 80h COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80h_thread_write_test_20261019_221511.txt",
+          "line": 24,
+          "excerpt": "marker=0x00000003_1075DBC0 val=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80h_thread_write_test_20261019_221511.txt",
+          "line": 32,
+          "excerpt": "\u0000\u0000\u0000\u0013\u0000\u001b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0005\u0000\u0000\u0000;\u0000;\u0000\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0002\u0001\u0000\u0000\u0000\u0000\u0000\b\u0000\ufffd\u0010\u0003\u0000\u0000\u0000;\u0000\u0000\u0000\u0000\u0000\u0000\u0000\ufffd\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0000\u0000\u0000j,\ufffdG\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000e\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000  thr_create rv=0x0 ok=true"
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80h_thread_write_test_20261019_221511.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": true,
+          "sha256": "928f8b0f9cbfeb46811eb1af9a42f692262ec40aec9950118c90112f09911485"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80i",
+      "status": "CLAIMED BUT NOT DEMONSTRATED",
+      "completion_detected": false,
+      "operation_return_detected": false,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 246,
+          "excerpt": "| 80i | `thread_write_final` | OK | **Arbitrary thread code execution confirmed (DEADBEEF write).** Thread writes controlled value to controlled address. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line_count": 153,
+          "sha256": "d7abf61f51f6db03911fe677adae9f91401ae9eed9dcae90b7ffe35d700a257f",
+          "worktree_sha256": "bfdda8c7d1b0c5d8ea22f36c321d8c06652fa9287ea5d413bdfa093bc2db77c2",
+          "git_blob": "6c2452f92b4729a059b3a0d8291beea31ff0c9c6",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80i_thread_write_final.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221559.txt",
+          "line_count": 15,
+          "sha256": "febb351273fe5c93c270458810de7079cf8034827abd8deb4503090ed6a4df90",
+          "worktree_sha256": "febb351273fe5c93c270458810de7079cf8034827abd8deb4503090ed6a4df90",
+          "git_blob": "320d532e3acfba8f99aa85940271fedd0e6669fb",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80i_thread_write_final_20261019_221559.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221625.txt",
+          "line_count": 15,
+          "sha256": "f71921384c8672f303aa072bf93b8740c3ba15e111d54db4cc91f799b8e948df",
+          "worktree_sha256": "f71921384c8672f303aa072bf93b8740c3ba15e111d54db4cc91f799b8e948df",
+          "git_blob": "b5ef3304e8cd54e1aa3b65263caa8cec8902fb88",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80i_thread_write_final_20261019_221625.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221714.txt",
+          "line_count": 14,
+          "sha256": "4e22bf6dfe0413d0d43b11b3828cf6c869cc7549bb6307d7a8c0eb3bf66ee929",
+          "worktree_sha256": "4e22bf6dfe0413d0d43b11b3828cf6c869cc7549bb6307d7a8c0eb3bf66ee929",
+          "git_blob": "c4b2f0954a213d164f2af6584237c6809fb87ad3",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80i_thread_write_final_20261019_221714.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221733.txt",
+          "line_count": 14,
+          "sha256": "c907ff22e4291ad7e287576c1abc247d6b454b9a7146d9c64f62eb8c418e03ec",
+          "worktree_sha256": "c907ff22e4291ad7e287576c1abc247d6b454b9a7146d9c64f62eb8c418e03ec",
+          "git_blob": "426cd4ec5f6d96382055f71ccfc20ddf458ec881",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80i_thread_write_final_20261019_221733.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line": 6,
+          "excerpt": "-- 80g/80h: getcontext-based context gets rv=0"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line": 57,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line": 60,
+          "excerpt": "print(\"[*] marker=\" .. q(marker))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line": 97,
+          "excerpt": "print(\"[*] calling thr_create...\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line": 119,
+          "excerpt": "print(\"[*] MARKER = 0x\" .. string.format(\"%08X\", mval or 0))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80i_thread_write_final.lua",
+          "line": 153,
+          "excerpt": "print(\"=== PROBE 80i COMPLETE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221559.txt",
+          "line": 5,
+          "excerpt": "[*] marker=0x00000003_10682D20"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221559.txt",
+          "line": 11,
+          "excerpt": "[*] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221625.txt",
+          "line": 5,
+          "excerpt": "[*] marker=0x00000003_11052080"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221625.txt",
+          "line": 11,
+          "excerpt": "[*] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221714.txt",
+          "line": 5,
+          "excerpt": "[*] marker=0x00000003_106D7F60"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221714.txt",
+          "line": 11,
+          "excerpt": "[*] calling thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221733.txt",
+          "line": 5,
+          "excerpt": "[*] marker=0x00000003_114946C0"
+        },
+        {
+          "path": "results/phase17_new_vectors/80i_thread_write_final_20261019_221733.txt",
+          "line": 11,
+          "excerpt": "[*] calling thr_create..."
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80i_thread_write_final_20261019_221559.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "febb351273fe5c93c270458810de7079cf8034827abd8deb4503090ed6a4df90"
+        },
+        {
+          "file": "results/phase17_new_vectors/80i_thread_write_final_20261019_221625.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "f71921384c8672f303aa072bf93b8740c3ba15e111d54db4cc91f799b8e948df"
+        },
+        {
+          "file": "results/phase17_new_vectors/80i_thread_write_final_20261019_221714.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "4e22bf6dfe0413d0d43b11b3828cf6c869cc7549bb6307d7a8c0eb3bf66ee929"
+        },
+        {
+          "file": "results/phase17_new_vectors/80i_thread_write_final_20261019_221733.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "c907ff22e4291ad7e287576c1abc247d6b454b9a7146d9c64f62eb8c418e03ec"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80j",
+      "status": "VERIFIED FROM RAW EVIDENCE",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 247,
+          "excerpt": "| 80j | `two_stage` | OK | Two-stage thread execution. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "SUPPORTED BY SAVED CAPTURE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80j_two_stage.lua",
+          "line_count": 101,
+          "sha256": "c4e2ff6245d64c09aeab79053414f88f8dcb1a954ef5dd8f3189c8cdf592089c",
+          "worktree_sha256": "7bcbefc47d6bbcc794fc715a9c44e3041c197e2b20e7b5177f81df9e9d409777",
+          "git_blob": "0cc8bf0e202a56b644359d407c2af1ce868029f2",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80j_two_stage.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222020.txt",
+          "line_count": 11,
+          "sha256": "291785b5e515b0e4484ca21d86652f22ff58248502b71f0b3681a9d29e13f42d",
+          "worktree_sha256": "291785b5e515b0e4484ca21d86652f22ff58248502b71f0b3681a9d29e13f42d",
+          "git_blob": "3d64ee05494f9849398ed18f224246b6c785ac9c",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_222020.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222255.txt",
+          "line_count": 9,
+          "sha256": "c7f27c6c8138ba3c41fe0d8560d280005596744f765a60acf9277ff30ae1bd9b",
+          "worktree_sha256": "c7f27c6c8138ba3c41fe0d8560d280005596744f765a60acf9277ff30ae1bd9b",
+          "git_blob": "3fd2579d5e79e98bfa08e8657d6ab64216556a44",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_222255.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222346.txt",
+          "line_count": 9,
+          "sha256": "7a6b39c6a9a918b9b6718d9fc286624e6ebbc5ac238452344f4bf22b5ddb4cba",
+          "worktree_sha256": "7a6b39c6a9a918b9b6718d9fc286624e6ebbc5ac238452344f4bf22b5ddb4cba",
+          "git_blob": "e053e33bb5359a4b5e7fd89fea671ab3dd86ac04",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_222346.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222512.txt",
+          "line_count": 12,
+          "sha256": "362f3b9927b6811d1dbf8ff0e39b9cd7d94728ac153064c64b4226ecfea6e773",
+          "worktree_sha256": "362f3b9927b6811d1dbf8ff0e39b9cd7d94728ac153064c64b4226ecfea6e773",
+          "git_blob": "7b00cb5f9eecfbedcd89610c30b4b11d377a3f14",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_222512.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222818.txt",
+          "line_count": 9,
+          "sha256": "34f28cd09cb6da4a13db56cd7936a9315ae2dd2f082b5086453a1e56245a6bb5",
+          "worktree_sha256": "34f28cd09cb6da4a13db56cd7936a9315ae2dd2f082b5086453a1e56245a6bb5",
+          "git_blob": "be8ffcbb1b4a80295e4f061a3873235bdc3d040c",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_222818.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222842.txt",
+          "line_count": 15,
+          "sha256": "a32c49fd3d908009970133c2474eec0ce0d5e280cd2a5205024fddabb348bb6e",
+          "worktree_sha256": "a32c49fd3d908009970133c2474eec0ce0d5e280cd2a5205024fddabb348bb6e",
+          "git_blob": "ecda0c161be3b170c285f46eaeb51e12a4a08392",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_222842.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_223100.txt",
+          "line_count": 9,
+          "sha256": "44b9dbdc2ec581daf122d20d88feb547177ffcd1456717c25d5434f353237b22",
+          "worktree_sha256": "44b9dbdc2ec581daf122d20d88feb547177ffcd1456717c25d5434f353237b22",
+          "git_blob": "f7c69c0a8ef9a07391ec192a160fe2379d81f146",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80j_two_stage_20261019_223100.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80j_two_stage.lua",
+          "line": 58,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80j_two_stage.lua",
+          "line": 88,
+          "excerpt": "print(\"[*] marker=\" .. q(marker) .. \" before=0x\" .. string.format(\"%08X\", rd(marker)))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80j_two_stage.lua",
+          "line": 94,
+          "excerpt": "print(\"[*] CALLING\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80j_two_stage.lua",
+          "line": 101,
+          "excerpt": "print(\"RV=\" .. tostring(rv_call) .. \" OK=\" .. tostring(ok_call) .. \" M=0x\" .. string.format(\"%08X\", rd(marker) or 0) .. \" TID=\" .. q(rq(tid_buf)))"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222020.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_10E35BC0 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222020.txt",
+          "line": 7,
+          "excerpt": "[*] Using resolved sc_thr_create..."
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222255.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_1118FF80 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222255.txt",
+          "line": 6,
+          "excerpt": "[*] CALLING thr_create NOW"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222346.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_10CCB720 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222346.txt",
+          "line": 6,
+          "excerpt": "[*] CALLING"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222512.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_11300780 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222512.txt",
+          "line": 6,
+          "excerpt": "[*] CALLING"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222512.txt",
+          "line": 12,
+          "excerpt": "\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u000e\u0014\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000RV=0x0 OK=true"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222818.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_10886A80 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222818.txt",
+          "line": 6,
+          "excerpt": "[*] CALLING"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222842.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_113D8000 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222842.txt",
+          "line": 6,
+          "excerpt": "[*] CALLING"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_222842.txt",
+          "line": 7,
+          "excerpt": "RV=0x0 OK=true M=0x00000000 TID=0x00000000_00018EF7"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_223100.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_10C73C80 before=0x41414141"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_223100.txt",
+          "line": 6,
+          "excerpt": "[*] CALLING"
+        },
+        {
+          "path": "results/phase17_new_vectors/80j_two_stage_20261019_223100.txt",
+          "line": 9,
+          "excerpt": "\u0000\u0000\u0000\u0013\u0000\u001b\u0000\u0000@\ufffd\u0010\u0003\u0000\u0000\u0000\u0005\u0000\u0000\u0000;\u0000;\u0000\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000B\u0000*#\u0000\u0000\u0000\u0000C\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0002\u0001\u0000\u0000\u0000\u0000\u0000\u0000@\ufffd\u0010\u0003\u0000\u0000\u0000;\u0000\u0000\u0000\u0000\u0000\u0000\u0000\ufffd\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0001\u0000\u0000\u0000\u0000\u0000\u0002\u0000\u0002\u0000\u0000\u0000\u0000\u0000B\u0000*#\u0000\u0000\u0000\u0000B\u0000*#\u0000\u0000\u0000\u0000\u000e\u0004\u0000\u0000\u0000\u0000\u0000\u0000\u0000@\ufffd\u0010\u0003\u0000\u0000\u0000RV=0x0 OK=true M=0xDEADBEEF TID=0x00000000_00018CFC"
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_222020.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "291785b5e515b0e4484ca21d86652f22ff58248502b71f0b3681a9d29e13f42d"
+        },
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_222255.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "c7f27c6c8138ba3c41fe0d8560d280005596744f765a60acf9277ff30ae1bd9b"
+        },
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_222346.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "7a6b39c6a9a918b9b6718d9fc286624e6ebbc5ac238452344f4bf22b5ddb4cba"
+        },
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_222512.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": true,
+          "sha256": "362f3b9927b6811d1dbf8ff0e39b9cd7d94728ac153064c64b4226ecfea6e773"
+        },
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_222818.txt",
+          "status": "CLAIMED BUT NOT DEMONSTRATED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "34f28cd09cb6da4a13db56cd7936a9315ae2dd2f082b5086453a1e56245a6bb5"
+        },
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_222842.txt",
+          "status": "CONTRADICTED",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "a32c49fd3d908009970133c2474eec0ce0d5e280cd2a5205024fddabb348bb6e"
+        },
+        {
+          "file": "results/phase17_new_vectors/80j_two_stage_20261019_223100.txt",
+          "status": "VERIFIED FROM RAW EVIDENCE",
+          "completion_detected": true,
+          "operation_return_detected": true,
+          "sha256": "44b9dbdc2ec581daf122d20d88feb547177ffcd1456717c25d5434f353237b22"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    },
+    {
+      "probe": "80k",
+      "status": "VERIFIED FROM RAW EVIDENCE",
+      "completion_detected": false,
+      "operation_return_detected": true,
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 248,
+          "excerpt": "| 80k | `rop_chain` | OK | Full ROP chain execution via thread. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "claim_vs_evidence": "SUPPORTED BY SAVED CAPTURE",
+      "source_files": [
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line_count": 156,
+          "sha256": "23f98a5341d7aa4b3e3e9c45d7421b35e1903c5b1e31bc4cc6d7d7048799dcc2",
+          "worktree_sha256": "231cff64405444899966628b3111e993ea7a581c052516609c862beaf166ee57",
+          "git_blob": "2bab3056f985c5273a80924c5eecc307d41cd112",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/probes/phase17_new_vectors/80k_rop_chain.lua"
+        }
+      ],
+      "raw_logs": [
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_223328.txt",
+          "line_count": 4,
+          "sha256": "de9251e3446fa323266dc38a122f09a462c076dfefcf4294d2a57ce31b98123d",
+          "worktree_sha256": "5dc14102d5bd7205d8b4b38710436cb9b877437ff984715e629e99690fda0590",
+          "git_blob": "f37d7d1fb85a971017aece4f377b18783fcbf4bd",
+          "worktree_matches_git_blob": false,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80k_rop_chain_20261019_223328.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_223354.txt",
+          "line_count": 11,
+          "sha256": "998f195827026d0bf3513c4100d2dc5f61ea1e5e2b41f97fac35932ae13ab54e",
+          "worktree_sha256": "998f195827026d0bf3513c4100d2dc5f61ea1e5e2b41f97fac35932ae13ab54e",
+          "git_blob": "e2198a6421894f8e55347ce19d1f7a18bad3f349",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80k_rop_chain_20261019_223354.txt"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt",
+          "line_count": 17,
+          "sha256": "31d3f149a4c7f4694c5441de4af449f3749bde9d029cb445e9040e882b30a875",
+          "worktree_sha256": "31d3f149a4c7f4694c5441de4af449f3749bde9d029cb445e9040e882b30a875",
+          "git_blob": "fb779f6870cbe08698c084ffe293cb3cd15d6c4a",
+          "worktree_matches_git_blob": true,
+          "text_matches_git_blob_after_newline_normalization": true,
+          "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/9c89819cf74002b616108bd674b398ae919b40b6/results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt"
+        }
+      ],
+      "evidence_lines": [
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 2,
+          "excerpt": "-- PROBE 80k: 3-write ROP chain via thr_create with massive ret sled"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 7,
+          "excerpt": "-- After pcall(thr_create), ONE print does all 3 marker reads in string.format."
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 61,
+          "excerpt": "local marker = memory.alloc(16)"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 66,
+          "excerpt": "print(\"[*] marker=\" .. q(marker))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 135,
+          "excerpt": "print(\"[*] before: \" .. string.format(\"%08X %08X %08X\", rd(marker), rd(marker + 4), rd(marker + 8)))"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 136,
+          "excerpt": "print(\"[*] CALLING thr_create\")"
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 146,
+          "excerpt": "print(string.format(\"RV=%s OK=%s TID=%s m0=%08X m4=%08X m8=%08X\","
+        },
+        {
+          "path": "probes/phase17_new_vectors/80k_rop_chain.lua",
+          "line": 156,
+          "excerpt": "print(\"=== DONE ===\")"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_223354.txt",
+          "line": 6,
+          "excerpt": "[*] markers before: 11111111 22222222 33333333"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_223354.txt",
+          "line": 8,
+          "excerpt": "[*] CALLING"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt",
+          "line": 4,
+          "excerpt": "[*] marker=0x00000003_10C7D980"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt",
+          "line": 12,
+          "excerpt": "[*] before: 41414141 42424242 43434343"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt",
+          "line": 13,
+          "excerpt": "[*] CALLING thr_create"
+        },
+        {
+          "path": "results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt",
+          "line": 14,
+          "excerpt": "RV=0x0 OK=true TID=0x00000000_00018F8E m0=DEADBEEF m4=CAFEBABE m8=12345678"
+        }
+      ],
+      "capture_findings": [
+        {
+          "file": "results/phase17_new_vectors/80k_rop_chain_20261019_223328.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "5dc14102d5bd7205d8b4b38710436cb9b877437ff984715e629e99690fda0590"
+        },
+        {
+          "file": "results/phase17_new_vectors/80k_rop_chain_20261019_223354.txt",
+          "status": "PARTIALLY SUPPORTED",
+          "completion_detected": false,
+          "operation_return_detected": false,
+          "sha256": "998f195827026d0bf3513c4100d2dc5f61ea1e5e2b41f97fac35932ae13ab54e"
+        },
+        {
+          "file": "results/phase17_new_vectors/80k_rop_chain_20261019_224016.txt",
+          "status": "VERIFIED FROM RAW EVIDENCE",
+          "completion_detected": false,
+          "operation_return_detected": true,
+          "sha256": "31d3f149a4c7f4694c5441de4af449f3749bde9d029cb445e9040e882b30a875"
+        }
+      ],
+      "claim_source_match": true,
+      "limitations": [
+        "Repository-authored logs are not independently authenticated.",
+        "This audit does not execute probes or verify a console/firmware identity."
+      ]
+    }
+  ],
+  "contradictions": [
+    {
+      "probe": "80c",
+      "file": "results/phase17_new_vectors/80c_thread_register_exec_20261019_220250.txt",
+      "status": "CONTRADICTED",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "sha256": "a295e77dc77e45221ec75bc92afba22d437e305beee5a734f8633fd41515d26b"
+    },
+    {
+      "probe": "80j",
+      "file": "results/phase17_new_vectors/80j_two_stage_20261019_222842.txt",
+      "status": "CONTRADICTED",
+      "completion_detected": true,
+      "operation_return_detected": true,
+      "sha256": "a32c49fd3d908009970133c2474eec0ce0d5e280cd2a5205024fddabb348bb6e"
+    }
+  ],
+  "claim_discrepancies": [
+    {
+      "probe": "80a",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 238,
+          "excerpt": "| 80a | `thr_create_cs43_threading` | OK | **CS=0x43 threading confirmed on 14.10.** All 4 sections pass without kernel panic. Thread creation with correct CS/SS segment registers produces a live user-mode thread. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "PARTIALLY SUPPORTED"
+    },
+    {
+      "probe": "80b",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 239,
+          "excerpt": "| 80b | `thread_rop_chain` | OK | Thread ROP chain execution via thr_create. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "PARTIALLY SUPPORTED"
+    },
+    {
+      "probe": "80d",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 241,
+          "excerpt": "| 80d | `thread_diag` | OK | Thread diagnostic probe. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "CLAIMED BUT NOT DEMONSTRATED"
+    },
+    {
+      "probe": "80e",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 242,
+          "excerpt": "| 80e | `cs_sweep` | OK | CS register value sweep for thread creation. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "CLAIMED BUT NOT DEMONSTRATED"
+    },
+    {
+      "probe": "80f",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 243,
+          "excerpt": "| 80f | `get_current_cs` | OK | Read current CS register value. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "PARTIALLY SUPPORTED"
+    },
+    {
+      "probe": "80g",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 244,
+          "excerpt": "| 80g | `thread_correct_offsets` | OK | Thread context offset verification. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "CLAIMED BUT NOT DEMONSTRATED"
+    },
+    {
+      "probe": "80h",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 245,
+          "excerpt": "| 80h | `thread_write_test` | OK | Thread-based memory write test. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "CLAIMED BUT NOT DEMONSTRATED"
+    },
+    {
+      "probe": "80i",
+      "claim_vs_evidence": "CLAIM EXCEEDS SAVED EVIDENCE",
+      "claims": [
+        {
+          "file": "docs/PROBE_INDEX.md",
+          "line": 246,
+          "excerpt": "| 80i | `thread_write_final` | OK | **Arbitrary thread code execution confirmed (DEADBEEF write).** Thread writes controlled value to controlled address. (2026-10-19) |",
+          "index_status": "OK",
+          "claims_success": true
+        }
+      ],
+      "status": "CLAIMED BUT NOT DEMONSTRATED"
+    }
+  ],
+  "method": "Filename-linked source/log inventory, SHA-256 and Git blob provenance, terminal/readback pattern checks.",
+  "timestamp_caveat": "Filename timestamps are labels; they are not independently authenticated capture times."
+}

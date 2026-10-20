@@ -39,6 +39,16 @@ python -S tools/ps5_research.py --firmware D:\PS5UPDATE.PUP --evidence-root 'C:\
 
 The tool inventories both checkouts, parses saved beacon logs, indexes claims and static code patterns with file and line, flags the V480 contradiction and incomplete test endings, compares caller-supplied source snapshots, models checked integer boundaries, and calls this repository's bounded SLB2 parser for PUP metadata. It never decrypts the inner PUP, executes probes, or labels a pattern match as a vulnerability. `--output` refuses to overwrite an existing result; choose a new path on repeat runs. See the [committed sample report](reports/OFFLINE_ANALYSIS.md).
 
+For the public thread probes 80a–80k, separately clone the external project and run:
+
+```powershell
+git clone https://github.com/ZigZagBoi1/PS5-14.10-Research.git E:\PS5-14.10-Research-external
+python -S tools/ps5_research.py --probe-audit 'E:\PS5-14.10-Research-external' --format markdown --output reports\external-thread-rop-audit.md
+python -S tools/ps5_research.py --probe-audit 'E:\PS5-14.10-Research-external' --format json --output reports\external-thread-rop-audit.json
+```
+
+This read-only mode records the repository commit, commit-blob and checkout-byte SHA-256 values, Git blob IDs, cross-references, terminal/readback observations, and contradictions. It compares the probe index's success labels with the saved evidence. It does not run Lua or connect to a console. For the audited snapshot and conclusions, see [EXTERNAL_THREAD_ROP_AUDIT.md](reports/EXTERNAL_THREAD_ROP_AUDIT.md) and [PROBE_80I_80K_VERIFICATION.md](reports/PROBE_80I_80K_VERIFICATION.md).
+
 Compare two local text snapshots, retaining hashes and a unified diff:
 
 ```powershell
