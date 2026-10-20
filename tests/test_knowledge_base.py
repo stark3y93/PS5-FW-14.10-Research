@@ -24,7 +24,7 @@ class KnowledgeBaseTests(unittest.TestCase):
     def test_import_counts_and_source_links(self):
         self.assertEqual(self.counts["repositories"], 17)
         self.assertEqual(self.counts["sources"], 41)
-        self.assertEqual(self.counts["findings"], 18)
+        self.assertEqual(self.counts["findings"], 21)
         self.assertEqual(self.counts["sources"], 41)
         self.assertGreaterEqual(self.counts["evidence"], self.counts["findings"])
         with closing(sqlite3.connect(self.db)) as con:

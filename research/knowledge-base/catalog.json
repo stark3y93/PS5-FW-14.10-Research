@@ -1964,6 +1964,108 @@
           "status": "unknown"
         }
       ]
+    },
+    {
+      "id": "f-pastawithpesto-api-fingerprint",
+      "title": "14.10 community report publishes a browser API and runtime fingerprint",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned README reports these values; hardware identity and measurements are not independently authenticated.",
+      "summary": "The author reports a p163 PS5 running 14.10 with Safari 17.0 / AppleWebKit 605.1.15 and JIT disabled, plus an API availability list (including Workers, WebSocket, streams, FontFace, Atomics and ResizableArrayBuffer). The report says it used on-device probes, but this project did not verify the device or artifacts.",
+      "scope": "Single author-reported PS5 browser fingerprint in the pinned public repository.",
+      "firmware_relevance": "Directly claims PS5 firmware 14.10; independent validation is absent.",
+      "reproduction_status": "README/source review only; no browser probe or console access by this project.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "Pinned README, Target and API availability table",
+          "supports": "Author-attributed 14.10 browser/runtime fingerprint; not independently authenticated."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed tested target",
+          "status": "author-reported"
+        }
+      ]
+    },
+    {
+      "id": "f-pastawithpesto-stream-claims",
+      "title": "14.10 community report claims two ReadableStream tee-stage issues",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned report makes the claims; low for independent technical confirmation or impact.",
+      "summary": "The author reports a private-slot behavior and an object-type confusion in ReadableStream.tee() as live on a 14.10 device. The same report says a JavaScript builtin wall prevents using the confused objects to reach internal fields, and says an out-of-bounds variant terminates in a crash trap. It does not establish arbitrary read/write, code execution, or a complete chain.",
+      "scope": "Two browser-stage findings claimed by the pinned repository author.",
+      "firmware_relevance": "Claims 14.10 device observations; hardware and source/build provenance are not independently authenticated.",
+      "reproduction_status": "Static review of writeups and README only; no probes, vulnerable page, or payload executed.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "Pinned README, Novel Findings and Stage Overview",
+          "supports": "Author reports stream-stage observations and explicit limitations; not independent reproduction."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed tested target",
+          "status": "author-reported"
+        }
+      ]
+    },
+    {
+      "id": "f-pastawithpesto-mitigation-claims",
+      "title": "14.10 browser report describes mitigation and runtime state from device probes",
+      "classification": "AUTHOR-REPORTED",
+      "confidence": "High that the pinned report states these settings; the project has not verified the target binary or device readings.",
+      "summary": "The author reports JIT disabled and a JavaScript builtin wall that blocks access to internal fields in confused stream objects. The report also makes WebKit allocator/Gigacage and assertion-build claims based on WebKit-1400 source analysis. These are not independently confirmed facts about the exact Sony 26.06-14.10.00 binary.",
+      "scope": "Mixture of author-reported device observations and source-derived claims about a version-labelled WebKit snapshot.",
+      "firmware_relevance": "Targets 14.10, but the cited public WebKit source is not mapped to the exact console build.",
+      "reproduction_status": "Static review only; no device access and no binary/source build comparison.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "user-pastawithpesto"
+      ],
+      "evidence": [
+        {
+          "source_id": "r-ps5-1410-browser",
+          "kind": "author-claim",
+          "locator": "Pinned README, Exploitation Environment and Stage Overview",
+          "supports": "Author mitigation/runtime claims and stated stage limitation."
+        },
+        {
+          "source_id": "d-sony-webkit",
+          "kind": "official-source-listing",
+          "locator": "Sony WebKit source version labels",
+          "supports": "Sony provides a WebKit_1400 snapshot from 14.00 onward; exact 14.10 build mapping is not stated."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "claimed target/source analysis",
+          "status": "author-reported"
+        }
+      ]
     }
   ],
   "questions": [
@@ -2237,10 +2339,11 @@
       "title": "14.10 browser claims versus public-chain status wording",
       "status": "needs-review",
       "severity": "medium",
-      "summary": "One repository claims browser-stage primitives on 14.10 while another status report says there is no public userland exploit. These can coexist if the distinction is between userland primitives and a complete public entry chain; sources need careful stage-by-stage reconciliation.",
+      "summary": "One repository author reports browser-stage memory/type-confusion observations on 14.10 but also says the builtin wall blocks internal-field access and arbitrary read/write, code execution, sandbox escape, and kernel stages have not been reached. Another status report says no public userland exploit. These statements differ in stage terminology and do not establish a complete public entry chain.",
       "finding_ids": [
         "f-pastawithpesto-cve-claim",
-        "f-zigzag-userland-claims"
+        "f-zigzag-userland-claims",
+        "f-pastawithpesto-stream-claims"
       ],
       "source_ids": [
         "r-ps5-1410-browser",
