@@ -14,7 +14,7 @@ The supplied PS5 update package is a 1,261,408,256-byte SLB2 wrapper with SHA-25
 | FreeBSD CVE-2026-7270 and CVE-2026-45251 | FreeBSD advisories | Sony fork provenance, matching function, patch state, syscall reachability | **CONFIRMED UPSTREAM ONLY** |
 | Gezine's reported 14.10 kernel method | Debug Settings demonstration and statements reported publicly | Reproducible public method, target-specific artifact, independent kernel R/W verification | Mechanism **NOT TESTED / UNDISCLOSED** |
 
-The separate public 14.10 research repository reports native userland ROP and controlled user-memory writes but explicitly reports no demonstrated kernel R/W and no validated target kernel vulnerability. This observation concerns that project's probes; it does not identify Gezine's method.
+The separate public 14.10 research repository reports native userland ROP and controlled user-memory writes but explicitly reports no demonstrated kernel R/W and no validated target kernel vulnerability. Its linked raw 80k result stops during gadget scanning and does not show the asserted write result, so regard that specific claim as maintainer-reported rather than independently confirmed. This concerns that project's probes; it does not identify Gezine's method.
 
 ## Browser-build and hypervisor limits
 

@@ -7,7 +7,7 @@
 - Offline suite on this combined branch: **59 tests passed, 0 failed** (49 existing toolkit tests and 10 evidence-audit tests).
 - The supplied 14.10 package can be identified and outer SLB2 metadata checked. The kernel/browser payload was not decrypted or inspected.
 - Browser checkout evidence count is 299 parsed events; the offline audit recorded eight incomplete runs and one V480 contradiction. V480 corrected output reports `0-of-14`, rebutting that specific string-corruption signal.
-- Public Gezine evidence supports a Debug Settings demonstration and a statement that the 13.xx kernel method was patched in 14.00. The 14.10 method remains undisclosed. A separate public project reports userland thread-ROP but says kernel R/W and a validated kernel vulnerability are not demonstrated.
+- Public Gezine evidence supports a Debug Settings demonstration and a statement that the 13.xx kernel method was patched in 14.00. The 14.10 method remains undisclosed. A separate public project reports userland thread-ROP but its linked raw 80k output stops during gadget scanning; kernel R/W and a validated kernel vulnerability are not demonstrated.
 - The combined offline report reprocessed **299** browser events, found **eight** incomplete runs and one V480 contradiction, and parsed the supplied firmware wrapper metadata without exposing its inner payload.
 
 ## Evidence-weighted status
