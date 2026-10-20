@@ -22,10 +22,10 @@ class KnowledgeBaseTests(unittest.TestCase):
         self.temp.cleanup()
 
     def test_import_counts_and_source_links(self):
-        self.assertEqual(self.counts["repositories"], 17)
+        self.assertEqual(self.counts["repositories"], 18)
         self.assertGreaterEqual(self.counts["sources"], 20)
-        self.assertEqual(self.counts["findings"], 20)
-        self.assertEqual(self.counts["sources"], 39)
+        self.assertEqual(self.counts["findings"], 22)
+        self.assertEqual(self.counts["sources"], 43)
         self.assertEqual(self.counts["experiments"], 7)
         self.assertGreaterEqual(self.counts["evidence"], self.counts["findings"])
         with closing(sqlite3.connect(self.db)) as con:
@@ -50,7 +50,9 @@ class KnowledgeBaseTests(unittest.TestCase):
 
     def test_dashboard_has_metrics_and_clickable_evidence(self):
         data = dashboard_data(self.db)
-        self.assertEqual(data["stats"]["repositories"], 17)
+        self.assertEqual(data["stats"]["repositories"], 18)
+        self.assertEqual(data["stats"]["findings"], 22)
+        self.assertEqual(data["stats"]["sources"], 43)
         page = render_dashboard(data)
         self.assertIn("Search findings", page)
         self.assertIn("https://", page)

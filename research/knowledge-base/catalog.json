@@ -561,6 +561,31 @@
           "supports": "Pinned project and stated old-version range."
         }
       ]
+    },
+    {
+      "id": "r-ps5-firmware-list",
+      "owner": "MewX",
+      "name": "ps5-official-firmware-list",
+      "url": "https://github.com/MewX/ps5-official-firmware-list",
+      "commit": "83b0b510580bdbf3a2b77c05ccc7566e887be60d",
+      "license": "Not verified in this audit; no reuse permission assumed",
+      "contribution": "Metadata reference only; no code or firmware downloaded or copied.",
+      "coverage": "Partially reviewed: two commit-pinned archived update-list XML records.",
+      "summary": "Community archive indexes version-labelled PS5 update-list XML and checksum/URL metadata. Its rows are useful leads but do not alone authenticate Sony's firmware version-to-digest mapping.",
+      "firmware_claim": "Pinned XML records label 13.60 and 14.00 update entries; independent Sony identity and full-object digest verification remain unresolved.",
+      "researchers": [],
+      "evidence": [
+        {
+          "url": "https://github.com/MewX/ps5-official-firmware-list/blob/83b0b510580bdbf3a2b77c05ccc7566e887be60d/updatelists/updatelist.2026_0909.14.00.00.xml",
+          "kind": "third_party_metadata",
+          "supports": "Pinned archived XML lists a 14.00-labeled Sony update URL and SHA-256 path; not independent firmware verification."
+        },
+        {
+          "url": "https://github.com/MewX/ps5-official-firmware-list/blob/7f4ed6a8d7395d22e260563a189756ec6308ca46/updatelists/updatelist.2026_0717.13.60.00.xml",
+          "kind": "third_party_metadata",
+          "supports": "Earlier pinned archived XML lists a 13.60-labeled update entry; not independent firmware verification."
+        }
+      ]
     }
   ],
   "documents": [
@@ -584,8 +609,8 @@
       "url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
       "date": "2026-10-20",
       "kind": "official source listing",
-      "provenance": "Sony-controlled page; WebKit_1400 archive labelled PS5 software 14.00 onward",
-      "summary": "Provides version-labelled source snapshot but no exact mapping to 26.06-14.10.00 build/commit.",
+      "provenance": "Sony-controlled page labels WebKit_1400 for PS5 14.00 onward. Direct HEAD check on 2026-10-20: 1,637,794,253 bytes; Last-Modified 2026-10-15; ETag 0x8DF2A837F34C6C7 (HTTP validator, not a cryptographic hash).",
+      "summary": "Provides version-labelled source snapshot but no exact mapping to 26.06-14.10.00 build/commit. The archive is large and was not downloaded in this integration.",
       "researchers": [
         "user-sony"
       ]
@@ -597,8 +622,8 @@
       "url": "https://www.playstation.com/en-us/oss/ps5/webkit-javascriptcore/",
       "date": "2026-10-20",
       "kind": "official source listing",
-      "provenance": "Sony-controlled page; JSC-800 archive labelled PS5 software 8.00 onward",
-      "summary": "Provides JSC source; exact 14.10 build correspondence is not stated.",
+      "provenance": "Sony-controlled page labels JSC-800 for PS5 8.00 onward. Direct HEAD check on 2026-10-20: 1,369,859,528 bytes; Last-Modified 2026-08-07; ETag bf49658547d459e0405ba5cba59cb1d6:1786126791.99314 (HTTP validator, not a cryptographic hash).",
+      "summary": "Provides JSC source; exact 14.10 build correspondence is not stated. The archive is large and was not downloaded in this integration.",
       "researchers": [
         "user-sony"
       ]
@@ -612,6 +637,19 @@
       "kind": "official source index",
       "provenance": "Sony-controlled source index",
       "summary": "Lists Sony's PS5 open-source disclosures and component-specific source packages.",
+      "researchers": [
+        "user-sony"
+      ]
+    },
+    {
+      "id": "d-sony-console-version-help",
+      "title": "Sony instructions for viewing PS5 system software version",
+      "publisher": "Sony Interactive Entertainment",
+      "url": "https://www.playstation.com/en-us/support/hardware/playstation-system-software-application-version/",
+      "date": "2026-10-20",
+      "kind": "official support procedure",
+      "provenance": "Sony documents the built-in Settings path to Console Information and notes the page also displays network identifiers.",
+      "summary": "Supports the proposed manual, read-only version observation plan; not vulnerability or patch evidence.",
       "researchers": [
         "user-sony"
       ]
@@ -812,6 +850,28 @@
       "kind": "upstream-security-advisory",
       "provenance": "Upstream project advisory; separate port/source scope.",
       "summary": "Primary WebKitGTK security advisory cited by the CVE record. No Sony build mapping identified.",
+      "researchers": []
+    },
+    {
+      "id": "d-webkitgtk-wsa-2026-0005",
+      "title": "WebKitGTK Security Advisory WSA-2026-0005",
+      "publisher": "WebKitGTK",
+      "url": "https://webkitgtk.org/security/WSA-2026-0005.html",
+      "date": "2026-08-20",
+      "kind": "upstream-security-advisory",
+      "provenance": "Primary WebKitGTK/WPE advisory listing fixes and affected upstream port versions. No PlayStation build mapping.",
+      "summary": "Adds current upstream vulnerability and fix-scope context; does not establish whether any issue is present in Sony's fork or PS5 14.10.",
+      "researchers": []
+    },
+    {
+      "id": "d-webkitgtk-wsa-2026-0006",
+      "title": "WebKitGTK Security Advisory WSA-2026-0006",
+      "publisher": "WebKitGTK",
+      "url": "https://webkitgtk.org/security/WSA-2026-0006.html",
+      "date": "2026-09-29",
+      "kind": "upstream-security-advisory",
+      "provenance": "Primary WebKitGTK/WPE advisory; includes WebKitGTK-scoped fixes and also references third-party bundled components. Product scope must be read per CVE.",
+      "summary": "Current upstream comparison source. Its version statements apply to WebKitGTK/WPE, not Sony PlayStation.",
       "researchers": []
     },
     {
@@ -1783,6 +1843,80 @@
       ]
     },
     {
+      "id": "f-webkitgtk-upstream-scope",
+      "title": "Recent WebKitGTK advisories do not establish Sony 14.10 applicability",
+      "classification": "VERIFIED",
+      "confidence": "High for the cited WebKitGTK/WPE advisory scope; no inference about Sony's fork.",
+      "summary": "The 2026 WebKitGTK/WPE advisories document upstream affected-version ranges and fixes, including memory-safety issues. They identify WebKitGTK/WPE builds and do not map those findings or fixes to Sony's WebKit/JSC source package or PS5 14.10.",
+      "scope": "Bounded to the product scope stated by WSA-2026-0005 and WSA-2026-0006; not a PS5 vulnerability finding.",
+      "firmware_relevance": "Context for static source comparison only; PS5 applicability unknown.",
+      "reproduction_status": "Advisory pages reviewed; no advisory PoC or vulnerable code executed.",
+      "component_ids": [
+        "webkit",
+        "jsc"
+      ],
+      "researcher_ids": [
+        "org-webkit"
+      ],
+      "vulnerability_ids": [],
+      "evidence": [
+        {
+          "source_id": "d-webkitgtk-wsa-2026-0005",
+          "kind": "official-advisory",
+          "locator": "Affected versions and individual CVE entries",
+          "supports": "Upstream WebKitGTK/WPE scope and fixed-version statements."
+        },
+        {
+          "source_id": "d-webkitgtk-wsa-2026-0006",
+          "kind": "official-advisory",
+          "locator": "Affected versions and individual CVE entries",
+          "supports": "Current WebKitGTK/WPE advisory scope; some entries concern bundled third-party components."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.10",
+          "relationship": "Sony applicability of upstream fixes",
+          "status": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "f-community-firmware-index-limits",
+      "title": "Community update-list snapshots are leads, not Sony firmware attestation",
+      "classification": "VERIFIED",
+      "confidence": "High that the pinned XML files contain the stated version labels and URL/checksum metadata; no firmware bytes were downloaded or hashed.",
+      "summary": "Two commit-pinned MewX XML snapshots list 13.60- and 14.00-labelled update entries with Sony CDN URL metadata. These community records alone do not authenticate the complete firmware bytes, Sony build identity, or a version-to-digest mapping.",
+      "scope": "The two named XML files at their immutable Git commit IDs only.",
+      "firmware_relevance": "Historical-version provenance leads for comparison planning; no PS5 14.10 vulnerability inference.",
+      "reproduction_status": "Pinned XML records reviewed; firmware objects were not downloaded or hashed in this integration.",
+      "component_ids": [
+        "pup"
+      ],
+      "researcher_ids": [],
+      "vulnerability_ids": [],
+      "evidence": [
+        {
+          "source_id": "r-ps5-firmware-list",
+          "kind": "third-party-metadata",
+          "locator": "Pinned 2026-09-09 14.00 XML and 2026-07-17 13.60 XML",
+          "supports": "Community archived XML lists version labels and Sony CDN update URL/checksum metadata, not independent firmware attestation."
+        }
+      ],
+      "firmware": [
+        {
+          "firmware_id": "ps5-14.00",
+          "relationship": "archived third-party update-list row",
+          "status": "candidate metadata; Sony version/digest mapping unverified"
+        },
+        {
+          "firmware_id": "ps5-13.60",
+          "relationship": "archived third-party update-list row",
+          "status": "candidate metadata; Sony version/digest mapping unverified"
+        }
+      ]
+    },
+    {
       "id": "f-sony-archives-obtained",
       "title": "Sony WebKit and JSC OSS archives have distinct source vintages",
       "classification": "VERIFIED",
@@ -1875,7 +2009,7 @@
       "answerability_score": 4,
       "safe_verification_score": 5,
       "community_value_score": 5,
-      "method": "Match multiple exact archive file hashes to upstream WebKit Git history, then compare full patch context and Sony-specific changes. Keep all results PC-only and source-level until a build manifest is authenticated.",
+      "method": "Retain URL, version label, HTTP validators and archive hashes; match multiple exact source file hashes to upstream WebKit Git history; compare full patch context and Sony-specific changes. Keep results PC-only and source-level until a build manifest is authenticated.",
       "stop_condition": "If Sony archives omit exact source/build mapping, retain UNKNOWN; do not infer binary identity.",
       "firmware_relevance_score": 5,
       "priority_score": 4.6
