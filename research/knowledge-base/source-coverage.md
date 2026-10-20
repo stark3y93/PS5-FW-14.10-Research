@@ -1,6 +1,6 @@
 # Source coverage and extraction ledger
 
-Snapshot: 2026-10-20. Inspected repositories are pinned to the commits listed below. "Fully extracted" means the repository-level scope captured in its `coverage` field, not a byte-for-byte or exhaustive audit of all code. No third-party exploit or payload code was run.
+Snapshot: 2026-10-20. Inspected repositories are pinned to the commits listed below. "Fully extracted" means the bounded repository-level scope recorded in `coverage`, not an exhaustive audit of all code. No third-party exploit or payload code was run.
 
 | Repository | Inspected commit | License recorded | Coverage reviewed |
 |---|---|---|---|
@@ -9,7 +9,7 @@ Snapshot: 2026-10-20. Inspected repositories are pinned to the commits listed be
 | [Gezine/Luac0re](https://github.com/Gezine/Luac0re/tree/6fa8db6c021e1ae01864455e03e9c86aa5d33d66) | `6fa8db6c021e1ae01864455e03e9c86aa5d33d66` | MIT | partially extracted; README and project scope reviewed |
 | [ntfargo/Relapse-Exploit](https://github.com/ntfargo/Relapse-Exploit/tree/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0) | `dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0` | MIT | fully extracted for README, version gate and license |
 | [zecoxao/ps5-pup-unpacker](https://github.com/zecoxao/ps5-pup-unpacker/tree/005cccc908142c35ab7280e7f9eef8d5203c21e0) | `005cccc908142c35ab7280e7f9eef8d5203c21e0` | No root license found at pinned tree | partially extracted; README, reader and integer widths reviewed |
-| [pastawithpesto/PS5-14.10-Jailbreak-Research](https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/tree/ea1beed081adfdbebd887db558358c753633b575) | `ea1beed081adfdbebd887db558358c753633b575` | No root license found at pinned tree | partially extracted; README, visible reports and evidence limits inspected; no code executed |
+| [pastawithpesto/PS5-14.10-Jailbreak-Research](https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/tree/ea1beed081adfdbebd887db558358c753633b575) | `ea1beed081adfdbebd887db558358c753633b575` | README states MIT; no root LICENSE file at pinned tree, so a formal reuse grant was not established | partially extracted; README, visible reports and evidence limits inspected; no code executed |
 | [ZigZagBoi1/PS5-14.10-Research](https://github.com/ZigZagBoi1/PS5-14.10-Research/tree/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049) | `2bfb6b54940dfbd18d05b2712d723b0b4cfd0049` | No root license found at pinned tree | partially extracted; README, progress report and license status inspected; code/tests not run |
 | [nikosradio/ps4tools](https://github.com/nikosradio/ps4tools/tree/2aabe4da09ba14c41f3a0d8516aa756742ef4688) | `2aabe4da09ba14c41f3a0d8516aa756742ef4688` | GPL-2.0 | partially extracted; SLB2 structure and extraction loop reviewed |
 | [zecoxao/ps5-pup-decrypt](https://github.com/zecoxao/ps5-pup-decrypt/tree/290f5dd216b6878223457f51b32127acc480964a) | `290f5dd216b6878223457f51b32127acc480964a` | No root license found at pinned tree | partially extracted; README prerequisites reviewed |
@@ -31,7 +31,7 @@ Snapshot: 2026-10-20. Inspected repositories are pinned to the commits listed be
 
 ## Existing knowledge baseline
 
-PR #13 source index commit `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2` indexed 7 repositories and classified 18 evidence URLs. The present normalized catalog retains those seven pinned records, adds 10 repository records from previous source-review notes, and represents 20 first-class technical/vendor documents. Three useful source records are specifically primary/vendor context: Sony release and OSS listings, and vendor/upstream advisories. None provides exact Sony component-to-build vulnerability mapping for 14.10.
+PR #13 source index commit `da5114413e3cadcc34dcebcc4c1b8c9ea93073c2` indexed 7 repositories and classified 18 evidence URLs. The present normalized catalog retains those seven pinned records, adds 10 repository records from previous source-review notes, and represents 24 first-class technical/vendor documents. The documents include Sony release/source listings, WebKit port documentation, vendor CVE records, primary WebKitGTK and FreeBSD advisories, and local SLB2 measurements. None establishes exact Sony component-to-build vulnerability mapping for 14.10.
 
 The additional 10 repository records are primarily better-indexing of older work already in project notes; they should not be described as ten new technical discoveries. The two public 14.10 community repositories add author-reported device research claims, but the catalog treats them as unverified rather than independent evidence.
 
