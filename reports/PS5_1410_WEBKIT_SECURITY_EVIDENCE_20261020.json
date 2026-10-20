@@ -1,0 +1,1629 @@
+{
+  "schema": "ps5-webkit-security-review/1",
+  "base_commit": "71b0968",
+  "captured_at_utc": "2026-10-20T22:28:35.473302+00:00",
+  "official_and_wiki_page_access": [
+    {
+      "url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "effective_url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "status": 200,
+      "bytes": 141457,
+      "sha256": "5aac2582bea6640f128771b42f52abef6128429973126c5059776cb089a7c9a0",
+      "captured_at_utc": "2026-10-20T22:26:58.965480+00:00",
+      "local_path": "derived\\security-boundaries-20261020\\source-page-0.html"
+    },
+    {
+      "url": "https://www.playstation.com/en-us/oss/ps5/webkit-javascriptcore/",
+      "effective_url": "https://www.playstation.com/en-us/oss/ps5/webkit-javascriptcore/",
+      "status": 200,
+      "bytes": 138458,
+      "sha256": "ef37c106bd9d2f15cd242f0aaf7faa190f24cfc306097f148347ae50ee5e30ed",
+      "captured_at_utc": "2026-10-20T22:26:59.432164+00:00",
+      "local_path": "derived\\security-boundaries-20261020\\source-page-1.html"
+    },
+    {
+      "url": "https://www.psdevwiki.com/ps5/Vulnerabilities",
+      "direct_fetch_error": "HTTP Error 403: Forbidden",
+      "web_reader": "Sony and wiki pages were separately readable via web research tool"
+    },
+    {
+      "url": "https://www.psdevwiki.com/ps4/WebKit_Bugs",
+      "direct_fetch_error": "HTTP Error 403: Forbidden",
+      "web_reader": "Sony and wiki pages were separately readable via web research tool"
+    }
+  ],
+  "public_primary_sources": [
+    {
+      "kind": "author-readme",
+      "repository": "ntfargo/Relapse-Exploit",
+      "commit": "dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0",
+      "commit_date": "2026-09-30T19:28:02Z",
+      "url": "https://raw.githubusercontent.com/ntfargo/Relapse-Exploit/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/README.md",
+      "bytes": 1325,
+      "sha256": "7668e15b175a3c95f915e4b1517870523383970441cb2d1e7b241c1a01af075a",
+      "local_path": "derived\\security-boundaries-20261020\\Relapse-Exploit-README.md"
+    },
+    {
+      "kind": "author-readme",
+      "repository": "ntfargo/CSSFontFace-Exploit",
+      "commit": "221baa6e7349b96a6fd299808a25a4178e47741c",
+      "commit_date": "2026-07-27T18:05:37Z",
+      "url": "https://raw.githubusercontent.com/ntfargo/CSSFontFace-Exploit/221baa6e7349b96a6fd299808a25a4178e47741c/README.md",
+      "bytes": 1897,
+      "sha256": "860db9e43151442f43324093d16fe9bbcb2224be83bb2c3ef3412fb9104f6a27",
+      "local_path": "derived\\security-boundaries-20261020\\CSSFontFace-Exploit-README.md"
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/010c6bd",
+      "sha256": "8e6c085787fdf3f0cf47c3c04736e44b2ff3cdcf36b31549cfc845c0545eb6e8",
+      "commit": "010c6bdfb0cde0485d31f0260ab9a046fa9b8567",
+      "date": "2024-01-26T11:40:50Z",
+      "subject": "CloneSerializer/Deserializer's objectPool should match.",
+      "parents": [
+        "7841b2790f42d00eb2a8a9357a38d9df5509e047"
+      ],
+      "files": [
+        "LayoutTests/js/structuredClone/structured-clone-validation-with-big-int-expected.txt",
+        "LayoutTests/js/structuredClone/structured-clone-validation-with-big-int.html",
+        "Source/JavaScriptCore/runtime/OptionsList.h",
+        "Source/WebCore/bindings/js/SerializedScriptValue.cpp"
+      ]
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/f3d61dae1b61dfbd2fc0b01196b63f8769bca77e",
+      "sha256": "c6973b4aaba93f7f450270814f67fd08f7503188593aed0f8df954c867964148",
+      "commit": "f3d61dae1b61dfbd2fc0b01196b63f8769bca77e",
+      "date": "2026-07-02T11:03:45Z",
+      "subject": "Cherry-pick d90247302507. https://bugs.webkit.org/show_bug.cgi?id=313577",
+      "parents": [
+        "d6dc8ef95ed7fb13ec3c1049520996408a174e5e"
+      ],
+      "files": [
+        "LayoutTests/fonts/font-face-load-crash-expected.txt",
+        "LayoutTests/fonts/font-face-load-crash.html",
+        "Source/WebCore/css/FontFace.cpp"
+      ]
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/f1fff08a99d77bac49c2500ece3fdcfac06c8f1c",
+      "sha256": "b7003ca693d573f14cf3547c4216e2595c3b446735c8cb6c353ef4747fb75ad8",
+      "commit": "f1fff08a99d77bac49c2500ece3fdcfac06c8f1c",
+      "date": "2026-07-03T15:07:53Z",
+      "subject": "[GLIB/2.52] Reentrant client removal during CSSFontFace::iterateClients triggers hasFace() assertion",
+      "parents": [
+        "a6f8ffda820a6a9d84e998f33c74ceac7fd2846a"
+      ],
+      "files": [
+        "Source/WebCore/css/CSSFontFace.cpp"
+      ]
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/97df94ead028cddcfc21e48ec6f2f72d25ec1662",
+      "sha256": "9de52b77e3d80ecb66a30330f03f26f130a2ded5eb7869718c98aad3b4830fba",
+      "commit": "97df94ead028cddcfc21e48ec6f2f72d25ec1662",
+      "date": "2026-08-24T02:25:02Z",
+      "subject": "Handle overflows in UnlinkedMetadataTable::finalize().",
+      "parents": [
+        "16c6a9971daca74d3b6bdddba6daf8d2c4c57d8c"
+      ],
+      "files": [
+        "JSTests/stress/unlinked-metadata-table-finalize-overflow.js",
+        "Source/JavaScriptCore/bytecode/UnlinkedCodeBlockGenerator.cpp",
+        "Source/JavaScriptCore/bytecode/UnlinkedCodeBlockGenerator.h",
+        "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+        "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.h",
+        "Source/JavaScriptCore/bytecompiler/BytecodeGenerator.cpp"
+      ]
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/8fd92b1021d310b2580eb3ac7913911eb14dc476",
+      "sha256": "e7332ac0e8d6ab586ac77447633b02dea5ef3a4ba36f07c2305feae8466938be",
+      "commit": "8fd92b1021d310b2580eb3ac7913911eb14dc476",
+      "date": "2026-06-30T21:57:21Z",
+      "subject": "[WebCore] TransformStream type confusion when Array.prototype[Symbol.iterator] is overridden",
+      "parents": [
+        "6db96cd11f963bfa6a9874768309a175de3049cd"
+      ],
+      "files": [
+        "LayoutTests/streams/transform-stream-poisoned-iterator-crash-expected.txt",
+        "LayoutTests/streams/transform-stream-poisoned-iterator-crash.html",
+        "Source/WebCore/Modules/streams/TransformStream.cpp"
+      ]
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "sha256": "1b03fa03ad3b946c890ef1ae80008b5b0979188948e3e4ab0c739d54c97445b0",
+      "commit": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "date": "2023-09-15T00:55:06Z",
+      "subject": "Cherry-pick 47e039ffd689. rdar://115399657",
+      "parents": [
+        "9239f61644d286ec9113b9e839ec9f5ce73de721"
+      ],
+      "files": [
+        "JSTests/stress/getbyoffset-cse-consistency.js",
+        "JSTests/stress/multigetbyoffset-cse-consistency.js",
+        "Source/JavaScriptCore/dfg/DFGCSEPhase.cpp",
+        "Source/JavaScriptCore/dfg/DFGClobberize.h",
+        "Source/JavaScriptCore/dfg/DFGHeapLocation.h"
+      ]
+    },
+    {
+      "kind": "upstream-commit",
+      "url": "https://api.github.com/repos/WebKit/WebKit/commits/ceb7e89",
+      "commit": "ceb7e89febcd92b46d65396ce68e0d58ae6bcd6e",
+      "sha256": "8589d4d3e0c64b34ba87a18a6a22546b59b27672140a76817cc5c252f44bf6ba",
+      "date": "2024-03-14T17:44:34Z",
+      "subject": "[JSC] get_by_id_with_this + ProxyObject can leak JSScope objects",
+      "parents": [
+        "8b2e50918a1c6a0c064267a241b81c5b6f01115e"
+      ],
+      "files": [
+        "JSTests/stress/regress-120777816.js",
+        "Source/JavaScriptCore/builtins/ProxyHelpers.js",
+        "Source/JavaScriptCore/bytecode/BytecodeIntrinsicRegistry.h",
+        "Source/JavaScriptCore/bytecompiler/BytecodeGenerator.cpp",
+        "Source/JavaScriptCore/bytecompiler/BytecodeGenerator.h",
+        "Source/JavaScriptCore/bytecompiler/NodesCodegen.cpp",
+        "Source/JavaScriptCore/dfg/DFGByteCodeParser.cpp",
+        "Source/JavaScriptCore/runtime/ProxyObject.cpp"
+      ]
+    }
+  ],
+  "new_sony_acquisition": {
+    "url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+    "observed_at_utc": "2026-10-20T22:24:05.875143+00:00",
+    "archive_bytes": 1637794253,
+    "transferred_bytes": 73457089,
+    "full_archive_sha256": null,
+    "method": "Validated HTTP ranges and per-member ZIP CRC; selected public source only",
+    "files": [
+      {
+        "path": "Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+        "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+        "sha256": "4e8d3814d9ed0fb1b233ddcb70c01029d32c503c1b2c2b430f0f81a58bf7d3ca",
+        "bytes": 202646,
+        "crc32": "4a3ad65d",
+        "crc_validated": true
+      },
+      {
+        "path": "Source/JavaScriptCore/runtime/ProxyObject.cpp",
+        "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/runtime/ProxyObject.cpp",
+        "sha256": "aaa5adf496305e09d3f6eb1c249b3ce576aa6165fe6434855b34d85abaaedbf7",
+        "bytes": 54092,
+        "crc32": "2b19a495",
+        "crc_validated": true
+      },
+      {
+        "path": "Source/JavaScriptCore/parser/NodesCodegen.cpp",
+        "missing": true
+      }
+    ]
+  },
+  "rechecked_sony_members": [
+    {
+      "path": "Source/WebCore/css/CSSFontFace.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/CSSFontFace.cpp",
+      "sha256": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+      "bytes": 28259,
+      "crc32": "cc62761a",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\WebCore\\css\\CSSFontFace.cpp"
+    },
+    {
+      "path": "Source/WebCore/css/FontFace.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/FontFace.cpp",
+      "sha256": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a",
+      "bytes": 13370,
+      "crc32": "4f4fd3f8",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\WebCore\\css\\FontFace.cpp"
+    },
+    {
+      "path": "Source/WebCore/css/CSSFontFaceSet.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/CSSFontFaceSet.cpp",
+      "sha256": "bf331ac6fcfca559398b428b3aaec763ca7088c9b1d70361d3b6a7b6289d4ccd",
+      "bytes": 19879,
+      "crc32": "3afb8ee7",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\WebCore\\css\\CSSFontFaceSet.cpp"
+    },
+    {
+      "path": "Source/WebCore/css/CSSFontFace.h",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/CSSFontFace.h",
+      "sha256": "b2fa7c54e03ec83ba629b842c4abfcc8e0eeab57a96c0a6c3e193fbc3d57c8a2",
+      "bytes": 7479,
+      "crc32": "5843660c",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\WebCore\\css\\CSSFontFace.h"
+    },
+    {
+      "path": "Source/WebCore/css/FontFace.h",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/css/FontFace.h",
+      "sha256": "245d6dcbc5a0ce94d812ad7e9ebd4cb02f049fdd7b1fd085b52b928daa17a675",
+      "bytes": 4214,
+      "crc32": "cf0f325f",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\WebCore\\css\\FontFace.h"
+    },
+    {
+      "path": "Configurations/Version.xcconfig",
+      "zip_member": "WebKit-1400/WebKit-1400/Configurations/Version.xcconfig",
+      "sha256": "2c2f5d80b270c69877aaf5bb075307e0b63d5227ca508e8d2474ea42336f5307",
+      "bytes": 3213,
+      "crc32": "45e21e25",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Configurations\\Version.xcconfig"
+    },
+    {
+      "path": "Source/cmake/OptionsPlayStation.cmake",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/cmake/OptionsPlayStation.cmake",
+      "sha256": "006cc6e1cbbe8e3b7e0fd3070812e89e29b4091413fa14e03deb2bdc6cb1b96d",
+      "bytes": 29134,
+      "crc32": "89b6af42",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\cmake\\OptionsPlayStation.cmake"
+    },
+    {
+      "path": "Source/WebCore/platform/playstation/UserAgentPlayStation.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/platform/playstation/UserAgentPlayStation.cpp",
+      "sha256": "050f6eb12ea89016954e1a5e6927b641d40a590386ea410f88512585ad09eff3",
+      "bytes": 3932,
+      "crc32": "894cf2fa",
+      "crc_validated": true,
+      "local_path": "derived\\webkit-deep\\sony-1400\\Source\\WebCore\\platform\\playstation\\UserAgentPlayStation.cpp"
+    },
+    {
+      "path": "Source/WebCore/Modules/streams/TransformStream.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/Modules/streams/TransformStream.cpp",
+      "sha256": "b28852a98dd094a9ec8df45c1ff1390e3c73d265931c36c79cd59dbb7b856551",
+      "bytes": 5912,
+      "crc32": "3ff65c1d",
+      "crc_validated": true,
+      "local_path": "derived\\phase4\\sony-additional\\Source\\WebCore\\Modules\\streams\\TransformStream.cpp"
+    },
+    {
+      "path": "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.cpp",
+      "sha256": "e53a06b555cd7d979b076c6975c898331f99b188bac32c2dad90c04fa93c6814",
+      "bytes": 6981,
+      "crc32": "a75257a5",
+      "crc_validated": true,
+      "local_path": "derived\\phase4\\sony-additional\\Source\\JavaScriptCore\\bytecode\\UnlinkedMetadataTable.cpp"
+    },
+    {
+      "path": "Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.h",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/bytecode/UnlinkedMetadataTable.h",
+      "sha256": "5c8ea339832848d27a16ece12fc208e6cd8c19ce16d7368096037c6adac4dc92",
+      "bytes": 5305,
+      "crc32": "07e30b41",
+      "crc_validated": true,
+      "local_path": "derived\\phase4\\sony-additional\\Source\\JavaScriptCore\\bytecode\\UnlinkedMetadataTable.h"
+    },
+    {
+      "path": "Source/JavaScriptCore/bytecode/MetadataTable.h",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/bytecode/MetadataTable.h",
+      "sha256": "eaafcb41930c4bc90e0295412fb83031863228b3842126fc8d47a28bb38f0267",
+      "bytes": 4716,
+      "crc32": "ae1b15fb",
+      "crc_validated": true,
+      "local_path": "derived\\phase4\\sony-additional\\Source\\JavaScriptCore\\bytecode\\MetadataTable.h"
+    },
+    {
+      "path": "Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+      "sha256": "4e8d3814d9ed0fb1b233ddcb70c01029d32c503c1b2c2b430f0f81a58bf7d3ca",
+      "bytes": 202646,
+      "crc32": "4a3ad65d",
+      "crc_validated": true,
+      "local_path": "derived\\security-boundaries-20261020\\sony-relapse\\Source\\WebCore\\bindings\\js\\SerializedScriptValue.cpp"
+    },
+    {
+      "path": "Source/JavaScriptCore/runtime/ProxyObject.cpp",
+      "zip_member": "WebKit-1400/WebKit-1400/Source/JavaScriptCore/runtime/ProxyObject.cpp",
+      "sha256": "aaa5adf496305e09d3f6eb1c249b3ce576aa6165fe6434855b34d85abaaedbf7",
+      "bytes": 54092,
+      "crc32": "2b19a495",
+      "crc_validated": true,
+      "local_path": "derived\\security-boundaries-20261020\\sony-relapse\\Source\\JavaScriptCore\\runtime\\ProxyObject.cpp"
+    },
+    {
+      "path": "Source/JavaScriptCore/parser/NodesCodegen.cpp",
+      "missing": true,
+      "local_path": "derived\\security-boundaries-20261020\\sony-relapse\\Source\\JavaScriptCore\\parser\\NodesCodegen.cpp"
+    }
+  ],
+  "clone_comparison": [
+    {
+      "revision": "7841b2790f42d00eb2a8a9357a38d9df5509e047",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/7841b2790f42d00eb2a8a9357a38d9df5509e047/Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+      "sha256": "1f83c18a695b2a0775bcaa92d4c700a77e429cad744495534ad41530d4a22ebe",
+      "bytes": 208530,
+      "sony_exact_match": false
+    },
+    {
+      "revision": "010c6bdfb0cde0485d31f0260ab9a046fa9b8567",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/010c6bdfb0cde0485d31f0260ab9a046fa9b8567/Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+      "sha256": "255d1b17dcb758f1756e0f396f5875b7ea2484d5aafd0db70721f5d607cb4412",
+      "bytes": 225323,
+      "sony_exact_match": false
+    },
+    {
+      "revision": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/WebCore/bindings/js/SerializedScriptValue.cpp",
+      "sha256": "f6712366dc98c2a42f32eefa02db8ee0e8cd4eb02ab41823237146d9a8663093",
+      "bytes": 188474,
+      "sony_exact_match": false
+    }
+  ],
+  "proxy_comparison": [
+    {
+      "revision": "8b2e50918a1c6a0c064267a241b81c5b6f01115e",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/8b2e50918a1c6a0c064267a241b81c5b6f01115e/Source/JavaScriptCore/runtime/ProxyObject.cpp",
+      "sha256": "fb319e7981266a284dc59d3bedb79670f18ab0de73ad244a5ce50e936a09715d",
+      "bytes": 54010,
+      "sony_exact_match": false
+    },
+    {
+      "revision": "ceb7e89febcd92b46d65396ce68e0d58ae6bcd6e",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/ceb7e89febcd92b46d65396ce68e0d58ae6bcd6e/Source/JavaScriptCore/runtime/ProxyObject.cpp",
+      "sha256": "aaa5adf496305e09d3f6eb1c249b3ce576aa6165fe6434855b34d85abaaedbf7",
+      "bytes": 54092,
+      "sony_exact_match": true
+    },
+    {
+      "revision": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+      "url": "https://raw.githubusercontent.com/WebKit/WebKit/0e722583a4d695c7b25f384c61fbf5b59b4c3146/Source/JavaScriptCore/runtime/ProxyObject.cpp",
+      "sha256": "fb319e7981266a284dc59d3bedb79670f18ab0de73ad244a5ce50e936a09715d",
+      "bytes": 54010,
+      "sony_exact_match": false
+    }
+  ],
+  "cssfontface_source_recheck": {
+    "classification": "VULNERABLE IMPLEMENTATION \u2014 VERIFIED",
+    "scope": "source snapshot only",
+    "ps5_1410_classification": "INSUFFICIENT EVIDENCE",
+    "reasons": [
+      "No exact PS5 14.10 executable/build correspondence is validated by this source-only tool."
+    ],
+    "files": [
+      {
+        "path": "Source/WebCore/css/CSSFontFace.cpp",
+        "sha256": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+        "expected_sha256": "047110c865310422c0ef77c05268841b1ac982bc22120e8c8e265539c713f3ab",
+        "hash_verified": true,
+        "bytes": 28259,
+        "origin_url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip"
+      },
+      {
+        "path": "Source/WebCore/css/FontFace.cpp",
+        "sha256": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a",
+        "expected_sha256": "82b68a296b73840857f0947ae533748d86a8f52248d03cd3f4f06176e56ed50a",
+        "hash_verified": true,
+        "bytes": 13370,
+        "origin_url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip"
+      }
+    ],
+    "functions": {
+      "client_iteration": {
+        "file": "Source/WebCore/css/CSSFontFace.cpp",
+        "state": "unguarded",
+        "line": 55,
+        "body_sha256": "9eb08c20f2ef1fba12de3c90d27731de4d3862cf6edbae62e7ed55a6f7a5b5fe"
+      },
+      "backing_load": {
+        "file": "Source/WebCore/css/FontFace.cpp",
+        "state": "unprotected",
+        "line": 358,
+        "body_sha256": "7c870098c7b55f14b9888acff6b3507354c5a2a2dedcd20636f2fb133bc5e6ff"
+      }
+    },
+    "reference_matches": [
+      {
+        "revision": "0e722583a4d695c7b25f384c61fbf5b59b4c3146",
+        "label": "2023 source baseline matching sampled Sony WebKit_1400 files"
+      }
+    ],
+    "provenance": {
+      "kind": "sony-published-source",
+      "revision": null,
+      "source_url": "https://www.playstation.com/content/dam/global_pdc/en-us/external-resources/oss/PS5/webkit/WebKit_1400.zip",
+      "source_listing_url": "https://www.playstation.com/en-us/oss/ps5/webkit/",
+      "listed_firmware_range": "14.00 -",
+      "exact_firmware_build": null
+    },
+    "label": "Sony WebKit_1400 published source (14.00 onward listing)",
+    "manifest_sha256": "5608e5e9cdfb0ce91f60c7393e93a907679708728d653b935b62c44b45d6be72"
+  },
+  "live": {
+    "initial_status": {
+      "server_time": "2026-10-20T22:21:14.754604+00:00",
+      "clients": [
+        {
+          "client_id": "a93285a84852",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "last_seen": "2026-10-20T22:21:08.498250+00:00",
+          "online": true,
+          "evidence": {
+            "file": "events.ndjson",
+            "line": 1,
+            "sha256": "d8345f595fbe59412d0d1e9e4673bf0061ea05a23eb18a15a64c90debb750108"
+          }
+        }
+      ]
+    },
+    "after_status": {
+      "server_time": "2026-10-20T22:21:43.061725+00:00",
+      "clients": [
+        {
+          "client_id": "a93285a84852",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "last_seen": "2026-10-20T22:21:38.494252+00:00",
+          "online": true,
+          "evidence": {
+            "file": "events.ndjson",
+            "line": 1,
+            "sha256": "d8345f595fbe59412d0d1e9e4673bf0061ea05a23eb18a15a64c90debb750108"
+          }
+        }
+      ]
+    },
+    "new_job_ids": [
+      "a41ad918204f7c72",
+      "dd07ae9bba05914e"
+    ],
+    "jobs": [
+      {
+        "id": "a41ad918204f7c72",
+        "client_id": "a93285a84852",
+        "task": "surface",
+        "status": "complete",
+        "created_at": "2026-10-20T22:21:38.955112+00:00",
+        "started_at": "2026-10-20T22:21:40.528762+00:00",
+        "completed_at": "2026-10-20T22:21:40.550796+00:00",
+        "missing_tests": []
+      },
+      {
+        "id": "dd07ae9bba05914e",
+        "client_id": "a93285a84852",
+        "task": "security",
+        "status": "complete",
+        "created_at": "2026-10-20T22:21:41.021153+00:00",
+        "started_at": "2026-10-20T22:21:42.531485+00:00",
+        "completed_at": "2026-10-20T22:21:42.769009+00:00",
+        "missing_tests": []
+      }
+    ],
+    "results": [
+      {
+        "test_id": "surface.Promise",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check Promise exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.Map",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check Map exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.Set",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check Set exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.Symbol",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check Symbol exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.BigInt",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check BigInt exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.ArrayBuffer",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check ArrayBuffer exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.Uint8Array",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check Uint8Array exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.TextEncoder",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check TextEncoder exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.FontFace",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check FontFace exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.TransformStream",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check TransformStream exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.WebAssembly",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check WebAssembly exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.fontSet",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check fontSet exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.cssGrid",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check cssGrid exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.cssFontFamily",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check cssFontFamily exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.clipboard",
+        "gate": "REQUIRES HTTPS",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check clipboard exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "surface.fileInput",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check fileInput exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.fileSystem",
+        "gate": "REQUIRES HTTPS",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check fileSystem exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "surface.fileAPIs",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "File": true,
+          "FileReader": true,
+          "Blob": true,
+          "FileList": true,
+          "blobURL": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check fileAPIs exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.devices",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "bluetooth": false,
+          "usb": false,
+          "serial": false,
+          "hid": false,
+          "mediaDevices": false,
+          "geolocation": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check devices exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "surface.isolation",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "crossOriginIsolated": false,
+          "SharedArrayBuffer": false,
+          "policy": "This page does not request COOP/COEP isolation"
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check isolation exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "surface.permissions",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Check permissions exposure in this page without privileged operations; availability is not exploitation.",
+        "client_id": "a93285a84852",
+        "job_id": "a41ad918204f7c72",
+        "received_at": "2026-10-20T22:21:40.550796+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 6,
+          "sha256": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "security.context",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "isSecureContext": false,
+          "protocol": "http:",
+          "crossOriginIsolated": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe current secure-context and cross-origin-isolation flags; HTTP LAN and loopback can differ.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.permissions",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Query geolocation permission state without requesting permission or position.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.wasm",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "If exposed, validate an 8-byte empty module; no permanent disablement inference.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.worker",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": true,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "A temporary Blob worker sends one marker, is terminated, and its URL revoked.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.serviceWorker",
+        "gate": "REQUIRES HTTPS",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Register/unregister only the isolated suite scope, without caches or a fetch handler.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.crypto",
+        "gate": "REQUIRES HTTPS",
+        "observed": false,
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "SHA-256 of 3 synthetic bytes returns a 32-byte digest.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.sandbox",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "opaque_origin": true,
+          "parent_dom_blocked": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Controlled allow-scripts sandbox has an opaque message origin and denies parent DOM access.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "security-context-specific"
+      },
+      {
+        "test_id": "security.csp",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "control_loaded": true,
+          "inline_script_blocked": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "The static control loads while its explicitly forbidden inline script does not execute.",
+        "client_id": "a93285a84852",
+        "job_id": "dd07ae9bba05914e",
+        "received_at": "2026-10-20T22:21:42.769009+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 8,
+          "sha256": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "security-context-specific"
+      }
+    ],
+    "served_assets": {
+      "/bridge/index.html": "4b47af6e9564e733f102d16440646ce575f6b0fb6d89b8369b4fd2ce93be75ed",
+      "/bridge/dashboard.html": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/bridge/client.js": "b712e597d67b3bac743fecc748e44046b7c031fd767f42bb0fe56aef80563abc",
+      "/bridge/suite.js": "1413cae0d7c6c6ba8c16ed0486283ccdc0e6fb0c52ece26f527e6fe6d1df3498",
+      "/bridge/dashboard.js": "1a1ee58bcc16af6c682d10d87df401b48fc19417c53ad0affa25846a26c1fc93",
+      "/bridge/style.css": "d0fcc3c14f65cd1fe6db1b6f5fa9e16a30dfd56c6054f540e4707a0f84b36a4b",
+      "/bridge/sw.js": "f4aee8038cfd72e167ec8d4e28f726b266417c58b2b42c50d5f8a056ac8a1d96",
+      "/bridge/blob_observer.js": "dcb12f822166b07be42e35b88ec5bbd6df120d1dd2358a8e5cdba5e376482de1",
+      "/": "4b47af6e9564e733f102d16440646ce575f6b0fb6d89b8369b4fd2ce93be75ed",
+      "/dashboard": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/passive/index.html": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2",
+      "/passive/diagnostic.js": "97bc1b57d549879784a8d8a85dab20b546ae084da7d78936eb15e300decb3f5a",
+      "/passive/": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2"
+    },
+    "raw_event_records": [
+      {
+        "file": "derived\\bridge-20261020T221043Z-7328bc\\events.ndjson",
+        "line": 5,
+        "sha256_with_newline": "a7db4e08e565b23d27c505a5fd9c0baea308a754d060dde1eb160c644dcab386",
+        "record": {
+          "sequence": 5,
+          "server_time": "2026-10-20T22:21:38.955112+00:00",
+          "kind": "scheduled",
+          "data": {
+            "id": "a41ad918204f7c72",
+            "client_id": "a93285a84852",
+            "task": "surface",
+            "status": "queued",
+            "created_at": "2026-10-20T22:21:38.955112+00:00"
+          }
+        }
+      },
+      {
+        "file": "derived\\bridge-20261020T221043Z-7328bc\\events.ndjson",
+        "line": 6,
+        "sha256_with_newline": "6928986ced346550b7fe7fb2766300681646d7dbb10612a9a082bdd62f002ed0",
+        "record": {
+          "sequence": 6,
+          "server_time": "2026-10-20T22:21:40.549800+00:00",
+          "kind": "results",
+          "data": {
+            "client_id": "a93285a84852",
+            "job_id": "a41ad918204f7c72",
+            "results": [
+              {
+                "test_id": "surface.Promise",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check Promise exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.Map",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check Map exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.Set",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check Set exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.Symbol",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check Symbol exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.BigInt",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check BigInt exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.ArrayBuffer",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check ArrayBuffer exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.Uint8Array",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check Uint8Array exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.TextEncoder",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check TextEncoder exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.FontFace",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check FontFace exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.TransformStream",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check TransformStream exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.WebAssembly",
+                "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check WebAssembly exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.fontSet",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check fontSet exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.cssGrid",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check cssGrid exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.cssFontFamily",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check cssFontFamily exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.clipboard",
+                "gate": "REQUIRES HTTPS",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check clipboard exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.fileInput",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check fileInput exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.fileSystem",
+                "gate": "REQUIRES HTTPS",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check fileSystem exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.fileAPIs",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": {
+                  "File": true,
+                  "FileReader": true,
+                  "Blob": true,
+                  "FileList": true,
+                  "blobURL": true
+                },
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check fileAPIs exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.devices",
+                "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+                "observed": {
+                  "bluetooth": false,
+                  "usb": false,
+                  "serial": false,
+                  "hid": false,
+                  "mediaDevices": false,
+                  "geolocation": false
+                },
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check devices exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.isolation",
+                "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+                "observed": {
+                  "crossOriginIsolated": false,
+                  "SharedArrayBuffer": false,
+                  "policy": "This page does not request COOP/COEP isolation"
+                },
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check isolation exposure in this page without privileged operations; availability is not exploitation."
+              },
+              {
+                "test_id": "surface.permissions",
+                "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Check permissions exposure in this page without privileged operations; availability is not exploitation."
+              }
+            ]
+          }
+        }
+      },
+      {
+        "file": "derived\\bridge-20261020T221043Z-7328bc\\events.ndjson",
+        "line": 7,
+        "sha256_with_newline": "31a53cc7512be7e4b190ded93497cd230bde38e1cabe8619f18e625b82482eac",
+        "record": {
+          "sequence": 7,
+          "server_time": "2026-10-20T22:21:41.021153+00:00",
+          "kind": "scheduled",
+          "data": {
+            "id": "dd07ae9bba05914e",
+            "client_id": "a93285a84852",
+            "task": "security",
+            "status": "queued",
+            "created_at": "2026-10-20T22:21:41.021153+00:00"
+          }
+        }
+      },
+      {
+        "file": "derived\\bridge-20261020T221043Z-7328bc\\events.ndjson",
+        "line": 8,
+        "sha256_with_newline": "bd64f50e52c0c91714a65f097ac6681e63b6b1bcb991fcd8f4e9d5675d7fc891",
+        "record": {
+          "sequence": 8,
+          "server_time": "2026-10-20T22:21:42.769009+00:00",
+          "kind": "results",
+          "data": {
+            "client_id": "a93285a84852",
+            "job_id": "dd07ae9bba05914e",
+            "results": [
+              {
+                "test_id": "security.context",
+                "gate": "REQUIRES HTTPS",
+                "observed": {
+                  "isSecureContext": false,
+                  "protocol": "http:",
+                  "crossOriginIsolated": false
+                },
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Observe current secure-context and cross-origin-isolation flags; HTTP LAN and loopback can differ."
+              },
+              {
+                "test_id": "security.permissions",
+                "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Query geolocation permission state without requesting permission or position."
+              },
+              {
+                "test_id": "security.wasm",
+                "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "If exposed, validate an 8-byte empty module; no permanent disablement inference."
+              },
+              {
+                "test_id": "security.worker",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": true,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "A temporary Blob worker sends one marker, is terminated, and its URL revoked."
+              },
+              {
+                "test_id": "security.serviceWorker",
+                "gate": "REQUIRES HTTPS",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Register/unregister only the isolated suite scope, without caches or a fetch handler."
+              },
+              {
+                "test_id": "security.crypto",
+                "gate": "REQUIRES HTTPS",
+                "observed": false,
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "SHA-256 of 3 synthetic bytes returns a 32-byte digest."
+              },
+              {
+                "test_id": "security.sandbox",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": {
+                  "opaque_origin": true,
+                  "parent_dom_blocked": true
+                },
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "Controlled allow-scripts sandbox has an opaque message origin and denies parent DOM access."
+              },
+              {
+                "test_id": "security.csp",
+                "gate": "CONFIRMED AVAILABLE",
+                "observed": {
+                  "control_loaded": true,
+                  "inline_script_blocked": true
+                },
+                "error": "",
+                "scope": "http: page; isSecureContext=false",
+                "confidence": "AUTOMATED OBSERVATION",
+                "expected": "The static control loads while its explicitly forbidden inline script does not execute."
+              }
+            ]
+          }
+        }
+      }
+    ],
+    "source_prefix": {
+      "file": "derived\\bridge-20261020T221043Z-7328bc\\events.ndjson",
+      "bytes": 19770,
+      "sha256": "56c6a4fccc538eb5f3d2630e37f3fba9e768cf077b0c9e8e44272d61b7fd1a99"
+    },
+    "prior_prefix_preserved": true
+  },
+  "limits": [
+    "Published source is not authenticated 14.10 executable identity",
+    "Wiki content is community attribution, not independent firmware validation",
+    "Full source archive SHA-256 not measured",
+    "No exploit or unsafe upstream regression executed",
+    "Linear Fox article yielded a JavaScript loading shell in the web reader; full article not independently assessed",
+    "Requested parser/NodesCodegen.cpp archive member was absent at that requested path; upstream uses bytecompiler/NodesCodegen.cpp, not acquired in this phase"
+  ]
+}
