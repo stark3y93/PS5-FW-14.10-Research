@@ -1,5 +1,14 @@
 # False positives and unsupported conclusions
 
+## Phase 4 source reassessment
+
+- **Old engine version means all old vulnerabilities are present:** contradicted by fresh sampling. Sony's published TransformStream file has the relevant count/type safeguards while other sampled files retain older implementations. Version strings and API fingerprints cannot replace per-function comparison.
+- **TransformStream unchecked-result path exists in the published 1400 source:** contradicted for the sampled file. Exact member SHA-256, lines and upstream fix are in [fresh provenance](PHASE4_SOURCE_EVIDENCE.json) and [compatibility analysis](WEBKIT_TARGET_COMPATIBILITY.md). Actual 14.10 executable state remains unknown.
+- **A complete passive diagnostic verifies an exploit:** unsupported. The importer always leaves vulnerability status insufficient and privileged boundaries unproven. PC captures with a default 14.10 text label are explicitly excluded from PS5 observations.
+- **Hypervisor Reborn supplies a 14.10 jailbreak:** unsupported by the inspected pinned primary README. Its listed support and kernel prerequisite do not establish either initial kernel access or a 14.10 port.
+
+The newly located old Sony metadata implementation strengthens that separate source lead. It does not reverse the corrected V480 negative result or prove the historically assumed stride, reachable allocation, memory fault or target inclusion.
+
 All `analysis/`, `docs/`, `probes/`, and `results/` citations below refer to the separate user-supplied browser research checkout, whose Git remote differs from this repository. Its original logs were read, not copied or altered here.
 
 ## Disproven string corruption

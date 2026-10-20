@@ -1,0 +1,1659 @@
+{
+  "base_commit": "d7f1a7d",
+  "source_file": "derived\\bridge-20261020T221043Z-7328bc\\events.ndjson",
+  "captured_bytes": 9937,
+  "source_prefix_sha256": "ef21cd39968adddaa97d8290ac7837eb6b216d5dace6043d4136113cc6d94542",
+  "snapshot": {
+    "schema": "ps5-browser-bridge/1",
+    "started_at": "2026-10-20T22:10:43.056202+00:00",
+    "server_time": "2026-10-20T22:16:07.982069+00:00",
+    "assets": {
+      "/bridge/index.html": "4b47af6e9564e733f102d16440646ce575f6b0fb6d89b8369b4fd2ce93be75ed",
+      "/bridge/dashboard.html": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/bridge/client.js": "b712e597d67b3bac743fecc748e44046b7c031fd767f42bb0fe56aef80563abc",
+      "/bridge/suite.js": "1413cae0d7c6c6ba8c16ed0486283ccdc0e6fb0c52ece26f527e6fe6d1df3498",
+      "/bridge/dashboard.js": "1a1ee58bcc16af6c682d10d87df401b48fc19417c53ad0affa25846a26c1fc93",
+      "/bridge/style.css": "d0fcc3c14f65cd1fe6db1b6f5fa9e16a30dfd56c6054f540e4707a0f84b36a4b",
+      "/bridge/sw.js": "f4aee8038cfd72e167ec8d4e28f726b266417c58b2b42c50d5f8a056ac8a1d96",
+      "/bridge/blob_observer.js": "dcb12f822166b07be42e35b88ec5bbd6df120d1dd2358a8e5cdba5e376482de1",
+      "/": "4b47af6e9564e733f102d16440646ce575f6b0fb6d89b8369b4fd2ce93be75ed",
+      "/dashboard": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/passive/index.html": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2",
+      "/passive/diagnostic.js": "97bc1b57d549879784a8d8a85dab20b546ae084da7d78936eb15e300decb3f5a",
+      "/passive/": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2"
+    },
+    "clients": [
+      {
+        "client_id": "a93285a84852",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T22:15:58.472517+00:00",
+        "online": true,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 1,
+          "sha256": "d8345f595fbe59412d0d1e9e4673bf0061ea05a23eb18a15a64c90debb750108"
+        }
+      }
+    ],
+    "jobs": [
+      {
+        "id": "06a4dcadf071b436",
+        "client_id": "a93285a84852",
+        "task": "files",
+        "status": "complete",
+        "created_at": "2026-10-20T22:12:02.815780+00:00",
+        "started_at": "2026-10-20T22:12:04.506525+00:00",
+        "completed_at": "2026-10-20T22:12:04.541110+00:00",
+        "missing_tests": []
+      }
+    ],
+    "results": [
+      {
+        "test_id": "manual.downloadLink",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.txtDownload",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.attribute",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.blobDownload",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.fileUpload",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.popup",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.navigation",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.fileOpen",
+        "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+        "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.showOpenFilePicker",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.showDirectoryPicker",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.showSaveFilePicker",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.webkitRequestFileSystem",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": false,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.requestFileSystem",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": false,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.FileSystemHandle",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.FileSystemFileHandle",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.FileSystemDirectoryHandle",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.getDirectory",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.fileReader",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "exact_match": true,
+          "bytes": 47,
+          "expected_bytes": 47,
+          "in_memory_only": true,
+          "no_user_file_selected": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.originPrivate",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "invoked": false,
+          "reason": "not exposed here; insecure context may be a prerequisite, not proven cause"
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.legacyTemporary",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "invoked": false,
+          "reason": "legacy temporary filesystem API not exposed"
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.blobReadback",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "url_scheme": "blob:",
+          "exact_match": true,
+          "expected_characters": 47,
+          "saved_file_not_inferred": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      }
+    ],
+    "limits": [
+      "Authenticated bridge session is not authenticated hardware/firmware",
+      "Every observation is limited to its page, context and test",
+      "No exploit or privileged-access verdict"
+    ]
+  },
+  "events": [
+    {
+      "line": 1,
+      "sha256_with_newline": "d8345f595fbe59412d0d1e9e4673bf0061ea05a23eb18a15a64c90debb750108",
+      "record": {
+        "sequence": 1,
+        "server_time": "2026-10-20T22:11:48.439749+00:00",
+        "kind": "registration",
+        "data": {
+          "client_id": "a93285a84852",
+          "info": {
+            "firmware": "14.10",
+            "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+            "secure_context": false
+          },
+          "context": {
+            "origin": "http://192.168.4.29:8765",
+            "transport": "http"
+          },
+          "identity_authenticated": false
+        }
+      }
+    },
+    {
+      "line": 2,
+      "sha256_with_newline": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78",
+      "record": {
+        "sequence": 2,
+        "server_time": "2026-10-20T22:11:48.461323+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "a93285a84852",
+          "job_id": "explicit-client-action",
+          "results": [
+            {
+              "test_id": "manual.downloadLink",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.txtDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.attribute",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.blobDownload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileUpload",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.popup",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.navigation",
+              "gate": "REQUIRES USER INTERACTION",
+              "observed": "Use the named local control; no successful outcome inferred",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion."
+            },
+            {
+              "test_id": "manual.fileOpen",
+              "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+              "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+              "error": "",
+              "scope": "http: current page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion."
+            }
+          ]
+        }
+      }
+    },
+    {
+      "line": 3,
+      "sha256_with_newline": "1dbafb1832ca0d3781256be5e575e3e05fae74d9c1cd37d532492744b6fc8841",
+      "record": {
+        "sequence": 3,
+        "server_time": "2026-10-20T22:12:02.815780+00:00",
+        "kind": "scheduled",
+        "data": {
+          "id": "06a4dcadf071b436",
+          "client_id": "a93285a84852",
+          "task": "files",
+          "status": "queued",
+          "created_at": "2026-10-20T22:12:02.815780+00:00"
+        }
+      }
+    },
+    {
+      "line": 4,
+      "sha256_with_newline": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0",
+      "record": {
+        "sequence": 4,
+        "server_time": "2026-10-20T22:12:04.541110+00:00",
+        "kind": "results",
+        "data": {
+          "client_id": "a93285a84852",
+          "job_id": "06a4dcadf071b436",
+          "results": [
+            {
+              "test_id": "files.showOpenFilePicker",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.showDirectoryPicker",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.showSaveFilePicker",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.webkitRequestFileSystem",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": false,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.requestFileSystem",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": false,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.FileSystemHandle",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.FileSystemFileHandle",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.FileSystemDirectoryHandle",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.getDirectory",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "type": "undefined",
+                "is_null": false,
+                "secure_context": false,
+                "secure_context_prerequisite": true,
+                "cause_of_absence_not_established": true,
+                "invoked": false
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.fileReader",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "exact_match": true,
+                "bytes": 47,
+                "expected_bytes": 47,
+                "in_memory_only": true,
+                "no_user_file_selected": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.originPrivate",
+              "gate": "REQUIRES HTTPS",
+              "observed": {
+                "invoked": false,
+                "reason": "not exposed here; insecure context may be a prerequisite, not proven cause"
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.legacyTemporary",
+              "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+              "observed": {
+                "invoked": false,
+                "reason": "legacy temporary filesystem API not exposed"
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            },
+            {
+              "test_id": "files.blobReadback",
+              "gate": "CONFIRMED AVAILABLE",
+              "observed": {
+                "url_scheme": "blob:",
+                "exact_match": true,
+                "expected_characters": 47,
+                "saved_file_not_inferred": true
+              },
+              "error": "",
+              "scope": "http: page; isSecureContext=false",
+              "confidence": "AUTOMATED OBSERVATION",
+              "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes."
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "controller_observations": [
+    {
+      "control": "Test file picker (gesture required)",
+      "source": "user reply in this research session",
+      "observation": "I\u2019m not sure",
+      "classification": "INCONCLUSIVE"
+    },
+    {
+      "control": "Instrumented Blob download/navigation control",
+      "source": "user reply in this research session",
+      "observation": "I\u2019m not sure",
+      "classification": "INCONCLUSIVE"
+    }
+  ],
+  "initial_snapshot": {
+    "schema": "ps5-browser-bridge/1",
+    "started_at": "2026-10-20T22:10:43.056202+00:00",
+    "server_time": "2026-10-20T22:12:52.515332+00:00",
+    "assets": {
+      "/bridge/index.html": "4b47af6e9564e733f102d16440646ce575f6b0fb6d89b8369b4fd2ce93be75ed",
+      "/bridge/dashboard.html": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/bridge/client.js": "b712e597d67b3bac743fecc748e44046b7c031fd767f42bb0fe56aef80563abc",
+      "/bridge/suite.js": "1413cae0d7c6c6ba8c16ed0486283ccdc0e6fb0c52ece26f527e6fe6d1df3498",
+      "/bridge/dashboard.js": "1a1ee58bcc16af6c682d10d87df401b48fc19417c53ad0affa25846a26c1fc93",
+      "/bridge/style.css": "d0fcc3c14f65cd1fe6db1b6f5fa9e16a30dfd56c6054f540e4707a0f84b36a4b",
+      "/bridge/sw.js": "f4aee8038cfd72e167ec8d4e28f726b266417c58b2b42c50d5f8a056ac8a1d96",
+      "/bridge/blob_observer.js": "dcb12f822166b07be42e35b88ec5bbd6df120d1dd2358a8e5cdba5e376482de1",
+      "/": "4b47af6e9564e733f102d16440646ce575f6b0fb6d89b8369b4fd2ce93be75ed",
+      "/dashboard": "762398b67617f34929072b6e67867d16a54e3cde7203f1027d9a5bc09cfab47f",
+      "/passive/index.html": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2",
+      "/passive/diagnostic.js": "97bc1b57d549879784a8d8a85dab20b546ae084da7d78936eb15e300decb3f5a",
+      "/passive/": "51088a00a1aa92e3ed4f409e11ac6b159c838177393d4d4eb0a9659153686ef2"
+    },
+    "clients": [
+      {
+        "client_id": "a93285a84852",
+        "info": {
+          "firmware": "14.10",
+          "user_agent": "Mozilla/5.0 (PlayStation; PlayStation 5/14.10) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Safari/605.1.15",
+          "secure_context": false
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "last_seen": "2026-10-20T22:12:48.462927+00:00",
+        "online": true,
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 1,
+          "sha256": "d8345f595fbe59412d0d1e9e4673bf0061ea05a23eb18a15a64c90debb750108"
+        }
+      }
+    ],
+    "jobs": [
+      {
+        "id": "06a4dcadf071b436",
+        "client_id": "a93285a84852",
+        "task": "files",
+        "status": "complete",
+        "created_at": "2026-10-20T22:12:02.815780+00:00",
+        "started_at": "2026-10-20T22:12:04.506525+00:00",
+        "completed_at": "2026-10-20T22:12:04.541110+00:00",
+        "missing_tests": []
+      }
+    ],
+    "results": [
+      {
+        "test_id": "manual.downloadLink",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe downloadLink only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.txtDownload",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe txtDownload only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.attribute",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe attribute only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.blobDownload",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe blobDownload only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.fileUpload",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe fileUpload only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.popup",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe popup only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.navigation",
+        "gate": "REQUIRES USER INTERACTION",
+        "observed": "Use the named local control; no successful outcome inferred",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe navigation only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "manual.fileOpen",
+        "gate": "NOT TESTABLE FROM A NORMAL WEBPAGE",
+        "observed": "A webpage cannot inspect the download directory; only normal browser UI/user observation can supply evidence",
+        "error": "",
+        "scope": "http: current page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Observe fileOpen only through its explicit local control; preserve requested versus observed completion.",
+        "client_id": "a93285a84852",
+        "job_id": "explicit-client-action",
+        "received_at": "2026-10-20T22:11:48.461323+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 2,
+          "sha256": "ef8f8f9aa7423b0a11fac596dc31882b9d9aaaae65f8802afb37efe71755de78"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.showOpenFilePicker",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.showDirectoryPicker",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.showSaveFilePicker",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.webkitRequestFileSystem",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": false,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.requestFileSystem",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": false,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.FileSystemHandle",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.FileSystemFileHandle",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.FileSystemDirectoryHandle",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.getDirectory",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "type": "undefined",
+          "is_null": false,
+          "secure_context": false,
+          "secure_context_prerequisite": true,
+          "cause_of_absence_not_established": true,
+          "invoked": false
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.fileReader",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "exact_match": true,
+          "bytes": 47,
+          "expected_bytes": 47,
+          "in_memory_only": true,
+          "no_user_file_selected": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.originPrivate",
+        "gate": "REQUIRES HTTPS",
+        "observed": {
+          "invoked": false,
+          "reason": "not exposed here; insecure context may be a prerequisite, not proven cause"
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "LOW",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.legacyTemporary",
+        "gate": "CONFIRMED BLOCKED OR UNAVAILABLE",
+        "observed": {
+          "invoked": false,
+          "reason": "legacy temporary filesystem API not exposed"
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      },
+      {
+        "test_id": "files.blobReadback",
+        "gate": "CONFIRMED AVAILABLE",
+        "observed": {
+          "url_scheme": "blob:",
+          "exact_match": true,
+          "expected_characters": 47,
+          "saved_file_not_inferred": true
+        },
+        "error": "",
+        "scope": "http: page; isSecureContext=false",
+        "confidence": "AUTOMATED OBSERVATION",
+        "expected": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
+        "client_id": "a93285a84852",
+        "job_id": "06a4dcadf071b436",
+        "received_at": "2026-10-20T22:12:04.541110+00:00",
+        "evidence": {
+          "file": "events.ndjson",
+          "line": 4,
+          "sha256": "da53f54ec3c3b11ee1e6dc0d2ab0bd9c4f22c605666a507d748b7dea1dc140b0"
+        },
+        "context": {
+          "origin": "http://192.168.4.29:8765",
+          "transport": "http"
+        },
+        "identity_authenticated": false,
+        "confidence_level": "MEDIUM",
+        "scope_kind": "browser/context observation; underlying cause not established"
+      }
+    ],
+    "limits": [
+      "Authenticated bridge session is not authenticated hardware/firmware",
+      "Every observation is limited to its page, context and test",
+      "No exploit or privileged-access verdict"
+    ]
+  },
+  "preserved_parent_run": {
+    "client_id": "630895e6f5c3",
+    "state_path": "derived/file-extension/preserved-state-20261020T221041374640Z.json",
+    "source_path": "derived/bridge-20261020T214316Z-e5aedd/events.ndjson",
+    "sha256_before_restart": "6671cb7540b7ec5d4a679ef31646933d36a9c7961c9c729a11a0c8be4369f05a"
+  },
+  "source_fingerprints": {
+    "src/ps5fwlab/bridge.py": "b310edc1c7b3739b702529e44e091e01594a855522d946d578341ad0c3e704a4",
+    "diagnostics/bridge/client.js": "b712e597d67b3bac743fecc748e44046b7c031fd767f42bb0fe56aef80563abc",
+    "diagnostics/bridge/suite.js": "1413cae0d7c6c6ba8c16ed0486283ccdc0e6fb0c52ece26f527e6fe6d1df3498",
+    "diagnostics/bridge/blob_observer.js": "dcb12f822166b07be42e35b88ec5bbd6df120d1dd2358a8e5cdba5e376482de1"
+  }
+}

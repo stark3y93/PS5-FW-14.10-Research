@@ -11,6 +11,7 @@ import json
 import re
 import sys
 import difflib
+import subprocess
 from dataclasses import asdict
 from collections import Counter, defaultdict
 from pathlib import Path
@@ -176,6 +177,214 @@ def compare_source_files(before, after):
             "unified_diff": "\n".join(diff)}
 
 
+PROBE_IDS = tuple(f"80{letter}" for letter in "abcdefghijk")
+WRITE_EXPECTATIONS = {
+    "80c": (("DEADBEEF",), ("41414141",)),
+    "80i": (("DEADBEEF", "CAFEBABE"), ("41414141",)),
+    "80j": (("DEADBEEF",), ("41414141",)),
+    "80k": (("DEADBEEF", "CAFEBABE", "12345678"),
+            ("41414141", "42424242", "43434343")),
+}
+PROBE_TERMINAL = re.compile(r"(?:===\s*DONE\s*===|===\s*PROBE\s+80[a-k].*COMPLETE\s*===|\*\*\* ALL 3 WRITES CONFIRMED)", re.I)
+
+
+def _completion_detected(probe_id, text):
+    if PROBE_TERMINAL.search(text):
+        return True
+    # 80j emits its result in one combined line and has no separate terminal banner.
+    return probe_id == "80j" and bool(re.search(
+        r"RV=0x[0-9a-f]+\s+OK=(?:true|false)\s+M=0x[0-9a-f]{8}\s+TID=0x[0-9a-f_]+", text, re.I))
+
+
+def _git_value(root, *args):
+    try:
+        return subprocess.run(["git", "-C", str(root), *args], check=True,
+                              capture_output=True, text=True).stdout.strip()
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
+def _git_blob_bytes(root, blob):
+    try:
+        return subprocess.run(["git", "-C", str(root), "cat-file", "blob", blob],
+                              check=True, capture_output=True).stdout
+    except (OSError, subprocess.CalledProcessError):
+        return None
+
+
+def _file_evidence(root, path, repo_url, revision):
+    raw = path.read_bytes()
+    rel = path.relative_to(root).as_posix()
+    lines = read_lines(path)
+    blob = _git_value(root, "rev-parse", f"HEAD:{rel}")
+    blob_match = None
+    canonical = _git_blob_bytes(root, blob) if blob else None
+    if blob and len(blob) == 40:
+        git_header = f"blob {len(raw)}\0".encode("ascii")
+        blob_match = hashlib.sha1(git_header + raw).hexdigest() == blob
+    normalized_match = None
+    if canonical is not None:
+        normalized_match = raw.replace(b"\r\n", b"\n") == canonical.replace(b"\r\n", b"\n")
+    url = f"{repo_url.rstrip('/')}/blob/{revision}/{rel}" if repo_url and revision else None
+    return {"path": rel, "line_count": len(lines),
+            "sha256": hashlib.sha256(canonical if canonical is not None else raw).hexdigest(),
+            "worktree_sha256": hashlib.sha256(raw).hexdigest(),
+            "git_blob": blob, "worktree_matches_git_blob": blob_match,
+            "text_matches_git_blob_after_newline_normalization": normalized_match, "url": url}
+
+
+def _probe_status(probe_id, source_text, log_texts):
+    all_logs = "\n".join(log_texts)
+    complete = any(_completion_detected(probe_id, item) for item in log_texts)
+    expected, baseline = WRITE_EXPECTATIONS.get(probe_id, ((), ()))
+    if expected:
+        source_has_values = all(re.search(rf"0x{value}", source_text, re.I) for value in expected)
+        positive_run, explicit_mismatch, any_readback = False, False, False
+        for log_text in log_texts:
+            if probe_id == "80i":
+                first = re.findall(r"MARKER\s*=\s*0x([0-9A-F]{8})(?![0-9A-F_])", log_text, re.I)
+                second = re.findall(r"second write:\s*0x([0-9A-F]{8})", log_text, re.I)
+                readbacks = first[-1:] + second[-1:]
+            elif probe_id == "80c":
+                readbacks = re.findall(r"marker after:\s*0x([0-9A-F]{8})", log_text, re.I)
+            elif probe_id == "80j":
+                readbacks = re.findall(r"M=0x([0-9A-F]{8})", log_text, re.I)
+            else:
+                readbacks = []
+                for key in ("m0", "m4", "m8"):
+                    found = re.findall(rf"{key}=([0-9A-F]{{8}})", log_text, re.I)
+                    readbacks.append(found[-1] if found else "")
+            explicit_mismatch |= any(value and value.upper() not in expected for value in readbacks)
+            any_readback |= bool(readbacks)
+            log_has_baseline = all(value in log_text.upper() for value in baseline)
+            log_complete = _completion_detected(probe_id, log_text)
+            operation_result = bool(re.search(r"RV=0x[0-9a-f]+", log_text, re.I))
+            if source_has_values and log_has_baseline and tuple(v.upper() for v in readbacks) == expected and operation_result:
+                positive_run = True
+        if positive_run:
+            return "VERIFIED FROM RAW EVIDENCE", complete
+        if explicit_mismatch:
+            return "CONTRADICTED", complete
+        if complete or any_readback:
+            return "PARTIALLY SUPPORTED", complete
+        return "CLAIMED BUT NOT DEMONSTRATED", complete
+    if not log_texts:
+        return "INSUFFICIENT EVIDENCE", False
+    if complete:
+        return "PARTIALLY SUPPORTED", True
+    return "CLAIMED BUT NOT DEMONSTRATED", False
+
+
+def audit_external_probes(root, repo_url=None):
+    """Cross-reference 80a-k sources and captures; hashes provide provenance, not authenticity."""
+    root = Path(root).resolve()
+    revision = _git_value(root, "rev-parse", "HEAD")
+    repo_url = repo_url or _git_value(root, "remote", "get-url", "origin")
+    if repo_url and repo_url.endswith(".git"):
+        repo_url = repo_url[:-4]
+    source_paths = sorted((root / "probes").rglob("80*.lua")) if (root / "probes").exists() else []
+    log_paths = sorted(path for base in (root / "results",) if base.exists()
+                       for path in base.rglob("80*") if path.is_file())
+    claims_by_probe = defaultdict(list)
+    index_path = root / "docs" / "PROBE_INDEX.md"
+    if index_path.is_file():
+        for number, line in enumerate(read_lines(index_path), 1):
+            match = re.match(r"\|\s*(80[a-k])\s*\|.*", line, re.I)
+            if match:
+                cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+                claims_by_probe[match.group(1).lower()].append({
+                    "file": index_path.relative_to(root).as_posix(), "line": number,
+                    "excerpt": line.strip()[:320],
+                    "index_status": cells[2] if len(cells) > 2 else "",
+                    "claims_success": len(cells) > 2 and cells[2].upper() in {"OK", "PASS", "SUCCESS"}})
+    rows = []
+    for probe_id in PROBE_IDS:
+        sources = [p for p in source_paths if re.match(rf"{probe_id}(?:[_\.]|$)", p.name, re.I)]
+        logs = [p for p in log_paths if re.match(rf"{probe_id}(?:[_\.]|$)", p.name, re.I)]
+        source_text = "\n".join(p.read_text(encoding="utf-8", errors="replace") for p in sources)
+        log_texts = [p.read_text(encoding="utf-8", errors="replace") for p in logs]
+        status, complete = _probe_status(probe_id, source_text, log_texts)
+        claims = claims_by_probe.get(probe_id, [])
+        success_claimed = any(item["claims_success"] for item in claims)
+        if not success_claimed:
+            claim_vs_evidence = "NO SUCCESS CLAIM IN INDEX"
+        elif status == "VERIFIED FROM RAW EVIDENCE":
+            claim_vs_evidence = "SUPPORTED BY SAVED CAPTURE"
+        elif status == "CONTRADICTED":
+            claim_vs_evidence = "CONTRADICTED BY SAVED CAPTURE"
+        else:
+            claim_vs_evidence = "CLAIM EXCEEDS SAVED EVIDENCE"
+        evidence = []
+        for path in sources + logs:
+            for number, line in enumerate(read_lines(path), 1):
+                if re.search(r"(?:before:|before=|MARKER\s*=|RV=|m0=|CALLING|COMPLETE|DONE|thr_create)", line, re.I):
+                    evidence.append({"path": path.relative_to(root).as_posix(), "line": number,
+                                     "excerpt": line.strip()[:220]})
+        captures = []
+        for path, log_text in zip(logs, log_texts):
+            capture_status, capture_complete = _probe_status(probe_id, source_text, [log_text])
+            captures.append({"file": path.relative_to(root).as_posix(), "status": capture_status,
+                             "completion_detected": capture_complete,
+                             "operation_return_detected": bool(re.search(r"RV=0x[0-9a-f]+", log_text, re.I)),
+                             "sha256": hashlib.sha256(path.read_bytes()).hexdigest()})
+        rows.append({"probe": probe_id, "status": status, "completion_detected": complete,
+                     "operation_return_detected": bool(re.search(r"RV=0x[0-9a-f]+", "\n".join(log_texts), re.I)),
+                     "claims": claims, "claim_vs_evidence": claim_vs_evidence,
+                     "source_files": [_file_evidence(root, p, repo_url, revision) for p in sources],
+                     "raw_logs": [_file_evidence(root, p, repo_url, revision) for p in logs],
+                     "evidence_lines": evidence,
+                     "capture_findings": captures,
+                     "claim_source_match": bool(sources),
+                     "limitations": ["Repository-authored logs are not independently authenticated.",
+                                     "This audit does not execute probes or verify a console/firmware identity."]})
+    contradictions = [{"probe": row["probe"], **capture} for row in rows
+                      for capture in row["capture_findings"] if capture["status"] == "CONTRADICTED"]
+    claim_discrepancies = [{"probe": row["probe"], "claim_vs_evidence": row["claim_vs_evidence"],
+                            "claims": row["claims"], "status": row["status"]}
+                           for row in rows if row["claim_vs_evidence"] == "CLAIM EXCEEDS SAVED EVIDENCE"]
+    return {"repository": repo_url, "commit": revision, "probes": rows,
+            "contradictions": contradictions, "claim_discrepancies": claim_discrepancies,
+            "method": "Filename-linked source/log inventory, SHA-256 and Git blob provenance, terminal/readback pattern checks.",
+            "timestamp_caveat": "Filename timestamps are labels; they are not independently authenticated capture times."}
+
+
+def render_probe_audit(report):
+    lines = ["# External thread execution evidence audit", "",
+             f"Repository: {report.get('repository') or 'unknown'}",
+             f"Commit: `{report.get('commit') or 'unavailable'}`", "",
+             report["method"], "", report["timestamp_caveat"], "",
+             "| Probe | Classification | Completion marker | Index claim | Sources | Raw captures |",
+             "|---|---|---:|---|---:|---:|"]
+    for row in report["probes"]:
+        sources = ", ".join(f"[{item['path']}]({item['url']}) · SHA-256 `{item['sha256']}`" if item["url"] else f"`{item['path']}` · SHA-256 `{item['sha256']}`" for item in row["source_files"])
+        logs = ", ".join(f"[{item['path']}]({item['url']}) · SHA-256 `{item['sha256']}`" if item["url"] else f"`{item['path']}` · SHA-256 `{item['sha256']}`" for item in row["raw_logs"])
+        lines.append(f"| {row['probe']} | **{row['status']}** | {row['completion_detected']} | {row['claim_vs_evidence']} | {sources or 'none'} | {logs or 'none'} |")
+    lines += ["", "## Evidence lines", ""]
+    for row in report["probes"]:
+        lines += [f"### {row['probe']} — {row['status']}", ""]
+        if row["evidence_lines"]:
+            lines.extend(f"- `{item['path']}:{item['line']}` `{item['excerpt']}`" for item in row["evidence_lines"])
+        else:
+            lines.append("- No source or raw log was found.")
+    lines += ["", "## Contradictory captures", ""]
+    if report["contradictions"]:
+        lines.extend(f"- {item['probe']}: `{item['file']}` — {item['status']}" for item in report["contradictions"])
+    else:
+        lines.append("- No explicitly mismatched write readback detected.")
+    lines += ["", "## Index claims exceeding saved evidence", ""]
+    if report["claim_discrepancies"]:
+        for item in report["claim_discrepancies"]:
+            claims = "; ".join(f"`{claim['file']}:{claim['line']}` {claim['excerpt']}" for claim in item["claims"])
+            lines.append(f"- {item['probe']}: {item['status']} — {claims}")
+    else:
+        lines.append("- None detected.")
+    lines += ["", "## Interpretation limits", "",
+              "A positive saved output supports that the repository records the expected userland operation. It does not authenticate the operator, console model, firmware version, capture integrity, or independent reproduction.",
+              "An OS thread return code and marker readback do not demonstrate kernel execution, kernel read/write, a firmware vulnerability, or a jailbreak.",
+              "Hashes identify the exact files audited; they do not prove when or where a file was created."]
+    return "\n".join(lines) + "\n"
+
+
 def scan_source(root):
     hits = []
     for path in files(root):
@@ -278,16 +487,75 @@ def main(argv=None):
     parser.add_argument("--firmware", type=Path, help="optional local PUP; only metadata is read")
     parser.add_argument("--evidence-root", type=Path,
                         help="optional second checkout containing browser probes/logs")
+    parser.add_argument("--probe-audit", type=Path,
+                        help="cross-reference public 80a-k Lua sources and saved captures")
+    parser.add_argument("--probe-repo-url", help="canonical GitHub repository URL for evidence links")
     parser.add_argument("--sha256", action="store_true", help="hash the entire PUP")
     parser.add_argument("--format", choices=("markdown", "json"), default="markdown")
     parser.add_argument("--output", type=Path, help="write new report; refuses to overwrite")
     parser.add_argument("--compare", nargs=2, metavar=("BEFORE", "AFTER"),
                         help="compare two caller-supplied text source snapshots and report hashes/diff")
+    webkit = parser.add_mutually_exclusive_group()
+    webkit.add_argument("--webkit-snapshot", type=Path, help="classify a CSSFontFace snapshot manifest")
+    webkit.add_argument("--webkit-compare", nargs=2, type=Path, metavar=("BEFORE", "AFTER"),
+                        help="compare two CSSFontFace snapshot manifests")
+    webkit.add_argument("--fetch-webkit", metavar="COMMIT", help="download two pinned official source files from an audited full commit")
+    parser.add_argument("--snapshot-dir", type=Path, help="new source directory required by --fetch-webkit")
+    parser.add_argument("--browser-diagnostic", nargs="+", type=Path,
+                        help="import 1-64 passive diagnostic JSON records; no console connection")
+    parser.add_argument("--target-firmware", default="14.10", help="self-reported firmware label filter")
     args = parser.parse_args(argv)
     if not args.root.is_dir():
         parser.error("--root must be a directory")
     if args.evidence_root and not args.evidence_root.is_dir():
         parser.error("--evidence-root must be a directory")
+    if args.probe_audit and not args.probe_audit.is_dir():
+        parser.error("--probe-audit must be a directory")
+    webkit_mode = args.webkit_snapshot or args.webkit_compare or args.fetch_webkit
+    if sum(bool(mode) for mode in (args.compare, args.probe_audit, webkit_mode, args.browser_diagnostic)) > 1:
+        parser.error("choose one comparison/audit mode")
+    if args.snapshot_dir and not args.fetch_webkit:
+        parser.error("--snapshot-dir requires --fetch-webkit")
+    if args.browser_diagnostic:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+        from ps5fwlab.browser_evidence import analyze_diagnostics, render_diagnostics
+        try:
+            result = analyze_diagnostics(args.browser_diagnostic, args.target_firmware)
+            payload = json.dumps(result, indent=2) + "\n" if args.format == "json" else render_diagnostics(result)
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                with args.output.open("x", encoding="utf-8") as stream:
+                    stream.write(payload)
+            else:
+                print(payload, end="")
+        except (OSError, ValueError) as exc:
+            parser.error(str(exc))
+        return 0
+    if webkit_mode:
+        sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
+        from ps5fwlab.webkit_patch import classify_snapshot, compare_snapshots, fetch_snapshot, render_report
+        if args.output and args.output.exists():
+            parser.error("output exists; choose a new output path")
+        if args.fetch_webkit:
+            if not args.snapshot_dir:
+                parser.error("--fetch-webkit requires --snapshot-dir")
+            try:
+                manifest = fetch_snapshot(args.fetch_webkit, args.snapshot_dir)
+            except (OSError, ValueError) as exc:
+                parser.error(str(exc))
+            result = classify_snapshot(manifest)
+        elif args.webkit_compare:
+            result = compare_snapshots(*args.webkit_compare)
+        else:
+            result = classify_snapshot(args.webkit_snapshot)
+        payload = json.dumps(result, indent=2) + "\n" if args.format == "json" else render_report(result)
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("x", encoding="utf-8") as stream:
+                stream.write(payload)
+        else:
+            print(payload, end="")
+        return 0
     if args.compare:
         before, after = map(Path, args.compare)
         if not before.is_file() or not after.is_file():
@@ -301,6 +569,16 @@ def main(argv=None):
             print(payload, end="")
         return 0
     report = analyze(args.root, args.firmware, args.sha256)
+    if args.probe_audit:
+        probe_report = audit_external_probes(args.probe_audit, args.probe_repo_url)
+        payload = json.dumps(probe_report, indent=2) + "\n" if args.format == "json" else render_probe_audit(probe_report)
+        if args.output:
+            args.output.parent.mkdir(parents=True, exist_ok=True)
+            with args.output.open("x", encoding="utf-8") as stream:
+                stream.write(payload)
+        else:
+            print(payload, end="")
+        return 0
     if args.evidence_root:
         report["external_evidence"] = analyze(args.evidence_root)
     payload = json.dumps(report, indent=2) + "\n" if args.format == "json" else render(report)
