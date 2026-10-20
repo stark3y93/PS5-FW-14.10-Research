@@ -2,6 +2,8 @@
 
 ## Latest live browser follow-up
 
+The subsequent [FileReader/filesystem-interface follow-up](PS5_FILE_INTERFACES_20261020.md) added one fixed task and ran only that task on a newly paired live session after a necessary bridge restart. The 47-byte synthetic FileReader and Blob-URL readbacks matched exactly. Nine filesystem entry/interface type checks returned `undefined` in the HTTP context; origin-private and legacy directory operations were therefore not invoked. The new picker and instrumented Blob controls received uncertain user observations and no matching events, so neither was called successful. Browser-managed data is proven within this scope; user-selected-file and actual PS5-directory access remain unestablished.
+
 The [storage/file audit](PS5_STORAGE_FILE_AUDIT_20261020.md) and [credential-free evidence](PS5_STORAGE_FILE_EVIDENCE_20261020.json) now preserve live target bridge records. The originally supplied client was offline; newly paired sessions completed four scheduled jobs with 41 automatic observations. localStorage/sessionStorage readbacks, prior-page marker persistence, Blob-backed worker operation and removal of two owned markers were recorded. IndexedDB and quota estimation were unavailable in this HTTP context. TXT download attempts showed no visible save; a corroborated Blob link opened a blank page. Picker and user-selected-file reading remain inconclusive, and internal file access is **NOT ESTABLISHED**. The three tested/older sessions subsequently went offline, but a fourth session was ONLINE at the final authenticated check. No exploit or console configuration change was performed.
 
 ## Verified scope

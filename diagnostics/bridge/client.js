@@ -36,8 +36,26 @@
  d.getElementById('file').onchange=function(e){var f=e.target.files&&e.target.files[0];if(!f)return;if(!config||['ps5-synthetic.txt','ps5-attribute.txt','ps5-blob.txt'].indexOf(f.name)<0||f.size!==config.text.length){manual([localRow('fileUpload','INCONCLUSIVE','Selection rejected before reading: filename/size must match the generated synthetic fixture')]);e.target.value='';return;}
   var reader=new w.FileReader();reader.onload=function(){if(reader.result!==config.text){manual([localRow('fileUpload','INCONCLUSIVE','Content did not match synthetic fixture; no contents or filename uploaded')]);}else{manual([localRow('fileUpload','CONFIRMED AVAILABLE','Exact synthetic fixture selected/read; only this confirmation was uploaded','USER OBSERVATION')]);}e.target.value='';};reader.onerror=function(){manual([localRow('fileUpload','INCONCLUSIVE','Synthetic file read failed')]);e.target.value='';};reader.readAsText(f);
  };
+ d.getElementById('pickerTest').onclick=function(){
+  d.getElementById('pickerInstruction').textContent='Observe whether a file-selection window appears. Select only the generated TXT or cancel. Then choose File-picker UI and your actual observation below.';
+  manual([localRow('pickerUI','REQUIRES USER INTERACTION','Picker gesture requested; no visible outcome inferred')]);
+  try{var input=d.getElementById('file');if(typeof input.showPicker==='function')input.showPicker();else input.click();}catch(e){var r=localRow('pickerUI','INCONCLUSIVE','Picker API threw');r.error=String(e.name)+': '+String(e.message).slice(0,350);manual([r]);}
+ };
+ var blobNonce='',blobControlUrl='',blobObserved=false;
+ if(w.addEventListener)w.addEventListener('message',function(e){if(!blobNonce||e.origin!==w.location.origin||!e.source||!e.data||e.data.bridge!=='ps5-blob-navigation-v1'||e.data.nonce!==blobNonce||e.data.protocol!=='blob:')return;
+  blobObserved=true;manual([localRow('blobNavigation','CONFIRMED AVAILABLE',{controlled_document_ran:true,url_scheme:'blob:',navigation_confirmed:true,saved_file_not_inferred:true})]);
+ });
+ d.getElementById('blobControl').onclick=function(){try{
+  if(blobControlUrl)w.URL.revokeObjectURL(blobControlUrl);blobNonce=String(Date.now())+Math.random().toString(16).slice(2);blobObserved=false;
+  var nonce=blobNonce,html='<!doctype html><meta charset="utf-8"><h1>PS5 synthetic Blob navigation control</h1><p>This content is in browser memory; it is not proof of a saved file.</p><span hidden id="bridgeNonce">'+nonce+'</span><script src="'+w.location.origin+'/bridge/blob_observer.js"></script>';
+  var url=w.URL.createObjectURL(new w.Blob([html],{type:'text/html'}));blobControlUrl=url;
+  var a=d.createElement('a');a.href=url;a.target='_blank';a.rel='opener';a.download='ps5-navigation-control.html';a.textContent='Click instrumented Blob download/navigation link';
+  a.onclick=function(){manual([localRow('blobNavigation','REQUIRES USER INTERACTION','Control link clicked; waiting for a validated Blob-page message')]);};var holder=d.getElementById('blobControlLink');holder.textContent='';holder.appendChild(a);
+  setTimeout(function(){w.URL.revokeObjectURL(url);if(blobNonce===nonce){holder.textContent='Control expired.';if(!blobObserved)manual([localRow('blobNavigation','INCONCLUSIVE','No validated page message in 45 seconds; this does not prove save, block or navigation')]);blobNonce='';}},45000);
+  manual([localRow('blobNavigation','REQUIRES USER INTERACTION','Instrumented HTML Blob created; click its link and report visible outcome')]);
+ }catch(e){var r=localRow('blobNavigation','INCONCLUSIVE','Control creation failed');r.error=String(e.name)+': '+String(e.message).slice(0,350);manual([r]);}};
  d.getElementById('popup').onclick=function(){var x=null;try{x=w.open('/manual/popup','ps5bridgeSynthetic','width=400,height=250');}catch(ignore){}manual([localRow('popup',x?'REQUIRES USER INTERACTION':'INCONCLUSIVE',x?'Window handle returned; confirm visible page yourself':'No window handle returned for this gesture')]);};
  d.getElementById('confirmManual').onclick=function(){var name=d.getElementById('manualTest').value,value=d.getElementById('manualOutcome').value;
-  var gate=value==='saved'||value==='opened'?'CONFIRMED AVAILABLE':value==='blocked'?'CONFIRMED BLOCKED OR UNAVAILABLE':'INCONCLUSIVE';
+  var success=name==='pickerUI'?value==='pickerOpened':value==='saved'||value==='opened';var gate=success?'CONFIRMED AVAILABLE':value==='blocked'?'CONFIRMED BLOCKED OR UNAVAILABLE':'INCONCLUSIVE';
   manual([localRow(name,gate,{user_reported:value,not_independently_authenticated:true},'USER OBSERVATION')]);};
 }(window,document));

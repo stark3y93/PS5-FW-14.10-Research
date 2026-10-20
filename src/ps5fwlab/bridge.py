@@ -28,7 +28,8 @@ TASKS = {
     "network": "fetchGET fetchPOST xhrGET xhrPOST cors websocket eventSource streaming timeout failure",
     "security": "context permissions wasm worker serviceWorker crypto sandbox csp",
     "rendering": "language buffer canvas webgl timing errors",
-    "manual": "downloadLink txtDownload attribute blobDownload fileOpen fileUpload popup navigation storageCleanup",
+    "files": "showOpenFilePicker showDirectoryPicker showSaveFilePicker webkitRequestFileSystem requestFileSystem FileSystemHandle FileSystemFileHandle FileSystemDirectoryHandle getDirectory fileReader originPrivate legacyTemporary blobReadback",
+    "manual": "downloadLink txtDownload attribute blobDownload fileOpen fileUpload popup navigation storageCleanup pickerUI blobNavigation",
 }
 CATALOG = {task + "." + name: {"task": task, "expected": {
     "surface": "Read API availability only; absence is limited to this page/context.",
@@ -36,6 +37,7 @@ CATALOG = {task + "." + name: {"task": task, "expected": {
     "network": "Exchange a bounded synthetic response with the local controlled endpoints.",
     "security": "Observe a standard API or controlled policy without requesting privileges.",
     "rendering": "Complete a small bounded local operation without resource stress.",
+    "files": "Inspect API types or read a 47-byte in-memory fixture; no directory enumeration, user files or persisted writes.",
     "manual": "Explicit local gesture and observer confirmation; request alone does not prove completion.",
 }[task]} for task, names in TASKS.items() for name in names.split()}
 EXPECTED = {
@@ -304,7 +306,7 @@ class Handler(BaseHTTPRequestHandler):
                 self.reply(200, {"catalog": CATALOG, "tasks": [x for x in TASKS if x != "manual"], "secondary_origin": self.server.other_origin, "text": TEXT.decode(), "transport": self.server.scheme})
             elif path in self.server.assets and not self.server.secondary:
                 data, mime = self.server.assets[path]
-                csp = "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' " + self.server.other_origin + " " + self.server.origin.replace("http", "ws", 1) + "; frame-src 'self'; worker-src 'self' blob:; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+                csp = "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' blob: " + self.server.other_origin + " " + self.server.origin.replace("http", "ws", 1) + "; frame-src 'self'; worker-src 'self' blob:; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
                 self.reply(200, data, mime, {"Content-Security-Policy": PASSIVE_CSP if path.startswith('/passive/') else csp})
             elif path in ("/files/sample.txt", "/files/download.txt") and not self.server.secondary:
                 self.reply(200, TEXT, "text/plain; charset=utf-8", {"Content-Disposition": ('attachment; filename="ps5-synthetic.txt"' if path.endswith("download.txt") else "inline")})
@@ -393,7 +395,7 @@ def make_servers(address, port, secondary_port, state, tls=None):
     for p in (port, secondary_port):
         if type(p) is not int or not (p == 0 or 1024 <= p <= 65535): raise ValueError("ports must be 1024..65535")
     assets = {}
-    for name, mime in (("index.html", "text/html; charset=utf-8"), ("dashboard.html", "text/html; charset=utf-8"), ("client.js", "text/javascript; charset=utf-8"), ("suite.js", "text/javascript; charset=utf-8"), ("dashboard.js", "text/javascript; charset=utf-8"), ("style.css", "text/css; charset=utf-8"), ("sw.js", "text/javascript; charset=utf-8")):
+    for name, mime in (("index.html", "text/html; charset=utf-8"), ("dashboard.html", "text/html; charset=utf-8"), ("client.js", "text/javascript; charset=utf-8"), ("suite.js", "text/javascript; charset=utf-8"), ("dashboard.js", "text/javascript; charset=utf-8"), ("style.css", "text/css; charset=utf-8"), ("sw.js", "text/javascript; charset=utf-8"), ("blob_observer.js", "text/javascript; charset=utf-8")):
         path = ROOT / "diagnostics" / "bridge" / name
         if path.is_symlink() or not path.is_file() or path.stat().st_size > 262144: raise ValueError("missing/oversized bridge asset " + name)
         assets["/bridge/" + name] = (path.read_bytes(), mime)

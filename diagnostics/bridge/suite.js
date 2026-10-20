@@ -107,6 +107,34 @@
             add('devices',function(){var out={},count=0;['bluetooth','usb','serial','hid','mediaDevices','geolocation'].forEach(function(k){out[k]=exists(n,k);if(out[k])count+=1;});return unavailable(count===0?B:count===6?A:I,out);});
             add('isolation',function(){var out={crossOriginIsolated:w.crossOriginIsolated===true,SharedArrayBuffer:exists(w,'SharedArrayBuffer'),policy:'This page does not request COOP/COEP isolation'};return unavailable(out.crossOriginIsolated&&out.SharedArrayBuffer?A:B,out);});
             add('permissions',function(){return !!n.permissions && typeof n.permissions.query==='function';});
+        } else if(task==='files') {
+            var fixture='PS5 capability suite: harmless synthetic text.\n';
+            function exposure(obj,key,secure){var value=obj?obj[key]:undefined;return unavailable(typeof value==='function'?A:secure&&w.isSecureContext!==true?H:B,{type:typeof value,is_null:value===null,secure_context:w.isSecureContext===true,secure_context_prerequisite:!!secure,cause_of_absence_not_established:true,invoked:false});}
+            ['showOpenFilePicker','showDirectoryPicker','showSaveFilePicker','webkitRequestFileSystem','requestFileSystem','FileSystemHandle','FileSystemFileHandle','FileSystemDirectoryHandle'].forEach(function(key){add(key,function(){return exposure(w,key,key.indexOf('Picker')>=0||key.indexOf('Handle')>=0);});});
+            add('getDirectory',function(){return exposure(n.storage,'getDirectory',true);});
+            add('fileReader',function(){
+                if(typeof w.File!=='function'||typeof w.FileReader!=='function')return unavailable(B,{File:typeof w.File,FileReader:typeof w.FileReader,invoked:false});
+                return new Promise(function(resolve,reject){var file=new w.File([fixture],'ps5-memory-only.txt',{type:'text/plain',lastModified:0}),reader=new w.FileReader(),done=false;
+                    var timer=setTimeout(function(){finish(new Error('Synthetic FileReader exceeded 1500ms'));try{reader.abort();}catch(ignore){}},1500);
+                    function finish(error,value){if(done)return;done=true;clearTimeout(timer);if(error)reject(error);else resolve(value);}
+                    reader.onload=function(){var exact=reader.result===fixture;finish(null,unavailable(exact?A:I,{exact_match:exact,bytes:file.size,expected_bytes:47,in_memory_only:true,no_user_file_selected:true}));};
+                    reader.onerror=function(){finish(reader.error||new Error('FileReader error without details'));};reader.onabort=function(){finish(new Error('Synthetic FileReader aborted'));};
+                    try{reader.readAsText(file,'utf-8');}catch(e){finish(e);}
+                });
+            });
+            add('originPrivate',function(){
+                if(!n.storage||typeof n.storage.getDirectory!=='function')return unavailable(w.isSecureContext===true?B:H,{invoked:false,reason:'not exposed here; insecure context may be a prerequisite, not proven cause'});
+                return n.storage.getDirectory().then(function(handle){return unavailable(handle&&handle.kind==='directory'?A:I,{returned_kind:handle&&handle.kind,scope:'origin storage bucket only',entries_enumerated:false,files_created:false,os_paths_collected:false});});
+            });
+            add('legacyTemporary',function(){var fn=w.webkitRequestFileSystem||w.requestFileSystem;if(typeof fn!=='function')return unavailable(B,{invoked:false,reason:'legacy temporary filesystem API not exposed'});
+                return new Promise(function(resolve,reject){var done=false,timer=setTimeout(function(){finish(new Error('Temporary filesystem callback exceeded 1500ms'));},1500);
+                    function finish(e,v){if(done)return;done=true;clearTimeout(timer);if(e)reject(e);else resolve(v);}
+                    try{fn.call(w,0,0,function(fs){finish(null,unavailable(fs&&fs.root&&fs.root.isDirectory?A:I,{temporary_namespace:true,root_is_directory:!!(fs&&fs.root&&fs.root.isDirectory),requested_bytes:0,entries_enumerated:false,files_created:false,paths_collected:false}));},function(e){finish(e||new Error('Temporary filesystem error without details'));});}catch(e){finish(e);}
+                });
+            });
+            add('blobReadback',function(){if(!w.Blob||!w.URL||typeof w.URL.createObjectURL!=='function'||!w.XMLHttpRequest)return false;var url=w.URL.createObjectURL(new w.Blob([fixture],{type:'text/plain'}));
+                return request('GET',url).then(function(text){w.URL.revokeObjectURL(url);return unavailable(text===fixture?A:I,{url_scheme:'blob:',exact_match:text===fixture,expected_characters:47,saved_file_not_inferred:true});},function(e){w.URL.revokeObjectURL(url);throw e;});
+            });
         } else if(task==='storage') {
             var prior=[];
             add('local',function(){var result=sentinel(w.localStorage,'ps5bridge-v1.local');prior.push(result.prior_page_sentinel);return result;});

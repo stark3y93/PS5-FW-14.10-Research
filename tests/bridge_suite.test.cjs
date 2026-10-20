@@ -67,5 +67,24 @@ function environment(overrides = {}) {
   const rows=await environment({BigInt:undefined}).suite.run('rendering',{});
   assert.equal(rows.find(x=>x.test_id==='rendering.language').gate,'INCONCLUSIVE');
  });
+ await check('synthetic FileReader verifies exact memory-only content',async()=>{
+  class MemoryFile extends Blob {constructor(parts,name,options){super(parts,options);this.name=name;}}
+  function Reader(){this.readAsText=f=>f.text().then(x=>{this.result=x;this.onload();});this.abort=()=>{};}
+  const rows=await environment({File:MemoryFile,FileReader:Reader}).suite.run('files',{});
+  const r=rows.find(r=>r.test_id==='files.fileReader');assert.equal(r.gate,'CONFIRMED AVAILABLE');assert.equal(r.observed.exact_match,true);assert.equal(r.observed.bytes,47);
+ });
+ await check('filesystem types do not trigger picker or enumerate directories',async()=>{
+  let calls=0;const fail=()=>{calls++;throw Error('must not call picker');};
+  const rows=await environment({showOpenFilePicker:fail,showDirectoryPicker:fail,showSaveFilePicker:fail}).suite.run('files',{});
+  assert.equal(calls,0);assert.equal(rows.find(r=>r.test_id==='files.showDirectoryPicker').observed.type,'function');
+  assert.equal(rows.find(r=>r.test_id==='files.getDirectory').gate,'REQUIRES HTTPS');
+ });
+ await check('FileReader mismatch and restricted getter retain exact errors',async()=>{
+  function File(){this.size=47;}function Reader(){this.readAsText=()=>{this.result='wrong';this.onload();};this.abort=()=>{};}
+  const e=environment({File,FileReader:Reader});Object.defineProperty(e.window,'showOpenFilePicker',{get(){throw Object.assign(Error('policy denied'),{name:'SecurityError'});}});
+  const rows=await e.suite.run('files',{});
+  assert.equal(rows.find(r=>r.test_id==='files.fileReader').gate,'INCONCLUSIVE');
+  assert.equal(rows.find(r=>r.test_id==='files.showOpenFilePicker').error,'SecurityError: policy denied');
+ });
  console.log(n+' bridge JavaScript tests passed');
 })().catch(e=>{console.error(e);process.exitCode=1;});

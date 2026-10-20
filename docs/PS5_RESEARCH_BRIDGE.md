@@ -28,7 +28,7 @@ Keep the printed pairing key and separate dashboard key local. On the **PC**, op
 
 1. Use the same navigation route that already worked for you to open `http://192.168.4.29:8765/`. The exact navigation route has not been supplied to this repository; no new entry method is claimed.
 2. Reload so the new **PS5 browser research bridge** page appears. Enter the printed **pairing** key and keep the firmware label at `14.10`. Click **Pair and enable scheduled tests**.
-3. Run **surface** first. Check the PC dashboard for the client and uploaded rows. The firmware label and user agent are self-reported, not cryptographic proof of firmware identity.
+3. For a new baseline, run **surface** first. For the file-interface follow-up, run only **files**; earlier completed categories need not be repeated. Check the PC dashboard for the client and uploaded rows. The firmware label and user agent are self-reported, not cryptographic proof of firmware identity.
 4. Run **storage**, **network**, **security**, then **rendering**, one category at a time. The dashboard can schedule these same five fixed tasks after pairing. It cannot supply JavaScript, commands, target URLs or exploit payloads.
 5. For persistence, run storage, use normal browser Reload, pair again, then run storage again. Only a marker from a different page instance is persistence evidence. Session storage survives same-tab reload where supported, not necessarily closing the tab or console restart. Origin changes, including HTTP to HTTPS, use different storage.
 6. Complete the manual tests below if desired. Finally click **Remove suite-owned storage sentinels**. Export JSON and Markdown from the PC dashboard.
@@ -78,7 +78,7 @@ The certificate must be valid for the bound IP and already trusted by the client
 
 ## Bounds, failures and evidence
 
-- One active task per client, five fixed categories; 60-second server job deadline and 30-second client warning. Missing expected rows mark a job partial, not completed evidence.
+- One active task per client, six fixed categories including the bounded **files** follow-up; 60-second server job deadline and 30-second client warning. Missing expected rows mark a job partial, not completed evidence.
 - Heartbeats every 10 seconds; ONLINE means a heartbeat within 30 seconds, not independently verified console power status. Browser suspension can cause OFFLINE.
 - At most eight paired clients and 128 jobs per server run, 2,048 result rows, 64 rows per request, 64 KiB request bodies and 32 MiB evidence/snapshot output. Restart for a fresh run after reaching limits. Reloading and re-pairing consumes a client slot.
 - A single 256 KiB typed-array allocation, 16×16 canvas/WebGL surfaces, 10,000 additions, one tiny worker, and synthetic storage writes only. The temporary quota write has at most 4 KiB UTF-16 payload; this is not quota exhaustion or a memory stress test.
