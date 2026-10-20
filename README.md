@@ -74,6 +74,12 @@ Use new paths on repeat runs; source and output overwrites are refused. `--webki
 
 The five source classifications are `PATCHED — VERIFIED`, `VULNERABLE IMPLEMENTATION — VERIFIED`, `MODIFIED / AMBIGUOUS`, `COMPONENT NOT FOUND`, and `INSUFFICIENT EVIDENCE`. “Verified” describes the source pattern and exact audited file pair. A lifetime-only security backport is reported as mixed/ambiguous with its safeguard states; it is not called an unpatched UAF. The limited lexical detector is not a C++ compiler, and the synthetic callback/reference-count tests are not engine-level vulnerability reproductions.
 
+## PS5 local diagnostic link (home network only)
+
+[**Open PS5 Diagnostic — 192.168.4.29:8765**](http://192.168.4.29:8765/)
+
+This link is reachable **only on the same home network**, if the PC at `192.168.4.29` is serving the diagnostic on port `8765` and the PS5 browser permits local HTTP navigation. It will not work from the public internet. The address is a private LAN address, not a public server. If it fails, check the server bind address and Windows Firewall; do not change router ports, DNS or certificates. Opening the page tests browser capabilities only, not a jailbreak or security patch.
+
 ## Passive browser diagnostic and feasibility audit
 
 **Browser-access follow-up:** no reliable custom-page route was verified on PS5 14.10, and the user's guide/YouTube/message attempts are recorded as unsuccessful. See [entry evidence](reports/BROWSER_ENTRYPOINT_EVIDENCE.md), [browser-access findings](reports/PS5_1410_BROWSER_ACCESS.md) and [restricted hosting setup](docs/PS5_DIAGNOSTIC_SETUP.md). For new PC/LAN runs, prefer the two-file restricted host over a general directory server:
