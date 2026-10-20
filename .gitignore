@@ -10,3 +10,11 @@ __pycache__/
 *.egg-info/
 /build/
 /dist/
+
+# Prevent accidental publication of firmware and local scan outputs anywhere.
+*.PUP
+*.pup
+ps5_firmware_scan.json
+*.sqlite
+*.sqlite3
+*.db
