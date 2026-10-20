@@ -2,7 +2,7 @@
 
 This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. Tests use synthetic containers and public-source metadata only.
 
-The source-linked SQLite research index and local dashboard are documented in [research/knowledge-base/README.md](research/knowledge-base/README.md). Build them from the repository root with `python -S -m ps5knowledge build-db` and `python -S -m ps5knowledge dashboard` after setting `PYTHONPATH=src`.
+The source-linked SQLite research index, local dashboard, all-version ecosystem matrix and disabled-by-default source updater are documented in [research/knowledge-base/README.md](research/knowledge-base/README.md) and the [ecosystem research review](research/knowledge-base/ecosystem-research.md). Build them from the repository root with `python -S -m ps5knowledge build-db` and `python -S -m ps5knowledge dashboard` after setting `PYTHONPATH=src`.
 
 ## What it does
 
@@ -26,7 +26,7 @@ python -S -m unittest discover -s tests -v
 ```
 
 The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
-The integrated suite currently has 57 tests, including deterministic parser mutations, survey and comparator regressions, mapper mutation detection, evidence-ledger validation, and knowledge-base build/search/dashboard checks. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions has not started jobs in the observed runs; local test output is the available execution evidence.
+The integrated suite currently has 69 tests, including deterministic parser mutations, survey and comparator regressions, mapper mutation detection, evidence-ledger validation, ecosystem deduplication, compatibility attribution, incremental source polling, and knowledge-base build/search/dashboard checks. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions has not started jobs in the observed runs; local test output is the available execution evidence.
 
 ## Reproduce the 14.10 observations locally
 
@@ -59,5 +59,6 @@ The `entropy` windows can overlap; they are descriptive measurements, not indepe
 - [Parser validation](notes/analysis-14.10.md) covers strict bounds, malformed synthetic headers and the duplicate-name ambiguity policy.
 - [Toolkit review and proposed merge order](notes/toolkit-consolidation-review-2026-10-20.md) describe remaining integration work.
 - [Integrated branch manifest and merge proposal](notes/integration-2026-10-20.md) records which PR changes are included and which PRs would become redundant.
+- [Ecosystem and Freedom OS matrix](research/knowledge-base/ecosystem-research.md) records current Linux, graphics, homebrew, Wine/Steam, SDK and host-translation evidence, with explicit 14.10 gaps.
 
 No command connects to a console or establishes the meaning of unknown SLB2 fields, inner PUP encryption state, executable content, signature validity, exploitability, or firmware compatibility. Keep Sony packages and generated output in `artifacts/` and `derived/`, respectively; both directories are Git-ignored.
