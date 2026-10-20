@@ -27,19 +27,38 @@ def sample_entropy(
 ) -> tuple[EntropySample, ...]:
     """Sample evenly spaced windows without reading outside the selected range."""
 
+    if not 1 <= samples <= MAX_SAMPLES:
+        raise ValueError("sample count is outside the supported range")
+    if not 1 <= window_size <= min(size, MAX_WINDOW_SIZE):
+        raise ValueError("window size is invalid for this range")
+    span = size - window_size
+    if samples > span + 1:
+        raise ValueError("not enough distinct window starts for requested samples")
+    positions = [offset] if samples == 1 else [offset + span * index // (samples - 1) for index in range(samples)]
+    return sample_entropy_at_offsets(
+        path, offset=offset, size=size, window_size=window_size,
+        positions=tuple(positions),
+    )
+
+
+def sample_entropy_at_offsets(
+    path: str | Path, *, offset: int, size: int, window_size: int,
+    positions: tuple[int, ...],
+) -> tuple[EntropySample, ...]:
+    """Measure explicit, distinct windows inside a validated file interval."""
+
+    if not 1 <= len(positions) <= MAX_SAMPLES or len(set(positions)) != len(positions):
+        raise ValueError("positions must be distinct and within the supported count")
     with Path(path).open("rb") as source:
         file_size = os.fstat(source.fileno()).st_size
         if offset < 0 or size <= 0 or offset > file_size or size > file_size - offset:
             raise ValueError("sample range lies outside the file")
         if not 1 <= window_size <= min(size, MAX_WINDOW_SIZE):
             raise ValueError("window size is invalid for this range")
-        if not 1 <= samples <= MAX_SAMPLES:
-            raise ValueError("sample count is outside the supported range")
-
-        span = size - window_size
-        positions = [offset] if samples == 1 else [offset + span * index // (samples - 1) for index in range(samples)]
         result: list[EntropySample] = []
-        for position in dict.fromkeys(positions):
+        for position in positions:
+            if position < offset or position > offset + size - window_size:
+                raise ValueError("sample position lies outside the selected range")
             source.seek(position)
             data = source.read(window_size)
             if len(data) != window_size:

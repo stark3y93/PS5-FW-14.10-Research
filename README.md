@@ -1,53 +1,59 @@
-# PS5 system software 26.06-14.10.00 research
+# PS5 update wrapper research toolkit
 
-This workspace holds a read-only, offline investigation of Sony's public PS5 **update** package. It contains an original SLB2 metadata parser, a bounded byte-statistics experiment, tests, and an evidence-led source review. The original package is in Git-ignored `artifacts/`; generated reports belong in Git-ignored `derived/`.
+This repository contains original, read-only Python tools for inspecting the **outer SLB2 wrapper** of a local PS5 update package. It contains no Sony firmware, extracted binaries, keys, payloads, or console networking code. The tests use only synthetic containers.
 
-## Current state
+## What it does
 
-- Sony's [release notes](https://www.playstation.com/en-gb/support/hardware/ps5/system-software-info/) identify version `26.06-14.10.00`.
-- The package was downloaded from the **PS5 console update file** link on Sony's [UK system software page](https://www.playstation.com/en-gb/support/hardware/ps5/system-software/). It is the `sys_...` update package, not the `rec_...` reinstallation package.
-- The download is complete and its observed length, hashes, and container header are recorded in [notes/provenance.md](notes/provenance.md) and [notes/initial-findings.md](notes/initial-findings.md).
-- A strict metadata-only parser and deterministic entropy sampler are in `src/ps5fwlab/`; automated tests use synthetic fixtures in `tests/`.
-- No console settings, firmware, DNS, files, or services were changed. No update was installed or sent to the console.
+| Command | Output | Input protection |
+| --- | --- | --- |
+| `inspect` | Validated SLB2 header and entry metadata | Bounds-checked parser |
+| `entropy` | Evenly spaced byte-window statistics inside declared entries | Bounded reads; no built-in hash check |
+| `survey` | SHA-seeded, disjoint aligned-window statistics | Expected SHA-256 checked before and after sampling |
+| `map` | Numerical profiles at wrapper region boundaries | Expected SHA-256 checked before and after mapping |
+| `compare` | Relationships among two or more local wrapper maps | Distinct expected hashes and file sizes checked |
 
-## Reproduce locally
+The parser reads the first 512 bytes and validates declared file ranges, names and entry overlap. It does not parse or extract the inner PUP. `map` fully measures regions up to 1,024 bytes and reads only their first and last 512 bytes when larger. `survey` limits its aligned sampling frame to one million slots to bound memory use; very small window sizes may be rejected. Commands emit numerical JSON to standard output; keep local reports in ignored `derived/`.
 
-Requires Python 3.10 or newer. The package has no runtime dependencies.
+## Test without firmware
+
+Python 3.10 or newer is required. There are no runtime dependencies. From the repository root:
 
 ```powershell
-python -m pip install -e .
-python -m unittest discover -s tests -v
-Get-FileHash -LiteralPath 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' -Algorithm SHA256
-python -m ps5fwlab inspect 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' > 'derived\slb2-metadata.json'
-python -m ps5fwlab entropy 'artifacts\PS5UPDATE-26.06-14.10.00.PUP' --window 65536 --samples 256 > 'derived\inner-pup-entropy-64k-256.json'
+$env:PYTHONPATH = (Join-Path (Get-Location) 'src')
+python -S -m unittest discover -s tests -v
 ```
 
-The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`. A fresh clone must acquire the official package separately and verify its identity before running package-specific commands. `inspect` validates declared wrapper ranges without extraction. `entropy` samples only inside validated entries; its statistics cannot identify encryption or executable content.
+The suite creates temporary synthetic SLB2 files. It requires no Sony package, credentials, network access, or PS5.
+The integrated suite currently has 49 tests, including deterministic parser mutations and the survey and comparator regressions. The GitHub Actions workflow runs the same firmware-free suite on Ubuntu 24.04 with Python 3.12, pinned trusted actions, `contents: read`, disabled persisted checkout credentials, and a five-minute job timeout. GitHub Actions execution is presently blocked by an account billing restriction; local test output is the available execution evidence.
 
-## Research results
+## Reproduce the 14.10 observations locally
 
-- [Local 14.10 artifact analysis](notes/analysis-14.10.md)
-- [Comparison matrix separating facts, claims, and hypotheses](notes/comparison-matrix.md)
-- [GitHub source, license, and commit review](notes/source-review.md)
-- [Three ranked PC-only experiments and the reproduced result](notes/experiments.md)
+The official PS5 update file must be obtained separately from [Sony's support page](https://www.playstation.com/en-gb/support/hardware/ps5/system-software/). Keep it in ignored `artifacts/`. [Provenance and package identity](notes/provenance.md) record the 14.10 source, size and digest. The expected SHA-256 is `C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6`.
 
-## Scope and method
+```powershell
+$env:PYTHONPATH = (Join-Path (Get-Location) 'src')
+$package = 'artifacts\PS5UPDATE-26.06-14.10.00.PUP'
+$expected = 'C17384946DF6E5C85B2D72CBEEE2057B165BF90279D9E2A86D527D0778CDAAF6'
+if ((Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash -ne $expected) { throw 'Package SHA-256 mismatch' }
+python -S -m ps5fwlab inspect $package > 'derived\slb2-metadata.json'
+python -S -m ps5fwlab entropy $package --window 65536 --samples 256 > 'derived\inner-pup-entropy-64k-256.json'
+python -S -m ps5fwlab survey $package --sha256 $expected --window 65536 --samples 256 > 'derived\independent-survey-14.10.json'
+python -S -m ps5fwlab map $package --sha256 $expected > 'derived\wrapper-neighborhood-14.10.json'
+if ((Get-FileHash -LiteralPath $package -Algorithm SHA256).Hash -ne $expected) { throw 'Package changed during analysis' }
+```
 
-1. Preserve `artifacts/PS5UPDATE-26.06-14.10.00.PUP` as the source artifact. Recompute its SHA-256 before relying on a later analysis result.
-2. Perform bounded, offline parsing of headers and file tables. Record offsets, raw bytes, parser assumptions, and validation checks alongside conclusions.
-3. Keep extracted content, if any, in `derived/` with source byte ranges and hashes. Treat names and apparent file types as hypotheses until independently validated.
-4. Distinguish direct observations, interpretations, and unknowns. Do not infer live console behavior from a static package.
-5. If a decrypted or executable component becomes legitimately available, analyze that component as a separate artifact with its own provenance. Do not execute extracted code on the host.
+The `entropy` windows can overlap; they are descriptive measurements, not independent random draws. `survey` uses a deterministic seed derived from the package hash. Its zero-hit binomial number is a **conditional model benchmark**, not a formal confidence guarantee for this fixed selection. High entropy does not distinguish encryption, compression, or other causes. A SHA-256 check before and after analysis detects ordinary file changes, but does not make concurrent modification impossible.
 
-## Research questions
+`compare` accepts repeated `--package SAMPLE_ID FILE SHA256 EXPECTED_SIZE` arguments. Sample IDs are labels, **not verified firmware versions**. Cross-version interpretation requires independent Sony-controlled version-to-file evidence. Only 14.10 currently meets this project's provenance gate: [historical 14.00 and 13.60 candidate audit](notes/historical-sony-source-audit-2026-10-20.md). No historical packages were downloaded for this repository.
 
-- What are the verified outer-container layout, entry count, offsets, sizes, and padding?
-- Which inner structures can be identified from public bytes without keys or a live console?
-- Which findings are specific to 14.10, and which need a verified earlier update package for comparison?
-- What can be corroborated by Sony's release notes and published open-source notices?
+## Findings and limits
 
-## Boundaries
+- [14.10 wrapper observations](notes/wrapper-neighborhood-14.10.md) include two 32-byte nonzero runs in a fully measured 512-byte pre-entry block. Their recurrence across versions is unknown.
+- [Independent 14.10 byte-window survey](notes/independent-survey-14.10.md) records offsets, results and statistical limits.
+- [Cross-version comparison](notes/cross-version-comparison-2026-10-20.md) has synthetic validation but no provenance-verified historical input.
+- [Evidence matrix](notes/comparison-matrix.md), [source review](notes/source-review.md) and [experiment ranking](notes/experiments.md) separate observations, third-party claims and hypotheses.
+- [Parser validation](notes/analysis-14.10.md) covers strict bounds, malformed synthetic headers and the duplicate-name ambiguity policy.
+- [Toolkit review and proposed merge order](notes/toolkit-consolidation-review-2026-10-20.md) describe remaining integration work.
+- [Integrated branch manifest and merge proposal](notes/integration-2026-10-20.md) records which PR changes are included and which PRs would become redundant.
 
-This workspace does not contain an exploit, authentication bypass, decrypted PS5 system image, or a claim of complete firmware coverage. The initial live-network observations from the prior check establish local reachability only; they do not identify firmware internals.
-
-The next technical obstacle is verified access to the inner PUP's protected contents or a documented, independently validated public header layout beyond its observed magic. No code here connects to a PS5.
+No command connects to a console or establishes the meaning of unknown SLB2 fields, inner PUP encryption state, executable content, signature validity, exploitability, or firmware compatibility. Keep Sony packages and generated output in `artifacts/` and `derived/`, respectively; both directories are Git-ignored.

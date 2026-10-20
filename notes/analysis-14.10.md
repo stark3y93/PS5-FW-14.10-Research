@@ -18,6 +18,24 @@ The original local file is `artifacts/PS5UPDATE-26.06-14.10.00.PUP`, 1,261,408,2
 
 The table layout agrees with historical [PS4 `SLB2` source](https://github.com/nikosradio/ps4tools/blob/2aabe4da09ba14c41f3a0d8516aa756742ef4688/pupunpack.c), but the local field values and bounds were measured independently. The parser uses each entry's declared offset and rejects malformed or overlapping ranges; it does not copy the historical extraction behavior.
 
+## Parser audit (synthetic inputs)
+
+The parser opens the caller-supplied path in binary read mode, reads one 512-byte
+header block, and returns metadata; it does not create files or follow entry
+names as paths. Tests now cover every truncation length below 512 bytes, zero
+and excessive entry counts, malformed names and padding, duplicate names,
+overlapping entries, an entry ending exactly at EOF, and maximum 32-bit offset
+and block-count fields. A seeded 128-case mutation test changes structural
+header bytes and checks that every accepted result remains within the file.
+Python integer arithmetic avoids 32-bit wraparound; the parser also compares
+declared sizes against the actual file length before returning an interval.
+
+Duplicate names are rejected as an ambiguity policy, not as a claim that every
+SLB2 variant forbids them. Other valid wrapper variants may be rejected by this
+strict first-block layout. A file changed concurrently between parsing and a
+later sampling run could invalidate the earlier metadata; the recorded SHA-256
+and a fresh hash check establish the input identity for reproduction.
+
 ## Inner PUP boundary
 
 At byte `0x0400` of the original, the first 16 bytes are:
