@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-10-20",
+  "method": "GitHub repository metadata, git ls-remote HEAD, pinned raw README and CONTRIBUTING files, and pinned recursive Git trees; no external code or payload executed",
+  "evidence_levels": {
+    "source_observation": "File or metadata present at pinned revision; not device verification",
+    "author_claim": "Upstream author reports a result or compatibility claim",
+    "inference": "Assessment from cited source observations",
+    "unknown": "No sufficient version-specific evidence"
+  },
+  "repositories": [
+    {
+      "repository": "PS5Dev/PS5-UMTX-Jailbreak",
+      "commit": "2cf6778ebe89ff35255e1c228826d0d2155e9d2a",
+      "licence": "Unlicense (GitHub metadata and root LICENSE)",
+      "contribution_policy": "No CONTRIBUTING file in pinned tree; README points researchers to Discord, so review repository history and ask maintainer before substantial work",
+      "functionality": "Web-hosted browser and kernel research code with firmware-specific JavaScript offset files",
+      "firmware_claim": "README lists 1.00–5.50 variants and says firmware 6.00 and above requires a new WebKit exploit",
+      "firmware_14_10": "unsupported by this revision; no 14.10 offset file or claim",
+      "evidence_quality": "Source tree and author documentation directly inspected; runtime claims not independently tested",
+      "limitations": "Older firmware focus; bundled payloads and network host were not run; no dedicated test tree found",
+      "possible_improvement": "Offline lint or documentation checks for the published firmware support list and offset-file inventory",
+      "evidence": [
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/README.md", "supports": "author firmware list and explicit >=6.00 limitation"},
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/tree/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/document/en/ps5/offsets", "supports": "firmware-specific files in source tree"},
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5-UMTX-Jailbreak/blob/2cf6778ebe89ff35255e1c228826d0d2155e9d2a/LICENSE", "supports": "root licence"}
+      ]
+    },
+    {
+      "repository": "PS5Dev/PS5SDK",
+      "commit": "a2e03a2a0231a3a3397fa6cd087a01ca6d04f273",
+      "licence": "GPL-2.0 (GitHub metadata; root LICENSE and README)",
+      "contribution_policy": "README invites forks and pull requests for header/CRT updates; no CONTRIBUTING file in pinned tree",
+      "functionality": "C headers, runtime support, CMake toolchain and examples for PS5 ELF development",
+      "firmware_claim": "README documents kernel-helper offsets for 3.00, 3.20, 3.21, 4.02, 4.03, 4.50 and 4.51",
+      "firmware_14_10": "unknown and not claimed by documented offset list",
+      "evidence_quality": "Source tree and README directly inspected; no build or console test",
+      "limitations": "SDK is marked work in progress; its firmware-specific examples depend on offsets; no dedicated test tree found",
+      "possible_improvement": "Synthetic CMake configure/build checks and documentation that distinguishes generic SDK compilation from firmware-specific runtime support",
+      "evidence": [
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5SDK/blob/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/README.md", "supports": "functionality, contribution invitation, firmware list, GPL statement"},
+        {"kind": "source_observation", "url": "https://github.com/PS5Dev/PS5SDK/tree/a2e03a2a0231a3a3397fa6cd087a01ca6d04f273/ps5/kernel_offsets", "supports": "offset inventory"}
+      ]
+    },
+    {
+      "repository": "Gezine/Luac0re",
+      "commit": "6fa8db6c021e1ae01864455e03e9c86aa5d33d66",
+      "licence": "MIT (GitHub metadata and root LICENSE)",
+      "contribution_policy": "No CONTRIBUTING file in pinned tree",
+      "functionality": "Lua-based mast1c0re variant and associated host scripts",
+      "firmware_claim": "README says a JIT route targets latest PS4/PS5 firmware and says the related Poopsploit payload requires PS5 12.00 or lower",
+      "firmware_14_10": "unknown; 'latest' is not a reproducible 14.10 test statement",
+      "evidence_quality": "Source tree and author README directly inspected; no device evidence reviewed",
+      "limitations": "Game dependency and userland scope; no dedicated test tree found",
+      "possible_improvement": "Document a versioned compatibility matrix with evidence per entry and separate loader from payload prerequisites",
+      "evidence": [
+        {"kind": "source_observation", "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/README.md", "supports": "author firmware and dependency statements"},
+        {"kind": "source_observation", "url": "https://github.com/Gezine/Luac0re/blob/6fa8db6c021e1ae01864455e03e9c86aa5d33d66/LICENSE", "supports": "root licence"}
+      ]
+    },
+    {
+      "repository": "ntfargo/Relapse-Exploit",
+      "commit": "dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0",
+      "licence": "MIT (GitHub metadata and root LICENSE)",
+      "contribution_policy": "No CONTRIBUTING file in pinned tree",
+      "functionality": "Browser exploit host and supporting scripts",
+      "firmware_claim": "README states supported firmware 7.00 through 13.60",
+      "firmware_14_10": "outside author-stated supported range",
+      "evidence_quality": "Source tree and author README directly inspected; no device test",
+      "limitations": "No 14.10 compatibility evidence and no dedicated test tree found",
+      "possible_improvement": "Add machine-readable supported-version metadata and offline checks against documentation",
+      "evidence": [
+        {"kind": "source_observation", "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/README.md", "supports": "author-supported version range"},
+        {"kind": "source_observation", "url": "https://github.com/ntfargo/Relapse-Exploit/blob/dd8e4e0914c5e9d066ee1f9b056be76cb992c8e0/LICENSE", "supports": "root licence"}
+      ]
+    },
+    {
+      "repository": "zecoxao/ps5-pup-unpacker",
+      "commit": "005cccc908142c35ab7280e7f9eef8d5203c21e0",
+      "licence": "No root licence in pinned tree; bundled zlib notices do not licence the project's own code",
+      "contribution_policy": "No CONTRIBUTING file in pinned tree; clarify reuse terms before incorporating code",
+      "functionality": "C++ unpacker for update blobs already decrypted by a separate tool",
+      "firmware_claim": "No explicit firmware support range in README",
+      "firmware_14_10": "unknown; does not directly address an intact opaque 14.10 outer wrapper",
+      "evidence_quality": "Source tree and README directly inspected; no package or build test",
+      "limitations": "Requires separately decrypted input and does not unpack nested filesystems",
+      "possible_improvement": "Independent synthetic parser fixtures and defensive input-boundary tests, contingent on reproducible bug and licence review",
+      "evidence": [
+        {"kind": "source_observation", "url": "https://github.com/zecoxao/ps5-pup-unpacker/blob/005cccc908142c35ab7280e7f9eef8d5203c21e0/README.md", "supports": "input prerequisite and scope"},
+        {"kind": "source_observation", "url": "https://github.com/zecoxao/ps5-pup-unpacker/tree/005cccc908142c35ab7280e7f9eef8d5203c21e0", "supports": "root inventory including absent root licence"}
+      ]
+    },
+    {
+      "repository": "pastawithpesto/PS5-14.10-Jailbreak-Research",
+      "commit": "ea1beed081adfdbebd887db558358c753633b575",
+      "licence": "No root licence in pinned tree",
+      "contribution_policy": "CONTRIBUTING.md contains only a heading at pinned revision; review open PRs and clarify licence before code reuse",
+      "functionality": "14.10 browser research notes, host tools, probe records and offline host fixtures",
+      "firmware_claim": "README attributes browser observations to a 14.10 device; describes unresolved exploitation stages",
+      "firmware_14_10": "author-reported research observations; no independently verified complete jailbreak",
+      "evidence_quality": "Repository and fixtures observed; hardware identity and results not independently authenticated",
+      "limitations": "Version claims need provenance and independent reproduction; no general reuse licence",
+      "possible_improvement": "Strengthen offline host fixture tests, evidence pins and documentation of claim status without importing code",
+      "evidence": [
+        {"kind": "author_claim", "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/blob/ea1beed081adfdbebd887db558358c753633b575/README.md", "supports": "14.10 author-reported browser findings and stated stage status"},
+        {"kind": "source_observation", "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/tree/ea1beed081adfdbebd887db558358c753633b575/tools/remote-loader/runtime-derive/test", "supports": "committed offline fixture files"},
+        {"kind": "source_observation", "url": "https://github.com/pastawithpesto/PS5-14.10-Jailbreak-Research/blob/ea1beed081adfdbebd887db558358c753633b575/CONTRIBUTING.md", "supports": "contribution file contents"}
+      ]
+    },
+    {
+      "repository": "ZigZagBoi1/PS5-14.10-Research",
+      "commit": "2bfb6b54940dfbd18d05b2712d723b0b4cfd0049",
+      "licence": "No root licence in pinned tree",
+      "contribution_policy": "CONTRIBUTING.md asks for fork, branch, testing and explanatory PR; supplies offline test command",
+      "functionality": "14.10 Lua userland probe corpus, saved results, research documentation and offline audit tools",
+      "firmware_claim": "README attributes some userland findings to 14.10 but explicitly says no validated kernel vulnerability, kernel read/write or complete exploit is demonstrated",
+      "firmware_14_10": "author-reported userland evidence only; kernel and complete-chain claims unsupported",
+      "evidence_quality": "Repository corpus and tests observed; device provenance not independently authenticated",
+      "limitations": "Very large mixed corpus; repository includes live-console tooling that must not be run here; no root licence",
+      "possible_improvement": "Offline result-parser regression fixtures and provenance audit for a bounded subset of records",
+      "evidence": [
+        {"kind": "author_claim", "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049/README.md", "supports": "claimed findings and explicit absent kernel milestones"},
+        {"kind": "source_observation", "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049/CONTRIBUTING.md", "supports": "contribution workflow and offline test command"},
+        {"kind": "source_observation", "url": "https://github.com/ZigZagBoi1/PS5-14.10-Research/blob/2bfb6b54940dfbd18d05b2712d723b0b4cfd0049/tools/verify_offline.py", "supports": "bounded offline verifier exists in repository"}
+      ]
+    }
+  ]
+}
